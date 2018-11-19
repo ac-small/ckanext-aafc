@@ -28,7 +28,7 @@ setup(
     author_email='''john.kolesar@canada.ca''',
 
     # Choose your license
-    license='AGPL',
+    license='MIT',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
