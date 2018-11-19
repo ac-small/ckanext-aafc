@@ -1,0 +1,386 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "aafc-metadata-dataset",
+  "about": "",
+  "about_url": "",
+  "dataset_fields": [
+    {
+      "field_name": "title_English",
+      "label": {
+        "en": "English title of the dataset",
+        "fr": "Titre anglais du jeu de données"
+      },
+      "form_placeholder": "eg. A descriptive title",
+      "validators": "not_empty"
+    },
+    {
+      "field_name": "title_French",
+      "label": {
+        "en": "French title of the dataset",
+        "fr": "Titre français du jeu de données"
+      },
+      "form_placeholder": "eg. A descriptive title",
+      "validators": "not_empty"
+    },
+    {
+      "field_name": "name_English",
+      "label": {
+        "en": "English name of the dataset",
+        "fr": "Nom anglais du jeu de données"
+      },
+      "form_placeholder": "eg. A descriptive title",
+      "validators": "not_empty"
+    },
+    {
+      "field_name": "name_French",
+      "label": {
+        "en": "French name of the dataset",
+        "fr": "Nom français du jeu de données"
+      },
+      "form_placeholder": "eg. A descriptive title",
+      "validators": "not_empty"
+    },
+    {
+      "field_name": "organizationName_English",
+      "label": {
+        "en": "Name of the organisation in English",
+        "fr": "Nom en de l'organisation en Anglais"
+      },
+      "form_snippet": "text.html",
+      "validators": "not_empty"
+    },
+    {
+      "field_name": "organizationName_French",
+      "label": {
+        "en": "Name of the organisation in French",
+        "fr": "Nom en de l'organisation en Français"
+      },
+      "form_snippet": "text.html",
+      "validators": "not_empty"
+    },
+    {
+      "field_name": "electronicMailAddress_English",
+      "label": {
+        "en": "Email of the organisation in English",
+        "fr": "Adresse électronique du contact en Anglais"
+      },
+      "form_placeholder": "name@domain.ca",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "organization"
+    },
+    {
+      "field_name": "electronicMailAddress_French",
+      "label": {
+        "en": "Email of the organisation in French",
+        "fr": "Adresse électronique du contact en Français"
+      },
+      "form_placeholder": "nom@domaine.ca",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "organization"
+    },
+    {
+      "field_name": "role",
+      "label": {
+        "en": "Role",
+        "fr": "Rôle"
+      },
+      "preset": "select",
+      "choices": [
+        {
+          "value": "author",
+          "label": {
+            "en": "author",
+            "fr": "auteur"
+          }
+        },
+        {
+          "value": "distributor",
+          "label": {
+            "en": "distributor",
+            "fr": "distributeur"
+          }
+        },
+        {
+          "value": "collaborator",
+          "label": {
+            "en": "collaborator",
+            "fr": "collaborateur"
+          }
+        },
+        {
+          "value": "custodian",
+          "label": {
+            "en": "custodian",
+            "fr": "conservateur"
+          }
+        },
+        {
+          "value": "distributor",
+          "label": {
+            "en": "distributor",
+            "fr": "distributeur"
+          }
+        },
+        {
+          "value": "editor",
+          "label": {
+            "en": "editor",
+            "fr": "réviseur"
+          }
+        },
+        {
+          "value": "mediator",
+          "label": {
+            "en": "mediator",
+            "fr": "médiateur"
+          }
+        },
+        {
+          "value": "originator",
+          "label": {
+            "en": "originator",
+            "fr": "créateur"
+          }
+        },
+        {
+          "value": "owner",
+          "label": {
+            "en": "owner",
+            "fr": "propriétaire"
+          }
+        },
+        {
+          "value": "pointOfContact",
+          "label": {
+            "en": "pointOfContact",
+            "fr": "contact"
+          }
+        },
+        {
+          "value": "principalInvestigator",
+          "label": {
+            "en": "principalInvestigator",
+            "fr": "chercheurPrincipal"
+          }
+        },
+        {
+          "value": "processor",
+          "label": {
+            "en": "processor",
+            "fr": "traiteur"
+          }
+        },
+        {
+          "value": "publisher",
+          "label": {
+            "en": "publisher",
+            "fr": "éditeur"
+          }
+        },
+        {
+          "value": "resourceProvider",
+          "label": {
+            "en": "resourceProvider",
+            "fr": "fournisseurRessource"
+          }
+        },
+        {
+          "value": "rightsHolder",
+          "label": {
+            "en": "rightsHolder",
+            "fr": "détenteurDroits"
+          }
+        },
+        {
+          "value": "user",
+          "label": {
+            "en": "user",
+            "fr": "utilisateur"
+          }
+        }
+      ]
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "fileIdentifier",
+      "label": {
+        "en": "Unique Identifier",
+        "fr": "Identifiant unique"
+      },
+      "form_snippet": "text.html",
+      "validators": "not_empty"
+    },
+    {
+      "field_name": "language",
+      "label": {
+        "en": "Language of Metadata",
+        "fr": "Langue des métadonnées"
+      },
+      "preset": "select",
+      "choices": [
+        {
+          "value": "eng;CAN",
+          "label": {
+            "en": "eng;CAN",
+            "fr": "fra;CAN"
+          }
+        }
+      ]
+    },
+    {
+      "field_name": "characterSet",
+      "label": {
+        "en": "Encoding of the metadata",
+        "fr": "Encodage des métadonnées"
+      },
+      "form_placeholder": "utf8",
+      "form_snippet": "text.html"
+    },
+    {
+      "field_name": "dateStamp",
+      "label": {
+        "en": "Date Modified",
+        "fr": "Date de modification"
+      },
+      "display_property": "dc:date",
+      "values": {
+        "form_snippet": "date.html",
+        "display_snippet": "date.html",
+        "validators": "scheming_required isodate convert_to_json_if_date"
+      }
+    },
+    {
+      "field_name": "hierarchyLevel",
+      "label": "Resource Type",
+      "preset": "select",
+      "choices": [
+        {
+          "value": "dataset",
+          "label": {
+            "en": "dataset",
+            "fr": "jeuDonnées"
+          }
+        },
+        {
+          "value": "model",
+          "label": {
+            "en": "model",
+            "fr": "modèle"
+          }
+        },
+        {
+          "value": "series",
+          "label": {
+            "en": "series",
+            "fr": "série"
+          }
+        },
+        {
+          "value": "service",
+          "label": {
+            "en": "service",
+            "fr": "service"
+          }
+        },
+        {
+          "value": "software",
+          "label": {
+            "en": "software",
+            "fr": "logiciel"
+          }
+        }
+      ]
+    },
+    {
+      "field_name": "metadataStandardName_English",
+      "label": {
+        "en": "Name of the metadata standard/profile",
+        "fr": "Nom de la norme / du profil de métadonnées"
+      },
+      "form_placeholder": "North American Profile of ISO 19115:2003 - Geographic information - Metadata",
+      "form_snippet": "text.html"
+    },
+    {
+      "field_name": "metadataStandardName_French",
+      "label": {
+        "en": "Name of the metadata standard/profile",
+        "fr": "Nom de la norme / du profil de métadonnées"
+      },
+      "form_placeholder": "Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées",
+      "form_snippet": "text.html"
+    },
+    {
+      "field_name": "language_locale",
+      "label": {
+        "en": "Second language of the metadata",
+        "fr": "Deuxième langue des métadonnées"
+      },
+      "preset": "select",
+      "choices": [
+        {
+          "value": "Français;French",
+          "label": {
+            "en": "Anglais; English",
+            "fr": "Français;French"
+          }
+        }
+      ]
+    },
+    {
+      "field_name": "country",
+      "label": {
+        "en": "Country of the second language",
+        "fr": "Pays de la langue seconde"
+      },
+      "preset": "select",
+      "choices": [
+        {
+          "value": "Canada",
+          "label": {
+            "en": "Canada",
+            "fr": "Canada"
+          }
+        }
+      ]
+    },
+    {
+      "field_name": "characterEncoding",
+      "label": {
+        "en": "Encoding of the second language",
+        "fr": "Encodage de la langue seconde"
+      },
+      "form_placeholder": "utf8",
+      "form_snippet": "text.html"
+    },
+    {
+      "field_name": "code",
+      "label": {
+        "en": "Spatial Reference Code",
+        "fr": "Code de référence spatiale"
+      },
+      "form_placeholder": "ex: EPSG:%%%% or SR-ORG:%%%%",
+      "form_snippet": "text.html"
+    },
+    {
+      "field_name": "codespace",
+      "label": {
+        "en": "Spatial Reference Code URL",
+        "fr": "URL du code de référence spatiale"
+      },
+      "form_placeholder": "ex: http://www.epsg-registry.org or http://www.spatialreference.org",
+      "form_snippet": "text.html"
+    },
+    {
+      "field_name": "version",
+      "label": {
+        "en": "Version of the Spatial Reference Code",
+        "fr": "Version du code de référence spatiale"
+      },
+      "form_placeholder": "ex: 8.6.2",
+      "form_snippet": "text.html"
+    }
+  ]
+}
