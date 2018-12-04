@@ -8,7 +8,7 @@ from ckan.lib.navl.validators import StopOnError
 from ckan.authz import is_sysadmin
 from ckan import model
 
-from ckanext.canada.helpers import may_publish_datasets
+from ckanext.aafc.tbs_helpers import may_publish_datasets
 import geojson
 from geomet import wkt
 import json
