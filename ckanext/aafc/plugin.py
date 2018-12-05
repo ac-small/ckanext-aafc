@@ -22,8 +22,9 @@ from ckanext.aafc import helpers
 
 import json
 
-class AafcPlugin(plugins.SingletonPlugin):
+class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer)
+    p.implements(p.IValidators, inherit=True)
 
     # IConfigurer
 
@@ -31,3 +32,22 @@ class AafcPlugin(plugins.SingletonPlugin):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'aafc')
+
+    # IValidators
+
+    def get_validators(self):
+        return {
+            'canada_validate_generate_uuid':
+                validators.canada_validate_generate_uuid,
+            'canada_tags': validators.canada_tags,
+#            'geojson_validator': validators.geojson_validator,
+            'email_validator': validators.email_validator,
+#            'protect_portal_release_date':
+                validators.protect_portal_release_date,
+#            'canada_copy_from_org_name':
+                validators.canada_copy_from_org_name,
+            'canada_non_related_required':
+                validators.canada_non_related_required,
+            'if_empty_set_to':
+                validators.if_empty_set_to,
+            }
