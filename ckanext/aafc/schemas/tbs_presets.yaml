@@ -23,8 +23,6 @@ presets:
 
 - preset_name: tbs_dataset_id
   values:
-   create_validators: unicode name_validator 
-   display_snippet: null
    field_name: tbs_id
    form_snippet: null
 
@@ -41,10 +39,8 @@ presets:
 
 - preset_name: tbs_dataset_name
   values:
-    display_snippet: null
     field_name: tbs_name
     form_snippet: null
-    validators: if_empty_same_as(id)
 
 # Field = Collection Type.
 # Display the English or the French Description from the Collection Type code table (refer to Data Migration), depending on the selected language.
