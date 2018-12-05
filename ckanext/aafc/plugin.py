@@ -24,7 +24,7 @@ import json
 
 class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer)
-    p.implements(p.IValidators, inherit=True)
+    plugins.implements(plugins.IValidators, inherit=True)
 
     # IConfigurer
 
