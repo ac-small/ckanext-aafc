@@ -13,10 +13,10 @@ from paste.reloader import watch_file
 import ckanapi
 from ckan.lib.base import c
 
-from ckanext.aafc import tbs_validators
+from ckanext.aafc import validators
 #from ckanext.aafc import logic
 #from ckanext.aafc import auth
-from ckanext.aafc import tbs_helpers
+from ckanext.aafc import helpers
 #from ckanext.aafc import activity as act
 #from ckanext.aafc.extendedactivity.plugins import IActivity
 
