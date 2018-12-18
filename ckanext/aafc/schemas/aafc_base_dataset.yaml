@@ -1,0 +1,67 @@
+
+scheming_version: 1
+# AAFC Inventory Tombstone Dataset
+dataset_type: aafc-base-dataset
+
+about: 'aafc.canada.ca: default aafc internal metadata definition'
+about_url: http://github.com/open-data/ckanext-aafc
+catalog_type_label:
+  en: Raw/Geo Data
+  fr: Données/géo
+
+form_languages:
+- en
+- fr
+
+#
+#   DATASET FIELDS
+#
+dataset_fields:
+
+##################################################
+# Minimal list of AAFC fields
+#
+- preset: canada_dataset_id
+- preset: canada_dataset_name
+- preset: canada_title
+- preset: aafc_schema_type
+- preset: canada_notes
+- preset: canada_maintainer_email
+- preset: aafc_branch_owner_org
+- preset: aafc_future_schema_target
+- preset: canada_creator
+- preset: canada_keywords
+- preset: canada_subject
+- preset: canada_audience
+- preset: canada_frequency
+- preset: canada_digital_object_identifier
+- preset: canada_spatial_representation_type
+- preset: aafc_proposed_release
+- preset: aafc_contact_it
+- preset: aafc_eligibility_reason
+- preset: aafc_tbs_inventory_submission_date
+- preset: aafc_dept_result_fw
+
+#
+#   RESOURCE FIELDS
+#
+resource_fields:
+
+- preset: canada_resource_unique_identifier
+- preset: canada_resource_name
+- preset: canada_resource_type
+  form_restrict_choices_to:
+  - application
+  - api
+  - dataset
+  - guide
+  - faq
+  - specification
+  - terminology
+  - tool
+  - website
+- preset: canada_resource_format
+- preset: canada_resource_size
+- preset: canada_resource_character_set
+- preset: canada_resource_language
+- preset: canada_resource_url

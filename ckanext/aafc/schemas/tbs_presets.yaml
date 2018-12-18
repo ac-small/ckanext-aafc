@@ -42,6 +42,65 @@ presets:
     field_name: tbs_name
     form_snippet: null
 
+- preset_name: aafc_schema_type
+  values:
+      field_name: type
+      label:
+         en: Dataset Type (??NOT SETUP YET???)
+         fr: To Translate...
+      help_text:
+         en: "The current Dataset or Schema type"
+         fr: "To translate..."
+
+- preset_name: aafc_branch_owner_org
+  values:
+      field_name: aafc_branch_org_unit
+      label:
+         en: AAFC Branch Org Unit (Placeholder for now - could we use MRD???)
+         fr: To Translate...
+
+- preset_name: aafc_future_schema_target
+  values:
+      field_name: aafc_future_schema_target
+      label:
+         en: Catalogue Type (???? - Supposed to show future detailed schema target)
+         fr: To Translate...
+
+- preset_name: aafc_proposed_release
+  values:
+      field_name: aafc_proposed_release
+      label:
+         en: Proposed Release (FY - Q)
+         fr: To Translate...
+
+- preset_name: aafc_contact_it
+  values:
+      field_name: aafc_contact_it
+      label:
+         en: IT Custodian or APM ID
+         fr: To Translate...
+
+- preset_name: aafc_eligibility_reason
+  values:
+      field_name: aafc_eligibility_reason
+      label:
+         en: Eligibility Criteria (can add a pickdown list...one value or allow multiple???)
+         fr: To Translate...
+
+- preset_name: aafc_tbs_inventory_submission_date
+  values:
+      field_name: aafc_inv_subm_date
+      label:
+         en: AAFC TBS Inventory Submission Date (??? Discussion with reconcile process between inventory records and master list on TBS)
+         fr: To Translate...
+
+- preset_name: aafc_dept_result_fw
+  values:
+      field_name: aafc_dept_result_fw
+      label:
+         en: Departmental Result Framework (??? List, Type, Link..?)
+         fr: To Translate...
+
 # Field = Collection Type.
 # Display the English or the French Description from the Collection Type code table (refer to Data Migration), depending on the selected language.
 # {The collection (domain specific) to which the metadata record belongs, Example: Non-Spatial}
@@ -156,6 +215,27 @@ presets:
     help_text:
       en: The Title of the current Organization (GC Department or Agency) primarily responsible for publishing the dataset
       fr: Titre de l’organisation actuelle (organisme ou ministère du GC) principalement responsable de publier le jeu de données
+    required: true
+    form_include_blank_choice: true
+    form_select_attrs:
+      class: form-control
+    # copied from dataset_organization preset
+    validators: owner_org_validator unicode
+    form_snippet: organization.html
+
+# Field = Publisher - Current AAFC Branch Name.
+# List box Source: Publisher - Current Branch Name code table (refer to Data Migration).
+# Populate the list box with the Titles of all the organizations the currently logged-in user is linked to.
+# {The Title of the current Organization (GC Department or Agency) primarily responsible for publishing the asset}
+- preset_name: aafc_branch_owner_org
+  values:
+    field_name: owner_org
+    label:
+      en: Publisher - Current AAFC Branch Name
+      fr: Editeur - Nom actuel de la filiale
+    help_text:
+      en: "The Title of the current AAFC Branch primarily responsible for publishing the dataset"
+      fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de donnÃ©es"
     required: true
     form_include_blank_choice: true
     form_select_attrs:
@@ -508,7 +588,7 @@ presets:
   values:
     field_name: audience
     label:
-      en: Audience
+      en: Audience (????Does this belong in the main template schema...or just GEO???)
       fr: Audience
     help_text:
       en: "A description of the audience or group of people for whom the described dataset is intended or useful. You may select multiple options (Ctrl+Click)"
@@ -2508,7 +2588,7 @@ presets:
   values:
     field_name: spatial_representation_type
     label:
-      en: Spatial Representation Type
+      en: Spatial Representation Type (???Does this belong in the main metadata schema or just GEO???)
       fr: Type représentation spatiale
     form_snippet: null
     display_snippet: multiple_choice.html
@@ -2551,7 +2631,7 @@ presets:
   values:
     field_name: unique_identifier
     label:
-      en: Unique Identifier
+      en: Unique Identifier (?? TBS uses input of a string...do we want to generate a UUID??)
       fr: Identificateur unique
     help_text:
       en: A unique phrase or string which identifies the resource.
@@ -2570,7 +2650,7 @@ presets:
       fr: Titre
     fluent_form_label:
       en:
-        en: "Title English"
+        en: "Title English (????Not on our list...but do we need this??)"
         fr: "Titre anglais"
       fr:
         en: "Title French"
