@@ -44,13 +44,18 @@ presets:
 
 - preset_name: aafc_schema_type
   values:
-      field_name: type
+      field_name: dataset_type
       label:
-         en: Dataset Type (??NOT SETUP YET???)
+         en: Dataset Type
          fr: To Translate...
       help_text:
-         en: "The current Dataset or Schema type"
+         en: "The current Schema type will be automatically populated after create. "
          fr: "To translate..."
+      form_attrs:
+         readonly: ''
+         disabled: "disabled" 
+         style: "background-color:#ddd"
+
 
 - preset_name: aafc_branch_owner_org
   values:
@@ -63,8 +68,24 @@ presets:
   values:
       field_name: aafc_future_schema_target
       label:
-         en: Catalogue Type (???? - Supposed to show future detailed schema target)
+         en: Inventory Type (???? - Correct label???)
          fr: To Translate...
+      choices:
+      - label:
+          en: Inventory - Open Data
+          fr: To Translate...
+        value: inv_open_data
+      - label:
+          en: Inventory - Open Data Publish Canididate
+          fr: To Translate...
+        value: inv_open_data_publish
+      - label:
+          en: non-Inventory AAFC internal
+          fr: To Translate...
+        value: non_inv_aafc_int
+      form_snippet: select.html
+      display_snippet: select.html
+      validators: scheming_required scheming_choices
 
 - preset_name: aafc_proposed_release
   values:
@@ -93,6 +114,10 @@ presets:
       label:
          en: AAFC TBS Inventory Submission Date (??? Discussion with reconcile process between inventory records and master list on TBS)
          fr: To Translate...
+      form_attrs:
+         readonly: ''
+         disabled: "disabled"
+         style: "background-color:#ddd"
 
 - preset_name: aafc_dept_result_fw
   values:

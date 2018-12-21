@@ -24,11 +24,17 @@ dataset_fields:
 - preset: canada_dataset_id
 - preset: canada_dataset_name
 - preset: canada_title
-- preset: aafc_schema_type
 - preset: canada_notes
+- preset: aafc_schema_type
+
+- preset: aafc_future_schema_target
+- preset: aafc_tbs_inventory_submission_date
+- preset: aafc_proposed_release
+- preset: aafc_eligibility_reason
+- preset: aafc_dept_result_fw
 - preset: canada_maintainer_email
 - preset: aafc_branch_owner_org
-- preset: aafc_future_schema_target
+- preset: aafc_contact_it
 - preset: canada_creator
 - preset: canada_keywords
 - preset: canada_subject
@@ -36,11 +42,6 @@ dataset_fields:
 - preset: canada_frequency
 - preset: canada_digital_object_identifier
 - preset: canada_spatial_representation_type
-- preset: aafc_proposed_release
-- preset: aafc_contact_it
-- preset: aafc_eligibility_reason
-- preset: aafc_tbs_inventory_submission_date
-- preset: aafc_dept_result_fw
 
 #
 #   RESOURCE FIELDS
