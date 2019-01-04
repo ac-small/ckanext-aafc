@@ -11,10 +11,10 @@ ENV CKAN_INI ${CKAN_CONFIG}/production.ini
 ENV PIP_SRC ${SRC_DIR}
 ENV CKAN_STORAGE_PATH /var/lib/ckan
 
-ENV GIT_URL https://github.com/ckan/ckan.git
+ENV GIT_URL=https://github.com/ckan/ckan.git
 
 # CKAN version to build
-ENV GIT_BRANCH ckan-2.8.1
+ENV GIT_BRANCH=ckan-2.8.1
 
 # Customize these on the .env file if needed
 ENV CKAN_SITE_URL http://localhost:5000
