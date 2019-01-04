@@ -63,7 +63,8 @@ RUN mkdir -p $CKAN_VENV $CKAN_CONFIG $CKAN_STORAGE_PATH && \
     ln -s $CKAN_VENV/bin/paster /usr/local/bin/ckan-paster
 
 # Setup CKAN
-RUN pip install -e git+${GIT_URL}@${GIT_BRANCH}#egg=ckan
+#RUN pip install -e git+${GIT_URL}@${GIT_BRANCH}#egg=ckan
+RUN pip install -e git+https://github.com/ckan/ckan.git@ckan-2.8.1#egg=ckan
 
 RUN ckan-pip install -U pip && \
     ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/requirement-setuptools.txt && \
