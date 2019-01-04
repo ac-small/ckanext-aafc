@@ -44,7 +44,7 @@ presets:
 
 - preset_name: aafc_schema_type
   values:
-      field_name: dataset_type
+      field_name: type
       label:
          en: Dataset Type
          fr: To Translate...
@@ -55,14 +55,6 @@ presets:
          readonly: ''
          disabled: "disabled" 
          style: "background-color:#ddd"
-
-
-- preset_name: aafc_branch_owner_org
-  values:
-      field_name: aafc_branch_org_unit
-      label:
-         en: AAFC Branch Org Unit (Placeholder for now - could we use MRD???)
-         fr: To Translate...
 
 - preset_name: aafc_future_schema_target
   values:
@@ -107,6 +99,46 @@ presets:
       label:
          en: Eligibility Criteria (can add a pickdown list...one value or allow multiple???)
          fr: To Translate...
+
+- preset_name: inv_eligibe_to_release
+  values:
+      field_name: inv_elig_to_release
+      label:
+         en: Eligible to Release
+         fr: To Translate...
+      form_attrs:
+         readonly: ''
+         disabled: "disabled" 
+
+- preset_name: inv_ref_number
+  values:
+      field_name: inv_ref_number
+      label:
+         en: TBS Inventory Reference Number
+         fr: To Translate...
+      form_attrs:
+         readonly: ''
+         disabled: "disabled" 
+
+- preset_name: inv_id
+  values:
+      field_name: inv_id
+      label:
+         en: TBS Inventory ID
+         fr: To Translate...
+      form_attrs:
+         readonly: ''
+         disabled: "disabled"
+
+- preset_name: inv_program_alignment
+  values:
+      field_name: inv_program_align
+      label:
+         en: Program Alignment Architecture
+         fr: To Translate...
+      form_attrs:
+         readonly: ''
+         disabled: "disabled"
 
 - preset_name: aafc_tbs_inventory_submission_date
   values:
