@@ -82,7 +82,7 @@ USER ckan
 EXPOSE $CKAN_PORT
 
 RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
-#    pip install PyYAML && \
+    pip install PyYAML && \
     pip install ckanapi && \
     pip install -e "git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming" && \
     pip install -r ./ckanext-scheming/requirements.txt && \
