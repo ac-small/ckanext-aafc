@@ -17,7 +17,7 @@ ENV GIT_URL=https://github.com/ckan/ckan.git
 ENV GIT_BRANCH=ckan-2.8.1
 
 # Customize these on the .env file if needed
-ENV CKAN_SITE_URL http://localhost:5000
+#ENV CKAN_SITE_URL http://localhost:5000
 ENV CKAN__PLUGINS image_view text_view recline_view envvars scheming_datasets fluent aafc
 ENV CKAN___SCHEMING__DATASET_SCHEMAS "ckanext.aafc:schemas/tbs_dataset.yaml ckanext.scheming:ckan_dataset.json"
 ENV CKAN___SCHEMING__PRESETS "ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml"
