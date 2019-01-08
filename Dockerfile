@@ -20,7 +20,7 @@ ENV GIT_BRANCH=master
 # Customize these on the .env file if needed
 #ENV CKAN_SITE_URL http://localhost:5000
 ENV CKAN__PLUGINS image_view text_view recline_view envvars scheming_datasets fluent aafc
-ENV CKAN___SCHEMING__DATASET_SCHEMAS "ckanext.aafc:schemas/tbs_dataset.yaml ckanext.scheming:ckan_dataset.json"
+ENV CKAN___SCHEMING__DATASET_SCHEMAS "ckanext.aafc:schemas/aafc_base_dataset.yaml ckanext.aafc:schemas/aafc_geospatial.yaml ckanext.aafc:schemas/aafc_open_gov_dataset.yaml ckanext.scheming:ckan_dataset.json"
 ENV CKAN___SCHEMING__PRESETS "ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml"
 ENV CKAN___SCHEMING__DATASET_FALLBACK=false
 ENV CKAN__SEARCH__SHOW_ALL_TYPES=true
