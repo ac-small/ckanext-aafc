@@ -27,11 +27,6 @@ dataset_fields:
 - preset: canada_notes
 - preset: aafc_schema_type
 
-- preset: inv_eligibe_to_release
-- preset: inv_ref_number
-- preset: inv_id
-- preset: inv_program_alignment
-
 - preset: aafc_future_schema_target
 - preset: aafc_tbs_inventory_submission_date
 - preset: aafc_proposed_release
