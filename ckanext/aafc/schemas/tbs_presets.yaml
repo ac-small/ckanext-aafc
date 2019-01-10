@@ -114,7 +114,7 @@ presets:
   values:
       field_name: inv_ref_number
       label:
-         en: TBS Inventory Reference Number
+         en: TBS Inventory Reference Number (ODI)
          fr: To Translate...
       form_attrs:
          readonly: ''
