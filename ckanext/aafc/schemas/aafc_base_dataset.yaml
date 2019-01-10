@@ -25,6 +25,7 @@ dataset_fields:
 - preset: canada_dataset_name
 - preset: canada_title
 - preset: canada_notes
+- preset: inv_ref_number 
 - preset: aafc_schema_type
 
 - preset: aafc_future_schema_target
