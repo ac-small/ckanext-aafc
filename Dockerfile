@@ -25,6 +25,7 @@ ENV CKAN___SCHEMING__PRESETS "ckanext.scheming:presets.json ckanext.fluent:prese
 ENV CKAN___SCHEMING__DATASET_FALLBACK=false
 ENV CKAN__SEARCH__SHOW_ALL_TYPES=true
 ENV CKAN__LOCALE_ORDER en fr
+ENV CKAN__DATASET__CREATE__REQUIRE__RESOURCE=false
 
 WORKDIR ${SRC_DIR}
 
@@ -99,6 +100,7 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.dataset_schemas = ${CKAN___SCHEMING__DATASET_SCHEMAS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.presets = ${CKAN___SCHEMING__PRESETS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.dataset_fallback = ${CKAN___SCHEMING__DATASET_FALLBACK}" && \
-    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.search.show_all_types = ${CKAN__SEARCH__SHOW_ALL_TYPES}"
+    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.search.show_all_types = ${CKAN__SEARCH__SHOW_ALL_TYPES}" && \
+    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.dataset.create.require.resource = ${CKAN__DATASET__CREATE__REQUIRE__RESOURCE}"
 
 CMD ["ckan-paster","serve","/etc/ckan/production.ini"]
