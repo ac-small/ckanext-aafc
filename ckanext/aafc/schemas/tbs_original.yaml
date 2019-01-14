@@ -1,4 +1,3 @@
-
 scheming_version: 1
 dataset_type: open-data
 
@@ -27,27 +26,27 @@ form_languages:
 dataset_fields:
 
 ##################################################
-# Changed Original TBS
-# TBS original comment: our id + name fields are uuids and always equal
-# JK 2018/12/04: Uncommented and pulled in TBS logic. AAFC id and name.
-- preset: canada_dataset_id
-- preset: canada_dataset_name
+# Added default fields for AAFC name
+# 2018/10/31 Must take a closer look and change later
+# Like TBS we probably dont want this free form but generated
+#
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
 ###################################################
 
-####################################################
-# Added tbs fields to hold tbs id and name
-# Hidden and only set from id and name values 
-# on Open gov
-# JK 2018/12/04
-######################################################
-- preset: tbs_dataset_id
-- preset: tbs_dataset_name
 
-<<<<<<< HEAD
-- preset: aafc_schema_type
+##################################################
+# Changed Original TBS
+# We just want read only display? of TBS id's
+# OR a hidden field???
+# JK 2018/10/31
+# TBS original comment: our id + name fields are uuids and always equal
+#- preset: canada_dataset_id
+#- preset: canada_dataset_name
+###################################################
 
-=======
->>>>>>> 225ec2edc738e95f3160a38c90cd303170067eea
 - preset: canada_collection
   form_restrict_choices_to:
     - primary
@@ -458,5 +457,3 @@ resource_fields:
 - preset: canada_resource_language
 - preset: canada_resource_url
 - preset: canada_resource_data_quality
-
-
