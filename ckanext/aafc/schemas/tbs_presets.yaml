@@ -501,7 +501,6 @@ presets:
       fr:
         en: "Keywords (French)"
         fr: "Mots clés (français)"
-
     fluent_help_text:
       en:
         en: Commonly used words or phrases which describe the dataset, in English. (Separate multiple entries by commas)
@@ -512,7 +511,7 @@ presets:
     required: true
 ###################
 # JK Need to investigate TBS tag_validators
-#    tag_validators: canada_tags
+    tag_validators: canada_tags
 ##################
     # copied from fluent_tags preset
     form_snippet: fluent_tags.html
