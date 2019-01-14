@@ -43,11 +43,7 @@ dataset_fields:
 - preset: tbs_dataset_id
 - preset: tbs_dataset_name
 
-<<<<<<< HEAD
 - preset: aafc_schema_type
-
-=======
->>>>>>> 225ec2edc738e95f3160a38c90cd303170067eea
 - preset: canada_collection
   form_restrict_choices_to:
     - primary
