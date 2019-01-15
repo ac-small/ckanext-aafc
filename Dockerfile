@@ -2,6 +2,9 @@
 FROM debian:jessie
 MAINTAINER Open Knowledge
 
+# Build-time variables specified by docker-compose.yml / .env
+ARG CKAN_SITE_URL
+
 # Internals
 ENV CKAN_HOME /usr/lib/ckan
 ENV CKAN_VENV ${CKAN_HOME}/venv
@@ -51,9 +54,6 @@ RUN apt-get -q -y update \
         wget \
     && apt-get -q clean \
     && rm -rf /var/lib/apt/lists/*
-
-# Build-time variables specified by docker-compose.yml / .env
-ARG CKAN_SITE_URL
 
 # Create ckan user
 RUN useradd -r -u 900 -m -c "ckan account" -d $CKAN_HOME -s /bin/false ckan
