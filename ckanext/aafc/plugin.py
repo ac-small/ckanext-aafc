@@ -40,7 +40,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
             'canada_validate_generate_uuid':
                 validators.canada_validate_generate_uuid,
             'canada_tags': validators.canada_tags,
-#            'geojson_validator': validators.geojson_validator,
+            'geojson_validator': validators.geojson_validator,
             'email_validator': validators.email_validator,
 #            'protect_portal_release_date':
 #                validators.protect_portal_release_date,
