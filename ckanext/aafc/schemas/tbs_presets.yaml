@@ -769,7 +769,7 @@ presets:
     label:
       en: Spatial
       fr: Élément spatial
-    validators: scheming_required
+    validators: scheming_required geojson_validator
 #####################################
 # JK Need to investigate TBS validator geojson_validator
 # 2018/10/31

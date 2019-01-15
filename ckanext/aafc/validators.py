@@ -9,8 +9,8 @@ from ckan.authz import is_sysadmin
 from ckan import model
 
 from ckanext.aafc.helpers import may_publish_datasets
-#import geojson
-#from geomet import wkt
+import geojson
+from geomet import wkt
 import json
 import uuid
 
@@ -125,21 +125,21 @@ def email_validator(value):
     return value
 
 
-#def geojson_validator(value):
-#    if value:
-#        try:
-#            # accept decoded geojson too
-#            if isinstance(value, basestring):
-#                value = json.loads(value)
-#            shape = geojson.GeoJSON.to_instance(value, strict=True)
-#            if not shape.is_valid:
-#                raise ValueError
-#            wkt.dumps(shape)
-#        except Exception:
-#            raise Invalid(_("Invalid GeoJSON"))
-#        # must store as JSON
-#        return json.dumps(value)
-#    return value
+def geojson_validator(value):
+    if value:
+        try:
+            # accept decoded geojson too
+            if isinstance(value, basestring):
+                value = json.loads(value)
+            shape = geojson.GeoJSON.to_instance(value, strict=True)
+            if not shape.is_valid:
+                raise ValueError
+            wkt.dumps(shape)
+        except Exception:
+            raise Invalid(_("Invalid GeoJSON"))
+        # must store as JSON
+        return json.dumps(value)
+    return value
 
 def canada_copy_from_org_name(key, data, errors, context):
     """
