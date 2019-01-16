@@ -7,4 +7,4 @@ Goal to reuse and align with Government of Canada CKAN with added customization 
 Working area right now. Some items are present for central location and change tracking only.
 
 Licensed under Government of Canada Open Source and Open Source MIT agreements.
-(License.
+(Detailed in LICENSE file)
