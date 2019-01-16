@@ -3,7 +3,7 @@ FROM debian:jessie
 MAINTAINER Open Knowledge
 
 # Build-time variables specified by docker-compose.yml / .env
-ARG CKAN_SITE_URL
+ARG CKAN_SITE_URL=${CKAN_SITE_URL}
 
 # Internals
 ENV CKAN_HOME /usr/lib/ckan
