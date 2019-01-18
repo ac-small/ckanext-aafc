@@ -15,6 +15,7 @@ services:
       context: ../../
       args:
           - CKAN_SITE_URL=${CKAN_SITE_URL}
+          - ENV_LABEL=dev
     links:
       - db
       - solr
