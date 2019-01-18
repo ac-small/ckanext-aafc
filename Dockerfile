@@ -97,11 +97,11 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     pip install -e "git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent" && \
     pip install -e "git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars" && \
     pip install -e "git+https://github.com/aafc-ckan/ckanext-aafc.git#egg=ckanext-aafc" && \
+    pip install -r ./ckanext-aafc/requirements.txt && \
     pip install -e "git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial" && \
     pip install -r ./ckanext-spatial/pip-requirements.txt && \
-    pip install -e "git+https://github.com/ckan/ckanext-geoview.git#egg=ckanext-goview" && \
-    pip install -r ./ckanext-geoview/pip-requirements.txt
-    
+    pip install -e "git+https://github.com/ckan/ckanext-geoview.git#egg=ckanext-geoview" && \
+    pip install -r ./ckanext-geoview/pip-requirements.txt && \
     chown -R ckan:ckan $CKAN_HOME $CKAN_VENV $CKAN_CONFIG $CKAN_STORAGE_PATH && \
 # Create and update CKAN config
     paster --plugin=ckan make-config ckan ${CKAN_INI} && \
