@@ -4,6 +4,7 @@ MAINTAINER Open Knowledge
 
 # Build-time variables specified by docker-compose.yml / .env
 ARG CKAN_SITE_URL=${CKAN_SITE_URL}
+ARG ENV_LABEL=${ENV_LABEL:-dev}
 
 # Internals
 ENV CKAN_HOME /usr/lib/ckan
@@ -32,7 +33,7 @@ ENV CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES=false
 ENV CKAN___LICENSES_GROUP_URL=file:///usr/lib/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json
 ENV CKAN__VIEWS__DEFAULT_VIEWS "image_view text_view recline_view geo_view geojson_view wmts_view"
 ENV CKAN___CKANEXT__GEOVIEW__OL_VIEWER__FORMATS "wms wfs geojson gml kml arcgis_rest"
-
+ENV CKAN__ROOT_PATH="/${ENV_LABEL}/{{LANG}}"
 
 WORKDIR ${SRC_DIR}
 
@@ -115,7 +116,7 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.views.default_views = ${CKAN__VIEWS__DEFAULT_VIEWS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckanext.geoview.ol_viewer.formats = ${CKAN___CKANEXT__GEOVIEW__OL_VIEWER__FORMATS}" && \
-    paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}"
-
+    paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}" && \
+    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.root_path = ${CKAN__ROOT_PATH}"
 
 CMD ["ckan-paster","serve","/etc/ckan/production.ini"]
