@@ -34,6 +34,13 @@ set_environment () {
   export CKAN_SMTP_PASSWORD=${CKAN_SMTP_PASSWORD}
   export CKAN_SMTP_MAIL_FROM=${CKAN_SMTP_MAIL_FROM}
   export CKAN_MAX_UPLOAD_SIZE_MB=${CKAN_MAX_UPLOAD_SIZE_MB}
+  export CKAN__PLUGINS=${CKAN__PLUGINS}
+  export CKAN___SCHEMING__DATASET_SCHEMAS="${CKAN___SCHEMING__DATASET_SCHEMAS}"
+  export CKAN___SCHEMING__PRESETS="${CKAN___SCHEMING__PRESETS}"
+  export CKAN___SCHEMING__DATASET_FALLBACK=${CKAN___SCHEMING__DATASET_FALLBACK}
+  export CKAN__SEARCH__SHOW_ALL_TYPES=${CKAN__SEARCH__SHOW_ALL_TYPES}
+  export CKAN__LOCALE_ORDER="${CKAN__LOCALE_ORDER}"
+  export CKAN___LICENSES_GROUP_URL=${file:///usr/lib/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json}
 }
 
 write_config () {
