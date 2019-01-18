@@ -2,6 +2,9 @@
 FROM debian:jessie
 MAINTAINER Open Knowledge
 
+# Build-time variables specified by docker-compose.yml / .env
+ARG CKAN_SITE_URL=${CKAN_SITE_URL}
+
 # Internals
 ENV CKAN_HOME /usr/lib/ckan
 ENV CKAN_VENV ${CKAN_HOME}/venv
@@ -26,6 +29,7 @@ ENV CKAN___SCHEMING__DATASET_FALLBACK=false
 ENV CKAN__SEARCH__SHOW_ALL_TYPES=true
 ENV CKAN__LOCALE_ORDER en fr
 ENV CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES=false
+ENV CKAN___LICENSES_GROUP_URL=file:///usr/lib/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json
 
 WORKDIR ${SRC_DIR}
 
@@ -51,9 +55,6 @@ RUN apt-get -q -y update \
         wget \
     && apt-get -q clean \
     && rm -rf /var/lib/apt/lists/*
-
-# Build-time variables specified by docker-compose.yml / .env
-ARG CKAN_SITE_URL
 
 # Create ckan user
 RUN useradd -r -u 900 -m -c "ckan account" -d $CKAN_HOME -s /bin/false ckan
@@ -86,6 +87,8 @@ EXPOSE $CKAN_PORT
 RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     pip install PyYAML && \
     pip install ckanapi && \
+    pip install geojson && \
+    pip install geomet && \
     pip install -e "git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming" && \
     pip install -r ./ckanext-scheming/requirements.txt && \
     pip install -e "git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent" && \
