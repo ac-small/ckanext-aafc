@@ -40,7 +40,8 @@ set_environment () {
   export CKAN___SCHEMING__DATASET_FALLBACK=${CKAN___SCHEMING__DATASET_FALLBACK}
   export CKAN__SEARCH__SHOW_ALL_TYPES=${CKAN__SEARCH__SHOW_ALL_TYPES}
   export CKAN__LOCALE_ORDER="${CKAN__LOCALE_ORDER}"
-  export CKAN___LICENSES_GROUP_URL=${file:///usr/lib/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json}
+  export CKAN___LICENSES_GROUP_URL=${CKAN___LICENSES_GROUP_URL}
+  export CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES=${CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES}
 }
 
 write_config () {
