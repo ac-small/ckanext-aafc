@@ -22,7 +22,7 @@ ENV GIT_BRANCH=master
 
 # Customize these on the .env file if needed
 #ENV CKAN_SITE_URL http://localhost:5000
-ENV CKAN__PLUGINS image_view text_view recline_view envvars scheming_datasets fluent aafc
+ENV CKAN__PLUGINS "datastore datapusher image_view text_view recline_view envvars scheming_datasets fluent aafc spatial_metadata spatial_query resource_proxy geo_view geojson_view wmts_view"
 ENV CKAN___SCHEMING__DATASET_SCHEMAS "ckanext.aafc:schemas/aafc_base_dataset.yaml ckanext.aafc:schemas/aafc_geospatial.yaml ckanext.aafc:schemas/aafc_open_gov_dataset.yaml ckanext.scheming:ckan_dataset.json"
 ENV CKAN___SCHEMING__PRESETS "ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml"
 ENV CKAN___SCHEMING__DATASET_FALLBACK=false
@@ -30,6 +30,9 @@ ENV CKAN__SEARCH__SHOW_ALL_TYPES=true
 ENV CKAN__LOCALE_ORDER en fr
 ENV CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES=false
 ENV CKAN___LICENSES_GROUP_URL=file:///usr/lib/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json
+ENV CKAN__VIEWS__DEFAULT_VIEWS "image_view text_view recline_view geo_view geojson_view wmts_view"
+ENV CKAN___CKANEXT__GEOVIEW__OL_VIEWER__FORMATS "wms wfs geojson gml kml arcgis_rest"
+
 
 WORKDIR ${SRC_DIR}
 
@@ -94,6 +97,11 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     pip install -e "git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent" && \
     pip install -e "git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars" && \
     pip install -e "git+https://github.com/aafc-ckan/ckanext-aafc.git#egg=ckanext-aafc" && \
+    pip install -e "git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial" && \
+    pip install -r ./ckanext-spatial/pip-requirements.txt && \
+    pip install -e "git+https://github.com/ckan/ckanext-geoview.git#egg=ckanext-goview" && \
+    pip install -r ./ckanext-geoview/pip-requirements.txt
+    
     chown -R ckan:ckan $CKAN_HOME $CKAN_VENV $CKAN_CONFIG $CKAN_STORAGE_PATH && \
 # Create and update CKAN config
     paster --plugin=ckan make-config ckan ${CKAN_INI} && \
@@ -104,6 +112,10 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.presets = ${CKAN___SCHEMING__PRESETS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.dataset_fallback = ${CKAN___SCHEMING__DATASET_FALLBACK}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.search.show_all_types = ${CKAN__SEARCH__SHOW_ALL_TYPES}" && \
+    paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}" && \
+    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.views.default_views = ${CKAN__VIEWS__DEFAULT_VIEWS}" && \
+    paster --plugin=ckan config-tool ${CKAN_INI} "ckanext.geoview.ol_viewer.formats = ${CKAN___CKANEXT__GEOVIEW__OL_VIEWER__FORMATS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}"
+
 
 CMD ["ckan-paster","serve","/etc/ckan/production.ini"]
