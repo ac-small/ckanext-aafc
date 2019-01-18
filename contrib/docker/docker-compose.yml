@@ -38,12 +38,14 @@ services:
       - ckan_config:/etc/ckan
       - ckan_home:/usr/lib/ckan
       - ckan_storage:/var/lib/ckan
+    restart: always
 
   datapusher:
     container_name: datapusher
     image: clementmouchet/datapusher
     ports:
       - "8800:8800"
+    restart: always
 
   db:
     container_name: db
@@ -58,14 +60,16 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - pg_data:/var/lib/postgresql/data
+    restart: always
 
   solr:
     container_name: solr
     build:
       context: ../../
       dockerfile: contrib/docker/solr/Dockerfile
-
+    restart: always
 
   redis:
     container_name: redis
     image: redis:latest
+    restart: always
