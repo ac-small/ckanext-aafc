@@ -104,6 +104,6 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.presets = ${CKAN___SCHEMING__PRESETS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.dataset_fallback = ${CKAN___SCHEMING__DATASET_FALLBACK}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.search.show_all_types = ${CKAN__SEARCH__SHOW_ALL_TYPES}" && \
-    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.dataset.create_on_ui_requires_resources = ${CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES}"
+    paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}"
 
 CMD ["ckan-paster","serve","/etc/ckan/production.ini"]
