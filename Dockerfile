@@ -3,11 +3,12 @@ FROM debian:jessie
 MAINTAINER Open Knowledge
 
 # Build-time variables specified by docker-compose.yml / .env
-ARG CKAN_SITE_URL=${CKAN_SITE_URL}
-ARG ENV_LABEL=${ENV_LABEL:-dev}
+ARG CKAN_SITE_URL
+ARG ENV_LABEL
 
 # Internals
 ENV CKAN_HOME /usr/lib/ckan
+#ENV ENV_LABEL=${ENV_LABEL:-dev}
 ENV CKAN_VENV ${CKAN_HOME}/venv
 ENV SRC_DIR ${CKAN_VENV}/src
 ENV CKAN_CONFIG /etc/ckan

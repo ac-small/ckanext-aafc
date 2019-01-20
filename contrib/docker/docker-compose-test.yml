@@ -1,0 +1,67 @@
+# docker-compose build && docker-compose up -d
+# If "docker-compose logs ckan" shows DB not ready, run "docker-compose restart ckan" a few times.
+version: "3.5"
+
+services:
+  ckan:
+    image: jkolesar1024/dev-ckan:latest
+    links:
+    - db
+    - solr
+    - redis
+    - datapusher
+    ports:
+            #    - "0.0.0.0:5020:5020"
+    - "5020:5020"
+    environment:
+  # Defaults work with linked containers, change to use own Postgres, SolR, Redis or Datapusher
+    - CKAN_PORT=5020
+    - ENV_LABEL=test
+    - CKAN_SITE_URL=http://aafc-ckan-dev1.canadaeast.cloudapp.azure.com
+    - CKAN_SQLALCHEMY_URL=postgresql://ckan:${POSTGRES_PASSWORD}@db/ckan
+    - CKAN_DATASTORE_WRITE_URL=postgresql://ckan:${POSTGRES_PASSWORD}@db/datastore
+    - CKAN_DATASTORE_READ_URL=postgresql://datastore_ro:${DATASTORE_READONLY_PASSWORD}@db/datastore
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    - DS_RO_PASS=${DATASTORE_READONLY_PASSWORD}
+    - CKAN_SOLR_URL=http://solr:8983/solr/ckan
+    - CKAN_REDIS_URL=redis://redis:6379/1
+    - CKAN_DATAPUSHER_URL=http://datapusher:8900
+    - CKAN_MAX_UPLOAD_SIZE_MB=${CKAN_MAX_UPLOAD_SIZE_MB}
+    restart: always
+    networks:
+      - ckantest-docker-network
+
+  datapusher:
+    image: jkolesar1024/dev-datapusher:latest
+    ports:
+    - "8900:8900"
+    restart: always
+    networks:
+      - ckantest-docker-network
+
+  db:
+    build:
+      context: ../../
+      dockerfile: contrib/docker/postgresql/Dockerfile
+    environment:
+      - DS_RO_PASS=${DATASTORE_READONLY_PASSWORD}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    restart: always
+    networks:
+      - ckantest-docker-network
+
+  solr:
+    image: jkolesar1024/dev-solr:latest
+    restart: always
+    networks:
+      - ckantest-docker-network
+
+  redis:
+    image: jkolesar1024/dev-redis:latest
+    restart: always
+    networks:
+      - ckantest-docker-network
+
+networks:
+  ckantest-docker-network:
+    name: ckan-test
