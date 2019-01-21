@@ -107,7 +107,6 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
 # Create and update CKAN config
     paster --plugin=ckan make-config ckan ${CKAN_INI} && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.plugins = ${CKAN__PLUGINS}" && \
-    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.site_url = ${CKAN__SITE_URL}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.locale_order = ${CKAN__LOCALE_ORDER}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.dataset_schemas = ${CKAN___SCHEMING__DATASET_SCHEMAS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.presets = ${CKAN___SCHEMING__PRESETS}" && \
