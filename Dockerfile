@@ -94,7 +94,7 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     pip install ckanapi && \
     pip install geojson && \
     pip install geomet && \
-    pip install -e "git+https://github.com/TkTech/ckanext-scheming.git#egg=ckanext-scheming" && \
+    pip install -e "git+https://github.com/kolesarj/ckanext-scheming.git#egg=ckanext-scheming" && \     
     pip install -e "git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent" && \
     pip install -e "git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars" && \
     pip install -e "git+https://github.com/aafc-ckan/ckanext-aafc.git#egg=ckanext-aafc" && \
