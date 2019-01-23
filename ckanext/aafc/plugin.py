@@ -23,7 +23,8 @@ from ckanext.aafc import helpers
 import json
 
 class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
-    plugins.implements(plugins.IConfigurer)
+    plugins.implements(plugins.IConfigurer) 
+    plugins.implements(plugins.ITemplateHelpers)  
     plugins.implements(plugins.IValidators, inherit=True)
 
     # IConfigurer
@@ -50,4 +51,32 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
                 validators.canada_non_related_required,
             'if_empty_set_to':
                 validators.if_empty_set_to,
-            }
+         }
+            
+    #ITemplateHelpers
+    def get_helpers(self):
+        return dict((h, getattr(helpers, h)) for h in [
+            'user_organizations',
+            'openness_score',
+            'remove_duplicates',
+            'get_license',
+            'normalize_strip_accents',
+            'portal_url',
+            'googleanalytics_id',
+            'loop11_key',
+            'drupal_session_present',
+            'fgp_url',
+            'contact_information',
+            'show_subject_facet',
+            'show_fgp_facets',
+            'show_openinfo_facets',
+            'gravatar',
+            'linked_gravatar',
+            'linked_user',
+            'json_loads',
+            'catalogue_last_update_date',
+            'dataset_rating',
+            'dataset_comments',
+            'get_translated_t',
+            'language_text_t',
+            ])
