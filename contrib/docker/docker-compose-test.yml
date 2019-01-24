@@ -17,7 +17,7 @@ services:
   # Defaults work with linked containers, change to use own Postgres, SolR, Redis or Datapusher
     - CKAN_PORT=5020
     - ENV_LABEL=test
-    - CKAN_SITE_URL=http://aafc-ckan-dev1.canadaeast.cloudapp.azure.com
+    - CKAN_SITE_URL=
     - CKAN_SQLALCHEMY_URL=postgresql://ckan:${POSTGRES_PASSWORD}@db/ckan
     - CKAN_DATASTORE_WRITE_URL=postgresql://ckan:${POSTGRES_PASSWORD}@db/datastore
     - CKAN_DATASTORE_READ_URL=postgresql://datastore_ro:${DATASTORE_READONLY_PASSWORD}@db/datastore
