@@ -30,6 +30,7 @@ ENV CKAN___SCHEMING__PRESETS "ckanext.scheming:presets.json ckanext.fluent:prese
 ENV CKAN___SCHEMING__DATASET_FALLBACK=false
 ENV CKAN__SEARCH__SHOW_ALL_TYPES=true
 ENV CKAN__LOCALE_ORDER en fr
+ENV CKAN__LOCALES_OFFERED en fr
 ENV CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES=false
 ENV CKAN___LICENSES_GROUP_URL=file:///usr/lib/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json
 ENV CKAN__VIEWS__DEFAULT_VIEWS "image_view text_view recline_view geo_view geojson_view wmts_view"
@@ -108,6 +109,7 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     paster --plugin=ckan make-config ckan ${CKAN_INI} && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.plugins = ${CKAN__PLUGINS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.locale_order = ${CKAN__LOCALE_ORDER}" && \
+    paster --plugin=ckan config-tool ${CKAN_INI} "ckan.locales_offered = ${CKAN__LOCALES_OFFERED}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.dataset_schemas = ${CKAN___SCHEMING__DATASET_SCHEMAS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.presets = ${CKAN___SCHEMING__PRESETS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "scheming.dataset_fallback = ${CKAN___SCHEMING__DATASET_FALLBACK}" && \
