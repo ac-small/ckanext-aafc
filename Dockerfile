@@ -20,8 +20,8 @@ ENV GIT_URL=https://github.com/ckan/ckan.git
 
 # CKAN version to build
 
-#ENV GIT_BRANCH=ckan-2.8.2
-ENV GIT_BRANCH=ckan-2.7.5
+ENV GIT_BRANCH=ckan-2.8.2
+#ENV GIT_BRANCH=ckan-2.7.5
 #ENV GIT_BRANCH=master
 
 # Customize these on the .env file if needed
@@ -37,11 +37,13 @@ ENV CKAN__DATASET__CREATE_ON_UI_REQUIRES_RESOURCES=false
 ENV CKAN___LICENSES_GROUP_URL=file:///usr/lib/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json
 ENV CKAN__VIEWS__DEFAULT_VIEWS "image_view text_view recline_view geo_view geojson_view wmts_view"
 ENV CKAN___CKANEXT__GEOVIEW__OL_VIEWER__FORMATS "wms wfs geojson gml kml arcgis_rest"
-ENV CKAN__ROOT_PATH="/${ENV_LABEL}/{{LANG}}"
+#ENV CKAN__ROOT_PATH="/${ENV_LABEL}/{{LANG}}"
 
 WORKDIR ${SRC_DIR}
 
 # Install required system packages
+RUN sed -i '/jessie-updates/d' /etc/apt/sources.list
+#step 27/36
 RUN apt-get -q -y update \
     && DEBIAN_FRONTEND=noninteractive apt-get -q -y upgrade \
     && apt-get -q -y install \
@@ -60,6 +62,9 @@ RUN apt-get -q -y update \
         git-core \
         python-yaml \
         vim \
+		mc \
+		tmux \
+		curl \
         wget \
     && apt-get -q clean \
     && rm -rf /var/lib/apt/lists/*
@@ -82,7 +87,8 @@ RUN ckan-pip install -U pip && \
     ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/requirements.txt && \
     ckan-pip install --upgrade --no-cache-dir -r $CKAN_VENV/src/ckan/dev-requirements.txt && \
     ckan-pip install -e $CKAN_VENV/src/ckan/ && \
-    ln -s $CKAN_VENV/src/ckan/ckan/config/who.ini $CKAN_CONFIG/who.ini && \
+    #ln -s $CKAN_VENV/src/ckan/ckan/config/who.ini $CKAN_CONFIG/who.ini && \
+	cp -v $CKAN_VENV/src/ckan/ckan/config/who.ini $CKAN_CONFIG/who.ini && \
     cp -v $CKAN_VENV/src/ckan/contrib/docker/ckan-entrypoint.sh /ckan-entrypoint.sh && \
     chmod +x /ckan-entrypoint.sh && \
     chown -R ckan:ckan $CKAN_HOME $CKAN_VENV $CKAN_CONFIG $CKAN_STORAGE_PATH
@@ -97,7 +103,7 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     pip install ckanapi && \
     pip install geojson && \
     pip install geomet && \
-    pip install -e "git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming" && \
+    pip install -e "git+https://github.com/kolesarj/ckanext-scheming.git#egg=ckanext-scheming" && \
     pip install -e "git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent" && \
     pip install -e "git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars" && \
     pip install -e "git+https://github.com/aafc-ckan/ckanext-aafc.git#egg=ckanext-aafc" && \

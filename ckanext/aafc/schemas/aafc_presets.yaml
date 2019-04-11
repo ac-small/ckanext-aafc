@@ -1,0 +1,34 @@
+
+scheming_presets_version: 1
+
+about: scheming presets for ckanext-canada schemas
+about_url: http://github.com/open-data/ckanext-canada
+
+presets:
+
+#########################################################################
+# JC 2019/04/10
+# extra sets used by AAFC
+# Field = Publication Type.
+- preset_name: publication_type
+  values:
+    field_name: publication
+    label:
+      en: Collection Type
+      fr: Type de collection
+    help_text:
+      en: ""
+      fr: ""
+    required: true
+    choices:
+    - label:
+        en: AAFC Internal
+        fr: (fr)AAFC Internal
+      value: internal
+    - label:
+        en: AAFC Open Government
+        fr: (fr)AAFC Open Government
+      value: open_government
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
