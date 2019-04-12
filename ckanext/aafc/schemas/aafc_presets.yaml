@@ -14,8 +14,8 @@ presets:
   values:
     field_name: publication
     label:
-      en: Collection Type
-      fr: Type de collection
+      en: Publication Type
+      fr: Type de publication
     help_text:
       en: ""
       fr: ""
