@@ -5,7 +5,7 @@ display_group_default: Basic Information
 #display_group_order:
 #  - Basic Information
 #  - Contact Information
-#  - Details
+#  - Optional Dataset Information
 #  - Publishing Status
 
 display_groups:
@@ -15,8 +15,8 @@ display_groups:
   - label: Contact Information
     description: "This is the Contact Information section. "
     collapse_by_default: true
-  - label: Details
-    description: "This is the Details section. "
+  - label: Optional Dataset Information
+    description: "This is the Optional Dataset Information section. "
     collapse_by_default: true
   - label: Publishing Status
     description: "This is the Publishing status section. "
@@ -38,8 +38,6 @@ form_languages:
 #    - en-t-fr
 #  fr:
 #    - fr-t-en
-
-
 #
 #   DATASET FIELDS
 #
@@ -62,6 +60,11 @@ dataset_fields:
 - preset: tbs_dataset_id
 - preset: tbs_dataset_name
 
+- preset: publication_type
+  form_restrict_choices_to:
+    - internal
+    - open_government
+
 - preset: aafc_schema_type
   display_group: Basic Information
 
@@ -72,41 +75,13 @@ dataset_fields:
     - api
   display_group: Basic Information
 
-#############################
-# FGP fields (hidden from form)
-- field_name: metadata_contact
-  label:
-    en: Metadata contact
-    fr: Contact métadonnée
-  preset: fluent_text
-  form_snippet: null
-
-- field_name: parent_id
-  label:
-    en: Parent identifier
-    fr: Identifiant parent
-  form_snippet: null
-
-- field_name: hierarchy_level
-  label:
-    en: Hierarchy level
-    fr: Portée hiérarchique
-  form_snippet: null
-
-- field_name: file_id
-  label:
-    en: File Identifier
-    fr: Identifiant métadonnées
-  form_snippet: null
-
-- field_name: short_key
-  label:
-    en: Short Key
-    fr: Identifiant court
-  form_snippet: null
-###############################
-
 - preset: canada_title
+  display_group: Basic Information
+
+- preset: canada_keywords
+  display_group: Basic Information
+
+- preset: canada_subject
   display_group: Basic Information
 
 - preset: canada_owner_org
@@ -237,14 +212,8 @@ dataset_fields:
 - preset: canada_notes
   display_group: Basic Information
 
-- preset: canada_keywords
-  display_group: Details
-
-- preset: canada_subject
-  display_group: Details
-
 - preset: canada_audience
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - field_name: place_of_publication
   label:
@@ -253,24 +222,24 @@ dataset_fields:
   help_text:
     en: "The region where the dataset was originally published. You may select multiple options (Ctrl+Click) "
     fr: "La rÃ©gion oÃ¹ le jeu de donnÃ©es a Ã©tÃ© publiÃ© initialement. Vous pouvez sÃ©lectionner de multiples options (Ctrl+Clic)"
-  display_group: Details 
+  display_group: Optional Dataset Information 
   preset: canada_geographic_region # use same multi-select controlled list
-  display_group: Details
+  display_group: Optional Dataset Information
  
 - preset: canada_spatial
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_geographic_region
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_time_period_coverage_start
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_time_period_coverage_end
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_frequency
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_date_published
   display_group: Publishing Status
@@ -279,16 +248,16 @@ dataset_fields:
   display_group: Publishing Status
 
 - preset: canada_program_page_url
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_data_series_name
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_data_series_issue_identification
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_digital_object_identifier
-  display_group: Details
+  display_group: Optional Dataset Information
 
 ####################################
 # FGP fields (hidden from form)
@@ -387,10 +356,10 @@ dataset_fields:
 #####################################
 
 - preset: canada_spatial_representation_type
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_jurisdiction
-  display_group: Details
+  display_group: Optional Dataset Information
 
 - preset: canada_license_id
   display_group: Publishing Status
