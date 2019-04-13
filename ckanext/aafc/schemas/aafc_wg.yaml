@@ -6,7 +6,7 @@ display_group_default: Basic Information
 #  - Basic Information
 #  - Contact Information
 #  - Optional Dataset Information
-#  - Publishing Status
+#  - Optional Inventory Information
 
 display_groups:
   - label: Basic Information
@@ -18,8 +18,8 @@ display_groups:
   - label: Optional Dataset Information
     description: "This is the Optional Dataset Information section. "
     collapse_by_default: true
-  - label: Publishing Status
-    description: "This is the Publishing status section. "
+  - label: Optional Inventory Information
+    description: "This is the Optional Inventory Information section. "
     collapse_by_default: true
 
 about: 'open.canada.ca: raw open data metadata definition'
@@ -143,10 +143,10 @@ dataset_fields:
   display_group: Optional Dataset Information
 
 - preset: canada_date_published
-  display_group: Publishing Status
+  display_group: Optional Inventory Information
 
 - preset: canada_date_modified
-  display_group: Publishing Status
+  display_group: Optional Inventory Information
 
 - preset: canada_program_page_url
   display_group: Optional Dataset Information
@@ -252,30 +252,21 @@ dataset_fields:
       fr: Est composé de
     value: is_composed_of
 
-- field_name: aggregate_identifier
-  label:
-    en: Aggregate dataset identifier
-    fr: Identifiant jeu données aggrégées
-  form_snippet: null
-#####################################
+#################################
+# Optional Dataset Information
+- preset: odi_reference_number
+  display_group: Optional Inventory Information
 
-- preset: canada_spatial_representation_type
-  display_group: Optional Dataset Information
+- preset: program_alignmen_architecture
+  display_group: Optional Inventory Information
 
-- preset: canada_jurisdiction
-  display_group: Optional Dataset Information
-
-- preset: canada_license_id
-  display_group: Publishing Status
+- preset: open_government_portal_record
+  display_group: Optional Inventory Information
 
 - preset: canada_restrictions
-  display_group: Publishing Status
+  display_group: Optional Inventory Information
 
-- preset: canada_imso_approval
-  display_group: Publishing Status
 
-- preset: canada_ready_to_publish
-  display_group: Publishing Status
 
 ###########################################
 # Commented out JK 2018/10/31

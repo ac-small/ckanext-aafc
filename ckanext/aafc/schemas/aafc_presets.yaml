@@ -54,17 +54,17 @@ presets:
 #  Optional Inventory
 - preset_name: odi_reference_number
   values:
-      field_name: odi_reference_number
-      label:
-         en: ODI Reference Number
-         fr: ODI Reference Number
+    field_name: odi_reference_number
+    label:
+        en: ODI Reference Number
+        fr: ODI Reference Number
 
 - preset_name: program_alignmen_architecture
   values:
-      field_name: program_alignmen_architecture
-      label:
-         en: Program Alignment Architecture (English)
-         fr: Program Alignment Architecture (French)
+    field_name: program_alignmen_architecture
+    label:
+        en: Program Alignment Architecture (English)
+        fr: Program Alignment Architecture (French)
 
 - preset_name: open_government_portal_record
   values:
