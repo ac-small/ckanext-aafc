@@ -50,6 +50,35 @@ presets:
          en: "The current item is a test. "
          fr: "To translate..."
 
+########################################3
+#  Optional Inventory
+- preset_name: odi_reference_number
+  values:
+      field_name: odi_reference_number
+      label:
+         en: ODI Reference Number
+         fr: ODI Reference Number
+
+- preset_name: program_alignmen_architecture
+  values:
+      field_name: program_alignmen_architecture
+      label:
+         en: Program Alignment Architecture (English)
+         fr: Program Alignment Architecture (French)
+
+- preset_name: open_government_portal_record
+  values:
+    field_name: open_government_portal_record
+    label:
+        en: Open Government Portal Record English
+        fr: Open Government Portal Record English
+
+- preset_name: aafc_test
+  values:
+    field_name: test
+    label:
+        en: Open Government Portal Record French
+        fr: Open Government Portal Record English
 
 
 
