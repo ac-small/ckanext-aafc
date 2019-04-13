@@ -98,110 +98,11 @@ dataset_fields:
 
 ############################
 # FGP fields (hidden from form)
-- field_name: position_name
-  label:
-    en: Position Name
-    fr: Nom position
-  preset: fluent_text
-  form_snippet: null
-
-- field_name: responsible_role
-  label:
-    en: Role
-    fr: Rôle
-  form_snippet: null
-
 - field_name: contact_information
   label:
     en: Contact Information
     fr: Information contact
   form_snippet: null
-
-- field_name: topic_category
-  label:
-    en: Topic category
-    fr: Catégorie thématique
-  form_snippet: null
-  display_snippet: list_inline.html
-  validators: scheming_multiple_choice
-  output_validators: scheming_multiple_choice_output
-  choices:
-  - label:
-      en: Farming
-      fr: Agriculture
-    value: farming
-  - label:
-      en: Biota
-      fr: Biote
-    value: biota
-  - label:
-      en: Boundaries
-      fr: Frontières
-    value: boundaries
-  - label:
-      en: Climatology Meteorology Atmosphere
-      fr: Climatologie Météorologie Atmosphère
-    value: climatology_meterology_atmosphere
-  - label:
-      en: Economy
-      fr: Économie
-    value: economy
-  - label:
-      en: Elevation
-      fr: Élévation
-    value: elevation
-  - label:
-      en: Environment
-      fr: Environnement
-    value: environment
-  - label:
-      en: Geoscientific Information
-      fr: Information géoscientifique
-    value: geoscientific_information
-  - label:
-      en: Health
-      fr: Santé
-    value: health
-  - label:
-      en: Imagery Base Maps Earth Cover
-      fr: Imagerie carte de base couverture terrestre
-    value: imagery_base_maps_earth_cover
-  - label:
-      en: Intelligence Military
-      fr: Renseignements militaires
-    value: intelligence_military
-  - label:
-      en: Inland Waters
-      fr: Eaux intérieures
-    value: inland_waters
-  - label:
-      en: Location
-      fr: Localisation
-    value: location
-  - label:
-      en: Oceans
-      fr: Océans
-    value: oceans
-  - label:
-      en: Planning Cadastre
-      fr: Aménagement cadastre
-    value: planning_cadastre
-  - label:
-      en: Society
-      fr: Société
-    value: society
-  - label:
-      en: Structure
-      fr: Structures
-    value: structure
-  - label:
-      en: Transportation
-      fr: Transport
-    value: transport
-  - label:
-      en: Utilities Communication
-      fr: Services communication
-    value: utilities_communication
 
 - preset: canada_contributor
   display_group: Contact Information
@@ -256,17 +157,20 @@ dataset_fields:
 - preset: canada_data_series_issue_identification
   display_group: Optional Dataset Information
 
-- preset: canada_digital_object_identifier
+- preset: test_odi
+  display_group: Optional Dataset Information
+
+- field_name: test_odi2
+  label:
+    en: Test ODI 2
+    fr: Test ODI 2
+  value: test_odi2
+ 
+- preset: aafc_test
   display_group: Optional Dataset Information
 
 ####################################
 # FGP fields (hidden from form)
-- field_name: reference_system_information
-  label:
-    en: Reference System Information
-    fr: Information système référence
-  form_snippet: null
-
 - field_name: distributor
   label:
     en: Distributor

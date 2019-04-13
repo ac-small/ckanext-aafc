@@ -32,3 +32,24 @@ presets:
     form_snippet: select.html
     display_snippet: select.html
     validators: scheming_required scheming_choices
+
+- preset_name: test_odi
+  values:
+    field_name: test_odi
+    label:
+      en: Test ODI
+      fr: Test ODI (fr)
+
+- preset_name: aafc_test
+  values:
+      field_name: test
+      label:
+         en: Dataset Test
+         fr: To Translate...
+      help_text:
+         en: "The current item is a test. "
+         fr: "To translate..."
+
+
+
+
