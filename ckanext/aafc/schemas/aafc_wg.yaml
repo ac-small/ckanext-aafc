@@ -142,12 +142,6 @@ dataset_fields:
 - preset: canada_frequency
   display_group: Optional Dataset Information
 
-- preset: canada_date_published
-  display_group: Optional Inventory Information
-
-- preset: canada_date_modified
-  display_group: Optional Inventory Information
-
 - preset: canada_program_page_url
   display_group: Optional Dataset Information
 
