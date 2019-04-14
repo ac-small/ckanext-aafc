@@ -87,15 +87,6 @@ dataset_fields:
 - preset: canada_owner_org
   display_group: Basic Information
 
-- preset: canada_org_title_at_publication
-  display_group: Contact Information
-
-- preset: canada_org_section_name
-  display_group: Contact Information
-
-- preset: canada_creator
-  display_group: Contact Information
-
 ############################
 # FGP fields (hidden from form)
 - field_name: contact_information
@@ -104,16 +95,30 @@ dataset_fields:
     fr: Information contact
   form_snippet: null
 
-- preset: canada_contributor
-  display_group: Contact Information
-
 - preset: canada_maintainer_email
   display_group: Contact Information
 
 - preset: canada_notes
   display_group: Basic Information
 
-- preset: canada_audience
+############################
+# Optional Dataset Information
+- preset: canada_org_title_at_publication
+  display_group: Optional Dataset Information
+
+- preset: canada_org_section_name
+  display_group: Optional Dataset Information
+
+- preset: canada_creator
+  display_group: Optional Dataset Information
+
+- preset: canada_contributor
+  display_group: Optional Dataset Information
+
+- preset: canada_data_series_name
+  display_group: Optional Dataset Information
+
+- preset: canada_data_series_issue_identification
   display_group: Optional Dataset Information
 
 - field_name: place_of_publication
@@ -125,9 +130,6 @@ dataset_fields:
     fr: "La rÃ©gion oÃ¹ le jeu de donnÃ©es a Ã©tÃ© publiÃ© initialement. Vous pouvez sÃ©lectionner de multiples options (Ctrl+Clic)"
   display_group: Optional Dataset Information 
   preset: canada_geographic_region # use same multi-select controlled list
-  display_group: Optional Dataset Information
- 
-- preset: canada_spatial
   display_group: Optional Dataset Information
 
 - preset: canada_geographic_region
@@ -143,12 +145,6 @@ dataset_fields:
   display_group: Optional Dataset Information
 
 - preset: canada_program_page_url
-  display_group: Optional Dataset Information
-
-- preset: canada_data_series_name
-  display_group: Optional Dataset Information
-
-- preset: canada_data_series_issue_identification
   display_group: Optional Dataset Information
 
 - preset: test_odi
@@ -247,7 +243,7 @@ dataset_fields:
     value: is_composed_of
 
 #################################
-# Optional Dataset Information
+# Optional Inventory Information
 - preset: odi_reference_number
   display_group: Optional Inventory Information
 
