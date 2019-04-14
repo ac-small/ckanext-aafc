@@ -1,5 +1,5 @@
 scheming_version: 1
-dataset_type: open-data
+dataset_type: open-data-mock
 
 display_group_default: Basic Information
 #display_group_order:
@@ -30,17 +30,6 @@ catalog_type_label:
 form_languages:
   - en
   - fr
-###############################################
-# Commented out JK 2018/10/31
-# machine translated metadata:
-#alternate_languages:
-#  en:
-#    - en-t-fr
-#  fr:
-#    - fr-t-en
-#
-#   DATASET FIELDS
-#
 dataset_fields:
 
 ##################################################
@@ -87,8 +76,9 @@ dataset_fields:
 - preset: canada_owner_org
   display_group: Basic Information
 
-############################
-# FGP fields (hidden from form)
+- preset: canada_notes
+  display_group: Basic Information
+
 - field_name: contact_information
   label:
     en: Contact Information
@@ -96,10 +86,7 @@ dataset_fields:
   form_snippet: null
 
 - preset: canada_maintainer_email
-  display_group: Contact Information
-
-- preset: canada_notes
-  display_group: Basic Information
+  form_snippet: null
 
 ############################
 # Optional Dataset Information
