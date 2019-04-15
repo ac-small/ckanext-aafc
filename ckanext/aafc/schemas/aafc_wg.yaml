@@ -9,12 +9,11 @@ display_group_default: Basic Information
 #  - Optional Inventory Information
 
 display_groups:
+  - label: ANA
+    description: "This is the N/A section. "
   - label: Basic Information
     description: "This is the Basic Info section. "
     collapse_by_default: false
-  - label: Contact Information
-    description: "This is the Contact Information section. "
-    collapse_by_default: true
   - label: Optional Dataset Information
     description: "This is the Optional Dataset Information section. "
     collapse_by_default: true
@@ -53,6 +52,7 @@ dataset_fields:
   form_restrict_choices_to:
     - internal
     - open_government
+  display_group: ANA
 
 - preset: aafc_schema_type
   display_group: Basic Information
