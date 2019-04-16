@@ -80,5 +80,161 @@ presets:
         en: Open Government Portal Record French
         fr: Open Government Portal Record English
 
+#######################################
+# Open Government Dataset Release Information
+- preset_name: access_to_information 
+  values:
+    field_name: access_to_information
+    label:
+      en: Access To Information
+      fr: (fr)Access To Information 
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
+- preset_name: authority_to_release
+  values:
+    field_name: authority_to_release
+    label:
+      en: Authority to Release
+      fr: (fr)Authority to Release
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
+- preset_name: formats 
+  values:
+    field_name: formats
+    label:
+      en: Formats
+      fr: (fr)Formats
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
+- preset_name: privacy 
+  values:
+    field_name: privacy
+    label:
+      en: Privacy
+      fr: (fr)Privacy
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
+- preset_name: offical_language 
+  values:
+    field_name: offical_language
+    label:
+      en: Offical Language
+      fr: (fr)Offical Language
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
+- preset_name: security 
+  values:
+    field_name: security
+    label:
+      en: Security
+      fr: (fr)Security
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
+- preset_name: other 
+  values:
+    field_name: other
+    label:
+      en: Other
+      fr: (fr)Other
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
 
 
