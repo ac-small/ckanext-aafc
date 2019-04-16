@@ -107,6 +107,36 @@ dataset_fields:
     fr: (fr)Privacy
   display_group: Open Government Dataset Release Information
 
+- preset: general_boolean_required
+  label:
+    en: Official Language
+    fr: (fr)Official Language
+  display_group: Open Government Dataset Release Information
+
+- preset: general_boolean_required
+  label:
+    en: Other
+    fr: (fr)Other
+  display_group: Open Government Dataset Release Information
+
+- preset: general_yesno_required
+  label:
+    en: IMSO Approval
+    fr: (fr)IMSO Approval
+  display_group: Open Government Dataset Release Information
+
+- preset: general_yesno_required
+  label:
+    en: Ready to Publish
+    fr: (fr)Ready to Publish
+  display_group: Open Government Dataset Release Information
+
+- preset: general_boolean_required
+  label:
+    en: Ready to Republish
+    fr: (fr)Ready to Republish
+  display_group: Open Government Dataset Release Information
+
 ############################
 # Optional Dataset Information
 - preset: canada_org_title_at_publication

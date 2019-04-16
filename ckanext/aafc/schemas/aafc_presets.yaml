@@ -257,5 +257,26 @@ presets:
     display_snippet: select.html
     validators: scheming_required scheming_choices
 
+- preset_name: general_yesno_required 
+  values:
+    field_name: general_yesno_required 
+    label:
+      en: Yes/No
+      fr: (fr)Yes/No
+    required: true
+    choices:
+    - label:
+        en: "No"
+        fr: Non
+      value: "false"
+    - label:
+        en: "Yes"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
 
 
