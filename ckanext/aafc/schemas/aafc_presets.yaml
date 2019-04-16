@@ -236,5 +236,26 @@ presets:
     display_snippet: select.html
     validators: scheming_required scheming_choices
 
+- preset_name: general_boolean_required 
+  values:
+    field_name: general_boolean_required 
+    label:
+      en: Boolean
+      fr: (fr)Boolean
+    required: true
+    choices:
+    - label:
+        en: "False"
+        fr: Non
+      value: "false"
+    - label:
+        en: "True"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
 
 
