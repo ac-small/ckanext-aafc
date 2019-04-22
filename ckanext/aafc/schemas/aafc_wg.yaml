@@ -57,6 +57,12 @@ dataset_fields:
     - open_government
   display_group: ANA
 
+- preset: canada_owner_org
+  label:
+    en: Publishing Branch
+    fr: (fr)Publishing Branch
+  display_group: Basic Information
+
 - preset: canada_title
   display_group: Basic Information
 
@@ -64,9 +70,6 @@ dataset_fields:
   display_group: Basic Information
 
 - preset: canada_subject
-  display_group: Basic Information
-
-- preset: canada_owner_org
   display_group: Basic Information
 
 - preset: canada_notes
@@ -119,6 +122,15 @@ dataset_fields:
     fr: (fr)Other
   display_group: Open Government Dataset Release Information
 
+- preset: jurisdiction
+  display_group: Open Government Dataset Release Information
+
+- preset: license
+  display_group: Open Government Dataset Release Information
+
+- preset: access_restriction
+  display_group: Open Government Dataset Release Information
+
 - preset: general_yesno_required
   label:
     en: IMSO Approval
@@ -131,7 +143,7 @@ dataset_fields:
     fr: (fr)Ready to Publish
   display_group: Open Government Dataset Release Information
 
-- preset: general_boolean_required
+- preset: general_yesno_required
   label:
     en: Ready to Republish
     fr: (fr)Ready to Republish
