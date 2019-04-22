@@ -50,6 +50,61 @@ presets:
          en: "The current item is a test. "
          fr: "To translate..."
 
+- preset_name: data_steward_email
+  values:
+      field_name: data_steward_email
+      label:
+         en: Data Steward Email
+         fr: To Translate...
+ 
+- preset_name: procured_data
+  values:
+      field_name: procured_data
+      label:
+         en: Procured Data
+         fr: To Translate... 
+
+- preset_name: eligible_for_release
+  values:
+      field_name: eligible_for_release
+      label:
+         en: Eligible for Release
+         fr: To Translate... 
+
+- preset_name: ineligibility_reason
+  values:
+      field_name: ineligibility_reason
+      label:
+         en: Ineligibility Reason
+         fr: To Translate... 
+
+- preset_name: date_published
+  values:
+      field_name: date_published
+      label:
+         en: Date Published
+         fr: To Translate...          
+
+- preset_name: maintenance_and_update_frequency
+  values:
+      field_name: maintenance_and_update_frequency
+      label:
+         en: Maintenance and Update Frequency
+         fr: To Translate...          
+
+- preset_name: data_source_repository
+  values:
+      field_name: data_source_repository
+      label:
+         en: Data Source Repository
+         fr: To Translate...           
+
+- preset_name: procured_data_organization_name
+  values:
+      field_name: procured_data_organization_name
+      label:
+         en: Procured Data Organization Name
+         fr: To Translate...            
 ########################################3
 #  Optional Inventory
 - preset_name: odi_reference_number
@@ -277,6 +332,30 @@ presets:
     form_snippet: select.html
     display_snippet: select.html
     validators: scheming_required scheming_choices
+
+- preset_name: jurisdiction
+  values:
+    field_name: jurisdiction
+    label:
+      en: Jurisdiction
+      fr: (fr)Jurisdiction
+    required: true
+
+- preset_name: license
+  values:
+    field_name: license
+    label:
+      en: License
+      fr: (fr)License
+    required: true
+
+- preset_name: access_restriction
+  values:
+    field_name: access_restriction
+    label:
+      en: Access_restriction
+      fr: (fr)Access_restriction
+    required: true
 
 
 
