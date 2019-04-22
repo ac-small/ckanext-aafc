@@ -75,6 +75,30 @@ dataset_fields:
 - preset: canada_notes
   display_group: Basic Information
 
+- preset: data_steward_email
+  display_group: Basic Information
+
+- preset: procured_data
+  display_group: Basic Information
+
+- preset: eligible_for_release
+  display_group: Basic Information
+
+- preset: ineligibility_reason
+  display_group: Basic Information  
+
+- preset: date_published
+  display_group: Basic Information 
+
+- preset: maintenance_and_update_frequency
+  display_group: Basic Information 
+
+- preset: data_source_repository
+  display_group: Basic Information   
+  
+- preset: procured_data_organization_name
+  display_group: Basic Information   
+  
 - field_name: contact_information
   label:
     en: Contact Information
