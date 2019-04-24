@@ -27,8 +27,8 @@ ENV GIT_BRANCH=ckan-2.8.2
 # Customize these on the .env file if needed
 #ENV CKAN_SITE_URL http://localhost:5000
 ENV CKAN__PLUGINS "datastore datapusher image_view text_view recline_view scheming_datasets fluent aafc spatial_metadata spatial_query resource_proxy geo_view geojson_view wmts_view envvars"
-ENV CKAN___SCHEMING__DATASET_SCHEMAS "ckanext.aafc:schemas/aafc_base_dataset.yaml ckanext.aafc:schemas/aafc_geospatial.yaml ckanext.aafc:schemas/aafc_open_gov_dataset.yaml ckanext.scheming:ckan_dataset.json"
-ENV CKAN___SCHEMING__PRESETS "ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml"
+ENV CKAN___SCHEMING__DATASET_SCHEMAS "ckanext.aafc:schemas/aafc_base_dataset.yaml ckanext.aafc:schemas/aafc_geospatial.yaml ckanext.aafc:schemas/aafc_wg.yaml ckanext.scheming:ckan_dataset.json"
+ENV CKAN___SCHEMING__PRESETS "ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml ckanext.aafc:schemas/aafc_presets.yaml"
 ENV CKAN___SCHEMING__DATASET_FALLBACK=false
 ENV CKAN__SEARCH__SHOW_ALL_TYPES=true
 ENV CKAN__LOCALE_ORDER en fr
