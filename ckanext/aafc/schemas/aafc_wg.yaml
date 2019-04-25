@@ -78,10 +78,19 @@ dataset_fields:
 - preset: data_steward_email
   display_group: Basic Information
 
-- preset: procured_data
+- preset: general_yesno_required
+  label:
+    en: Procured Data
+    fr: (fr)Procured Data
   display_group: Basic Information
 
-- preset: eligible_for_release
+- preset: procured_data_organization_name
+  display_group: Basic Information   
+  
+- preset: general_yesno_required
+  label:
+    en: Eligible for Release 
+    fr: (fr)Eligible for Release
   display_group: Basic Information
 
 - preset: ineligibility_reason
@@ -94,9 +103,6 @@ dataset_fields:
   display_group: Basic Information 
 
 - preset: data_source_repository
-  display_group: Basic Information   
-  
-- preset: procured_data_organization_name
   display_group: Basic Information   
   
 - field_name: contact_information
