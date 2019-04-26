@@ -92,19 +92,62 @@ presets:
          en: Maintenance and Update Frequency
          fr: To Translate...          
 
-- preset_name: data_source_repository
-  values:
-      field_name: data_source_repository
-      label:
-         en: Data Source Repository
-         fr: To Translate...           
-
 - preset_name: procured_data_organization_name
   values:
       field_name: procured_data_organization_name
       label:
          en: Procured Data Organization Name
          fr: To Translate...            
+
+- preset_name: data_source_repository
+  values:
+    field_name: data_source_repository
+    label:
+      en: Data Source Repository
+      fr: To translate
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+       en: AgriDoc
+       fr: AgriDoc
+      value: agridoc
+    - label:
+       en: GCDoc
+       fr: GCDoc
+      value: gcdoc
+    - label:
+       en: Knowledge Workspace
+       fr: Espace de travail de la connaissance
+      value: knowledge_workspace
+    - label:
+       en: Database
+       fr: To translage
+      value: database
+    - label:
+       en: External AAFC webserver
+       fr: Serveur Web externe d'AAC
+      value: external_aafc_webserver
+    - label:
+       en: External non-AAFC
+       fr: Externe non AAC
+      value: external_non-aafc
+    - label:
+       en: Internal AAFC Webserver
+       fr: Serveur Web interne d'AAC
+      value: internal_aafc_webserver
+    - label:
+       en: Local drive
+       fr: Lecteur local
+      value: local_drive
+    - label:
+       en: Network share
+       fr: To translate
+      value: network_share
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
 ########################################3
 #  Optional Inventory
 - preset_name: odi_reference_number
