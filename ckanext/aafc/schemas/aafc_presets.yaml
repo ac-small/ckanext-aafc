@@ -185,6 +185,188 @@ presets:
     label:
         en: Program Alignment Architecture (English)
         fr: Program Alignment Architecture (French)
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: 1.1 Business Risk 
+        fr: 1.1 Gestion des risques de l'entreprise 
+      value: 1_1   
+    - label:
+        en: 1.1.1 AgriStability 
+        fr: 1.1.1 Agri-stabilite 
+      value: 1_1_1  
+    - label:
+        en: 1.1.2 AgriInvest 
+        fr: 1.1.2 Agri-investissement 
+      value: 1_1_2  
+    - label:
+        en: 1.1.3 AgriRecovery 
+        fr: 1.1.3 Agri-relance 
+      value: 1_1_3  
+    - label:
+        en: 1.1.4 AgriInsurance 
+        fr: 1.1.4 Agri-protection 
+      value: 1_1_4  
+    - label:
+        en: 1.1.5 AgriRisk Initiatives 
+        fr: 1.1.5 Initiatives Agri-risques 
+      value: 1_1_5  
+    - label:
+        en: 1.1.6 Agricultural Marketing Programs Act 
+        fr: 1.1.6 Loi sur les programmes de commercialisation agricole 
+      value: 1_1_6  
+    - label:
+        en: 1.1.7 Canadian Agricultural Loans Act 
+        fr: 1.1.7 Loi canadienne sur les prêts agricoles 
+      value: 1_1_7  
+    - label:
+        en: 1.2 Market Access, Negotiations, Sector Competitiveness, and Assurance Systems 
+        fr: 1.2 Acces aux marches, negociations, competitivite du secteur, et systemes d'assurance 
+      value: 1_2  
+    - label:
+        en: 1.2.1 Trade and Market Expansion 
+        fr: 1.2.1 Croissance du commerce et des marches
+      value: 1_2_1  
+    - label:
+        en: 1.2.2 Sector Engagement and Development
+        fr: 1.2.2 Mobilisation et developpement du secteur
+      value: 1_2_2  
+    - label:
+        en: 1.2.3 Market Development 
+        fr: 1.2.3 Developpement des marches 
+      value: 1_2_3  
+    - label:
+        en: 1.2.4 Assurance Systems 
+        fr: 1.2.4 Systemes d'assurance  
+      value: 1_2_4  
+    - label:
+        en: 1.2.5 FPT Cost-shared Market Development and Competitiveness
+        fr: 1.2.5 Programmes a frais partages FPT relies au developpement des marches et a la competitivite
+      value: 1_2_5  
+    - label:
+        en: 1.2.6 Pest Management: Pesticides Minor Use Program
+        fr: 1.2.6 Lutte antiparasitaire: Programme de pesticides a usage limite
+      value: 1_2_6  
+    - label:
+        en: 1.2.7 Pest Management: Pesticides Risk Reduction Program 
+        fr: 1.2.7 Lutte antiparasitaire: Programme de reduction des risques lies aux pesticides 
+      value: 1_2_7  
+    - label:
+        en: 1.3 Farm Products Council of Canada 
+        fr: 1.3  Conseil des produits agricoles du Canada 
+      value: 1_3  
+    - label:
+        en: 2.1 Science, Innovation, Adoption and Sustainability 
+        fr: 2.1 Sciences, innovation, adoption et durabilite 
+      value: 2_1  
+    - label:
+        en: 2.1.1 Science Supporting an Innovative and Sustainable Sector 
+        fr: 2.1.1 Un secteur innovateur et durable appuye par la science 
+      value: 2_1_1  
+    - label:
+        en: 2.1.2 Research Accelerating Innovation
+        fr: 2.1.2 Recherche accelerant l'innovation 
+      value: 2_1_2  
+    - label:
+        en: 2.1.3 Research, Development and Knowledge Transfer
+        fr: 2.1.3 Recherche, developpement et  transfert des connaissances
+      value: 2_1_3  
+    - label:
+        en: 2.1.4 Enabling Commercialization and Adoption 
+        fr: 2.1.4 Facilitation de la commercialisation et l'adoption 
+      value: 2_1_4  
+    - label:
+        en: 2.1.5 FPT Cost-shared Research, Adoption and Commercialization
+        fr: 2.1.5 Programmes a frais partages FPT relies a la recherche, a l’adoption et a la commercialisation
+      value: 2_1_5  
+    - label:
+        en: 2.1.6 FPT Cost-shared Environment 
+        fr: 2.1.6 Programmes a frais partages FPT relies a l’environnement
+      value: 2_1_6  
+    - label:
+        en: 2.1.7 Agricultural Greenhouse Gases Program 
+        fr: 2.1.7 Programme de lutte contre les gaz a effet de serre en agriculture 
+      value: 2_1_7  
+    - label:
+        en: 2.2 Industry Capacity 
+        fr: 2.2 Capacite de l'industrie 
+      value: 2_2  
+    - label:
+        en: 2.2.1 Farm Debt Mediation Service 
+        fr: 2.2.1 Service de mediation en matiere d'endettement agricole 
+      value: 2_2_1  
+    - label:
+        en: 2.2.2 Fostering Business Development 
+        fr: 2.2.2 Favoriser le developpement des entreprises
+      value: 2_2_2  
+    - label:
+        en: 2.2.3 FPT Cost-shared Adaptability and Industry Capacity
+        fr: 2.2.3 Programmes a frais partages FPT relies a l’adaptabilite et a la capacite de l’industrie 
+      value: 2_2_3  
+    - label:
+        en: 2.2.4 Community Pastures 
+        fr: 2.2.4 Paturages communautaires 
+      value: 2_2_4  
+    - label:
+        en: 2.2.5 Water Infrastructure 
+        fr: 2.2.5 Infrastructure hydraulique 
+      value: 2_2_5  
+    - label:
+        en: 2.2.6 Canadian Agricultural Adaptation Program 
+        fr: 2.2.6  Programme canadien d'adaptation agricole 
+      value: 2_2_6  
+    - label:
+        en: 2.3  Canadian Pari-Mutuel Agency
+        fr: 2.3 Agence canadienne du pari mutuel 
+      value: 2_3  
+    - label:
+        en: 3.1  Internal Services 
+        fr: 3.1 Services internes 
+      value: 3_1  
+    - label:
+        en: 3.1.1  Management and Oversight Services 
+        fr: 3.1.1 Services de gestion et de surveillance 
+      value: 3_1_1  
+    - label:
+        en: 3.1.2 Communications Services 
+        fr: 3.1.2 Services de communications 
+      value: 3_1_2  
+    - label:
+        en: 3.1.3 Legal Services 
+        fr: 3.1.3 Services juridiques 
+      value: 3_1_3  
+    - label:
+        en: 3.1.4 Human Resources Management Services 
+        fr: 3.1.4 Services de gestion des ressources humaines 
+      value: 3_1_4  
+    - label:
+        en: 3.1.5 Financial Management Services 
+        fr: 3.1.5 Services de gestion des finances 
+      value: 3_1_5  
+    - label:
+        en: 3.1.6 Information Management Services 
+        fr: 3.1.6 Services de gestion de l'information 
+      value: 3_1_6  
+    - label:
+        en: 3.1.7 Information Technology Services 
+        fr: 3.1.7 Services de technologie de l'information 
+      value: 3_1_7  
+    - label:
+        en: 3.1.8 Real Property Services 
+        fr: 3.1.8 Services des biens immobiliers 
+      value: 3_1_8  
+    - label:
+        en: 3.1.9 Material Services 
+        fr: 3.1.9 Services du materiel 
+      value: 3_1_9  
+    - label:
+        en: 3.1.10 Acquisition Services 
+        fr: 3.1.10 Services des acquisitions 
+      value: 3_1_11
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
 
 - preset_name: open_government_portal_record
   values:
