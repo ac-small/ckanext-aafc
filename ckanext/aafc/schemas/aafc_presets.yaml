@@ -77,6 +77,28 @@ presets:
       label:
          en: Ineligibility Reason
          fr: To Translate... 
+      required: true
+      form_include_blank_choice: true
+      choices:
+      - label:
+          en: Privacy
+          fr: Intimite
+        value: privacy
+      - label:
+          en: Security
+          fr: Securite
+        value: security
+      - label:
+          en: Confidentiality
+          fr: Confidentialite
+        value: confidentiality
+      - label:
+          en: Ownership
+          fr: La possession
+        value: ownership
+      form_snippet: select.html
+      display_snippet: select.html
+      validators: scheming_required scheming_choices
 
 - preset_name: date_published
   values:
