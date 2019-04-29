@@ -99,7 +99,7 @@ dataset_fields:
 - preset: date_published
   display_group: Basic Information 
 
-- preset: maintenance_and_update_frequency
+- preset: canada_frequency
   display_group: Basic Information 
 
 - preset: data_source_repository
