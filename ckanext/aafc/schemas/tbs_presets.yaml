@@ -258,6 +258,8 @@ presets:
     error_snippet: fluent_text.html
     validators: fluent_text
     output_validators: fluent_core_translated_output
+    form_attrs:
+      data-module: autocomplete
 
 # Field = Publisher - Current Organization Name.
 # List box Source: Publisher - Current Organization Name code table (refer to Data Migration).
@@ -644,7 +646,7 @@ presets:
   values:
     field_name: audience
     label:
-      en: Audience (????Does this belong in the main template schema...or just GEO???)
+      en: Audience
       fr: Audience
     help_text:
       en: "A description of the audience or group of people for whom the described dataset is intended or useful. You may select multiple options (Ctrl+Click)"
@@ -4084,3 +4086,25 @@ presets:
     display_snippet: multiple_choice.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
+
+- preset_name: aafc_yesno_required
+  values:
+    field_name: aafc_yesno_required
+    label:
+      en: Yes/No
+      fr: (fr)Yes/No
+    required: true
+    choices:
+    - label:
+        en: "No"
+        fr: Non
+      value: "false"
+    - label:
+        en: "Yes"
+        fr: Oui
+      value: "true"
+    # copied from select preset
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
