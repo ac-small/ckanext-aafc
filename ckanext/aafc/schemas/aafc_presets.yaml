@@ -83,23 +83,23 @@ presets:
       - label:
           en: Privacy
           fr: Intimite
-        value: privacy
+        value: privacy    
       - label:
           en: Security
           fr: Securite
-        value: security
+        value: security  
       - label:
           en: Confidentiality
           fr: Confidentialite
-        value: confidentiality
+        value: confidentiality  
       - label:
           en: Ownership
           fr: La possession
-        value: ownership
+        value: ownership 
       form_snippet: select.html
       display_snippet: select.html
       validators: scheming_required scheming_choices
-
+ 
 - preset_name: date_published
   values:
       field_name: date_published
@@ -245,12 +245,12 @@ presets:
         fr: 1.2.5 Programmes a frais partages FPT relies au developpement des marches et a la competitivite
       value: 1_2_5  
     - label:
-        en: 1.2.6 Pest Management- Pesticides Minor Use Program
-        fr: 1.2.6 Lutte antiparasitaire- Programme de pesticides a usage limite
+        en: "1.2.6 Pest Management: Pesticides Minor Use Program"
+        fr: "1.2.6 Lutte antiparasitaire: Programme de pesticides a usage limite"
       value: 1_2_6  
     - label:
-        en: 1.2.7 Pest Management- Pesticides Risk Reduction Program 
-        fr: 1.2.7 Lutte antiparasitaire- Programme de reduction des risques lies aux pesticides 
+        en: "1.2.7 Pest Management: Pesticides Risk Reduction Program"
+        fr: "1.2.7 Lutte antiparasitaire: Programme de reduction des risques lies aux pesticides" 
       value: 1_2_7  
     - label:
         en: 1.3 Farm Products Council of Canada 
@@ -278,11 +278,11 @@ presets:
       value: 2_1_4  
     - label:
         en: 2.1.5 FPT Cost-shared Research, Adoption and Commercialization
-        fr: 2.1.5 Programmes a frais partages FPT relies a la recherche, a l'adoption et a la commercialisation
+        fr: 2.1.5 Programmes a frais partages FPT relies a la recherche, a ladoption et a la commercialisation
       value: 2_1_5  
     - label:
         en: 2.1.6 FPT Cost-shared Environment 
-        fr: 2.1.6 Programmes a frais partages FPT relies a l'environnement
+        fr: 2.1.6 Programmes a frais partages FPT relies a lenvironnement
       value: 2_1_6  
     - label:
         en: 2.1.7 Agricultural Greenhouse Gases Program 
@@ -302,7 +302,7 @@ presets:
       value: 2_2_2  
     - label:
         en: 2.2.3 FPT Cost-shared Adaptability and Industry Capacity
-        fr: 2.2.3 Programmes a frais partages FPT relies a l'adaptabilite et a la capacite de l'industrie 
+        fr: 2.2.3 Programmes a frais partages FPT relies a l’adaptabilite et a la capacite de l’industrie 
       value: 2_2_3  
     - label:
         en: 2.2.4 Community Pastures 
@@ -367,6 +367,7 @@ presets:
     form_snippet: select.html
     display_snippet: select.html
     validators: scheming_required scheming_choices
+
 
 - preset_name: open_government_portal_record
   values:
@@ -547,13 +548,13 @@ presets:
     required: true
     choices:
     - label:
-        en: "False"
+        en: False
         fr: Non
-      value: "false"
+      value: false
     - label:
-        en: "True"
+        en: True
         fr: Oui
-      value: "true"
+      value: true
     # copied from select preset
     form_snippet: select.html
     display_snippet: select.html
