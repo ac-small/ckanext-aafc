@@ -99,7 +99,7 @@ dataset_fields:
 - preset: date_published
   display_group: Basic Information 
 
-- preset: maintenance_and_update_frequency
+- preset: canada_frequency
   display_group: Basic Information 
 
 - preset: data_source_repository
@@ -219,22 +219,26 @@ dataset_fields:
 - preset: canada_time_period_coverage_end
   display_group: Optional Dataset Information
 
-- preset: canada_frequency
+- preset: canada_audience
+  display_group: Optional Dataset Information
+
+- field_name: ditigal_object_identifier
+  label:
+    en: Digital Object Identifier(ODI)
+    fr: To be translated
+  value: aafc_odi
+  display_group: Optional Dataset Information
+ 
+- preset: canada_date_modified
   display_group: Optional Dataset Information
 
 - preset: canada_program_page_url
   display_group: Optional Dataset Information
 
-- preset: test_odi
-  display_group: Optional Dataset Information
-
-- field_name: test_odi2
+- field_name: amp_department_identifier
   label:
-    en: Test ODI 2
-    fr: Test ODI 2
-  value: test_odi2
- 
-- preset: aafc_test
+    en: AMP Department Identifier
+    fr: To be translated
   display_group: Optional Dataset Information
 
 ####################################
@@ -475,4 +479,3 @@ resource_fields:
 - preset: canada_resource_format
 - preset: canada_resource_language
 - preset: canada_resource_url
-- preset: canada_resource_data_quality
