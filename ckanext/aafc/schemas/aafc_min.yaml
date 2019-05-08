@@ -1,5 +1,4 @@
 scheming_version: 1
-# AAFC Inventory Tombstone Dataset
 dataset_type: aafc-min
 
 display_group_default: Basic Information
@@ -47,21 +46,65 @@ dataset_fields:
   display_group: ANA
 
 ##################################################
-# Minimal list of AAFC fields
+# Basic Group
 #
 - preset: canada_dataset_id
-
 - preset: canada_dataset_name
-
-- preset: canada_title
-  display_group: Basic Information
 
 - preset: aafc_branch_owner_org
   display_group: Basic Information
 
-- preset: canada_digital_object_identifier
-- preset: canada_spatial_representation_type
+- preset: canada_title
+  display_group: Basic Information
+
+- preset: canada_keywords
+  display_group: Basic Information
+
+- preset: canada_subject
+  display_group: Basic Information
+
+- preset: canada_notes
+  display_group: Basic Information
+
+- preset: data_steward_email
+  display_group: Basic Information
+
 - preset: aafc_yesno_required
+  field_name: procured_data
+  label:
+    en: Procured Data
+    fr: (fr)Procured Data
+  display_group: Basic Information
+
+- preset: procured_data_organization_name
+  display_group: Basic Information   
+  
+- preset: aafc_yesno_required
+  field_name: elegible_for_release
+  label:
+    en: Eligible for Release 
+    fr: (fr)Eligible for Release
+  display_group: Basic Information
+
+- preset: aafc_yesno_required
+  field_name: test_yesno
+  label:
+    en: Y/N reusing test
+    fr: (fr)Y/N reusing test
+  display_group: Basic Information
+#
+#- preset: procured_data_organization_name
+#  display_group: Basic Information   
+#  
+#- preset: general_yesno_required
+#  label:
+#    en: Eligible for Release 
+#    fr: (fr)Eligible for Release
+#  display_group: Basic Information
+
+- preset: canada_digital_object_identifier
+#- preset: canada_spatial_representation_type
+#- preset: aafc_yesno_required
 
 #
 #   RESOURCE FIELDS
