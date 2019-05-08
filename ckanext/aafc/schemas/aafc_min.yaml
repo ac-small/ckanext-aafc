@@ -40,13 +40,25 @@ form_languages:
 #
 dataset_fields:
 
+- preset: publication_type
+  form_restrict_choices_to:
+    - internal
+    - open_government
+  display_group: ANA
+
 ##################################################
 # Minimal list of AAFC fields
 #
 - preset: canada_dataset_id
+
 - preset: canada_dataset_name
+
 - preset: canada_title
+  display_group: Basic Information
+
 - preset: aafc_branch_owner_org
+  display_group: Basic Information
+
 - preset: canada_digital_object_identifier
 - preset: canada_spatial_representation_type
 - preset: aafc_yesno_required
