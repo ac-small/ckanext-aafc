@@ -548,13 +548,13 @@ presets:
     required: true
     choices:
     - label:
-        en: False
+        en: "False"
         fr: Non
-      value: false
+      value: "false"
     - label:
-        en: True
+        en: "True"
         fr: Oui
-      value: true
+      value: "true"
     # copied from select preset
     form_snippet: select.html
     display_snippet: select.html
@@ -564,18 +564,18 @@ presets:
   values:
     field_name: general_yesno_required 
     label:
-      en: Yes/No
+      en: Yes/No(general in aafc_presets.yaml)
       fr: (fr)Yes/No
     required: true
     choices:
     - label:
         en: "No"
         fr: Non
-      value: "false"
+      value: false
     - label:
         en: "Yes"
         fr: Oui
-      value: "true"
+      value: true
     # copied from select preset
     form_snippet: select.html
     display_snippet: select.html
