@@ -57,6 +57,9 @@ dataset_fields:
     - open_government
   display_group: ANA
 
+##################################################
+# Basic Group
+#
 - preset: canada_owner_org
   label:
     en: Publishing Branch
@@ -78,16 +81,18 @@ dataset_fields:
 - preset: data_steward_email
   display_group: Basic Information
 
-- preset: general_yesno_required
+- preset: aafc_yesno_required
   label:
     en: Procured Data
     fr: (fr)Procured Data
+  field_name: procured_data
   display_group: Basic Information
 
 - preset: procured_data_organization_name
   display_group: Basic Information   
   
-- preset: general_yesno_required
+- preset: aafc_yesno_required
+  field_name: elegible_for_release
   label:
     en: Eligible for Release 
     fr: (fr)Eligible for Release
@@ -123,30 +128,35 @@ dataset_fields:
   display_group: Open Government Dataset Release Information
 
 - preset: general_boolean_required
+  field_name: authority_to_release
   label:
     en: Authority to Release
     fr: (fr)Authority to Release
   display_group: Open Government Dataset Release Information
 
 - preset: general_boolean_required
+  field_name: formats 
   label:
     en: Formats
     fr: (fr)Formats
   display_group: Open Government Dataset Release Information
 
 - preset: general_boolean_required
+  field_name: privacy
   label:
     en: Privacy
     fr: (fr)Privacy
   display_group: Open Government Dataset Release Information
 
 - preset: general_boolean_required
+  field_name: official_language
   label:
     en: Official Language
     fr: (fr)Official Language
   display_group: Open Government Dataset Release Information
 
 - preset: general_boolean_required
+  field_name: other 
   label:
     en: Other
     fr: (fr)Other
@@ -161,19 +171,22 @@ dataset_fields:
 - preset: access_restriction
   display_group: Open Government Dataset Release Information
 
-- preset: general_yesno_required
+- preset: aafc_yesno_required
+  field_name: imso_approval 
   label:
     en: IMSO Approval
     fr: (fr)IMSO Approval
   display_group: Open Government Dataset Release Information
 
-- preset: general_yesno_required
+- preset: aafc_yesno_required
+  field_name: ready_to_publish
   label:
     en: Ready to Publish
     fr: (fr)Ready to Publish
   display_group: Open Government Dataset Release Information
 
-- preset: general_yesno_required
+- preset: aafc_yesno_required
+  field_name: ready_to_republish
   label:
     en: Ready to Republish
     fr: (fr)Ready to Republish
