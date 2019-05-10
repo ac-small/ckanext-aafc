@@ -179,9 +179,9 @@ presets:
         en: ODI Reference Number
         fr: ODI Reference Number
 
-- preset_name: program_alignmen_architecture
+- preset_name: program_alignment_architecture
   values:
-    field_name: program_alignmen_architecture
+    field_name: program_alignment_architecture
     label:
         en: Program Alignment Architecture (English)
         fr: Program Alignment Architecture (French)
@@ -368,6 +368,26 @@ presets:
     display_snippet: select.html
     validators: scheming_required scheming_choices
 
+- preset_name: program_alignment_architecture9
+  values:
+    field_name: program_alignment_architecture9
+    label:
+        en: Program Alignment Architecture8(English)
+        fr: Program Alignment Architecture (French)
+    required: true
+    form_include_blank_choice: true
+    choices:
+    - label:
+        en: "1.1 Business Risk" 
+        fr: "1.1 Gestion des risques de l'entreprise" 
+      value: v1
+    - label:
+        en: "1.1.1 AgriStability"
+        fr: "1.1.1 Agri-stabilite" 
+      value: v2
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
 
 - preset_name: open_government_portal_record
   values:
