@@ -117,7 +117,7 @@ dataset_fields:
   form_snippet: null
 
 - preset: canada_maintainer_email
-  form_snippet: null
+  display_group: Basic Information   
 
 ############################
 # Open Gov Dataset Release Information
@@ -165,7 +165,7 @@ dataset_fields:
 - preset: jurisdiction
   display_group: Open Government Dataset Release Information
 
-- preset: license
+- preset: canada_license_id
   display_group: Open Government Dataset Release Information
 
 - preset: access_restriction
@@ -342,7 +342,7 @@ dataset_fields:
 - preset: odi_reference_number
   display_group: Optional Inventory Information
 
-- preset: program_alignmen_architecture
+- preset: program_alignment_architecture9
   display_group: Optional Inventory Information
 
 - preset: open_government_portal_record
@@ -471,10 +471,11 @@ dataset_fields:
 #   RESOURCE FIELDS
 #
 resource_fields:
-- preset: canada_resource_unique_identifier
 - preset: canada_resource_name
-- preset: canada_resource_related_relationship
-- preset: canada_resource_related_type
+- preset: canada_resource_language
+- preset: canada_resource_unique_identifier
+#- preset: canada_resource_related_relationship
+#- preset: canada_resource_related_type
 - preset: canada_resource_date_published
 - preset: canada_resource_type
   form_restrict_choices_to:
@@ -487,8 +488,7 @@ resource_fields:
   - terminology
   - tool
   - website
+- preset: canada_resource_format
 - preset: canada_resource_size
 - preset: canada_resource_character_set
-- preset: canada_resource_format
-- preset: canada_resource_language
-- preset: canada_resource_url
+#- preset: canada_resource_url
