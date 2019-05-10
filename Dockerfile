@@ -61,7 +61,7 @@ RUN apt-get -q -y update \
         build-essential \
         git-core \
         python-yaml \
-        vim \
+	vim \
 		mc \
 		tmux \
 		curl \
@@ -126,7 +126,7 @@ RUN    . $CKAN_VENV/bin/activate && cd $CKAN_VENV/src && \
     paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.views.default_views = ${CKAN__VIEWS__DEFAULT_VIEWS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckanext.geoview.ol_viewer.formats = ${CKAN___CKANEXT__GEOVIEW__OL_VIEWER__FORMATS}" && \
-    paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES__GROUP__URL}" && \
+    paster --plugin=ckan config-tool ${CKAN_INI} "licenses_group_url = ${CKAN___LICENSES_GROUP_URL}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.root_path = ${CKAN__ROOT_PATH}"
 
 CMD ["ckan-paster","serve","/etc/ckan/production.ini"]
