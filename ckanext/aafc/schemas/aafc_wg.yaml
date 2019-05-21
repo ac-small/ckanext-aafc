@@ -39,7 +39,9 @@ dataset_fields:
 # TBS original comment: our id + name fields are uuids and always equal
 # JK 2018/12/04: Uncommented and pulled in TBS logic. AAFC id and name.
 - preset: canada_dataset_id
+  display_snippet: none
 - preset: canada_dataset_name
+  display_snippet: null
 ###################################################
 
 ####################################################
