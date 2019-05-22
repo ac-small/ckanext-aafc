@@ -1,9 +1,32 @@
+[role=main] {
+  min-height: 546px;
+}
+
+
+.aafc-container {
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
+    padding-top:200px;
+    width:670px;
+}
+
+@media (min-width: 768px) {
+  .aafc-back {
+    background-color: white;
+    background-position:center center;
+    background: url("../images/home_page_background.png")  center center white;
+    background-repeat:no-repeat;
+  }
+}
+
+
 .account-masthead {
     background-color: rgb(40, 40, 40);
 }
 /* The "bubble" containing the number of new notifications. */
 .account-masthead .account .notifications a span {
-  background-color: black;
+  background-color: #888888;
 }
 /* The text and icons in the user account info. */
 .account-masthead .account ul li a {
@@ -24,6 +47,7 @@
 .masthead {
   color: #000;
   background-color: #fff;
+  background-image: none;
 }
 .masthead a {
     color: #000;
@@ -57,6 +81,9 @@
   box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
 }
 
+.masthead .logo img {
+    max-height: 30px;
+}
 
 /* ===========================================
    The content in the middle of the front page
@@ -68,7 +95,7 @@
 }
 /* Remove the borders around the "Welcome to CKAN" and "Search Your Data"
    boxes. */
-.hero .box {
+.aafc-back .box {
   border: none;
 }
 /* Change the colors of the "Search Your Data" box. */
