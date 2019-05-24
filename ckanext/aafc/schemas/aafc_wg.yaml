@@ -1,5 +1,5 @@
 scheming_version: 1
-dataset_type: open-data-mock
+dataset_type: aafc-open-data
 
 display_group_default: Basic Information
 #display_group_order:
@@ -493,4 +493,4 @@ resource_fields:
 - preset: canada_resource_format
 - preset: canada_resource_size
 - preset: canada_resource_character_set
-#- preset: canada_resource_url
+- preset: canada_resource_url
