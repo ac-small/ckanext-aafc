@@ -112,15 +112,6 @@ dataset_fields:
 - preset: data_source_repository
   display_group: Basic Information   
   
-- field_name: contact_information
-  label:
-    en: Contact Information
-    fr: Information contact
-  form_snippet: null
-
-- preset: canada_maintainer_email
-  display_group: Basic Information   
-
 ############################
 # Open Gov Dataset Release Information
 - preset: access_to_information
