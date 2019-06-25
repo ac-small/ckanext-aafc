@@ -110,7 +110,7 @@
 /* Change the colors of the "Search Your Data" box. */
 .homepage .module-search .module-content {
   color: rgb(68, 68, 68);
-  background-color: white;
+  background-color: rgba(0,0,0,0);
 }
 /* Change the background color of the "Popular Tags" box. */
 .homepage .module-search .tags {
@@ -123,6 +123,7 @@
 }
 .homepage .module-search {
   padding: 0px;
+  background-color: rgba(0, 0, 0, 0);
 }
 /* Add a border line between the top and bottom halves of the front page. */
 .homepage [role="main"] {
