@@ -2691,7 +2691,7 @@ presets:
   values:
     field_name: unique_identifier
     label:
-      en: Unique Identifier (?? TBS uses input of a string...do we want to generate a UUID??)
+      en: Unique Identifier
       fr: Identificateur unique
     help_text:
       en: A unique phrase or string which identifies the resource.
@@ -2710,7 +2710,7 @@ presets:
       fr: Titre
     fluent_form_label:
       en:
-        en: "Title English (????Not on our list...but do we need this??)"
+        en: "Title English"
         fr: "Titre anglais"
       fr:
         en: "Title French"

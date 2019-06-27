@@ -374,7 +374,6 @@ presets:
     label:
         en: Program Alignment Architecture8(English)
         fr: Program Alignment Architecture (French)
-    required: true
     form_include_blank_choice: true
     choices:
     - label:
