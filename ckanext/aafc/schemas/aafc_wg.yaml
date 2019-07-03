@@ -81,6 +81,7 @@ dataset_fields:
   display_group: Basic Information
 
 - preset: data_steward_email
+  required: true
   display_group: Basic Information
 
 - preset: aafc_yesno_required
@@ -91,6 +92,7 @@ dataset_fields:
   display_group: Basic Information
 
 - preset: procured_data_organization_name
+  required: true
   display_group: Basic Information   
   
 - preset: aafc_yesno_required
@@ -104,6 +106,7 @@ dataset_fields:
   display_group: Basic Information  
 
 - preset: date_published
+  required: true
   display_group: Basic Information 
 
 - preset: canada_frequency
