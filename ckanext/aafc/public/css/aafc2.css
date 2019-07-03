@@ -158,3 +158,9 @@ body {
 }
 
 
+.masthead .navigation .nav-pills li a:hover,
+.masthead .navigation .nav-pills li a:focus,
+.masthead .navigation .nav-pills li.active a {
+  color:#fff;
+  background-color:rgb(38, 55, 74);
+}
