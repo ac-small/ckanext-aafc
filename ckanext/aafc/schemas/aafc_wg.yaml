@@ -105,7 +105,7 @@ dataset_fields:
 - preset: ineligibility_reason
   display_group: Basic Information  
 
-- preset: date_published
+- preset: canada_date_published
   required: true
   display_group: Basic Information 
 
