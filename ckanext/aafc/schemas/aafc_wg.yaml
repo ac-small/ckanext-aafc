@@ -66,18 +66,21 @@ dataset_fields:
   label:
     en: Publishing Branch
     fr: (fr)Publishing Branch
+  help_text:
+    en: "The name of the Branch primarily responsible for publishing the dataset"
+    fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de donnÃ©es"
   display_group: Basic Information
 
 - preset: canada_title
+  display_group: Basic Information
+
+- preset: canada_notes
   display_group: Basic Information
 
 - preset: canada_keywords
   display_group: Basic Information
 
 - preset: canada_subject
-  display_group: Basic Information
-
-- preset: canada_notes
   display_group: Basic Information
 
 - preset: data_steward_email

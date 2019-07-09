@@ -245,10 +245,10 @@ presets:
         fr: "Titre (français)"
     fluent_help_text:
       en:
-        en: The English name by which the dataset is known
+        en: The English name of the dataset
         fr: Nom anglais désignant le jeu de données
       fr:
-        en: The French name by which the dataset is known
+        en: The French name of the dataset
         fr: Nom français désignant le jeu de données
     form_placeholder:
       en: Canada Border Wait Times
