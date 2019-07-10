@@ -379,11 +379,35 @@ presets:
     - label:
         en: "1.1 Business Risk" 
         fr: "1.1 Gestion des risques de l'entreprise" 
-      value: v1
+      value: 1_1
     - label:
         en: "1.1.1 AgriStability"
         fr: "1.1.1 Agri-stabilite" 
-      value: v2
+      value: 1_1_1 
+    - label:
+        en: 1.1.2 AgriInvest 
+        fr: 1.1.2 Agri-investissement 
+      value: 1_1_2  
+    - label:
+        en: 1.1.3 AgriRecovery 
+        fr: 1.1.3 Agri-relance 
+      value: 1_1_3  
+    - label:
+        en: 1.1.4 AgriInsurance 
+        fr: 1.1.4 Agri-protection 
+      value: 1_1_4  
+    - label:
+        en: 1.1.5 AgriRisk Initiatives 
+        fr: 1.1.5 Initiatives Agri-risques 
+      value: 1_1_5  
+    - label:
+        en: 1.1.6 Agricultural Marketing Programs Act 
+        fr: 1.1.6 Loi sur les programmes de commercialisation agricole 
+      value: 1_1_6  
+    - label:
+        en: 1.1.7 Canadian Agricultural Loans Act 
+        fr: 1.1.7 Loi canadienne sur les prêts agricoles 
+      value: 1_1_7  
     form_snippet: select.html
     display_snippet: select.html
     validators: scheming_required scheming_choices

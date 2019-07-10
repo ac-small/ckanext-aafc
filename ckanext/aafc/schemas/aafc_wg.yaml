@@ -85,12 +85,18 @@ dataset_fields:
 
 - preset: data_steward_email
   required: true
+  help_text:
+    en: "The email address of the person responsible for the dataset(user.name@canada.ca)"
+    fr: "(fr)The email address of the person responsible for the dataset(user.name@canada.ca)"
   display_group: Basic Information
 
 - preset: aafc_yesno_required
   label:
     en: Procured Data
     fr: (fr)Procured Data
+  help_text:
+    en: "Indicates whether or not the data was purchased from a source external to AAFC"
+    fr: "(fr)Indicates whether or not the data was purchased from a source external to AAFC"
   field_name: procured_data
   display_group: Basic Information
 
@@ -349,8 +355,6 @@ dataset_fields:
 
 - preset: canada_restrictions
   display_group: Optional Inventory Information
-
-
 
 ###########################################
 # Commented out JK 2018/10/31
