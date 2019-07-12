@@ -362,7 +362,7 @@ presets:
       value: 3_1_9  
     - label:
         en: 3.1.10 Acquisition Services 
-        fr: 3.1.10 Services des acquisitions 
+        fr: 3.1.10 Services des acquisitions
       value: 3_1_11
     form_snippet: select.html
     display_snippet: select.html
@@ -550,7 +550,7 @@ presets:
       value: 3_1_9  
     - label:
         en: 3.1.10 Acquisition Services 
-        fr: 3.1.10 Services des acquisitions 
+        fr: 3.1.10 Services des acquisitions
       value: 3_1_11
     form_snippet: select.html
     display_snippet: select.html

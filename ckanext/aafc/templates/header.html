@@ -64,7 +64,14 @@
   <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
   {% endif %} {% endblock %}
   <div class="container">
+   <div class="row" id="header_row0">
     <div class="navbar-right">
+	English
+    </div>
+   </div>
+   <div class="row" id="header_row1">
+    <div class="navbar-right">
+     <img src="/images/canadawithflag.png"></img>
       <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
         <span class="fa fa-bars"></span>
       </button>
@@ -79,7 +86,11 @@
       {% if g.site_description %}
       <h2>{{ g.site_description }}</h2>{% endif %} {% endif %} {% endblock %}
     </hgroup>
-
+   </div>
+   <div class="row">
+    <div class="navbar-left" style="font-size:30px;margin-top:10px;font-weight:700">
+	AAFC Data Catelog
+    </div>
     <div class="collapse navbar-collapse" id="main-navigation-toggle">
       {% block header_site_navigation %}
       <nav class="section navigation">
@@ -98,6 +109,7 @@
       </form>
       {% endblock %}
     </div>
+   </div>
   </div>
 </header>
 {% endblock %}
