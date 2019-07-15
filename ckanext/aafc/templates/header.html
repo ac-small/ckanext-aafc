@@ -65,12 +65,13 @@
   {% endif %} {% endblock %}
   <div class="container">
    <div class="row" id="header_row0">
-    <div class="navbar-right">
-	English
+    <div class="navbar-right" style="background-color:rgb(40,40,40);padding-top:3px;padding-bottom:3px;padding-left:9px;padding-right:9px;margin-right:7px">
+	<a href="/en/util/redirect?/fr/{{h.current_url()}}" style="color:#fff" id="langEn" class="hidden">English</a>
+	<a href="#" style="color:#fff" id="langFr">Frances</a>
     </div>
    </div>
    <div class="row" id="header_row1">
-    <div class="navbar-right">
+    <div class="navbar-right" style="margin-right:2px">
      <img src="/images/canadawithflag.png"></img>
       <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
         <span class="fa fa-bars"></span>
@@ -89,7 +90,7 @@
    </div>
    <div class="row">
     <div class="navbar-left" style="font-size:30px;margin-top:10px;font-weight:700">
-	AAFC Data Catelog
+	AAFC Data Catalog
     </div>
     <div class="collapse navbar-collapse" id="main-navigation-toggle">
       {% block header_site_navigation %}
