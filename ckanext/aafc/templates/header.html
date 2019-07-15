@@ -68,8 +68,10 @@
     <div class="navbar-right" style="background-color:rgb(40,40,40);padding-top:3px;padding-bottom:3px;padding-left:9px;padding-right:9px;margin-right:7px">
         {% set current_lang = request.environ.CKAN_LANG %}
         <span>Current Language: {{current_lang}}</span>
-	<a href="/fr/util/redirect?url={% url_for h.current_url(), locale="en" %}" style="color:#fff" id="langEn" class="hidden">English</a>
-	<a href="/en/util/redirect?url={% url_for h.current_url(), locale="fr" %}" style="color:#fff" id="langFr">Frances</a>
+	<a href="/fr/util/redirect?url={% url_for h.current_url(), locale="en" %}" style="color:#fff" id="langEn"
+		{%if current_lang == "en" %} class="hidden"{% endif %}>English</a>
+	<a href="/en/util/redirect?url={% url_for h.current_url(), locale="fr" %}" style="color:#fff" id="langFr"
+		{%if current_lang == "fr" %} class="hidden"{% endif %}>Frances</a>
     </div>
    </div>
    <div class="row" id="header_row1">
