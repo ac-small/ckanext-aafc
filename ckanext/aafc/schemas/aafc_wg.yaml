@@ -28,7 +28,7 @@ about: 'open.canada.ca: raw open data metadata definition'
 about_url: http://github.com/open-data/ckanext-canada
 catalog_type_label:
   en: Raw/Geo Data
-  fr: DonnÃ©es/gÃ©o
+  fr: Données/géo
 form_languages:
   - en
   - fr
@@ -223,7 +223,7 @@ dataset_fields:
     fr: Endroit de publication
   help_text:
     en: "The region where the dataset was originally published. You may select multiple options (Ctrl+Click) "
-    fr: "La rÃ©gion oÃ¹ le jeu de donnÃ©es a Ã©tÃ© publiÃ© initialement. Vous pouvez sÃ©lectionner de multiples options (Ctrl+Clic)"
+    fr: "La région où le jeu de données a été publié initialement. Vous pouvez sélectionner de multiples options (Ctrl+Clic)"
   display_group: Optional Dataset Information 
   preset: canada_geographic_region # use same multi-select controlled list
   display_group: Optional Dataset Information
