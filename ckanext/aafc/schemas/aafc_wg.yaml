@@ -71,7 +71,7 @@ dataset_fields:
     fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de donnÃ©es"
   display_group: Basic Information
 
-- preset: canada_title
+- preset: aafc_title
   display_group: Basic Information
 
 - preset: canada_notes
