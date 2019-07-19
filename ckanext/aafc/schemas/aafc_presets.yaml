@@ -66,6 +66,47 @@ presets:
     form_attrs:
       data-module: autocomplete
 
+# Copy form tbs_presets.yaml with small modification of help text
+# Field = Description (English).
+# Markdown formatting Property = http://daringfireball.net/projects/markdown/syntax
+# {An account of the dataset, in English. A description may include abstract, table of contents or a free-text.}
+# Field = Description (French). 
+# Markdown formatting Property = http://daringfireball.net/projects/markdown/syntax
+#{An account of the dataset, in French. A description may include abstract, table of contents or a free-text.}
+- preset_name: aafc_notes
+  values:
+    field_name: notes_translated
+    label:
+      en: Description
+      fr: Description
+    fluent_form_label:
+      en:
+        en: "Description (English)"
+        fr: "Description (anglais)"
+      fr:
+        en: "Description (French)"
+        fr: "Description (français)"
+    form_placeholder:
+      en: The National Pollutant Release Inventory (NPRI) is Canada's public inventory
+        of pollutant releases (to air, water and land), disposals and transfers for
+        recycling. The NPRI includes...
+      fr: L’Inventaire national des rejets de polluants (INRP) est l’inventaire public
+        des rejets de polluants du Canada…
+    fluent_help_text:
+      en:
+        en: "An account of the dataset, in English. A description may include  abstract, table of contents, or a free-text"
+        fr: "Description du jeu de données, en anglais. La description peut comprendre un résumé, une table des matières ou un texte libre."
+      fr:
+        en: "An account of the dataset, in French. A description may include  abstract, table of contents, or a free-text"
+        fr: "Description du jeu de données, en anglais. La description peut comprendre un résumé, une table des matières ou un texte libre."
+    required: true
+    # copied from fluent_markdown preset
+    form_snippet: fluent_markdown.html
+    display_snippet: fluent_markdown.html
+    error_snippet: fluent_text.html
+    validators: fluent_text
+    output_validators: fluent_core_translated_output
+
 - preset_name: test_odi
   values:
     field_name: test_odi
