@@ -20,9 +20,9 @@ display_groups:
   - label: Optional Dataset Information
     description: "This is the Optional Dataset Information section. "
     collapse_by_default: true
-  - label: Optional Inventory Information
-    description: "This is the Optional Inventory Information section. "
-    collapse_by_default: true
+#  - label: Optional Inventory Information
+#    description: "This is the Optional Inventory Information section. "
+#    collapse_by_default: true
 
 about: 'open.canada.ca: raw open data metadata definition'
 about_url: http://github.com/open-data/ckanext-canada
@@ -350,17 +350,17 @@ dataset_fields:
 
 #################################
 # Optional Inventory Information
-- preset: odi_reference_number
-  display_group: Optional Inventory Information
-
-- preset: program_alignment_architecture9
-  display_group: Optional Inventory Information
-
-- preset: open_government_portal_record
-  display_group: Optional Inventory Information
-
-- preset: canada_restrictions
-  display_group: Optional Inventory Information
+#- preset: odi_reference_number
+#  display_group: Optional Inventory Information
+#
+#- preset: program_alignment_architecture9
+#  display_group: Optional Inventory Information
+#
+#- preset: open_government_portal_record
+#  display_group: Optional Inventory Information
+#
+#- preset: canada_restrictions
+#  display_group: Optional Inventory Information
 
 ###########################################
 # Commented out JK 2018/10/31
