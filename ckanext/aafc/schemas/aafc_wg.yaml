@@ -86,8 +86,8 @@ dataset_fields:
 - preset: data_steward_email
   required: true
   help_text:
-    en: "The email address of the person responsible for the dataset(user.name@canada.ca)"
-    fr: "(fr)The email address of the person responsible for the dataset(user.name@canada.ca)"
+    en: "The first point of contact for all questions related to this dataset.  (user.name@canada.ca)"
+    fr: "(fr)The first point of contact for all questions related to this dataset.  (user.name@canada.ca)"
   display_group: Basic Information
 
 - preset: aafc_yesno_required
@@ -102,6 +102,9 @@ dataset_fields:
 
 - preset: procured_data_organization_name
   required: true
+  help_text:
+    en: "The name of the organization which the data was purchased from"
+    fr: "(fr)The name of the organization which the data was purchased from"
   display_group: Basic Information   
   
 - preset: aafc_yesno_required
@@ -122,6 +125,9 @@ dataset_fields:
   display_group: Basic Information 
 
 - preset: data_source_repository
+  help_text:
+    en: "Indicates where the source data for the dataset can be found"
+    fr: "(fr)Indicates where the source data for the dataset can be found"
   display_group: Basic Information   
   
 ############################
