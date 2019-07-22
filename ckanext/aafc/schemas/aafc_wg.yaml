@@ -14,7 +14,7 @@ display_groups:
   - label: Basic Information
     description: "This is the Basic Info section. "
     collapse_by_default: false
-  - label: Open Government Dataset Release Information
+  - label: Open Data Release Criteria
     description: "This is the Open Government Dataset Release Info section. "
     collapse_by_default: false
   - label: Optional Dataset Information
