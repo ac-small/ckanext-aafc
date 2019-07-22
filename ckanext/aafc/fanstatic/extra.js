@@ -27,5 +27,12 @@ function conditionalShow(){
 
 }
 */
-$('#langEn').click(function(){changeLang("fr");});
-$('#langFr').click(function(){changeLang("en");});
+//$('#langEn').click(function(){changeLang("fr");});
+//$('#langFr').click(function(){changeLang("en");});
+/* for user edit screen */
+
+$("#field-about").prop('readonly', true);
+$("#field-fullname").prop('readonly', true);
+$("#field-email").prop('readonly', true);
+$("#field-username").prop('readonly', true);
+
