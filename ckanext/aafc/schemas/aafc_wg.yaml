@@ -217,10 +217,22 @@ dataset_fields:
 - preset: canada_contributor
   display_group: Optional Dataset Information
 
+- preset: canada_spatial
+  display_group: Optional Dataset Information
+
 - preset: canada_data_series_name
   display_group: Optional Dataset Information
 
 - preset: canada_data_series_issue_identification
+  display_group: Optional Dataset Information
+
+- preset: canada_time_period_coverage_start
+  display_group: Optional Dataset Information
+
+- preset: canada_time_period_coverage_end
+  display_group: Optional Dataset Information
+
+- preset: canada_audience
   display_group: Optional Dataset Information
 
 - field_name: place_of_publication
@@ -235,15 +247,6 @@ dataset_fields:
   display_group: Optional Dataset Information
 
 - preset: canada_geographic_region
-  display_group: Optional Dataset Information
-
-- preset: canada_time_period_coverage_start
-  display_group: Optional Dataset Information
-
-- preset: canada_time_period_coverage_end
-  display_group: Optional Dataset Information
-
-- preset: canada_audience
   display_group: Optional Dataset Information
 
 - field_name: ditigal_object_identifier
