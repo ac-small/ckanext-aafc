@@ -262,6 +262,33 @@ dataset_fields:
 - preset: canada_program_page_url
   display_group: Optional Dataset Information
 
+- field_name: aafc_note
+  label:
+    en: Note
+    fr: (fr)Note
+  fluent_form_label:
+    en:
+      en: Note(English)
+      fr: (fr)Note(English)
+    fr:
+      en: Note(French)
+      fr: (fr)Note(French)
+  fluent_help_text:
+    en:
+      en: General information relating to an asset, in English
+      fr: (fr)General information relating to an asset, in English
+    fr:
+      en: General information relating to an asset, in French
+      fr: (fr)General information relating to an asset, in French
+  form_snippet: fluent_text.html
+  display_snippet: fluent_text.html
+  display_attributes:
+    style: "word-wrap: break-word"
+  error_snippet: fluent_text.html
+  validators: fluent_text
+  output_validators: fluent_text_output
+  display_group: Optional Dataset Information
+ 
 - field_name: amp_department_identifier
   label:
     en: AMP Department Identifier
