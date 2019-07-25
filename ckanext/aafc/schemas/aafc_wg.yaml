@@ -295,6 +295,36 @@ dataset_fields:
     fr: To be translated
   display_group: Optional Dataset Information
 
+- field_name: odi_reference_number
+  label:
+    en: ODI Reference Number
+    fr: (fr)ODI Reference Number
+  value: aafc_odi_reference_number
+  classes: ['hidden']
+  display_group: Optional Dataset Information
+ 
+- field_name: data_released 
+  label:
+    en: Data Released
+    fr: (fr)Data Released
+  value: aafc_data_released
+  classes: ['hidden']
+  display_group: Optional Dataset Information
+  
+- field_name: open_government_portal_record_e
+  label:
+    en: Open Government Portal Record URL (English)
+    fr: (fr)Open Government Portal Record URL (English)
+  classes: ['hidden']
+  display_group: Optional Dataset Information
+  
+- field_name: open_government_portal_record_f
+  label:
+    en: Open Government Portal Record URL (French)
+    fr: (fr)Open Government Portal Record URL (French)
+  classes: ['hidden']
+  display_group: Optional Dataset Information
+ 
 ####################################
 # FGP fields (hidden from form)
 - field_name: distributor
