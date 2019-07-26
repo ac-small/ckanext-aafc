@@ -136,72 +136,72 @@ dataset_fields:
   label:
     en: Access To Information
     fr: (fr)Access
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: authority_to_release
   label:
     en: Authority to Release
     fr: (fr)Authority to Release
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: formats 
   label:
     en: Formats
     fr: (fr)Formats
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: privacy
   label:
     en: Privacy
     fr: (fr)Privacy
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: official_language
   label:
     en: Official Language
     fr: (fr)Official Language
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: other 
   label:
     en: Other
     fr: (fr)Other
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: jurisdiction
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: canada_license_id
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: access_restriction
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
   field_name: imso_approval 
   label:
     en: IMSO Approval
     fr: (fr)IMSO Approval
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
   field_name: ready_to_publish
   label:
     en: Ready to Publish
     fr: (fr)Ready to Publish
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
   field_name: ready_to_republish
   label:
     en: Ready to Republish
     fr: (fr)Ready to Republish
-  display_group: Open Government Dataset Release Information
+  display_group: Open Data Release Criteria
 
 ############################
 # Optional Dataset Information
