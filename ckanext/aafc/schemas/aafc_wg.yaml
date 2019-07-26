@@ -136,6 +136,9 @@ dataset_fields:
   label:
     en: Access To Information
     fr: (fr)Access
+  help_text:
+    en: "The data or information resource is not subject to any exemptions or exclusions under the Access to Information Act."
+    fr: "(fr)The data or information resource is not subject to any exemptions or exclusions under the Access to Information Act."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
@@ -143,6 +146,9 @@ dataset_fields:
   label:
     en: Authority to Release
     fr: (fr)Authority to Release
+  help_text:
+    en: "The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
+    fr: "(fr)The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
@@ -150,6 +156,19 @@ dataset_fields:
   label:
     en: Formats
     fr: (fr)Formats
+  help_text:
+    en: "The data or information resource is in an open and accessible format."
+    fr: "(fr)The data or information resource is in an open and accessible format."
+  display_group: Open Data Release Criteria
+
+- preset: aafc_yesno_required
+  field_name: mint_a_doi
+  label:
+    en: Mint a DOI
+    fr: (fr)Mint a DOI
+  help_text:
+    en: "Mint a Digital Object Identifier (DOI) for this dataset through DataCite Canada."
+    fr: "(fr)Mint a Digital Object Identifier (DOI) for this dataset through DataCite Canada."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
@@ -157,6 +176,9 @@ dataset_fields:
   label:
     en: Privacy
     fr: (fr)Privacy
+  help_text:
+    en: "The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
+    fr: "(fr)The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
