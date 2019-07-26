@@ -192,19 +192,26 @@ dataset_fields:
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
-  field_name: other 
+  field_name: security
   label:
-    en: Other
-    fr: (fr)Other
+    en: Security
+    fr: (fr)Security
   help_text:
     en: "The data or information resource does not increase security risks to the institution, to other institutions, or to the government as a whole and conforms to the requirements of the Policy on Government Security and its related instruments."
     fr: "(fr)The data or information resource does not increase security risks to the institution, to other institutions, or to the government as a whole and conforms to the requirements of the Policy on Government Security and its related instruments."
   display_group: Open Data Release Criteria
 
-- preset: jurisdiction
+- preset: general_boolean_required
+  field_name: other 
+  label:
+    en: Other
+    fr: (fr)Other
   help_text:
     en: "The release of data or other information resource complies with all other relevant legal, regulatory, contractual, and policy requirements (e.g., it is confirmed that there are no relevant legal, contractual, or third party, policy restrictions or limitations)."
     fr: "(fr)The release of data or other information resource complies with all other relevant legal, regulatory, contractual, and policy requirements (e.g., it is confirmed that there are no relevant legal, contractual, or third party, policy restrictions or limitations)."
+  display_group: Open Data Release Criteria
+
+- preset: jurisdiction
   display_group: Open Data Release Criteria
 
 - preset: canada_license_id
