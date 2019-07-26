@@ -177,8 +177,8 @@ dataset_fields:
     en: Privacy
     fr: (fr)Privacy
   help_text:
-    en: "The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
-    fr: "(fr)The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
+    en: "The data or information resource is not subject to any exemptions or exclusions under the Privacy Act."
+    fr: "(fr)The data or information resource is not subject to any exemptions or exclusions under the Privacy Act."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
@@ -186,6 +186,9 @@ dataset_fields:
   label:
     en: Official Language
     fr: (fr)Official Language
+  help_text:
+    en: "The data or information resource is available in both official languages and conforms to the requirements of the Official Languages Act."
+    fr: "(fr)The data or information resource is available in both official languages and conforms to the requirements of the Official Languages Act."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
@@ -193,9 +196,15 @@ dataset_fields:
   label:
     en: Other
     fr: (fr)Other
+  help_text:
+    en: "The data or information resource does not increase security risks to the institution, to other institutions, or to the government as a whole and conforms to the requirements of the Policy on Government Security and its related instruments."
+    fr: "(fr)The data or information resource does not increase security risks to the institution, to other institutions, or to the government as a whole and conforms to the requirements of the Policy on Government Security and its related instruments."
   display_group: Open Data Release Criteria
 
 - preset: jurisdiction
+  help_text:
+    en: "The release of data or other information resource complies with all other relevant legal, regulatory, contractual, and policy requirements (e.g., it is confirmed that there are no relevant legal, contractual, or third party, policy restrictions or limitations)."
+    fr: "(fr)The release of data or other information resource complies with all other relevant legal, regulatory, contractual, and policy requirements (e.g., it is confirmed that there are no relevant legal, contractual, or third party, policy restrictions or limitations)."
   display_group: Open Data Release Criteria
 
 - preset: canada_license_id
