@@ -82,7 +82,9 @@
     </div>
     <hgroup class="{{ g.header_class }} navbar-left">
       {% block header_logo %} {% if g.site_logo %}
-      <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+        {% set current_lang = request.environ.CKAN_LANG %}
+	{%if current_lang == "en"%} {% set logo_img = "/images/AAFCen-fr.jpg" %} {% else %}{%set logo_img = "/images/AAFCfr-en.jpg" %} {% endif %}
+      <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ logo_img }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
       {% else %}
       <h1>
         <a href="{{ h.url_for('home.index') }}">{{ g.site_title }}</a>
