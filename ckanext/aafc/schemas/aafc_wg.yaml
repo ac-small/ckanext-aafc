@@ -136,6 +136,12 @@ dataset_fields:
     fr: "(fr)Departmental Results Framework Core Responsibility to which the dataset relates"
   display_group: Basic Information   
   
+- preset: drf_program_inventory
+  help_text:
+    en: "Departmental Results Framework Program to which the dataset relates"
+    fr: "(fr)Departmental Results Framework Program to which the dataset relates"
+  display_group: Basic Information   
+
 - preset: aafc_yesno_required
   label:
     en: Authoritative Source
