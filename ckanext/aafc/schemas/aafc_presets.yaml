@@ -273,6 +273,23 @@ presets:
       display_snippet: select.html
       validators: scheming_required scheming_choices
 
+- preset_name: drf_program_inventory
+  values:
+      field_name: drf_program_inventory
+      label:
+         en: DRF Program Inventory
+         fr: (fr)DRF Program Inventory
+      required: true
+      form_include_blank_choice: true
+      choices:
+      - label:
+          en: 
+          fr: 
+        value: null
+      form_snippet: select.html
+      display_snippet: select.html
+      validators: scheming_required scheming_choices
+
 ########################################3
 #  Optional Inventory
 - preset_name: odi_reference_number
