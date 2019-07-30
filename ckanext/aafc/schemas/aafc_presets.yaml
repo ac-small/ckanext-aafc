@@ -244,6 +244,35 @@ presets:
     display_snippet: select.html
     validators: scheming_required scheming_choices
 
+- preset_name: program_alignment_architecture_to_drf_core_responsibilities
+  values:
+      field_name: program_alignment_architecture_to_drf_core_responsibilities
+      label:
+         en: Program Alignment Architecture to DRF Core Responsibilities
+         fr: (fr)Program Alignment Architecture to DRF Core Responsibilities
+      required: true
+      form_include_blank_choice: true
+      choices:
+      - label:
+          en: Domestic and International Markets
+          fr: (fr)Domestic and International Markets
+        value: domestic_and_international_markets
+      - label:
+          en: Science and Innovation
+          fr: (fr)Science and Innovation
+        value: science_and_innovation
+      - label:
+          en: Sector Risk
+          fr: (fr)Sector Risk
+        value: sector_risk  
+      - label:
+          en: Internal Services
+          fr: (fr)Internal Services
+        value: internal_services 
+      form_snippet: select.html
+      display_snippet: select.html
+      validators: scheming_required scheming_choices
+
 ########################################3
 #  Optional Inventory
 - preset_name: odi_reference_number
