@@ -130,6 +130,16 @@ dataset_fields:
     fr: "(fr)Indicates where the source data for the dataset can be found"
   display_group: Basic Information   
   
+- preset: aafc_yesno_required
+  label:
+    en: Authoritative Source
+    fr: (fr)Authoritative Source
+  help_text:
+    en: "Dataset is considered to be the authoritative source for data"
+    fr: "(fr)Dataset is considered to be the authoritative source for data"
+  field_name: authoritative_source
+  display_group: Basic Information
+
 ############################
 # Open Gov Dataset Release Information
 - preset: access_to_information
