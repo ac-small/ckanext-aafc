@@ -918,33 +918,33 @@ presets:
   values:
     field_name: aafc_mdropdown
     choices:
-    - value: parent1
+    - value: domestic_and_international_markets
       choices:
       - label:
-          en: Child1(P1)
-          fr: To Translate...
-        value: child1_p1
+          en: Trade and Market Expansion
+          fr: (fr)Trade and Market Expansion
+        value: trade_and_market_expansion
       - label:
-          en: Child2(P1)
-          fr: To Translate...
-        value: child2_p1
+          en: Sector Engagement and Development
+          fr: (fr)Sector Engagement and Development
+        value: sector_engagement_and_development
       - label:
-          en: Child3(P1)
-          fr: To Translate...
-        value: child3_p1
-    - value: parent2
+          en: Farm Products Council of Canada
+          fr: (fr)Farm Products Council of Canada
+        value: farm_products_council_of_canada
+    - value: science_and_innovation
       choices:
       - label:
-          en: Child1(P2)
-          fr: To Translate...
-        value: child1_p2
+          en: Foundational Science and Research
+          fr: (fr)Foundational Science and Research
+        value: foundational_science_and_research
       - label:
-          en: Child2(P2)
-          fr: To Translate...
-        value: child2_p2
+          en: AgriScience
+          fr: (fr)AgriScience
+        value: agriscience
       - label:
-          en: Child3(P2)
-          fr: To Translate...
-        value: child3_p2
+          en: AgriInnovate
+          fr: (fr)AgriInnovate
+        value: agriinnovate
     form_snippet: combined_dropdown.html
     display_snippet: combined_dropdown.html
