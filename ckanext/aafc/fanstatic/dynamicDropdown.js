@@ -11,11 +11,11 @@ var paa2drfData =
 {
  "domestic_and_international_markets":
 	['Trade and Market Expansion','Sector Engagement and Development','Farm Products Council of Canada','Dairy Programs','Canadian Pari-Mutuel Agency','Water Infrastructure','Community Pastures','Federal, Provincial and Territorial Cost-shared Markets and Trade'],
- "domestic_and_international_markets":
-	['Foundational Science and Research','AgriScience','AgriInnovate','Agricultural Greenhouse Gases Program','Canadian Agricultural Adaptation Program','Federal, Provincial and Territorial Cost-shared Science, Research, Innovation and Environment'],
  "science_and_innovation":
-	['AgriStability','AgriInsurance','AgriRisk','AgriInvest','AgriRecovery','Loan Guarantee Programs','Farm Debt Mediation Service','Pest Management','Assurance Program','Federal, Provincial and Territorial Cost-shared Assurance','Return of Payments'],
+	['Foundational Science and Research','AgriScience','AgriInnovate','Agricultural Greenhouse Gases Program','Canadian Agricultural Adaptation Program','Federal, Provincial and Territorial Cost-shared Science, Research, Innovation and Environment'],
  "sector_risk":
+	['AgriStability','AgriInsurance','AgriRisk','AgriInvest','AgriRecovery','Loan Guarantee Programs','Farm Debt Mediation Service','Pest Management','Assurance Program','Federal, Provincial and Territorial Cost-shared Assurance','Return of Payments'],
+ "internal_services":
 	['Management and Oversight Services','Communication Services','Legal Services','Human Resource Management Services','Financial Management Services','Information Management Services','Information Technology Services','Real Property Services','Material Services','Acquisition Services']
 };
 
