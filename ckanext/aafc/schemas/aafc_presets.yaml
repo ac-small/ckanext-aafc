@@ -1,8 +1,8 @@
 
 scheming_presets_version: 1
 
-about: scheming presets for ckanext-canada schemas
-about_url: http://github.com/open-data/ckanext-canada
+about: scheming presets for ckanext-aafc schemas
+about_url: http://github.com/aafc-ckan/ckanext-aafc
 
 presets:
 
@@ -913,4 +913,38 @@ presets:
     required: true
 
 
-
+#a special dataset for parent-children dropdown
+- preset_name: aafc_mdropdown
+  values:
+    field_name: aafc_mdropdown
+    choices:
+    - value: parent1
+      choices:
+      - label:
+          en: Child1(P1)
+          fr: To Translate...
+        value: child1_p1
+      - label:
+          en: Child2(P1)
+          fr: To Translate...
+        value: child2_p1
+      - label:
+          en: Child3(P1)
+          fr: To Translate...
+        value: child3_p1
+    - value: parent2
+      choices:
+      - label:
+          en: Child1(P2)
+          fr: To Translate...
+        value: child1_p2
+      - label:
+          en: Child2(P2)
+          fr: To Translate...
+        value: child2_p2
+      - label:
+          en: Child3(P2)
+          fr: To Translate...
+        value: child3_p2
+    form_snippet: combined_dropdown.html
+    display_snippet: combined_dropdown.html
