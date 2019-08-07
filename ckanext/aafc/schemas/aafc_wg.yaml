@@ -152,6 +152,16 @@ dataset_fields:
   field_name: authoritative_source
   display_group: Basic Information
 
+- preset: drf_program_inventory
+  label:
+    en: DRF Program Inventory
+    fr: (fr)DRF Program Inventor
+  help_text:
+    en: "TBD"
+    fr: "(fr)TBD"
+  field_name: drf_program_inventory
+  display_group: Basic Information
+
 ############################
 # Open Gov Dataset Release Information
 - preset: access_to_information

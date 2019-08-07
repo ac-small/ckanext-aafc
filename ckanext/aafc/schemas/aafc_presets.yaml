@@ -273,22 +273,24 @@ presets:
       display_snippet: select.html
       validators: scheming_required scheming_choices
 
-- preset_name: drf_program_inventory
-  values:
-      field_name: drf_program_inventory
-      label:
-         en: DRF Program Inventory
-         fr: (fr)DRF Program Inventory
-      required: true
-      form_include_blank_choice: true
-      choices:
-      - label:
-          en: 
-          fr: 
-        value: null
-      form_snippet: select.html
-      display_snippet: select.html
-      validators: scheming_required scheming_choices
+#This preset assume the field is indpendent dropdown selection list
+#The reality is: it's multiple group as children of parent selection.
+#- preset_name: drf_program_inventory
+#  values:
+#      field_name: drf_program_inventory
+#      label:
+#         en: DRF Program Inventory
+#         fr: (fr)DRF Program Inventory
+#      required: true
+#      form_include_blank_choice: true
+#      choices:
+#      - label:
+#          en: 
+#          fr: 
+#        value: null
+#      form_snippet: select.html
+#      display_snippet: select.html
+#      validators: scheming_required scheming_choices
 
 ########################################3
 #  Optional Inventory
@@ -914,9 +916,9 @@ presets:
 
 
 #a special dataset for parent-children dropdown
-- preset_name: aafc_mdropdown
+- preset_name: drf_program_inventory
   values:
-    field_name: aafc_mdropdown
+    field_name: drf_program_inventory
     choices:
     - value: domestic_and_international_markets
       choices:
