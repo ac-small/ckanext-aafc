@@ -965,11 +965,11 @@ presets:
           fr: (fr)AgriInsurance
         value: agriinsurance
     - value: internal_services
+      choices:
       - label:
           en: Management and Oversight Services
           fr: (fr)Management and Oversight Services
         value: management_and_oversight_services
-    - value: internal_services
       - label:
           en: Communication Services
           fr: (fr)Communication Services
