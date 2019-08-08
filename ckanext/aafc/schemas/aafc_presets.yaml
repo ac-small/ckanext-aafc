@@ -932,6 +932,14 @@ presets:
           en: Farm Products Council of Canada
           fr: (fr)Farm Products Council of Canada
         value: farm_products_council_of_canada
+      - label:
+          en: Dairy Programs
+          fr: (fr)Dairy Programs
+        value: dairy_programs
+      - label:
+          en: Canadian Pari-Mutuel Agency
+          fr: (fr)Canadian Pari-Mutuel Agency
+        value: canadian_pari-mutuel_agency        
     - value: science_and_innovation
       choices:
       - label:
@@ -946,5 +954,25 @@ presets:
           en: AgriInnovate
           fr: (fr)AgriInnovate
         value: agriinnovate
+    - value: sector_risk
+      choices:
+      - label:
+          en: AgriStability
+          fr: (fr)AgriStability
+        value: agristability
+      - label:
+          en: AgriInsurance
+          fr: (fr)AgriInsurance
+        value: agriinsurance
+    - value: internal_services
+      - label:
+          en: Management and Oversight Services
+          fr: (fr)Management and Oversight Services
+        value: management_and_oversight_services
+    - value: internal_services
+      - label:
+          en: Communication Services
+          fr: (fr)Communication Services
+        value: communication_services        
     form_snippet: combined_dropdown.html
     display_snippet: combined_dropdown.html
