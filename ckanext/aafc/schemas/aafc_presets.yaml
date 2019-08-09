@@ -939,7 +939,19 @@ presets:
       - label:
           en: Canadian Pari-Mutuel Agency
           fr: (fr)Canadian Pari-Mutuel Agency
-        value: canadian_pari-mutuel_agency        
+        value: canadian_pari-mutuel_agency
+      - label:
+          en: Water Infrastructure
+          fr: (fr)Water Infrastructure
+        value: water_infrastructure
+      - label:
+          en: Community Pastures
+          fr: (fr)Community Pastures
+        value: community_pastures
+      - label:
+          en: Federal, Provincial and Territorial Cost-shared Markets and Trade
+          fr: (fr)Federal, Provincial and Territorial Cost-shared Markets and Trade
+        value: federal,_provincial_and_territorial_cost-shared_markets_and_trade
     - value: science_and_innovation
       choices:
       - label:
@@ -954,6 +966,20 @@ presets:
           en: AgriInnovate
           fr: (fr)AgriInnovate
         value: agriinnovate
+      - label:
+          en: Agricultural Greenhouse Gases Program
+          fr: (fr)Agricultural Greenhouse Gases Program
+        value: agricultural_greenhouse_gases_program
+      - label:
+          en: Canadian Agricultural Adaptation Program
+          fr: (fr)Canadian Agricultural Adaptation Program
+        value: canadian_agricultural_adaptation_program
+      - label:
+          en: Federal, Provincial and Territorial Cost-shared Science, Research, Innovation
+            and Environment
+          fr: (fr)Federal, Provincial and Territorial Cost-shared Science, Research,
+            Innovation and Environment
+        value: federal,_provincial_and_territorial_cost-shared_science,_research,_innovation_and_environment
     - value: sector_risk
       choices:
       - label:
@@ -964,15 +990,83 @@ presets:
           en: AgriInsurance
           fr: (fr)AgriInsurance
         value: agriinsurance
+      - label:
+          en: AgriRisk
+          fr: (fr)AgriRisk
+        value: agririsk
+      - label:
+          en: AgriInvest
+          fr: (fr)AgriInvest
+        value: agriinvest
+      - label:
+          en: AgriRecovery
+          fr: (fr)AgriRecovery
+        value: agrirecovery
+      - label:
+          en: Loan Guarantee Programs
+          fr: (fr)Loan Guarantee Programs
+        value: loan_guarantee_programs
+      - label:
+          en: Farm Debt Mediation Service
+          fr: (fr)Farm Debt Mediation Service
+        value: farm_debt_mediation_service
+      - label:
+          en: Pest Management
+          fr: (fr)Pest Management
+        value: pest_management
+      - label:
+          en: Assurance Program
+          fr: (fr)Assurance Program
+        value: assurance_program
+      - label:
+          en: Federal, Provincial and Territorial Cost-shared Assurance
+          fr: (fr)Federal, Provincial and Territorial Cost-shared Assurance
+        value: federal,_provincial_and_territorial_cost-shared_assurance
+      - label:
+          en: Return of Payments
+          fr: (fr)Return of Payments
+        value: return_of_payments
     - value: internal_services
+      choices:
       - label:
           en: Management and Oversight Services
           fr: (fr)Management and Oversight Services
         value: management_and_oversight_services
-    - value: internal_services
       - label:
           en: Communication Services
           fr: (fr)Communication Services
-        value: communication_services        
+        value: communication_services
+      - label:
+          en: Legal Services
+          fr: (fr)Legal Services
+        value: legal_services
+      - label:
+          en: Human Resource Management Services
+          fr: (fr)Human Resource Management Services
+        value: human_resource_management_services
+      - label:
+          en: Financial Management Services
+          fr: (fr)Financial Management Services
+        value: financial_management_services
+      - label:
+          en: Information Management Services
+          fr: (fr)Information Management Services
+        value: information_management_services
+      - label:
+          en: Information Technology Services
+          fr: (fr)Information Technology Services
+        value: information_technology_services
+      - label:
+          en: Real Property Services
+          fr: (fr)Real Property Services
+        value: real_property_services
+      - label:
+          en: Material Services
+          fr: (fr)Material Services
+        value: material_services
+      - label:
+          en: Acquisition Services
+          fr: (fr)Acquisition Services
+        value: acquisition_services
     form_snippet: combined_dropdown.html
     display_snippet: combined_dropdown.html
