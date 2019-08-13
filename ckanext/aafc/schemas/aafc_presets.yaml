@@ -255,19 +255,19 @@ presets:
       choices:
       - label:
           en: Domestic and International Markets
-          fr: (fr)Domestic and International Markets
+          fr: Marchés nationaux et internationaux
         value: domestic_and_international_markets
       - label:
           en: Science and Innovation
-          fr: (fr)Science and Innovation
+          fr: Science et Innovation
         value: science_and_innovation
       - label:
           en: Sector Risk
-          fr: (fr)Sector Risk
+          fr: Risques du secteur
         value: sector_risk  
       - label:
           en: Internal Services
-          fr: (fr)Internal Services
+          fr: Services internes
         value: internal_services 
       form_snippet: select.html
       display_snippet: select.html
@@ -1061,151 +1061,150 @@ presets:
       choices:
       - label:
           en: Trade and Market Expansion
-          fr: (fr)Trade and Market Expansion
+          fr: Croissance du commerce et des marchés
         value: trade_and_market_expansion
       - label:
           en: Sector Engagement and Development
-          fr: (fr)Sector Engagement and Development
+          fr: Mobilisation et développement du secteur
         value: sector_engagement_and_development
       - label:
           en: Farm Products Council of Canada
-          fr: (fr)Farm Products Council of Canada
+          fr: Conseil des produits agricoles du Canada
         value: farm_products_council_of_canada
       - label:
           en: Dairy Programs
-          fr: (fr)Dairy Programs
+          fr: Programmes laitiers
         value: dairy_programs
       - label:
           en: Canadian Pari-Mutuel Agency
-          fr: (fr)Canadian Pari-Mutuel Agency
+          fr: Agence canadienne du pari mutuel
         value: canadian_pari-mutuel_agency
       - label:
           en: Water Infrastructure
-          fr: (fr)Water Infrastructure
+          fr: Infrastructure hydraulique
         value: water_infrastructure
       - label:
           en: Community Pastures
-          fr: (fr)Community Pastures
+          fr: Pâturages communautaires
         value: community_pastures
       - label:
           en: Federal, Provincial and Territorial Cost-shared Markets and Trade
-          fr: (fr)Federal, Provincial and Territorial Cost-shared Markets and Trade
+          fr: Programmes à frais partagés fédéral, provinciaux et territoriaux reliés aux marchés et au commerce
         value: federal,_provincial_and_territorial_cost-shared_markets_and_trade
     - value: science_and_innovation
       choices:
       - label:
           en: Foundational Science and Research
-          fr: (fr)Foundational Science and Research
+          fr: Science et recherche fondamentales
         value: foundational_science_and_research
       - label:
           en: AgriScience
-          fr: (fr)AgriScience
+          fr: Agri-science
         value: agriscience
       - label:
           en: AgriInnovate
-          fr: (fr)AgriInnovate
+          fr: Agri-innover
         value: agriinnovate
       - label:
           en: Agricultural Greenhouse Gases Program
-          fr: (fr)Agricultural Greenhouse Gases Program
+          fr: Programme de lutte contre les gaz à effet de serre en agriculture
         value: agricultural_greenhouse_gases_program
       - label:
           en: Canadian Agricultural Adaptation Program
-          fr: (fr)Canadian Agricultural Adaptation Program
+          fr: Programme canadien d’adaptation agricole
         value: canadian_agricultural_adaptation_program
       - label:
           en: Federal, Provincial and Territorial Cost-shared Science, Research, Innovation
             and Environment
-          fr: (fr)Federal, Provincial and Territorial Cost-shared Science, Research,
-            Innovation and Environment
+          fr: Programmes à frais partagés fédéral, provinciaux et territoriaux reliés à la science, à la recherche, à l’innovation et à l’environnement
         value: federal,_provincial_and_territorial_cost-shared_science,_research,_innovation_and_environment
     - value: sector_risk
       choices:
       - label:
           en: AgriStability
-          fr: (fr)AgriStability
+          fr: Agri-stabilité
         value: agristability
       - label:
           en: AgriInsurance
-          fr: (fr)AgriInsurance
+          fr: Agri-protection
         value: agriinsurance
       - label:
           en: AgriRisk
-          fr: (fr)AgriRisk
+          fr: Agri-risques
         value: agririsk
       - label:
           en: AgriInvest
-          fr: (fr)AgriInvest
+          fr: Agri-investissement
         value: agriinvest
       - label:
           en: AgriRecovery
-          fr: (fr)AgriRecovery
+          fr: Agri-relance
         value: agrirecovery
       - label:
           en: Loan Guarantee Programs
-          fr: (fr)Loan Guarantee Programs
+          fr: Programmes de garantie de prêts
         value: loan_guarantee_programs
       - label:
           en: Farm Debt Mediation Service
-          fr: (fr)Farm Debt Mediation Service
+          fr: Service de médiation en matière d’endettement agricole
         value: farm_debt_mediation_service
       - label:
           en: Pest Management
-          fr: (fr)Pest Management
+          fr: Lutte antiparasitaire
         value: pest_management
       - label:
           en: Assurance Program
-          fr: (fr)Assurance Program
+          fr: Programme d’assurance
         value: assurance_program
       - label:
           en: Federal, Provincial and Territorial Cost-shared Assurance
-          fr: (fr)Federal, Provincial and Territorial Cost-shared Assurance
+          fr: Programmes à frais partagés fédéral, provinciaux et territoriaux reliés à l’assurance
         value: federal,_provincial_and_territorial_cost-shared_assurance
       - label:
           en: Return of Payments
-          fr: (fr)Return of Payments
+          fr: Retour de paiements
         value: return_of_payments
     - value: internal_services
       choices:
       - label:
           en: Management and Oversight Services
-          fr: (fr)Management and Oversight Services
+          fr: Services de gestion et de surveillance
         value: management_and_oversight_services
       - label:
           en: Communication Services
-          fr: (fr)Communication Services
+          fr: Services de communications
         value: communication_services
       - label:
           en: Legal Services
-          fr: (fr)Legal Services
+          fr: Services juridiques
         value: legal_services
       - label:
           en: Human Resource Management Services
-          fr: (fr)Human Resource Management Services
+          fr: Services de gestion des ressources humaines
         value: human_resource_management_services
       - label:
           en: Financial Management Services
-          fr: (fr)Financial Management Services
+          fr: Services de gestion des finances
         value: financial_management_services
       - label:
           en: Information Management Services
-          fr: (fr)Information Management Services
+          fr: Services de gestion de l’information
         value: information_management_services
       - label:
           en: Information Technology Services
-          fr: (fr)Information Technology Services
+          fr: Services de la technologie del’information
         value: information_technology_services
       - label:
           en: Real Property Services
-          fr: (fr)Real Property Services
+          fr: Services des biens immobiliers
         value: real_property_services
       - label:
           en: Material Services
-          fr: (fr)Material Services
+          fr: Services du matériel
         value: material_services
       - label:
           en: Acquisition Services
-          fr: (fr)Acquisition Services
+          fr: Services des acquisitions
         value: acquisition_services
     form_snippet: combined_dropdown.html
     display_snippet: combined_dropdown.html
