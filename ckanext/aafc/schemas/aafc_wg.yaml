@@ -623,6 +623,9 @@ resource_fields:
   - website
 - preset: canada_resource_format
 - preset: canada_resource_size
+  label:
+    en: Data File Size(in bytes)
+    fr: Taille
 - preset: canada_resource_character_set
 - preset: canada_resource_data_quality
 - preset: canada_resource_url
