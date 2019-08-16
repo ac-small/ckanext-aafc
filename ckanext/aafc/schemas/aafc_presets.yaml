@@ -1214,9 +1214,9 @@ presets:
 # For resouce page
 
 
-- preset_name: resource_metadata_schema
+- preset_name: aafc_resource_metadata_schema
   values:
-    field_name: resource_metadata_schema
+    field_name: aafc_resource_metadata_schema
     label:
       en: Resource Metadata Schema
       fr: (fr)Resource Metadata Schema
