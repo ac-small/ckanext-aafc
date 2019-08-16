@@ -1208,3 +1208,45 @@ presets:
         value: acquisition_services
     form_snippet: combined_dropdown.html
     display_snippet: combined_dropdown.html
+
+
+########################################
+# For resouce page
+
+
+- preset_name: resource_metadata_schema
+  values:
+    field_name: resource_metadata_schema
+    label:
+      en: Resource Metadata Schema
+      fr: (fr)Resource Metadata Schema
+    help_text:
+      en: "The metadata schema of the resource"
+      fr: "(fr)The metadata schema of the resource"
+    required: true
+    choices:
+    - label:
+        en: Darwin Core
+        fr: (fr)Darwin Core
+      value: darwin_core
+    - label:
+        en: Dublin Core (DC)
+        fr: (fr)Dublin Core (DC)
+      value: dublin_core
+    - label:
+        en: DDI (Data Documentation Initiative)
+        fr: (fr)DDI (Data Documentation Initiative)
+      value: ddi
+    - label:
+        en: ISO 19115 (GIS)
+        fr: (fr)ISO 19115 (GIS)
+      value: iso_19115
+    - label:
+        en: MARC (Machine-Readable Cataloging)
+        fr: (fr)MARC (Machine-Readable Cataloging)
+      value: marc
+    form_snippet: select.html
+    display_snippet: select.html
+    validators: scheming_required scheming_choices
+
+
