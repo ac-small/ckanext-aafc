@@ -624,4 +624,5 @@ resource_fields:
 - preset: canada_resource_format
 - preset: canada_resource_size
 - preset: canada_resource_character_set
+- preset: canada_resource_data_quality
 - preset: canada_resource_url
