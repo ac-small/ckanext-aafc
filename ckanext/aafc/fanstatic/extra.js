@@ -31,7 +31,7 @@ function conditionalShow(){
 //$('#langFr').click(function(){changeLang("en");});
 /* for user edit screen */
 
-$("#field-fullname").prop('readonly', true);
-$("#field-email").prop('readonly', true);
-$("#field-username").prop('readonly', true);
+//$("#field-fullname").prop('readonly', true);
+//$("#field-email").prop('readonly', true);
+//$("#field-username").prop('readonly', true);
 $("fieldset:nth-child(2)").addClass("hidden")
