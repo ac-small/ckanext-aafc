@@ -126,7 +126,7 @@
 /* Remove some padding. This makes the bottom edges of the "Welcome to CKAN"
    and "Search Your Data" boxes line up. */
 .module-content:last-child {
-  padding-bottom: 0px;
+ /* padding-bottom: 0px;*/
 }
 .homepage .module-search {
   padding: 0px;
