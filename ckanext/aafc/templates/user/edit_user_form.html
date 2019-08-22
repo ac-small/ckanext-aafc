@@ -20,7 +20,7 @@
 
   </fieldset>
 
-  <fieldset>
+  <fieldset class="hidden">
     <legend>{{ _('Change password') }}</legend>
     {{ form.input('old_password',
                   type='password',
@@ -53,5 +53,5 @@
   </div>
 </form>
 {% block myscript %}
-{% resource 'aafc/extra.js' %}
+{# {% resource 'aafc/extra.js' %} #}
 {% endblock %}
