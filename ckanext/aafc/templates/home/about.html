@@ -14,7 +14,11 @@
           {{ h.render_markdown(g.site_about) }}
         {% else %}
           <h1 class="page-heading">{{ _('About') }}</h1>
+	  {% if h.lang() == "en" %}
           {% snippet 'home/snippets/about_text.html' %}
+	  {% else %}
+          {% snippet 'home/snippets/about_text_f.html' %}
+	  {% endif %}
         {% endif %}
       {% endblock %}
     </div>
