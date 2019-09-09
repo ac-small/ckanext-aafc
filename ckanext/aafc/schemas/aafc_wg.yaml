@@ -112,6 +112,9 @@ dataset_fields:
   label:
     en: Eligible for Release 
     fr: (fr)Eligible for Release
+  help_text:
+    en: "Eligible for release."
+    fr: "(fr)Eligible for release."
   display_group: Basic Information
 
 - preset: ineligibility_reason
