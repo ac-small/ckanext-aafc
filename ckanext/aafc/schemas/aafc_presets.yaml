@@ -246,6 +246,10 @@ presets:
        en: Network share
        fr: To translate
       value: network_share
+    - label:
+       en: Unknown
+       fr: (fr)Unknown
+      value: uknown
     form_snippet: select.html
     display_snippet: select.html
     validators: scheming_required scheming_choices
