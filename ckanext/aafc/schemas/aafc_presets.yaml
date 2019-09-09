@@ -144,6 +144,9 @@ presets:
       label:
          en: Eligible for Release
          fr: To Translate... 
+      help_text:
+         en: "Eligible for release. "
+         fr: "(fr)Eligible for release."
 
 - preset_name: ineligibility_reason
   values:
@@ -151,6 +154,9 @@ presets:
       label:
          en: Ineligibility Reason
          fr: To Translate... 
+      help_text:
+         en: "Inaligibility reason. "
+         fr: "(fr)Inaligible reason."
       required: true
       form_include_blank_choice: true
       choices:
