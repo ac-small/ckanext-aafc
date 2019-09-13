@@ -2715,7 +2715,6 @@ presets:
       fr:
         en: "Title French"
         fr: "Titre français"
-
     fluent_help_text:
       en:
         en: An English name given to the resource.
