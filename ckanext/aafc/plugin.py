@@ -79,4 +79,5 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
 #            'dataset_comments',
             'get_translated_t',
             'language_text_t',
+            'gen_uid',
             ])
