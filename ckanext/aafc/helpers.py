@@ -12,6 +12,7 @@ import ckanapi
 from ckantoolkit import h
 from ckanext.scheming.helpers import scheming_get_preset
 from ckan.logic.validators import boolean_validator
+import uuid
 
 ORG_MAY_PUBLISH_OPTION = 'canada.publish_datasets_organization_name'
 ORG_MAY_PUBLISH_DEFAULT_NAME = 'tb-ct'
@@ -299,6 +300,10 @@ def show_fgp_facets():
 
 def json_loads(value):
     return json.loads(value)
+
+def gen_uid():
+    new_id = uuid.uuid1()
+    return new_id
 
 
 # FIXME: terrible hacks
