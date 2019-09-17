@@ -1263,4 +1263,16 @@ presets:
     display_snippet: select.html
     validators: scheming_required scheming_choices
 
-
+# Field = Unique Identifier.
+# {A unique phrase or string which identifies the resource}
+- preset_name: aafc_resource_unique_identifier
+  values:
+    field_name: unique_identifier
+    label:
+      en: Unique Identifier(A)
+      fr: Identificateur unique
+    help_text:
+      en: A unique phrase or string which identifies the resource.
+      fr: Expression ou chaîne unique désignant la ressource.
+    form_snippet: text_uid.html
+    form_panel: resource
