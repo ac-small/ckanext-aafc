@@ -833,15 +833,15 @@ presets:
     field_name: open_government_portal_record
     label:
         en: Open Government Portal Record English
-        fr: Open Government Portal Record English
+        fr: Dossier du Portail du gouvernement ouvert (français)
 
 - preset_name: aafc_test
   values:
     field_name: test
     label:
         en: Open Government Portal Record French
-        fr: Open Government Portal Record English
-
+        fr: Dossier du Portail du gouvernement ouvert (français)
+        
 #######################################
 # Open Government Dataset Release Information
 - preset_name: access_to_information 
@@ -849,7 +849,7 @@ presets:
     field_name: access_to_information
     label:
       en: Access To Information
-      fr: (fr)Access To Information 
+      fr: Accès à l’information 
     required: true
     form_include_blank_choice: true
     choices:
@@ -871,7 +871,7 @@ presets:
     field_name: authority_to_release
     label:
       en: Authority to Release
-      fr: (fr)Authority to Release
+      fr: Autorisation de publication
     required: true
     form_include_blank_choice: true
     choices:
@@ -893,7 +893,7 @@ presets:
     field_name: formats
     label:
       en: Formats
-      fr: (fr)Formats
+      fr: Formats
     required: true
     form_include_blank_choice: true
     choices:
@@ -915,7 +915,7 @@ presets:
     field_name: privacy
     label:
       en: Privacy
-      fr: (fr)Privacy
+      fr: Protection des renseignements personnels
     required: true
     form_include_blank_choice: true
     choices:
@@ -937,7 +937,7 @@ presets:
     field_name: offical_language
     label:
       en: Offical Language
-      fr: (fr)Offical Language
+      fr: (fr)Offical LanguageLangues officielles
     required: true
     form_include_blank_choice: true
     choices:
@@ -959,7 +959,7 @@ presets:
     field_name: security
     label:
       en: Security
-      fr: (fr)Security
+      fr: Sécurité
     required: true
     form_include_blank_choice: true
     choices:
@@ -981,7 +981,7 @@ presets:
     field_name: other
     label:
       en: Other
-      fr: (fr)Other
+      fr: Autre
     required: true
     form_include_blank_choice: true
     choices:
@@ -1003,7 +1003,7 @@ presets:
     field_name: general_boolean_required 
     label:
       en: Boolean
-      fr: (fr)Boolean
+      fr: Booléen
     required: true
     choices:
     - label:
@@ -1024,7 +1024,7 @@ presets:
     field_name: general_yesno_required 
     label:
       en: Yes/No(general in aafc_presets.yaml)
-      fr: (fr)Yes/No
+      fr: Oui/Non
     required: true
     choices:
     - label:
@@ -1045,7 +1045,7 @@ presets:
     field_name: jurisdiction
     label:
       en: Jurisdiction
-      fr: (fr)Jurisdiction
+      fr: Compétence
     required: true
 
 - preset_name: license
@@ -1053,7 +1053,7 @@ presets:
     field_name: license
     label:
       en: License
-      fr: (fr)License
+      fr: Licence
     required: true
 
 - preset_name: access_restriction
@@ -1061,7 +1061,7 @@ presets:
     field_name: access_restriction
     label:
       en: Access_restriction
-      fr: (fr)Access_restriction
+      fr: Accès_restriction
     required: true
 
 
@@ -1232,31 +1232,31 @@ presets:
     field_name: aafc_resource_metadata_schema
     label:
       en: Resource Metadata Schema
-      fr: (fr)Resource Metadata Schema
+      fr: Schéma des métadonnées des ressources
     help_text:
       en: "The metadata schema of the resource"
-      fr: "(fr)The metadata schema of the resource"
+      fr: "Le schéma des métadonnées des ressources"
     required: true
     choices:
     - label:
         en: Darwin Core
-        fr: (fr)Darwin Core
+        fr: Darwin Core
       value: darwin_core
     - label:
         en: Dublin Core (DC)
-        fr: (fr)Dublin Core (DC)
+        fr: Dublin Core (DC)
       value: dublin_core
     - label:
         en: DDI (Data Documentation Initiative)
-        fr: (fr)DDI (Data Documentation Initiative)
+        fr: Initiative de consignation des données (ICD)
       value: ddi
     - label:
         en: ISO 19115 (GIS)
-        fr: (fr)ISO 19115 (GIS)
+        fr: ISO 19115 (SIG)
       value: iso_19115
     - label:
         en: MARC (Machine-Readable Cataloging)
-        fr: (fr)MARC (Machine-Readable Cataloging)
+        fr: Catalogage lisible par machine (MARC)
       value: marc
     form_snippet: select.html
     display_snippet: select.html
