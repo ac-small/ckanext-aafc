@@ -129,21 +129,21 @@ presets:
       field_name: data_steward_email
       label:
          en: Data Steward Email
-         fr: To Translate...
+         fr: Courriel du responsable des données
  
 - preset_name: procured_data
   values:
       field_name: procured_data
       label:
          en: Procured Data
-         fr: To Translate... 
+         fr: Données achetées
 
 - preset_name: eligible_for_release
   values:
       field_name: eligible_for_release
       label:
          en: Eligible for Release
-         fr: To Translate... 
+         fr: Admissible pour publication  
       help_text:
          en: "Eligible for release. "
          fr: "Admissible pour publication."
@@ -248,11 +248,11 @@ presets:
       value: local_drive
     - label:
        en: Network share
-       fr: To translate
+       fr: Réseau partagé
       value: network_share
     - label:
        en: Unknown
-       fr: (fr)Unknown
+       fr: Inconnu
       value: uknown
     form_snippet: select.html
     display_snippet: select.html
@@ -263,7 +263,7 @@ presets:
       field_name: program_alignment_architecture_to_drf_core_responsibilities
       label:
          en: Program Alignment Architecture to DRF Core Responsibilities
-         fr: (fr)Program Alignment Architecture to DRF Core Responsibilities
+         fr: Responsabilités essentielles du CRM concernant l’architecture d’alignement des programmes
       required: true
       form_include_blank_choice: true
       choices:
@@ -292,76 +292,75 @@ presets:
       field_name: drf_program_inventory
       label:
          en: DRF Program Inventory
-         fr: (fr)DRF Program Inventory
+         fr: Répertoire des programmes du Cadre ministériel des résultats
 
       required: true
       form_include_blank_choice: true
       choices:
       - label:
           en: Trade and Market Expansion
-          fr: (fr)Trade and Market Expansion
+          fr: Développement du commerce et des marchés
         value: trade_and_market_expansion
       - label:
           en: Sector Engagement and Development
-          fr: (fr)Sector Engagement and Development
+          fr: Mobilisation et développement du secteur
         value: sector_engagement_and_development
       - label:
           en: Farm Products Council of Canada
-          fr: (fr)Farm Products Council of Canada
+          fr: Conseil des produits agricoles du Canada
         value: farm_products_council_of_canada
       - label:
           en: Dairy Programs
-          fr: (fr)Dairy Programs
+          fr: Programmes de l’industrie laitière
         value: dairy_programs
       - label:
           en: Canadian Pari-Mutuel Agency
-          fr: (fr)Canadian Pari-Mutuel Agency
+          fr: Agence canadienne du pari mutuel
         value: canadian_pari-mutuel_agency
       - label:
           en: Water Infrastructure
-          fr: (fr)Water Infrastructure
+          fr: Infrastructure hydraulique
         value: water_infrastructure
       - label:
           en: Community Pastures
-          fr: (fr)Community Pastures
+          fr: Pâturages communautaires
         value: community_pastures
       - label:
           en: Federal, Provincial and Territorial Cost-shared Markets and Trade
-          fr: (fr)Federal, Provincial and Territorial Cost-shared Markets and Trade
+          fr: Activités fédérales, provinciales et territoriales à coûts partagés dans les domaines des marchés et du commerce
         value: federal,_provincial_and_territorial_cost-shared_markets_and_trade
       - label:
           en: Foundational Science and Research
-          fr: (fr)Foundational Science and Research
+          fr: Sciences et recherches fondamentales
         value: foundational_science_and_research
       - label:
           en: AgriScience
-          fr: (fr)AgriScience
+          fr: Agri-science
         value: agriscience
       - label:
           en: AgriInnovate
-          fr: (fr)AgriInnovate
+          fr: Agri-innover
         value: agriinnovate
       - label:
           en: Agricultural Greenhouse Gases Program
-          fr: (fr)Agricultural Greenhouse Gases Program
+          fr: Programme de lutte contre les gaz à effet de serre en agriculture
         value: agricultural_greenhouse_gases_program
       - label:
           en: Canadian Agricultural Adaptation Program
-          fr: (fr)Canadian Agricultural Adaptation Program
+          fr: Programme canadien d’adaptation agricole
         value: canadian_agricultural_adaptation_program
       - label:
           en: Federal, Provincial and Territorial Cost-shared Science, Research, Innovation
             and Environment
-          fr: (fr)Federal, Provincial and Territorial Cost-shared Science, Research,
-            Innovation and Environment
+          fr: Activités fédérales, provinciales et territoriales à coûts partagés dans les domaines des sciences, de la recherche, de l’innovation et de l’environnement
         value: federal,_provincial_and_territorial_cost-shared_science,_research,_innovation_and_environment
       - label:
           en: AgriStability
-          fr: (fr)AgriStability
+          fr: Agri-stabilité
         value: agristability
       - label:
           en: AgriInsurance
-          fr: (fr)AgriInsurance
+          fr: Agri-protection
         value: agriinsurance
       - label:
           en: AgriRisk
