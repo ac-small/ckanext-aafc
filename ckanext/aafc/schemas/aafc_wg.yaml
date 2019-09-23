@@ -204,40 +204,40 @@ dataset_fields:
   field_name: privacy
   label:
     en: Privacy
-    fr: (fr)Privacy
+    fr: Protection des renseignements personnels
   help_text:
     en: "The data or information resource is not subject to any exemptions or exclusions under the Privacy Act."
-    fr: "(fr)The data or information resource is not subject to any exemptions or exclusions under the Privacy Act."
+    fr: "Les données ou les ressources documentaires ne sont visées par aucune exception ou exclusion en vertu de la Loi sur la protection des renseignements personnels."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: official_language
   label:
     en: Official Language
-    fr: (fr)Official Language
+    fr: Langues officielles
   help_text:
     en: "The data or information resource is available in both official languages and conforms to the requirements of the Official Languages Act."
-    fr: "(fr)The data or information resource is available in both official languages and conforms to the requirements of the Official Languages Act."
+    fr: "Les données ou les ressources documentaires sont offertes dans les deux langues officielles, et sont conformes aux exigences de la Loi sur les langues officielles."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: security
   label:
     en: Security
-    fr: (fr)Security
+    fr: Sécurité
   help_text:
     en: "The data or information resource does not increase security risks to the institution, to other institutions, or to the government as a whole and conforms to the requirements of the Policy on Government Security and its related instruments."
-    fr: "(fr)The data or information resource does not increase security risks to the institution, to other institutions, or to the government as a whole and conforms to the requirements of the Policy on Government Security and its related instruments."
+    fr: "Les données ou les ressources documentaires n’augmentent pas les risques pour la sécurité de l’institution, des autres institutions ou du gouvernement dans son ensemble et sont conformes aux exigences de la Politique sur la sécurité du gouvernement et de ses instruments connexes."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: other 
   label:
     en: Other
-    fr: (fr)Other
+    fr: Autre
   help_text:
     en: "The release of data or other information resource complies with all other relevant legal, regulatory, contractual, and policy requirements (e.g., it is confirmed that there are no relevant legal, contractual, or third party, policy restrictions or limitations)."
-    fr: "(fr)The release of data or other information resource complies with all other relevant legal, regulatory, contractual, and policy requirements (e.g., it is confirmed that there are no relevant legal, contractual, or third party, policy restrictions or limitations)."
+    fr: "La publication des données ou des ressources documentaires est conforme à toutes les autres exigences juridiques, réglementaires, contractuelles et politiques pertinentes (p. ex., il est confirmé qu’il n’y a aucune restriction ou limitation juridique, contractuelle ou de tierce partie pertinente)."
   display_group: Open Data Release Criteria
 
 - preset: jurisdiction
@@ -253,21 +253,21 @@ dataset_fields:
   field_name: imso_approval 
   label:
     en: IMSO Approval
-    fr: (fr)IMSO Approval
+    fr: Approbation par le CSGI
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
   field_name: ready_to_publish
   label:
     en: Ready to Publish
-    fr: (fr)Ready to Publish
+    fr: Prêt pour la publication
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
   field_name: ready_to_republish
   label:
     en: Ready to Republish
-    fr: (fr)Ready to Republish
+    fr: Prêt pour la publication
   display_group: Open Data Release Criteria
 
 ############################
@@ -332,14 +332,14 @@ dataset_fields:
 - field_name: aafc_note
   label:
     en: Note
-    fr: (fr)Note
+    fr: Remarque
   fluent_form_label:
     en:
       en: Note(English)
-      fr: (fr)Note(English)
+      fr: Remarque(English)
     fr:
       en: Note(French)
-      fr: (fr)Note(French)
+      fr: Remarque(French)
   fluent_help_text:
     en:
       en: General information relating to an asset, in English
@@ -365,7 +365,7 @@ dataset_fields:
 - field_name: odi_reference_number
   label:
     en: ODI Reference Number
-    fr: (fr)ODI Reference Number
+    fr: Numéro de référence du Répertoire des données ouvertes
   value: aafc_odi_reference_number
   classes: ['hidden']
   display_group: Optional Dataset Information
@@ -373,7 +373,7 @@ dataset_fields:
 - field_name: data_released 
   label:
     en: Data Released
-    fr: (fr)Data Released
+    fr: Données publiées
   value: aafc_data_released
   classes: ['hidden']
   display_group: Optional Dataset Information
