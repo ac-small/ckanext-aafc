@@ -65,7 +65,7 @@ dataset_fields:
 - preset: canada_owner_org
   label:
     en: Publishing Branch
-    fr: (fr)Publishing Branch
+    fr: Direction générale de la publication
   help_text:
     en: "The name of the Branch primarily responsible for publishing the dataset"
     fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de donnÃ©es"
@@ -87,16 +87,16 @@ dataset_fields:
   required: true
   help_text:
     en: "The first point of contact for all questions related to this dataset.  (user.name@canada.ca)"
-    fr: "(fr)The first point of contact for all questions related to this dataset.  (user.name@canada.ca)"
+    fr: "Le premier point de contact pour toutes les questions relatives à cet ensemble de données. (nom.utilisateur@canada.ca)"
   display_group: Basic Information
 
 - preset: aafc_yesno_required
   label:
     en: Procured Data
-    fr: (fr)Procured Data
+    fr: Données achetées
   help_text:
     en: "Indicates whether or not the data was purchased from a source external to AAFC"
-    fr: "(fr)Indicates whether or not the data was purchased from a source external to AAFC"
+    fr: "Précise si les données ont été achetées ou non d’une source externe à AAC."
   field_name: procured_data
   display_group: Basic Information
 
@@ -104,17 +104,17 @@ dataset_fields:
   required: true
   help_text:
     en: "The name of the organization which the data was purchased from"
-    fr: "(fr)The name of the organization which the data was purchased from"
+    fr: "Le nom de l’organisation pour laquelle les données ont été achetées."
   display_group: Basic Information   
   
 - preset: aafc_yesno_required
   field_name: elegible_for_release
   label:
     en: Eligible for Release 
-    fr: (fr)Eligible for Release
+    fr: Admissible pour publication
   help_text:
     en: "Eligible for release."
-    fr: "(fr)Eligible for release."
+    fr: "Admissible pour publication."
   display_group: Basic Information
 
 - preset: ineligibility_reason
