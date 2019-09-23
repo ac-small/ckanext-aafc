@@ -23,11 +23,11 @@ presets:
     choices:
     - label:
         en: AAFC Internal
-        fr: (fr)AAFC Internal
+        fr: En interne à AAC
       value: internal
     - label:
         en: AAFC Open Government
-        fr: (fr)AAFC Open Government
+        fr: Gouvernement ouvert d’AAC
       value: open_government
     form_snippet: select.html
     display_snippet: select.html
@@ -112,7 +112,7 @@ presets:
     field_name: test_odi
     label:
       en: Test ODI
-      fr: Test ODI (fr)
+      fr: Essai — Répertoire des données ouvertes
 
 - preset_name: aafc_test
   values:
@@ -1275,4 +1275,16 @@ presets:
       en: A unique phrase or string which identifies the resource.
       fr: Expression ou chaîne unique désignant la ressource.
     form_snippet: text_uid.html
+    form_panel: resource
+
+- preset_name: aafc_resource_name
+  values:
+    #field_name: name_translated 
+    field_name: name_resource
+    label:
+      en: Title 
+      fr: Titre
+    help_text:
+      en: A name given to the resource
+      fr: (fr)A name given to the resource
     form_panel: resource
