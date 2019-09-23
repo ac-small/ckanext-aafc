@@ -336,10 +336,10 @@ dataset_fields:
   fluent_form_label:
     en:
       en: Note(English)
-      fr: Remarque(English)
+      fr: Remarque(anglais)
     fr:
       en: Note(French)
-      fr: Remarque(French)
+      fr: Remarque(français)
   fluent_help_text:
     en:
       en: General information relating to an asset, in English
@@ -359,7 +359,7 @@ dataset_fields:
 - field_name: amp_department_identifier
   label:
     en: AMP Department Identifier
-    fr: To be translated
+    fr: Identifiant (ID) du Programme Agri-marketing (PAM)
   display_group: Optional Dataset Information
 
 - field_name: odi_reference_number
@@ -381,14 +381,14 @@ dataset_fields:
 - field_name: open_government_portal_record_e
   label:
     en: Open Government Portal Record URL (English)
-    fr: (fr)Open Government Portal Record URL (English)
+    fr: URL du Portail du gouvernement ouvert (anglais)
   classes: ['hidden']
   display_group: Optional Dataset Information
   
 - field_name: open_government_portal_record_f
   label:
     en: Open Government Portal Record URL (French)
-    fr: (fr)Open Government Portal Record URL (French)
+    fr: URL du Portail du gouvernement ouvert (français)
   classes: ['hidden']
   display_group: Optional Dataset Information
  
@@ -593,6 +593,7 @@ dataset_fields:
 - field_name: display_flags
   label:
     en: Display Flags
+    fr: Drapeaux d’affichage
   form_snippet: null
   display_snippet: null
   validators: scheming_multiple_choice
@@ -600,6 +601,7 @@ dataset_fields:
   choices:
   - label:
       en: FGP viewer is supported
+      fr: La visionneuse de la PGF est compatible
     value: fgp_viewer
 
 #################################
