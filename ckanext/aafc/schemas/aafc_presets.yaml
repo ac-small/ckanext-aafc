@@ -146,17 +146,17 @@ presets:
          fr: To Translate... 
       help_text:
          en: "Eligible for release. "
-         fr: "(fr)Eligible for release."
+         fr: "Admissible pour publication."
 
 - preset_name: ineligibility_reason
   values:
       field_name: ineligibility_reason
       label:
          en: Ineligibility Reason
-         fr: To Translate... 
+         fr: Motif du rejet 
       help_text:
          en: "Inaligibility reason. "
-         fr: "(fr)Inaligible reason."
+         fr: "Motif du rejet."
       required: true
       form_include_blank_choice: true
       choices:
