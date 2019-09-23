@@ -130,28 +130,28 @@ dataset_fields:
 - preset: data_source_repository
   help_text:
     en: "Indicates where the source data for the dataset can be found"
-    fr: "(fr)Indicates where the source data for the dataset can be found"
+    fr: "Indique l’endroit où se trouvent les données de base de l’ensemble de données."
   display_group: Basic Information   
 
 - preset: program_alignment_architecture_to_drf_core_responsibilities
   help_text:
     en: "Departmental Results Framework Core Responsibility to which the dataset relates"
-    fr: "(fr)Departmental Results Framework Core Responsibility to which the dataset relates"
+    fr: "Responsabilité essentielle du Cadre de résultats ministériels à laquelle se rapporte l’ensemble de données"
   display_group: Basic Information   
   
 - preset: drf_program_inventory
   help_text:
     en: "Departmental Results Framework Program to which the dataset relates"
-    fr: "(fr)Departmental Results Framework Program to which the dataset relates"
+    fr: "Programme du Cadre de résultats ministériels auquel l’ensemble de données se rapporte"
   display_group: Basic Information   
 
 - preset: aafc_yesno_required
   label:
     en: Authoritative Source
-    fr: (fr)Authoritative Source
+    fr: Source faisant autorité
   help_text:
     en: "Dataset is considered to be the authoritative source for data"
-    fr: "(fr)Dataset is considered to be the authoritative source for data"
+    fr: "L’ensemble de données est considéré comme la source faisant autorité pour les données."
   field_name: authoritative_source
   display_group: Basic Information
 
@@ -167,37 +167,37 @@ dataset_fields:
     fr: (fr)Access
   help_text:
     en: "The data or information resource is not subject to any exemptions or exclusions under the Access to Information Act."
-    fr: "(fr)The data or information resource is not subject to any exemptions or exclusions under the Access to Information Act."
+    fr: "Les données ou les ressources documentaires ne sont visées par aucune exception ou exclusion en vertu de la Loi sur l’accès à l’information."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: authority_to_release
   label:
     en: Authority to Release
-    fr: (fr)Authority to Release
+    fr: Autorisation de publication
   help_text:
     en: "The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
-    fr: "(fr)The institution has the mandate, legislative authority or permission from a third party provider to publish the data or information resource under the Open Government Licence - Canada."
+    fr: "L’institution a le mandat, l’autorisation légale ou la permission d’un tiers fournisseur de publier les données ou les ressources documentaires aux termes de la Licence du gouvernement ouvert — Canada."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
   field_name: formats 
   label:
     en: Formats
-    fr: (fr)Formats
+    fr: Formats
   help_text:
     en: "The data or information resource is in an open and accessible format."
-    fr: "(fr)The data or information resource is in an open and accessible format."
+    fr: "Les données ou les ressources documentaires sont présentées dans un format ouvert et accessible."
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
   field_name: mint_a_doi
   label:
     en: Mint a DOI
-    fr: (fr)Mint a DOI
+    fr: Création d’un DOI — Identificateur d’objet numérique
   help_text:
     en: "Mint a Digital Object Identifier (DOI) for this dataset through DataCite Canada."
-    fr: "(fr)Mint a Digital Object Identifier (DOI) for this dataset through DataCite Canada."
+    fr: "Créer un identificateur d’objet numérique (DOI) pour cet ensemble de données par l’entremise de DataCite Canada."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
