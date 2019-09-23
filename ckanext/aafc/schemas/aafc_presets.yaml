@@ -364,79 +364,79 @@ presets:
         value: agriinsurance
       - label:
           en: AgriRisk
-          fr: (fr)AgriRisk
+          fr: Agri-risques
         value: agririsk
       - label:
           en: AgriInvest
-          fr: (fr)AgriInvest
+          fr: Agri-investissement
         value: agriinvest
       - label:
           en: AgriRecovery
-          fr: (fr)AgriRecovery
+          fr: Agri-relance
         value: agrirecovery
       - label:
           en: Loan Guarantee Programs
-          fr: (fr)Loan Guarantee Programs
+          fr: Programmes de garantie de prêts
         value: loan_guarantee_programs
       - label:
           en: Farm Debt Mediation Service
-          fr: (fr)Farm Debt Mediation Service
+          fr: Service de médiation en matière d’endettement agricole
         value: farm_debt_mediation_service
       - label:
           en: Pest Management
-          fr: (fr)Pest Management
+          fr: Lutte antiparasitaire
         value: pest_management
       - label:
           en: Assurance Program
-          fr: (fr)Assurance Program
+          fr: Programme d’assurance
         value: assurance_program
       - label:
           en: Federal, Provincial and Territorial Cost-shared Assurance
-          fr: (fr)Federal, Provincial and Territorial Cost-shared Assurance
+          fr: Assurances fédérales, provinciales et territoriales à coûts partagés
         value: federal,_provincial_and_territorial_cost-shared_assurance
       - label:
           en: Return of Payments
-          fr: (fr)Return of Payments
+          fr: Remboursement de paiements
         value: return_of_payments
       - label:
           en: Management and Oversight Services
-          fr: (fr)Management and Oversight Services
+          fr: Services de gestion et de surveillance
         value: management_and_oversight_services
       - label:
           en: Communication Services
-          fr: (fr)Communication Services
+          fr: Services de communication
         value: communication_services
       - label:
           en: Legal Services
-          fr: (fr)Legal Services
+          fr: Services juridiques
         value: legal_services
       - label:
           en: Human Resource Management Services
-          fr: (fr)Human Resource Management Services
+          fr: Services de gestion des ressources humaines
         value: human_resource_management_services
       - label:
           en: Financial Management Services
-          fr: (fr)Financial Management Services
+          fr: Services de gestion financière
         value: financial_management_services
       - label:
           en: Information Management Services
-          fr: (fr)Information Management Services
+          fr: Services de gestion de l’information
         value: information_management_services
       - label:
           en: Information Technology Services
-          fr: (fr)Information Technology Services
+          fr: Services d’infotechnologie
         value: information_technology_services
       - label:
           en: Real Property Services
-          fr: (fr)Real Property Services
+          fr: Services immobiliers
         value: real_property_services
       - label:
           en: Material Services
-          fr: (fr)Material Services
+          fr: Services du matériel
         value: material_services
       - label:
           en: Acquisition Services
-          fr: (fr)Acquisition Services
+          fr: Services d’approvisionnement
         value: acquisition_services
       form_snippet: select.html
       display_snippet: select.html
@@ -449,7 +449,7 @@ presets:
     field_name: odi_reference_number
     label:
         en: ODI Reference Number
-        fr: ODI Reference Number
+        fr: Numéro de référence du Répertoire des données ouvertes
 
 - preset_name: program_alignment_architecture
   values:
