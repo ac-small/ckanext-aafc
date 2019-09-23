@@ -189,28 +189,28 @@ presets:
       field_name: date_published
       label:
          en: Date Published
-         fr: To Translate...          
+         fr: Date publiée         
 
 - preset_name: maintenance_and_update_frequency
   values:
       field_name: maintenance_and_update_frequency
       label:
          en: Maintenance and Update Frequency
-         fr: To Translate...          
+         fr: Fréquence de maintenance et de mise à jour         
 
 - preset_name: procured_data_organization_name
   values:
       field_name: procured_data_organization_name
       label:
          en: Procured Data Organization Name
-         fr: To Translate...            
+         fr: Nom de l'organisation de données achetée            
 
 - preset_name: data_source_repository
   values:
     field_name: data_source_repository
     label:
       en: Data Source Repository
-      fr: To translate
+      fr: Dépôt de sources de données
     required: true
     form_include_blank_choice: true
     choices:
