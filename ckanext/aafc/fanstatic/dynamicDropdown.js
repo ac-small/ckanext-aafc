@@ -7,7 +7,7 @@ change the option of dropdown
 */
 
 
-var paa2drfData = 
+var paa2drfData0 = 
 {
  "domestic_and_international_markets":
 	['Trade and Market Expansion','Sector Engagement and Development','Farm Products Council of Canada','Dairy Programs','Canadian Pari-Mutuel Agency','Water Infrastructure','Community Pastures','Federal, Provincial and Territorial Cost-shared Markets and Trade'],
@@ -18,6 +18,27 @@ var paa2drfData =
  "internal_services":
 	['Management and Oversight Services','Communication Services','Legal Services','Human Resource Management Services','Financial Management Services','Information Management Services','Information Technology Services','Real Property Services','Material Services','Acquisition Services']
 };
+
+var dic = {}
+$('ul.mdpd').each( 
+    function(index) { 
+        console.log("index:" +index);
+        var chidren = this.childNodes;
+        var parent = this.id;
+        dic[parent] = [];
+        chidren.forEach ( function (data){
+           var id = data.id;
+           var label = data.innerText;
+           //dic[parent].push({"value":id,"lable":label});
+           dic[parent].push(label);
+        });
+    }
+
+ );
+
+var paa2drfData = dic;
+
+
 
 
 $("#field-program_alignment_architecture_to_drf_core_responsibilities").change(
