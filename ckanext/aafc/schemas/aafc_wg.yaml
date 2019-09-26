@@ -240,13 +240,13 @@ dataset_fields:
     fr: "La publication des données ou des ressources documentaires est conforme à toutes les autres exigences juridiques, réglementaires, contractuelles et politiques pertinentes (p. ex., il est confirmé qu’il n’y a aucune restriction ou limitation juridique, contractuelle ou de tierce partie pertinente)."
   display_group: Open Data Release Criteria
 
-- preset: jurisdiction
+- preset: canada_jurisdiction
   display_group: Open Data Release Criteria
 
 - preset: canada_license_id
   display_group: Open Data Release Criteria
 
-- preset: access_restriction
+- preset: canada_restrictions
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
@@ -610,13 +610,18 @@ dataset_fields:
 #
 resource_fields:
 - preset: canada_resource_name
+  display_group: ANA
 - preset: canada_resource_language
+  display_group: ANA
 - preset: aafc_resource_metadata_schema
+  display_group: ANA
 #- preset: canada_resource_unique_identifier
 - preset: aafc_resource_unique_identifier
+  display_group: ANA
 #- preset: canada_resource_related_relationship
 #- preset: canada_resource_related_type
 - preset: canada_resource_date_published
+  display_group: ANA
 - preset: canada_resource_type
   form_restrict_choices_to:
   - application
@@ -628,11 +633,17 @@ resource_fields:
   - terminology
   - tool
   - website
+  display_group: ANA
 - preset: canada_resource_format
+  display_group: ANA
 - preset: canada_resource_size
   label:
     en: Data File Size(in bytes)
     fr: Taille
+  display_group: ANA
 - preset: canada_resource_character_set
+  display_group: ANA
 - preset: canada_resource_data_quality
+  display_group: ANA
 - preset: canada_resource_url
+  display_group: ANA
