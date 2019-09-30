@@ -318,9 +318,13 @@ dataset_fields:
 
 - field_name: ditigal_object_identifier
   label:
-    en: Digital Object Identifier(ODI)
+    en: Digital Object Identifier(DOI)
     fr: To be translated
+  help_text:
+    en: "The Digital Object Identifier assigned to the asset.For more information visit: http://cisti-icist.nrc-cnrc.gc.ca/eng/services/cisti/datacite-canada/index.html"
+    fr: "The Digital Object Identifier assigned to the asset.For more information visit: http://cisti-icist.nrc-cnrc.gc.ca/eng/services/cisti/datacite-canada/index.html"
   value: aafc_odi
+  form_snippet: text_odi.html
   display_group: Optional Dataset Information
  
 - preset: canada_date_modified

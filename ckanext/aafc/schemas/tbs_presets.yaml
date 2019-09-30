@@ -2864,7 +2864,7 @@ presets:
     help_text:
       en: Date of formal issuance (e.g., publication) of the resource.
       fr: Date officielle d’émission (c.-à-d. de publication) de la ressource
-    required: true
+    #required: true
     form_panel: resource
     # copied from date preset
     form_snippet: date.html
