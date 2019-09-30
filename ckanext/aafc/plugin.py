@@ -80,4 +80,5 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
             'get_translated_t',
             'language_text_t',
             'gen_uid',
+            'gen_odi',
             ])

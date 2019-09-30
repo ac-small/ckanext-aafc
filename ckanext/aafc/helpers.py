@@ -13,6 +13,7 @@ from ckantoolkit import h
 from ckanext.scheming.helpers import scheming_get_preset
 from ckan.logic.validators import boolean_validator
 import uuid
+import os
 
 ORG_MAY_PUBLISH_OPTION = 'canada.publish_datasets_organization_name'
 ORG_MAY_PUBLISH_DEFAULT_NAME = 'tb-ct'
@@ -305,6 +306,32 @@ def gen_uid():
     new_id = uuid.uuid1()
     return new_id
 
+def gen_odi():
+    filename = "count.dat"
+    now = datetime.datetime.now()
+    current_year = now.year
+    count = 1
+    odi = "ODI-%s-"%current_year
+    
+    #print(str(count))
+    if not os.path.exists(filename):
+        with open(filename, "w+") as f:
+            f.write(str(count))
+    
+    with open(filename, "r+") as f:
+        data = f.read()
+        if data != None:
+             count = data
+        count_num = int(count)
+        odi += "{:0>5d}".format(count_num)
+        count_num += 1
+        f.seek(0)
+        f.write(str(count_num))
+        f.truncate()
+    
+
+
+    return odi
 
 # FIXME: terrible hacks
 def gravatar(*args, **kwargs):
