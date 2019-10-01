@@ -323,8 +323,7 @@ dataset_fields:
   help_text:
     en: "The Digital Object Identifier assigned to the asset.For more information visit: http://cisti-icist.nrc-cnrc.gc.ca/eng/services/cisti/datacite-canada/index.html"
     fr: "The Digital Object Identifier assigned to the asset.For more information visit: http://cisti-icist.nrc-cnrc.gc.ca/eng/services/cisti/datacite-canada/index.html"
-  value: aafc_odi
-  form_snippet: text_odi.html
+  value: aafc_doi
   display_group: Optional Dataset Information
  
 - preset: canada_date_modified
@@ -372,6 +371,7 @@ dataset_fields:
     fr: Numéro de référence du Répertoire des données ouvertes
   value: aafc_odi_reference_number
   classes: ['hidden']
+  form_snippet: text_odi.html
   display_group: Optional Dataset Information
  
 - field_name: data_released 
