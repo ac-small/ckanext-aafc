@@ -77,6 +77,9 @@ dataset_fields:
 - preset: aafc_notes
   display_group: Basic Information
 
+- preset: aafc_sector
+  display_group: Basic Information
+
 - preset: canada_keywords
   display_group: Basic Information
 

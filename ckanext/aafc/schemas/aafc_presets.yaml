@@ -1222,6 +1222,58 @@ presets:
     form_snippet: combined_dropdown.html
     display_snippet: combined_dropdown.html
 
+#Sector
+- preset_name: aafc_sector
+  values:
+    field_name: aafc_sector
+    label:
+      en: Sector
+      fr: Secteur
+    #required: true
+    choices:
+    - label:
+        en: "Animal genetics"
+        fr: "Animal genetics"
+      value: animal_genetics
+    - label:
+        en: "Crops"
+        fr: "Crops"
+      value: crops
+    - label:
+        en: "Dairy"
+        fr: "Dairy"
+      value: dairy
+    - label:
+        en: "Fish and seafood"
+        fr: "Fish and seafood"
+      value: fish_and_seafood
+    - label:
+        en: "Functional foods and natural health products"
+        fr: "Functional foods and natural health products"
+      value: functional_foods_and_natural_health_products
+    - label:
+        en: "Industrial bioproducts"
+        fr: "Industrial bioproducts"
+      value: industrial_bioproducts
+    - label:
+        en: "Organic products"
+        fr: "Organic products"
+      value: organic_products
+    - label:
+        en: "Poultry and eggs"
+        fr: "Poultry and eggs"
+      value: poultry_and_eggs
+    - label:
+        en: "Processed food and beverages"
+        fr: "Processed food and beverages"
+      value: processed_food_and_beverages
+    - label:
+        en: "Red meat and livestock"
+        fr: "Red meat and livestock"
+      value: red_meat_and_livestock
+    form_snippet: select.html
+    display_snippet: select.html
+    #validators: scheming_required scheming_choices
 
 ########################################
 # For resouce page
