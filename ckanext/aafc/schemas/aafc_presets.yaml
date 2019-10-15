@@ -1273,7 +1273,7 @@ presets:
       value: red_meat_and_livestock
     form_snippet: select.html
     display_snippet: select.html
-    #validators: scheming_required scheming_choices
+    validators: scheming_required scheming_choices
 
 ########################################
 # For resouce page
