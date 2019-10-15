@@ -19,6 +19,7 @@ from ckanext.aafc import validators
 from ckanext.aafc import helpers
 #from ckanext.aafc import activity as act
 #from ckanext.aafc.extendedactivity.plugins import IActivity
+from time import gmtime, strftime
 
 import json
 
@@ -26,7 +27,8 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer) 
     plugins.implements(plugins.ITemplateHelpers)  
     plugins.implements(plugins.IValidators, inherit=True)
-
+    plugins.implements(plugins.IFacets)
+    plugins.implements(plugins.IPackageController)
     # IConfigurer
 
     def update_config(self, config_):
@@ -82,3 +84,88 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
             'gen_uid',
             'gen_odi',
             ])
+
+# IFacets
+
+    def dataset_facets(self, facets_dict, package_type):
+        ''' Update the facets_dict and return it. '''
+
+        #facets_dict.update({
+        #    'organization': _('Organization'),
+        #    'res_format': _('Format'),
+        #    'aafc_sector': _('Sector'),
+        #    'res_type': _('Resource Type'),
+        #    })
+        facets_dict['aafc_sector'] = plugins.toolkit._('Sector')
+        return facets_dict
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        ''' Update the facets_dict and return it. '''
+        return facets_dict
+
+    def organization_facets(self, facets_dict, organization_type,
+                            package_type):
+        return self.dataset_facets(facets_dict, package_type)
+
+# IPackageController
+    def read(self, entity):
+        pass
+
+    def create(self, entity):
+        pass
+
+    def edit(self, entity):
+        pass
+
+    def authz_add_role(self, object_role):
+        pass
+
+    def authz_remove_role(self, object_role):
+        pass
+
+    def delete(self, entity):
+        pass
+
+    def before_search(self, search_params):
+	return search_params
+
+    def after_search(self, search_results, search_params):
+        #for result in search_results.get('results', []):
+            #for extra in result.get('extras', []):
+            #    if extra.get('key') in ['sector' ]:
+            #        result[extra['key']] = "xxx" #extra['value']
+        output_file = "/tmp/filter_" + strftime("%Y-%m-%d_%H_%M_%S", gmtime()) + ".json"
+        #with open(output_file,"w") as fout:
+        #   output_str = json.dumps(search_results)
+        #   fout.write(output_str)
+	return search_results
+
+    def after_show(self, context, data_dict):
+        return data_dict
+
+    def update_facet_titles(self, facet_titles):
+        return facet_titles
+
+
+    def before_index(self, data_dict):
+        output_file = "/tmp/b4index_" + strftime("%Y-%m-%d_%H_%M_%S", gmtime()) + ".json"
+        #with open(output_file,"w") as fout:
+        #   output_str = json.dumps(data_dict)
+        #   fout.write(output_str)
+        return data_dict
+
+
+    def before_view(self, pkg_dict):
+        return pkg_dict
+
+    def after_delete(self, context, data_dict):
+        return data_dict
+
+    def after_show(self, context, data_dict):
+        return data_dict
+
+    def update_facet_titles(self, facet_titles):
+        return facet_titles
+
+    def after_update(self, context, data_dict):
+	return data_dict
