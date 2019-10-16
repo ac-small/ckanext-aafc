@@ -1241,7 +1241,7 @@ presets:
       value: crops
     - label:
         en: "Dairy"
-        fr: "Dairy"
+        fr: "(fr)Dairy"
       value: dairy
     - label:
         en: "Fish and seafood"
@@ -1271,6 +1271,10 @@ presets:
         en: "Red meat and livestock"
         fr: "Red meat and livestock"
       value: red_meat_and_livestock
+    - label:
+        en: "Other"
+        fr: "(fr)Other"
+      value: other
     form_snippet: select.html
     display_snippet: select.html
     validators: scheming_required scheming_choices
