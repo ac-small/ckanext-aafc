@@ -20,8 +20,12 @@ from ckanext.aafc import helpers
 #from ckanext.aafc import activity as act
 #from ckanext.aafc.extendedactivity.plugins import IActivity
 from time import gmtime, strftime
+from ckanext.scheming import helpers as sh
+import logging
 
 import json
+
+log = logging.getLogger(__name__)
 
 class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer) 
@@ -130,14 +134,25 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
 	return search_params
 
     def after_search(self, search_results, search_params):
+        pr = sh.scheming_get_preset("aafc_sector")
+        choices = sh.scheming_field_choices(pr)
+        strPr = str(choices)
         #for result in search_results.get('results', []):
             #for extra in result.get('extras', []):
             #    if extra.get('key') in ['sector' ]:
             #        result[extra['key']] = "xxx" #extra['value']
-        output_file = "/tmp/filter_" + strftime("%Y-%m-%d_%H_%M_%S", gmtime()) + ".json"
-        #with open(output_file,"w") as fout:
-        #   output_str = json.dumps(search_results)
-        #   fout.write(output_str)
+        facets = search_results.get('search_facets')
+        if not facets:
+            return search_results
+        for key, facet in facets.items():
+            if key != 'aafc_sector':
+                continue
+            #log.info(">>>###key:" + key)
+            for item in facet['items']:
+                field_value = item['name']				
+                label = sh.scheming_choices_label(choices,field_value)
+                log.info(">>>>>>>###label:" + label)
+                item['display_name'] = label
 	return search_results
 
     def after_show(self, context, data_dict):
