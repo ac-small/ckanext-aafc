@@ -1249,11 +1249,11 @@ presets:
       value: fish_and_seafood
     - label:
         en: "Functional foods and natural health products"
-        fr: "Functional foods and natural health products"
+        fr: "Aliments fonctionnels et produits de santé naturels"
       value: functional_foods_and_natural_health_products
     - label:
         en: "Industrial bioproducts"
-        fr: "Industrial bioproducts"
+        fr: "Bioproduits industriels"
       value: industrial_bioproducts
     - label:
         en: "Organic products"
@@ -1261,16 +1261,20 @@ presets:
       value: organic_products
     - label:
         en: "Poultry and eggs"
-        fr: "Poultry and eggs"
+        fr: "Volaille et œufs"
       value: poultry_and_eggs
     - label:
         en: "Processed food and beverages"
-        fr: "Processed food and beverages"
+        fr: "Aliments et boissons transformés"
       value: processed_food_and_beverages
     - label:
         en: "Red meat and livestock"
-        fr: "Red meat and livestock"
-      value: red_meat_and_livestock
+        fr: "Viandes rouges et bétail"
+      value: 
+    - label:
+        en: "Horticulture"
+        fr: "Horticulture"
+      value: horticulture      
     - label:
         en: "Other"
         fr: "(fr)Other"
