@@ -1233,19 +1233,19 @@ presets:
     choices:
     - label:
         en: "Animal genetics"
-        fr: "Animal genetics"
+        fr: "Zoogénétiques"
       value: animal_genetics
     - label:
         en: "Crops"
-        fr: "Crops"
+        fr: "Productions végétales"
       value: crops
     - label:
         en: "Dairy"
-        fr: "(fr)Dairy"
+        fr: "Produits laitiers"
       value: dairy
     - label:
         en: "Fish and seafood"
-        fr: "Fish and seafood"
+        fr: "Poissons et fruits de mer"
       value: fish_and_seafood
     - label:
         en: "Functional foods and natural health products"
@@ -1257,7 +1257,7 @@ presets:
       value: industrial_bioproducts
     - label:
         en: "Organic products"
-        fr: "Organic products"
+        fr: "Produits biologiques"
       value: organic_products
     - label:
         en: "Poultry and eggs"
