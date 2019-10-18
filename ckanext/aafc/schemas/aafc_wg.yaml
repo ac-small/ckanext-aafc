@@ -121,11 +121,7 @@ dataset_fields:
   display_group: Basic Information
 
 - preset: ineligibility_reason
-  display_group: Basic Information  
-
-- preset: canada_date_published
-  required: true
-  display_group: Basic Information 
+  display_group: Basic Information   
 
 - preset: canada_frequency
   display_group: Basic Information 
@@ -241,6 +237,10 @@ dataset_fields:
   help_text:
     en: "The release of data or other information resource complies with all other relevant legal, regulatory, contractual, and policy requirements (e.g., it is confirmed that there are no relevant legal, contractual, or third party, policy restrictions or limitations)."
     fr: "La publication des données ou des ressources documentaires est conforme à toutes les autres exigences juridiques, réglementaires, contractuelles et politiques pertinentes (p. ex., il est confirmé qu’il n’y a aucune restriction ou limitation juridique, contractuelle ou de tierce partie pertinente)."
+  display_group: Open Data Release Criteria
+  
+- preset: canada_date_published
+  required: true
   display_group: Open Data Release Criteria
 
 - preset: canada_jurisdiction
