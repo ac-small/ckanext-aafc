@@ -132,7 +132,7 @@ dataset_fields:
     fr: "Indique l’endroit où se trouvent les données de base de l’ensemble de données."
   display_group: Basic Information   
 
-- preset: program_alignment_architecture_to_drf_core_responsibilities
+- preset: drf_core_responsibilities
   help_text:
     en: "Departmental Results Framework Core Responsibility to which the dataset relates"
     fr: "Responsabilité essentielle du Cadre de résultats ministériels à laquelle se rapporte l’ensemble de données"
