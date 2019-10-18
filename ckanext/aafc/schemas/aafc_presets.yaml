@@ -1270,14 +1270,14 @@ presets:
     - label:
         en: "Red meat and livestock"
         fr: "Viandes rouges et bétail"
-      value: 
+      value: red_meat_and_livestock 
     - label:
         en: "Horticulture"
         fr: "Horticulture"
       value: horticulture      
     - label:
         en: "Other"
-        fr: "(fr)Other"
+        fr: "Autre"
       value: other
     form_snippet: select.html
     display_snippet: select.html
