@@ -258,12 +258,12 @@ presets:
     display_snippet: select.html
     validators: scheming_required scheming_choices
 
-- preset_name: program_alignment_architecture_to_drf_core_responsibilities
+- preset_name: drf_core_responsibilities
   values:
-      field_name: program_alignment_architecture_to_drf_core_responsibilities
+      field_name: drf_core_responsibilities
       label:
-         en: Program Alignment Architecture to DRF Core Responsibilities
-         fr: Responsabilités essentielles du CRM concernant l’architecture d’alignement des programmes
+         en: DRF Core Responsibilities
+         fr: Responsabilités essentielles du CRM
       required: true
       form_include_blank_choice: true
       choices:
