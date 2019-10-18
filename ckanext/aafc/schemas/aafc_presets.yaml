@@ -114,6 +114,35 @@ presets:
       en: Test ODI
       fr: Essai — Répertoire des données ouvertes
 
+# Field = Subject.
+# List box Source: Subject code table (refer to Data Migration).
+# {The topic of the content of the dataset. You may select multiple subjects (Ctrl+Click).}
+- preset_name: aafc_subject
+  values:
+    field_name: subject
+    label:
+      en: "AAFC Subject"
+      fr: "AAC Sujet"
+    help_text:
+      en: "The topic of the content of the dataset. You may select multiple subjects (Ctrl+Click)"
+      fr: "Le sujet du contenu du jeu de données. Vous pouvez sélectionner de multiples sujets (Ctrl+Clic)"
+    required: true
+    form_snippet: multiple_select.html
+    display_snippet: list_inline.html
+    validators: scheming_multiple_choice
+    output_validators: scheming_multiple_choice_output
+    choices:
+    - label:
+        en: Arts, Music, Literature
+        fr: Arts, musique, littérature
+      replaces: [AA]
+      value: arts_music_literature
+    - label:
+        en: Agriculture
+        fr: Agriculture
+      replaces: [AG]
+      value: agriculture
+
 - preset_name: aafc_test
   values:
       field_name: test
