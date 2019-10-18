@@ -362,9 +362,9 @@ dataset_fields:
   output_validators: fluent_text_output
   display_group: Optional Dataset Information
  
-- field_name: amp_department_identifier
+- field_name: apm_department_identifier
   label:
-    en: AMP Department Identifier
+    en: APM Department Identifier
     fr: Identifiant (ID) du Programme Agri-marketing (PAM)
   display_group: Optional Dataset Information
 
