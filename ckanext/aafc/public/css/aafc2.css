@@ -137,6 +137,10 @@
   border-top: 1px solid rgb(204, 204, 204);
 }
 
+.homepage .stats ul a:hover{
+  text-decoration:none;
+}
+
 
 /* ====================================
    The footer at the bottom of the site
