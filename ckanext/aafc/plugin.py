@@ -136,7 +136,6 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     def after_search(self, search_results, search_params):
         pr = sh.scheming_get_preset("aafc_sector")
         choices = sh.scheming_field_choices(pr)
-        strPr = str(choices)
         #for result in search_results.get('results', []):
             #for extra in result.get('extras', []):
             #    if extra.get('key') in ['sector' ]:
@@ -145,6 +144,11 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         if not facets:
             return search_results
         for key, facet in facets.items():
+            if key == 'tags':
+               log.info(">>>pop :" + key)
+               facets.pop('tags')
+               #c.facet_titles.pop(key)
+               continue
             if key != 'aafc_sector':
                 continue
             #log.info(">>>###key:" + key)
@@ -153,6 +157,8 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
                 label = sh.scheming_choices_label(choices,field_value)
                 log.info(">>>>>>>###label:" + label)
                 item['display_name'] = label
+        keys  = search_results.get('search_facets').keys()
+        log.info(">>>kesy before return  :" + str(keys))
 	return search_results
 
     def after_show(self, context, data_dict):
