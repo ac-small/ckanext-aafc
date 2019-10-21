@@ -291,7 +291,7 @@ presets:
   values:
       field_name: program_alignment_architecture_to_drf_core_responsibilities
       label:
-         en: Program Alignment Architecture to DRF Core Responsibilities
+         en: DRF Core Responsibilities
          fr: Responsabilités essentielles du CRM concernant l’architecture d’alignement des programmes
       required: true
       form_include_blank_choice: true
