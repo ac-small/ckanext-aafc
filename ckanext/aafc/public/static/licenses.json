@@ -88,5 +88,20 @@
     "title_fra": "Conditions d'utilisation de l'Imprimeur de la Reine de l'Alberta",
     "url": "http://www.qp.alberta.ca/copyright.cfm",
     "url_fra": "http://www.qp.alberta.ca/copyright.cfm"
+  },
+  {
+    "domain_content": true,
+    "domain_data": true,
+    "domain_software": false,
+    "family": "",
+    "id": "aafc-dsa",
+    "is_okd_compliant": false,
+    "is_osi_compliant": false,
+    "maintainer": "",
+    "status": "active",
+    "title": "Data Sharing Agreement - AAFC",
+    "title_fra": "AAC - Entente de partage des données",
+    "url": "",
+    "url_fra":""
   }
 ]
