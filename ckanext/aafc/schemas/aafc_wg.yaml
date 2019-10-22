@@ -240,7 +240,7 @@ dataset_fields:
   display_group: Open Data Release Criteria
   
 - preset: canada_date_published
-  required: true
+  #required: true
   display_group: Open Data Release Criteria
 
 - preset: canada_jurisdiction
