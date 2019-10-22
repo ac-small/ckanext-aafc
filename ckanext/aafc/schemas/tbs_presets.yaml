@@ -641,6 +641,11 @@ presets:
         fr: Transport
       replaces: [TR]
       value: transport
+    - label:
+        en: Other
+        fr: Autre
+      replaces: [OT]
+      value: other
 
 # Field = Audience.
 # List box Source: Audience code table (refer to Data Migration).
