@@ -191,3 +191,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
 
     def after_update(self, context, data_dict):
 	return data_dict
+
+
+    def after_create(self, context, data_dict):
+        return data_dict
