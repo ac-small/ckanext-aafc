@@ -145,8 +145,8 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
             return search_results
         for key, facet in facets.items():
             if key == 'tags':
-               log.info(">>>pop :" + key)
-               facets.pop('tags')
+               #log.info(">>>pop :" + key)
+               #facets.pop('tags')
                #c.facet_titles.pop(key)
                continue
             if key != 'aafc_sector':
@@ -155,17 +155,18 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
             for item in facet['items']:
                 field_value = item['name']				
                 label = sh.scheming_choices_label(choices,field_value)
-                log.info(">>>>>>>###label:" + label)
                 item['display_name'] = label
         keys  = search_results.get('search_facets').keys()
-        log.info(">>>kesy before return  :" + str(keys))
+        #log.info(">>>kesy before return  :" + str(keys))
+        try:
+            c.facet_titles.pop('tags')
+        except (AttributeError, RuntimeError):
+            pass
+        
 	return search_results
 
     def after_show(self, context, data_dict):
         return data_dict
-
-    def update_facet_titles(self, facet_titles):
-        return facet_titles
 
 
     def before_index(self, data_dict):
