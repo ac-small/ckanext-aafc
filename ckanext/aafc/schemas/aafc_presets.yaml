@@ -119,7 +119,7 @@ presets:
 # {The topic of the content of the dataset. You may select multiple subjects (Ctrl+Click).}
 - preset_name: aafc_subject
   values:
-    field_name: subject
+    field_name: aafc_subject
     label:
       en: "AAFC Subject"
       fr: "AAC Sujet"
