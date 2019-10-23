@@ -343,11 +343,11 @@ dataset_fields:
     fr: Remarque
   fluent_form_label:
     en:
-      en: Note(English)
-      fr: Remarque(anglais)
+      en: Note (English)
+      fr: Remarque (anglais)
     fr:
-      en: Note(French)
-      fr: Remarque(français)
+      en: Note (French)
+      fr: Remarque (français)
   fluent_help_text:
     en:
       en: General information relating to an asset, in English
