@@ -2061,7 +2061,7 @@ presets:
     field_name: time_period_coverage_start
     help_text:
       en: The start date of the period covered by the dataset (MM-DD-YYYY)
-      fr: Date de début de la période couverte par le jeu de données (JJ-MM-AAAA)
+      fr: Date de début de la période couverte par le jeu de données (MM-JJ-AAAA)
     label:
       en: Time Period Coverage Start
       fr: Couverture de la période de temps - date de début
@@ -2077,7 +2077,7 @@ presets:
     field_name: time_period_coverage_end
     help_text:
       en: The end date of the period covered by the dataset (MM-DD-YYYY)
-      fr: Date de fin de la période couverte par le jeu de données (JJ-MM-AAAA)
+      fr: Date de fin de la période couverte par le jeu de données (MM-JJ-AAAA)
     label:
       en: Time Period Coverage End
       fr: Couverture de la période de temps - date de fin
@@ -2203,7 +2203,7 @@ presets:
       fr: "Date de publication"
     help_text:
       en: The date of issuance (e.g., publication) of the dataset (MM-DD-YYYY)
-      fr: Date de publication du jeu de données (JJ-MM-AAAA)
+      fr: Date de publication du jeu de données (MM-JJ-AAAA)
     required: true
     # copied from date preset
     form_snippet: date.html
@@ -2221,7 +2221,7 @@ presets:
       fr: Date de modification
     help_text:
       en: The date on which the dataset was updated (MM-DD-YYYY)
-      fr: Date à laquelle le jeu de données a été mis à jour (JJ-MM-AAAA)
+      fr: Date à laquelle le jeu de données a été mis à jour (MM-JJ-AAAA)
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
