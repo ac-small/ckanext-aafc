@@ -184,7 +184,7 @@ presets:
          en: Ineligibility Reason
          fr: Motif du rejet 
       help_text:
-         en: "Inaligibility reason. "
+         en: "Ineligibility reason. "
          fr: "Motif du rejet."
       required: true
       form_include_blank_choice: true
