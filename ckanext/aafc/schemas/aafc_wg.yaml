@@ -101,6 +101,7 @@ dataset_fields:
     en: "Indicates whether or not the data was purchased from a source external to AAFC"
     fr: "Précise si les données ont été achetées ou non d’une source externe à AAC."
   field_name: procured_data
+  form_include_blank_choice: true
   display_group: Basic Information
 
 - preset: procured_data_organization_name
