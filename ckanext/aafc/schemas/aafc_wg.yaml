@@ -78,6 +78,7 @@ dataset_fields:
   display_group: Basic Information
 
 - preset: aafc_sector
+  required: true
   display_group: Basic Information
 
 - preset: canada_keywords
