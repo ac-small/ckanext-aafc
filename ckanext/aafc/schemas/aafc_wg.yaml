@@ -625,7 +625,7 @@ dataset_fields:
 resource_fields:
 - preset: canada_resource_name
   display_group: ANA
-- preset: canada_resource_language
+- preset: aafc_resource_language
   display_group: ANA
 - preset: aafc_resource_metadata_schema
   display_group: ANA

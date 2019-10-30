@@ -1376,3 +1376,46 @@ presets:
       en: A name given to the resource
       fr: (fr)A name given to the resource
     form_panel: resource
+
+
+# NOTE: a modified version of canada_resource_language to adapt AAFC requirement
+- preset_name: aafc_resource_language
+  values:
+    field_name: language
+    label:
+      en: Language
+      fr: Langue
+    help_text:
+      en: The language of the resource. You may select multiple languages (Ctrl+Click).
+      fr: Langue de la ressource. Vous pouvez sélectionner de multiples langues (Ctrl+Clic).
+    required: true
+    display_snippet: br_multiple_choice.html
+    choices:
+    - label:
+        en: English
+        fr: Anglais
+      value: en
+    - label:
+        en: Bilingual (English and French)
+        fr: bilinque (Anglais et français)
+      value: bilingual
+    - label:
+        en: French
+        fr: Français
+      value: fr
+    - label:
+        en: Inuktitut
+        fr: Inuktitut
+      value: iu
+    - label:
+        en: Other
+        fr: Autre
+      value: other
+    - label:
+        en: No linguistic content; Not applicable
+        fr: pas de contenu linguistique; non applicable
+      value: zxx
+    # copied from multiple_select preset
+    form_snippet: multiple_select.html
+    validators: scheming_multiple_choice
+    output_validators: scheming_multiple_choice_output
