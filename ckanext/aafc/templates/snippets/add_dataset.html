@@ -7,9 +7,18 @@
 {% for w in kole_dict %}
     {% set dataset_type = w %}
     {% set dataset_title = w.replace('-',' ') %}
-    {% if group %}
-        {% link_for _('Add ' + dataset_title.title()), named_route=dataset_type + '_new', group=group, class_='btn btn-primary', icon='plus-square' %}
+    {% if dataset_type == "aafc-open-data" %}
+	{% if h.lang() == "en" %}
+	    	{% set add_dataset_title = 'Add AAFC Open Data' %}
+    	{% else %}
+	    	{% set add_dataset_title = "Ajouter les données ouvertes d'AAC" %}
+    	{% endif %}
     {% else %}
-        {% link_for _('Add ' + dataset_title.title()), controller='package', action='new', named_route=dataset_type + '_new', class_='btn btn-primary', icon='plus-square' %}
+    	{% set add_dataset_title = 'Add ' + dataset_title.title() %}
+    {% endif %}
+    {% if group %}
+        {% link_for _(add_dataset_title), named_route=dataset_type + '_new', group=group, class_='btn btn-primary', icon='plus-square' %}
+    {% else %}
+        {% link_for _(add_dataset_title), controller='package', action='new', named_route=dataset_type + '_new', class_='btn btn-primary', icon='plus-square' %}
     {% endif %}
 {% endfor %}
