@@ -1259,6 +1259,7 @@ presets:
       en: Sector
       fr: Secteur
     #required: true
+    form_include_blank_choice: true
     choices:
     - label:
         en: "Animal genetics"
