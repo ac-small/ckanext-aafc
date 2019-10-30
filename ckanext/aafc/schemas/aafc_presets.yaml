@@ -1420,3 +1420,90 @@ presets:
     form_snippet: multiple_select.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
+
+
+
+- preset_name: aafc_geographic_region
+  values:
+    field_name: geographic_region
+    label:
+      en: Geographic Region Name
+      fr: Nom de la région géographique
+    help_text:
+      en: The geographic region of the dataset. You may select multiple regions (Ctrl+Click)
+      fr: Région géographique d’un jeu de données. Vous pouvez sélectionner de multiples régions (Ctrl+Clic)
+    choices:
+    - label:
+        en: Canada
+        fr: Canada
+      value: '0'
+    - label:
+        en: Atlantic
+        fr: Atlantique
+      value: '1'
+    - label:
+        en: Newfoundland and Labrador
+        fr: Terre-Neuve-et-Labrador
+      value: '10'
+    - label:
+        en: Prince Edward Island
+        fr: Île-du-Prince-Édouard
+      value: '11'
+    - label:
+        en: Nova Scotia
+        fr: Nouvelle-Écosse
+      value: '12'
+    - label:
+        en: New Brunswick
+        fr: Nouveau-Brunswick
+      value: '13'
+    - label:
+        en: Quebec
+        fr: Québec
+      value: '2'
+    - label:
+        en: Ontario
+        fr: Ontario
+      value: '3'
+    - label:
+        en: Prairies
+        fr: Prairies
+      value: '4'
+    - label:
+        en: Manitoba
+        fr: Manitoba
+      value: '46'
+    - label:
+        en: Saskatchewan
+        fr: Saskatchewan
+      value: '47'
+    - label:
+        en: Alberta
+        fr: Alberta
+      value: '48'
+    - label:
+        en: British Columbia
+        fr: Colombie-Britannique
+      value: '5'
+    - label:
+        en: Territories
+        fr: Territoires
+      value: '6'
+    - label:
+        en: Yukon
+        fr: Yukon
+      value: '60'
+    - label:
+        en: Northwest Territories
+        fr: Territoires du Nord-Ouest
+      value: '61'
+    - label:
+        en: Nunavut
+        fr: Nunavut
+      value: '62'
+    form_snippet: multiple_select.html
+    display_snippet: multiple_choice.html
+    validators: scheming_multiple_choice
+    output_validators: scheming_multiple_choice_output
+
+

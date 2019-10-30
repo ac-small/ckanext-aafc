@@ -319,11 +319,12 @@ dataset_fields:
   help_text:
     en: "The region where the dataset was originally published. You may select multiple options (Ctrl+Click) "
     fr: "La région où le jeu de données a été publié initialement. Vous pouvez sélectionner de multiples options (Ctrl+Clic)"
-  display_group: Optional Dataset Information 
-  preset: canada_geographic_region # use same multi-select controlled list
+  preset: aafc_geographic_region # use same multi-select controlled list
+  form_restrict_choices_to:
   display_group: Optional Dataset Information
 
-- preset: canada_geographic_region
+- preset: aafc_geographic_region
+  form_restrict_choices_to:
   display_group: Optional Dataset Information
 
 - field_name: ditigal_object_identifier
