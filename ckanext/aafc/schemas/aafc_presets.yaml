@@ -1325,7 +1325,7 @@ presets:
     help_text:
       en: "The metadata schema of the resource"
       fr: "Le schéma des métadonnées des ressources"
-    required: true
+    #required: true
     choices:
     - label:
         en: Darwin Core
