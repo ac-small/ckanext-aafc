@@ -279,6 +279,9 @@ dataset_fields:
 
 ############################
 # Optional Dataset Information
+#- preset_name: canada_owner_org
+#  display_group: Optional Dataset Information
+
 - preset: canada_org_title_at_publication
   display_group: Optional Dataset Information
 
@@ -634,16 +637,16 @@ resource_fields:
 - preset: canada_resource_date_published
   display_group: ANA
 - preset: canada_resource_type
-  form_restrict_choices_to:
-  - application
-  - api
-  - dataset
-  - guide
-  - faq
-  - specification
-  - terminology
-  - tool
-  - website
+  #form_restrict_choices_to:
+  #- application
+  #- api
+  #- dataset
+  #- guide
+  #- faq
+  #- specification
+  #- terminology
+  #- tool
+  #- website
   display_group: ANA
 - preset: canada_resource_format
   display_group: ANA
@@ -657,4 +660,5 @@ resource_fields:
 - preset: canada_resource_data_quality
   display_group: ANA
 - preset: canada_resource_url
+  required: true
   display_group: ANA
