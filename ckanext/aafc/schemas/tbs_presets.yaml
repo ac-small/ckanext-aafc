@@ -2731,6 +2731,8 @@ presets:
         fr: Nom français attribué à la ressource
     required: true
     # copied from fluent_text preset
+    form_attrs:
+      class: form-control
     form_snippet: fluent_text.html
     display_snippet: fluent_text.html
     error_snippet: fluent_text.html
