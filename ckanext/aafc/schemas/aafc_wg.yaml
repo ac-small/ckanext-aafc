@@ -370,10 +370,13 @@ dataset_fields:
   output_validators: fluent_text_output
   display_group: Optional Dataset Information
  
-- field_name: apm_department_identifier
+- field_name: apm_departmental_identifier
   label:
-    en: APM Department Identifier
+    en: APM Departmental Identifier
     fr: Identifiant (ID) du Programme Agri-marketing (PAM)
+  help_text:
+    en: The Application Portfolio Management "Departmental ID" of the data source for this dataset, if applicable.(https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index)
+    fr: (fr)The Application Portfolio Management "Departmental ID" of the data source for this dataset, if applicable.(https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index)
   display_group: Optional Dataset Information
 
 - field_name: odi_reference_number
