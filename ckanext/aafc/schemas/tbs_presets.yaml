@@ -2446,6 +2446,8 @@ presets:
       en: The licence applied to the dataset
       fr: Licence s’appliquant au jeu de données
     required: true
+    form_attrs:
+      class: form-control
     form_include_blank_choice: true
 
 #Field = Access Restrictions.
