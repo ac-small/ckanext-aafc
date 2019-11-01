@@ -261,6 +261,9 @@ dataset_fields:
   label:
     en: IMSO Approval
     fr: Approbation par le CSGI
+  help_text:
+    en: "Confirms if IMSO approval has been received for the publication of the data"
+    fr: "(fr)Confirms if IMSO approval has been received for the publication of the data"
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
