@@ -347,6 +347,8 @@ presets:
 #    validators: fluent_text canada_copy_from_org_name
 #############################################
 # copied from fluent_text preset
+    form_attrs:
+      class: form-control
     form_snippet: fluent_text.html
     display_snippet: fluent_text.html
     error_snippet: fluent_text.html
@@ -378,6 +380,8 @@ presets:
         fr: Noms français des groupes de travail, des unités de travail, des unités opérationnelles, etc. de l’organisation qui publie le jeu de données (séparer les multiples noms par des virgules)
 
     # copied from fluent_text preset
+    form_attrs:
+      class: form-control
     form_snippet: fluent_text.html
     display_snippet: fluent_text.html
     error_snippet: fluent_text.html
@@ -422,6 +426,8 @@ presets:
         en: The French names of entities (persons, groups, GC Departments or Agencies) that contributed to the dataset (separate multiple entities by commas)
         fr: Les noms français des entités (personnes, groupes, ministères ou organismes du GC) qui ont apporté une contribution au jeu de données (séparer les multiples entités par des virgules)
     # copied from fluent_text preset
+    form_attrs:
+      class: form-control
     form_snippet: fluent_text.html
     display_snippet: fluent_text.html
     error_snippet: fluent_text.html
@@ -2313,6 +2319,8 @@ presets:
         en: French program or homepage that can be navigated to gain additional or contextual information about the dataset
         fr: Programme ou page d’accueil pouvant être consulté pour obtenir de l’information supplémentaire ou contextuelle au sujet du jeu de données, en français
     # copied from fluent_text preset
+    form_attrs:
+      class: form-control
     form_snippet: fluent_text.html
     display_snippet: fluent_link.html
     display_attributes:
@@ -2346,6 +2354,8 @@ presets:
         en: The French name of the series, or aggregate dataset, of which the dataset is a part
         fr: Nom français de la série, ou du jeu de données globales, dont le jeu de données fait partie
     # copied from fluent_text preset
+    form_attrs:
+      class: form-control
     form_snippet: fluent_text.html
     display_snippet: fluent_text.html
     error_snippet: fluent_text.html
@@ -2377,6 +2387,8 @@ presets:
         en: French identification of the series’ issue information
         fr: Identification en français des renseignements sur la publication de la série
     # copied from fluent_text preset
+    form_attrs:
+      class: form-control
     form_snippet: fluent_text.html
     display_snippet: fluent_text.html
     error_snippet: fluent_text.html
