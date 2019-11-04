@@ -1509,3 +1509,19 @@ presets:
     output_validators: scheming_multiple_choice_output
 
 
+- preset_name: aafc_owner_org
+  values:
+    field_name: aafc_owner_org
+    label:
+      en: Publisher - Current Organization Name
+      fr: Éditeur - Nom actuel de l’organisation
+    help_text:
+      en: The Title of the current Organization (GC Department or Agency) primarily responsible for publishing the dataset
+      fr: Titre de l’organisation actuelle (organisme ou ministère du GC) principalement responsable de publier le jeu de données
+    required: true
+    form_include_blank_choice: true
+    form_select_attrs:
+      class: form-control
+    # copied from dataset_organization preset
+    validators: owner_org_validator unicode
+    form_snippet: aafc_org.html

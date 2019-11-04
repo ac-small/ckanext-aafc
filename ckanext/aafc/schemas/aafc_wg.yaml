@@ -284,6 +284,14 @@ dataset_fields:
 # Optional Dataset Information
 #- preset_name: canada_owner_org
 #  display_group: Optional Dataset Information
+- preset: aafc_owner_org
+  label:
+    en: Publisher - Current Organization Name
+    fr: (fr)Publisher - Current Organization Name
+  help_text:
+    en: "The title of the current organization (GC Department or Agency) primarily responsible for publishing the asset"
+    fr: "(fr)The title of the current organization (GC Department or Agency) primarily responsible for publishing the asset"
+  display_group: Optional Dataset Information
 
 - preset: canada_org_title_at_publication
   display_group: Optional Dataset Information
