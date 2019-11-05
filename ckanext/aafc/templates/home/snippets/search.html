@@ -1,7 +1,13 @@
 {% set tags = h.get_facet_items_dict('tags', limit=3) %}
 {% set stats = h.get_site_statistics() %}
 {% set placeholder = _('Search from 300 Datasets') %}
+
+{% set current_lang = request.environ.CKAN_LANG %}
+{%if current_lang == "fr" %}
+{% set placeholder1 =  'Recherche de' %}
+{% else %}
 {% set placeholder1 = _('Search from')  %}
+{% endif %}
 {% set placeholder2 = _('Datasets')  %}
 
 <div class="module module-search module-narrow module-shallow box">
