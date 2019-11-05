@@ -100,7 +100,8 @@
    </div>
    <div class="row">
     <div class="navbar-left" style="font-size:30px;margin-top:10px;font-weight:700">
-	AAFC Data Catalogue
+	{%if current_lang == "en"%} AAFC Data Catalogue {% else %}Catalogue de données d'AAC {% endif %}
+	
     </div>
     <div class="collapse navbar-collapse" id="main-navigation-toggle">
       {% block header_site_navigation %}
