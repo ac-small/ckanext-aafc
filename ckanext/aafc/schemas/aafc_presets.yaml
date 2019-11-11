@@ -1308,6 +1308,38 @@ presets:
         fr: "Horticulture"
       value: horticulture      
     - label:
+        en: "Forages and Beef"
+        fr: "Les fourrages et le boeuf"
+      value: forages_and_beef
+    - label:
+        en: "Cereal and Pulse"
+        fr: "Les céréales et les légumineuses"
+      value: cereal_and_pulse
+    - label:
+        en: "Oilseeds"
+        fr: "Les oléagineux"
+      value: oilseeds
+    - label:
+        en: "Dairy, Pork, Poultry and Other Livestock"
+        fr: "Le cheptel laitier, porc, volaille et autres animaux d'élevage"
+      value: dairy_pork_poultry_and_other_livestock
+    - label:
+        en: "Bioproducts"
+        fr: "Bioproduits"
+      value: bioproducts
+    - label:
+        en: "Agri-Food"
+        fr: "L'agroalimentaire"
+      value: agri_food
+    - label:
+        en: "Agro-Ecosystem Productivity and Health"
+        fr: "La productivité des écosystèmes agricoles et santé"
+      value: agro_ecosystem_productivity_and_health
+    - label:
+        en: "Biodiversity and Bioresouces"
+        fr: "La biodiversité et les bioressources"
+      value: biodiversity_and_bioresouces
+    - label:
         en: "Other"
         fr: "Autre"
       value: other
