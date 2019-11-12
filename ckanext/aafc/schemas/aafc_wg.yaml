@@ -248,6 +248,9 @@ dataset_fields:
   display_group: Open Data Release Criteria
 
 - preset: canada_jurisdiction
+  help_text:
+    en: "The extent or range of judicial, law enforcement or other authority. Example: Level of government that contributed the dataset."
+    fr: "(fr)The extent or range of judicial, law enforcement or other authority. Example: Level of government that contributed the dataset."
   display_group: Open Data Release Criteria
 
 - preset: canada_license_id
