@@ -4,40 +4,40 @@
     <div class="row top30"></div>
     <div class="row top30">
       <div class="col-xs-12 text-center">
-        <em  style="font-size:66px;color:black;font-weight:600">
+        <span style="font-family: &quot;Calibri Bold Italic&quot;, &quot;Calibri Regular&quot;, &quot;Calibri&quot;;font-style: italic;font-weight: 700;color: black;font-size: 72px;">
 	    {%if current_lang == "fr" %} Découvrir. Partager. Ouvert.
             {% else %} Discover. Share. Open.
 	    {% endif %}
-       </em>
-      </div>
-    </div>
-    <div class="row">
-      <div class="text-center font-italic">
-        <span  style="font-size:32px;color:black;"><i>
-	    {%if current_lang == "fr" %}
-Rendre les ensembles de données d’AAC disponibles, accessibles et 
-            {% else %} Making AAFC datasets available, accessible and reusable across
-	    {% endif %}
-          </i></span>
+       </span>
       </div>
     </div>
     <div class="row">
       <div class="text-center">
-        <span  style="font-size:32px;color:black;"><i>
+        <span style="font-family: &quot;Calibri Light&quot;, &quot;Calibri Regular&quot;, &quot;Calibri&quot;;font-style: normal;font-weight: 400;font-size: 36px;color: black;">
+	    {%if current_lang == "fr" %}
+Rendre les ensembles de données d’AAC disponibles, accessibles et 
+            {% else %} Making AAFC datasets available, accessible and reusable across
+	    {% endif %}
+          </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <span style="font-family: &quot;Calibri Light&quot;, &quot;Calibri Regular&quot;, &quot;Calibri&quot;;font-style: normal;font-weight: 400;font-size: 36px;color: black;">
 	    {%if current_lang == "fr" %}
 	sables d’AAC et au-delà.	
             {% else %} AAFC and beyond.
 	    {% endif %}
-       </i></span>
+       </span>
       </div>
     </div>
   </div>
-  <div class="aafc-container">
+  <div class="aafc-container" style="padding:0 !important;">
     {% block search %}
       {% snippet 'home/snippets/search.html' %}
     {% endblock %}
   </div>
-  <div class="aafc-container" style="padding:0;">
+  <div class="aafc-container" style="padding:0;position:relative;bottom:15px;">
     <div class="row">
       <div class="col-md-12 text-center">
         {% block stats %}
