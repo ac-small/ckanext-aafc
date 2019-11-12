@@ -281,6 +281,9 @@ dataset_fields:
   label:
     en: Ready to Republish
     fr: Prêt pour la publication
+  help_text:
+    en: "Confirms that the dataset is ready to be re-published to the Open Government portal"
+    fr: "(fr)Confirms that the dataset is ready to be re-published to the Open Government portal"
   display_group: Open Data Release Criteria
 
 ############################
