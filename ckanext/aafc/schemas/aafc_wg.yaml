@@ -271,6 +271,9 @@ dataset_fields:
   label:
     en: Ready to Publish
     fr: Prêt pour la publication
+  help_text:
+    en: "Confirms that the dataset is ready to be published to the Open Government portal"
+    fr: "(fr)Confirms that the dataset is ready to be published to the Open Government portal"
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
@@ -381,6 +384,16 @@ dataset_fields:
   error_snippet: fluent_text.html
   validators: fluent_text
   output_validators: fluent_text_output
+  display_group: Optional Dataset Information
+
+ 
+- field_name: apm_departmental_identifier
+  label:
+    en: APM Departmental Identifier
+    fr: Identifiant (ID) du Programme Agri-marketing (PAM)
+  help_text:
+    en: The Application Portfolio Management "Departmental ID" of the data source for this dataset, if applicable.(https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index)
+    fr: (fr)The Application Portfolio Management "Departmental ID" of the data source for this dataset, if applicable.(https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index)
   display_group: Optional Dataset Information
 
 - field_name: odi_reference_number
