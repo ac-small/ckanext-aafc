@@ -123,6 +123,9 @@ dataset_fields:
   display_group: Basic Information
 
 - preset: ineligibility_reason
+  help_text:
+    en: "If the dataset is not eligible for release to the public, select the reason why the dataset is not eligible for release."
+    fr: "(fr)If the dataset is not eligible for release to the public, select the reason why the dataset is not eligible for release."
   display_group: Basic Information   
 
 - preset: canada_frequency
