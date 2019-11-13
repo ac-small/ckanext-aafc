@@ -9,9 +9,9 @@
     {% set dataset_title = w.replace('-',' ') %}
     {% if dataset_type == "aafc-open-data" %}
 	{% if h.lang() == "en" %}
-	    	{% set add_dataset_title = 'Add AAFC Open Data' %}
+	    	{% set add_dataset_title = 'Add Dataset' %}
     	{% else %}
-	    	{% set add_dataset_title = "Ajouter les données ouvertes d'AAC" %}
+	    	{% set add_dataset_title = "Ajouter un jeu de données" %}
     	{% endif %}
     {% else %}
     	{% set add_dataset_title = 'Add ' + dataset_title.title() %}
