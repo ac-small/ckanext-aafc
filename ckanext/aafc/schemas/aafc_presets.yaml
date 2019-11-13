@@ -126,7 +126,7 @@ presets:
       en: "AAFC Subject"
       fr: "AAC Sujet"
     help_text:
-      en: "The topic of the content of the dataset. You may select multiple subjects (Ctrl+Click)"
+      en: "The AAFC topic of the content of the dataset. You may select multiple subjects (Ctrl+Click)"
       fr: "Le sujet du contenu du jeu de données. Vous pouvez sélectionner de multiples sujets (Ctrl+Clic)"
     required: true
     form_snippet: multiple_select.html

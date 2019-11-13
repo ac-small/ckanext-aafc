@@ -325,14 +325,14 @@ presets:
         fr: Éditeur - Nom de l’organisation lors de la publication (français)
     fluent_help_text:
       en:
-        en: The english organization Title at publication Time. Please leave blank
+        en: The English organization title at publication time. Please leave blank
           if the organization name at time of publication is identical to
           your current organization name.
         fr: Nom de l’organisation au moment de la publication, en anglais. Veuillez
           laisser le champ libre si le nom de l'organisation lors de la publication
           est identique au nom actuel de votre organisation.
       fr:
-        en: The french organization Title at publication Time. Please leave blank
+        en: The French organization title at publication time. Please leave blank
           if the organization name at time of publication is identical to
           your current organization name.
         fr: Nom de l’organisation au moment de la publication, en français. Veuillez
