@@ -68,7 +68,7 @@ dataset_fields:
     fr: Direction générale de la publication
   help_text:
     en: "The name of the Branch primarily responsible for publishing the dataset"
-    fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de donnÃ©es"
+    fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de données"
   display_group: Basic Information
 
 - preset: aafc_title
