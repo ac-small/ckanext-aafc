@@ -118,8 +118,8 @@ dataset_fields:
     en: Eligible for Release 
     fr: Admissible pour publication
   help_text:
-    en: "Eligible for release."
-    fr: "Admissible pour publication."
+    en: "Indicates whether or not the dataset is eligible for release to the public"
+    fr: "(fr)Indicates whether or not the dataset is eligible for release to the public"
   display_group: Basic Information
 
 - preset: ineligibility_reason
