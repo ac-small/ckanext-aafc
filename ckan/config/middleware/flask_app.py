@@ -215,7 +215,7 @@ def make_flask_stack(conf, **app_conf):
             'recompute_hashes': False,
             'minified': True,
             'bottom': True,
-            'bundle': True,
+            'bundle': False,
         }
     root_path = config.get('ckan.root_path', None)
     if root_path:
