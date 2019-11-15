@@ -89,7 +89,7 @@ def make_pylons_stack(conf, full_stack=True, static_files=True,
             'recompute_hashes': False,
             'minified': True,
             'bottom': True,
-            'bundle': True,
+            'bundle': False,
         }
     root_path = config.get('ckan.root_path', None)
     if root_path:
