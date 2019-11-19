@@ -1554,5 +1554,5 @@ presets:
     form_select_attrs:
       class: form-control
     # copied from dataset_organization preset
-    validators: owner_org_validator unicode
+    validators: unicode
     form_snippet: aafc_org.html
