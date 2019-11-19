@@ -1550,7 +1550,6 @@ presets:
     help_text:
       en: The Title of the current Organization (GC Department or Agency) primarily responsible for publishing the dataset
       fr: Titre de l’organisation actuelle (organisme ou ministère du GC) principalement responsable de publier le jeu de données
-    required: true
     form_include_blank_choice: true
     form_select_attrs:
       class: form-control
