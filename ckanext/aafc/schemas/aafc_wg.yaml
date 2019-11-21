@@ -259,7 +259,7 @@ dataset_fields:
 - preset: canada_license_id
   help_text:
     en: "Indicates the licence under which the dataset is being published"
-    fr: "(fr)Indicates the licence under which the dataset is being published"
+    fr: "Précise la licence selon laquelle l'ensemble de données est publié."
   display_group: Open Data Release Criteria
 
 - preset: canada_restrictions
