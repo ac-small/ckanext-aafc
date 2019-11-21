@@ -265,7 +265,7 @@ dataset_fields:
 - preset: canada_restrictions
   help_text:
     en: "Indicates whether or not there are any restictions to accessing the data"
-    fr: "(fr)Indicates whether or not there are any restictions to accessing the data"
+    fr: "Précise si l'accès aux données est assujetti à des restrictions."
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
