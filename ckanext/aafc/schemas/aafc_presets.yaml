@@ -176,8 +176,8 @@ presets:
          en: Eligible for Release
          fr: Admissible pour publication  
       help_text:
-         en: "Eligible for release. "
-         fr: "Admissible pour publication."
+         en: "Indicates whether or not there are any restictions to accessing the data."
+         fr: "Précise si l'accès aux données est assujetti à des restrictions."
 
 - preset_name: ineligibility_reason
   values:
