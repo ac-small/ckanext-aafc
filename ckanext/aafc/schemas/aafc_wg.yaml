@@ -252,8 +252,8 @@ dataset_fields:
 
 - preset: canada_jurisdiction
   help_text:
-    en: "The extent or range of judicial, law enforcement or other authority. Example: Level of government that contributed the dataset."
-    fr: "(fr)The extent or range of judicial, law enforcement or other authority. Example: Level of government that contributed the dataset."
+    en: "Indicates the jurisdiction under which the dataset is being published"
+    fr: "Indique la juridiction sous laquelle le jeu de données est publié"
   display_group: Open Data Release Criteria
 
 - preset: canada_license_id
