@@ -285,7 +285,7 @@ dataset_fields:
     fr: Prêt pour la publication
   help_text:
     en: "Confirms that the dataset is ready to be published to the Open Government portal"
-    fr: "(fr)Confirms that the dataset is ready to be published to the Open Government portal"
+    fr: "Confirme que l'ensemble de données est prêt à publier sur le Portail du gouvernement ouvert."
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
