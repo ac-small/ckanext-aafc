@@ -119,7 +119,7 @@ dataset_fields:
     fr: Admissible pour publication
   help_text:
     en: "Indicates whether or not the dataset is eligible for release to the public"
-    fr: "(fr)Indicates whether or not the dataset is eligible for release to the public"
+    fr: "Précise si l'accès aux données est assujetti à des restrictions."
   display_group: Basic Information
 
 - preset: ineligibility_reason
@@ -178,7 +178,7 @@ dataset_fields:
 - preset: access_to_information
   label:
     en: Access To Information
-    fr: (fr)Access
+    fr: Accès à l'information
   help_text:
     en: "The data or information resource is not subject to any exemptions or exclusions under the Access to Information Act."
     fr: "Les données ou les ressources documentaires ne sont visées par aucune exception ou exclusion en vertu de la Loi sur l’accès à l’information."
@@ -305,10 +305,10 @@ dataset_fields:
 - preset: aafc_owner_org
   label:
     en: Publisher - Current Organization Name
-    fr: (fr)Publisher - Current Organization Name
+    fr: Diffuseur - Nom de l'organisation actuelle
   help_text:
     en: "The title of the current organization (GC Department or Agency) primarily responsible for publishing the asset"
-    fr: "(fr)The title of the current organization (GC Department or Agency) primarily responsible for publishing the asset"
+    fr: "Titre de l'organisation (Ministère du GC ou Organisme) principalement responsable de la publication de la ressource."
   display_group: Optional Dataset Information
 
 - preset: canada_org_title_at_publication
@@ -386,10 +386,10 @@ dataset_fields:
   fluent_help_text:
     en:
       en: General information relating to an asset, in English
-      fr: (fr)General information relating to an asset, in English
+      fr: Information générale liée à une ressource, en anglais.
     fr:
       en: General information relating to an asset, in French
-      fr: (fr)General information relating to an asset, in French
+      fr: Information générale liée à une ressource, en français.
   form_snippet: fluent_text.html
   form_attrs:
     class: form-control
