@@ -170,7 +170,16 @@ dataset_fields:
   value: aafc_author_value
   classes: ['hidden']
   form_snippet: text_author.html
-  display_group: Optional Dataset Information
+  display_group: Basic Information
+
+- field_name: aafc_author_email
+  label:
+    en: Author Email
+    fr: Auteur Email
+  value: aafc_author_email_value
+  classes: ['hidden']
+  form_snippet: text_author_email.html
+  display_group: Basic Information
 ############################
 # Open Gov Dataset Release Information
 - preset: aafc_yesno_required
