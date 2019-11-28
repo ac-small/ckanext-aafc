@@ -127,7 +127,7 @@ presets:
       fr: "AAC Sujet"
     help_text:
       en: "The AAFC topic of the content of the dataset. You may select multiple subjects (Ctrl+Click)"
-      fr: "Le sujet du contenu du jeu de données. Vous pouvez sélectionner de multiples sujets (Ctrl+Clic)"
+      fr: "Sujet du contenu de l'ensemble de données d'AAC. Vous pouvez sélectionner plus d'un sujet (touche ctrl+clic). "
     required: true
     form_snippet: multiple_select.html
     display_snippet: list_inline.html
@@ -176,8 +176,8 @@ presets:
          en: Eligible for Release
          fr: Admissible pour publication  
       help_text:
-         en: "Eligible for release. "
-         fr: "Admissible pour publication."
+         en: "Indicates whether or not there are any restictions to accessing the data."
+         fr: "Précise si l'accès aux données est assujetti à des restrictions."
 
 - preset_name: ineligibility_reason
   values:

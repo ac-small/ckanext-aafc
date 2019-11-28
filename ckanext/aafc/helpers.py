@@ -23,6 +23,7 @@ DATAPREVIEW_MAX = 500
 FGP_URL_OPTION = 'fgp.service_endpoint'
 FGP_URL_DEFAULT = 'http://localhost/'
 
+AAFC_EXT_VER = '0.9.0'
 
 
 def get_translated_t(data_dict, field):
@@ -332,6 +333,10 @@ def gen_odi():
 
 
     return odi
+
+def get_ver():
+   '''Return a reference for version number'''
+   return AAFC_EXT_VER
 
 # FIXME: terrible hacks
 def gravatar(*args, **kwargs):

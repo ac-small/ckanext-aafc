@@ -87,6 +87,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
             'language_text_t',
             'gen_uid',
             'gen_odi',
+            'get_ver',
             ])
 
 # IFacets
