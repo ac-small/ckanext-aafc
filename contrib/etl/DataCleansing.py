@@ -71,8 +71,8 @@ def gen_json(schema, data_frame):
     :return:
     """
     res = []
-
-    for i in range(10):
+    count = data_frame.shape[0]
+    for i in range(count):
         row = data_frame.iloc[i]
         row = row.fillna("")
         item = {}
