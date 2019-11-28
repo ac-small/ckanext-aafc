@@ -338,6 +338,10 @@ def get_ver():
    '''Return a reference for version number'''
    return AAFC_EXT_VER
 
+def get_release():
+   '''Return a reference for registry release from config file'''
+   return config.get('release.aafc.registry', '0.0')
+
 # FIXME: terrible hacks
 def gravatar(*args, **kwargs):
     '''Brute force disable gravatar'''

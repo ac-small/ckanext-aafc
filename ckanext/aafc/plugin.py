@@ -88,6 +88,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
             'gen_uid',
             'gen_odi',
             'get_ver',
+            'get_release',
             ])
 
 # IFacets
