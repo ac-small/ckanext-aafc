@@ -9,8 +9,14 @@ datafile = "Data//updated_sharepoint.xlsm"
 FIELDS_SPECL_CHR = [('Collection Type', r'\d+;#'), ('Data Steward Email', r';#\d+'),
                     ('DRF', r'\d+;#')]
 
-
+OWNER_ORG_PLACEHOLDER = "00000000-0000-0000-0000-000000000000"
+# GROUP_INFO =[
+#     {"":{"display_name":"","description":"","image_display_url": "", "title": "Inventory", "id": "bb812a2e-fd92-4077-8910-5aec702a859a", "name": "inventory"}}
+# ]
 # Audience
+GROUP_INFO_KEYS = ["display_name","description","image_display_url","title","id","name"]
+
+groups_info = {}
 
 def remove_special_character(df, field, regex):
     """
@@ -26,6 +32,8 @@ def remove_special_character(df, field, regex):
 
 
 def main():
+    global  groups_info
+    groups_info = load_groups("Data//groups_info.json")
     df = pd.read_excel(datafile)
 
     df.fillna("")
@@ -46,6 +54,24 @@ def main():
 
     pass
 
+def load_groups(file):
+    """
+    Laod group meta data file and generate a dictionary for use
+    :param file:
+    :return:
+    """
+    groups_row = []
+    groups = {}
+    with open(file) as json_fp:
+        groups_row = json.load(json_fp)
+    for g in groups_row:
+        g_key = g["name"]
+        g_data = {}
+        for k in  GROUP_INFO_KEYS:
+            g_data[k] = g[k]
+
+        groups[g_key] = g_data
+    return groups
 
 def load_schema(file):
     sch = ""
@@ -95,6 +121,12 @@ def gen_json(schema, data_frame):
                 value = value.strftime('%Y-%m-%d %H:%M:%S')
             # if isinstance(value, np.nan):
             #     value = "N/A"
+            if k == "group":
+                value0 = value.split(",")
+                value = []
+                for v in value0:
+                    value.append(groups_info[v])
+
             item[k] = value
         # print(f'{k}, {v["col"]}')
         res.append(item)
