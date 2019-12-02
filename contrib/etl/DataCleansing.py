@@ -103,7 +103,7 @@ def gen_json(schema, data_frame):
         row = row.fillna("")
         item = {}
         for k, v in schema.items():
-            value = row[v['col']]
+            value = row[v['coln']]
             # if k == "keywords":
             #    value = process(value, "kw")
             if k.startswith("official_lang"):
