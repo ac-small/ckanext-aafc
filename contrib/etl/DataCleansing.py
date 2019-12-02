@@ -4,7 +4,7 @@ import numpy as np
 
 
 
-datafile = "Data//updated_sharepoint.xlsm"
+datafile = "Data//sharepoint.xlsm"
 
 FIELDS_SPECL_CHR = [('Collection Type', r'\d+;#'), ('Data Steward Email', r';#\d+'),
                     ('DRF', r'\d+;#')]
@@ -65,7 +65,7 @@ def load_groups(file):
     with open(file) as json_fp:
         groups_row = json.load(json_fp)
     for g in groups_row:
-        g_key = g["name"]
+        g_key = g["title"]
         g_data = {}
         for k in  GROUP_INFO_KEYS:
             g_data[k] = g[k]
@@ -121,12 +121,13 @@ def gen_json(schema, data_frame):
                 value = value.strftime('%Y-%m-%d %H:%M:%S')
             # if isinstance(value, np.nan):
             #     value = "N/A"
-            if k == "group":
-                value0 = value.split(",")
-                value = []
-                for v in value0:
-                    value.append(groups_info[v])
-
+            if k == "groups":
+                #value0 = value.split(",")
+                value1 = []
+                for v in value:
+                    v = v.strip()
+                    value1.append(groups_info[v])
+                value = value1
             item[k] = value
         # print(f'{k}, {v["col"]}')
         res.append(item)
