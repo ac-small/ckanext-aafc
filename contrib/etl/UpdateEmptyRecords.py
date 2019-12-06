@@ -12,26 +12,36 @@ import os
 
 #ssl._create_default_https_context = ssl._create_unverified_context
 
-load_dotenv()
-registry_url = os.getenv("registry_url")
-url1 = registry_url + "api/3/action/package_search"
+def get_unfilled_dataset():
+    global count
+    load_dotenv()
+    registry_url = os.getenv("registry_url")
+    url1 = registry_url + "api/3/action/package_search"
+    q_param = "?q=open_government_portal_record_e:n/a"
+    # Make the HTTP request
+    response = urllib.request.urlopen(url1 + q_param)
+    res = response.read()
+    # with open("res2.json","w") as fout:
+    #     fout.write(str(res))
+    response_dict = json.loads(res)
+    result = response_dict['result']
+    count = result['count']
+    print(f'count:{count}')
+    res_list = result['results']
+    return (count, res_list)
 
-q_param = "?q=open_government_portal_record_e:n/a"
-# Make the HTTP request
-response = urllib.request.urlopen(url1 + q_param)
-
-res = response.read()
-# with open("res2.json","w") as fout:
-#     fout.write(str(res))
-response_dict = json.loads(res)
 
 
-result = response_dict['result']
-count = result['count']
-print(f'count:{count}')
+def query_remote():
 
-res_list = result['results']
-for i in range(count):
-    a_res = res_list[i]
-    print(f'id: {a_res["id"]}, title:{a_res["title"]}')
+    pass
 
+def main():
+    count, res_list = get_unfilled_dataset()
+    for i in range(count):
+        a_res = res_list[i]
+        print(f'id: {a_res["id"]}, title:{a_res["title"]}')
+
+
+if __name__ == "__main__":
+    main()
