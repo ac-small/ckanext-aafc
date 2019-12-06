@@ -33,13 +33,14 @@ def get_unfilled_dataset():
 
 def query_remote(package_id):
     open_gov_url = os.getenv("open_gov_url")
+    key = os.getenv("api_key")
     url1 = open_gov_url + "api/3/action/package_show"
     #q_param = "?id=b22cd297-cdb4-4d76-9f79-cc1c16d0e9e7"
     q_param = f'?id={package_id}'
 
 
 
-    req = urllib.request.Request(url1 + q_param, headers={'Authorization':'b5a64a5a-e737-4fe2-9ae8-f92e7c7a8072'})
+    req = urllib.request.Request(url1 + q_param, headers={'Authorization':key})
 
     response = urllib.request.urlopen(req)
 
@@ -59,7 +60,6 @@ def main():
 def syncronize_registry(package_id):
     # English: http: // open.canada.ca / data / en / dataset / {PACKAGE_ID}
     # French: http: // ouvert.canada.ca / data / fr / dataset / {PACKAGE_ID}
-	# metadata_modified
     pass
 
 
@@ -70,4 +70,3 @@ def main2():
 if __name__ == "__main__":
     load_dotenv()
     main()
- 
