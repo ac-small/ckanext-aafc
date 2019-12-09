@@ -16,7 +16,7 @@ def get_unfilled_dataset():
     load_dotenv()
     registry_url = os.getenv("registry_url")
     url1 = registry_url + "api/3/action/package_search"
-    q_param = "?q=open_government_portal_record_e:n/a"
+    q_param = "?q=open_government_portal_record_e:n/a&fq=publication:open_government"
     # Make the HTTP request
     response = urllib.request.urlopen(url1 + q_param)
     res = response.read()
@@ -50,22 +50,24 @@ def query_remote(package_id):
     response_dict = json.loads(res)
     return response_dict
 
-def main():
-    count, res_list = get_unfilled_dataset()
-    for i in range(count):
-        a_res = res_list[i]
-        print(f'id: {a_res["id"]}, title:{a_res["title"]}')
-
 
 def syncronize_registry(package_id):
     # English: http: // open.canada.ca / data / en / dataset / {PACKAGE_ID}
     # French: http: // ouvert.canada.ca / data / fr / dataset / {PACKAGE_ID}
+    # metadata_modified
     pass
 
+def main():
+    count, res_list = get_unfilled_dataset()
+    for i in range(count):
+        a_res = res_list[i]
+        print(f'id: {a_res["id"]}, title:{a_res["title"]}, publication: {a_res["publication"]}')
 
 def main2():
-    query_remote()
+    res =  query_remote("xxxxxx")
 
+    data = res['result']
+    print(data['metadata_modified'])
 
 if __name__ == "__main__":
     load_dotenv()
