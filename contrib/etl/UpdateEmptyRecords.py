@@ -17,7 +17,7 @@ def get_unfilled_dataset():
     load_dotenv()
     registry_url = os.getenv("registry_url")
     url1 = registry_url + "api/3/action/package_search"
-    q_param = "?q=open_government_portal_record_e:n/a&fq=publication:open_government"
+    q_param = "?q=open_government_portal_record_e:N/A&fq=publication:open_government"
     # Make the HTTP request
     #response = urllib.request.urlopen(url1 + q_param)
     #for Python 2.7
@@ -48,7 +48,15 @@ def query_remote(package_id):
 
     #response = urllib.request.urlopen(req)
     #For Python 2.7
-    response = urllib2.urlopen(req)
+    response = None
+    try:
+        response = urllib2.urlopen(req)
+    except urllib2.HTTPError:
+        #print("might not have the package in OG site yet")
+        return None
+    except:
+        print("Error happening querying OG site")
+        return None
     res = response.read()
     # with open("res2.json","w") as fout:
     #     fout.write(str(res))
@@ -88,7 +96,10 @@ def syncronize_registry(package_id, data):
     # }
     dataset_dict = response_dict["result"]
     #dataset_dict['id'] = response_dict["result"]["id"]
-    dataset_dict['title'] = "Open Gov test Modified"
+    dataset_dict['title'] = "Open Gov  Modified2"
+    for k, v in data.items():
+        dataset_dict[k] = v
+
     dataset_dict['resources'][0]['language'] = [u'en']
 
     #data_string = urllib.parse.quote(json.dumps(dummy))#dataset_dict))
@@ -99,15 +110,13 @@ def syncronize_registry(package_id, data):
     # data = urllib.parse.urlencode(dummy)#dataset_dict)
     # data = data.encode()
     url1 = registry_url + "api/3/action/package_update"
-    # req = urllib.request.Request(url1, data=bdata, headers={'Authorization':'07718a69-8bed-4556-95d2-13418916cdc6',
-    #                                                                     'Content-Type':'multipart/form-data'})
-
     request = urllib2.Request(url1)
 
     # Creating a dataset requires an authorization header.
     # Replace *** with your API key, from your user account on the CKAN site
     # that you're creating the dataset on.
-    request.add_header('Authorization', '07718a69-8bed-4556-95d2-13418916cdc6')
+    registry_key = os.getenv("registry_api_key")
+    request.add_header('Authorization', registry_key)
 
     response = urllib2.urlopen(request, data_string)
 
@@ -118,9 +127,31 @@ def syncronize_registry(package_id, data):
 
 def main():
     count, res_list = get_unfilled_dataset()
-    for i in range(count):
+    for i in range(count): # for each unfilled item
         a_res = res_list[i]
+        package_id = a_res["id"]
+        #retrieve info from OG
+        res_og = query_remote(package_id)
+        if res_og == None:
+            print("The dataset %s is not published in OG yet"%package_id)
+            continue
+        data_og = res_og['result']
+        #populate retrieved value
+        data_fill = {}
+        data_fill['data_released'] = data_og['metadata_modified']
+        data_fill['open_government_portal_record_e'] = u'http://open.canada.ca/data/en/dataset/%s' % package_id
+        data_fill['open_government_portal_record_f'] = u'http://ouvert.canada.ca/data/fr/dataset/%s' % package_id
+        syncronize_registry(package_id, data_fill)
+
         print("id: %s, , title: %s, publication: %s"%( a_res["id"], a_res["title"], a_res["publication"]))
+
+
+def testModification():
+    data_fill = {}
+    data_fill['data_released'] = '2021-12-12'
+    data_fill['open_government_portal_record_e'] = u'http://open.canada.ca/data/en/dataset/%s' % "xxxxx-eeeee"
+    data_fill['open_government_portal_record_f'] = u'http://ouvert.canada.ca/data/fr/dataset/%s' % "xxxxx-fffff"
+    syncronize_registry("e328838f-3bfc-4d86-9cc5-23de0b549c91", data_fill )
 
 if __name__ == "__main__":
     load_dotenv()
