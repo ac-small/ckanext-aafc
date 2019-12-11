@@ -6,6 +6,7 @@ import json
 import pprint
 from dotenv import load_dotenv
 import os
+import datetime
 
 # Use the json module to dump a dictionary to a string for posting.
 # data_string = urllib.parse.quote(json.dumps({'id': 'b22cd297-cdb4-4d76-9f79-cc1c16d0e9e7'}))
@@ -96,7 +97,7 @@ def syncronize_registry(package_id, data):
     # }
     dataset_dict = response_dict["result"]
     #dataset_dict['id'] = response_dict["result"]["id"]
-    dataset_dict['title'] = "Open Gov  Modified2"
+    #dataset_dict['title'] = "Open Gov  Modified2"
     for k, v in data.items():
         dataset_dict[k] = v
 
@@ -125,6 +126,15 @@ def syncronize_registry(package_id, data):
 
     pass
 
+def reformat_date( date_string ):
+    '''
+    Convert the incoming date string into simple format
+    :param date_string:
+    :return: simplified date string
+    '''
+    date_obj = datetime.datetime.strptime(date_string,'%Y-%m-%dT%H:%M:%S.%f')
+    return date_obj.strftime('%Y-%m-%d')
+
 def main():
     count, res_list = get_unfilled_dataset()
     for i in range(count): # for each unfilled item
@@ -138,7 +148,7 @@ def main():
         data_og = res_og['result']
         #populate retrieved value
         data_fill = {}
-        data_fill['data_released'] = data_og['metadata_modified']
+        data_fill['data_released'] = reformat_date ( data_og['metadata_modified']) 
         data_fill['open_government_portal_record_e'] = u'http://open.canada.ca/data/en/dataset/%s' % package_id
         data_fill['open_government_portal_record_f'] = u'http://ouvert.canada.ca/data/fr/dataset/%s' % package_id
         syncronize_registry(package_id, data_fill)
