@@ -84,8 +84,8 @@ dataset_fields:
 - preset: canada_keywords
   display_group: Basic Information
 
-- preset: aafc_subject
-  display_group: Basic Information
+#- preset: aafc_subject
+#  display_group: Basic Information
 
 - preset: data_steward_email
   required: true
