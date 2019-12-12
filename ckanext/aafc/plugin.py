@@ -22,10 +22,18 @@ from ckanext.aafc import helpers
 from time import gmtime, strftime
 from ckanext.scheming import helpers as sh
 import logging
-
+from flask import render_template
+from flask import Blueprint
 import json
 
 log = logging.getLogger(__name__)
+
+def helper_info():
+    """
+    A function that render a page when the route to '/info'
+    """
+    return render_template('home/about.html')    
+
 
 class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer) 
@@ -33,6 +41,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     plugins.implements(plugins.IValidators, inherit=True)
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IPackageController)
+    plugins.implements(plugins.IBlueprint)
     # IConfigurer
 
     def update_config(self, config_):
@@ -112,6 +121,18 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     def organization_facets(self, facets_dict, organization_type,
                             package_type):
         return self.dataset_facets(facets_dict, package_type)
+# IBluprint
+    def get_blueprint(self):
+        # Create Blueprint for plugin
+        blueprint = Blueprint(self.name, self.__module__)
+        # Add plugin url rules to Blueprint object
+        rules = [
+            (u'/info', u'info', helper_info),
+        ]
+        for rule in rules:
+            blueprint.add_url_rule(*rule)
+
+        return blueprint
 
 # IPackageController
     def read(self, entity):
