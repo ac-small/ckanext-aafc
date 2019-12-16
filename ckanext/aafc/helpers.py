@@ -24,6 +24,7 @@ FGP_URL_OPTION = 'fgp.service_endpoint'
 FGP_URL_DEFAULT = 'http://localhost/'
 
 AAFC_EXT_VER = '0.9.0'
+OPEN_GOV_URL = 'N/A'
 
 
 def get_translated_t(data_dict, field):
@@ -333,6 +334,10 @@ def gen_odi():
 
 
     return odi
+    
+def get_url():
+    '''Return a reference for open government URL'''
+    return OPEN_GOV_URL
 
 def get_ver():
    '''Return a reference for version number'''

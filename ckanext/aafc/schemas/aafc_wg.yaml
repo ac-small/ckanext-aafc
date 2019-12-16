@@ -450,6 +450,7 @@ dataset_fields:
     en: Open Government Portal Record URL (English)
     fr: URL du Portail du gouvernement ouvert (anglais)
   classes: ['hidden']
+  form_snippet: text_url.html
   display_group: Optional Dataset Information
   
 - field_name: open_government_portal_record_f
@@ -457,6 +458,7 @@ dataset_fields:
     en: Open Government Portal Record URL (French)
     fr: URL du Portail du gouvernement ouvert (français)
   classes: ['hidden']
+  form_snippet: text_url.html
   display_group: Optional Dataset Information
  
 ####################################
