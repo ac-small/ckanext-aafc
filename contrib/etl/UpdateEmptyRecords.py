@@ -37,7 +37,7 @@ def get_unfilled_dataset():
 
 def query_remote(package_id):
     open_gov_url = os.getenv("open_gov_url")
-    key = os.getenv("api_key")
+    #key = os.getenv("api_key")
     url1 = open_gov_url + "api/3/action/package_show"
     q_param = "?id=%s"%package_id
 
@@ -45,7 +45,7 @@ def query_remote(package_id):
     # for Python 2.7
     req = urllib2.Request(url1 + q_param)
 
-    req.add_header('Authorization',key)
+    #req.add_header('Authorization',key)
 
     #response = urllib.request.urlopen(req)
     #For Python 2.7
