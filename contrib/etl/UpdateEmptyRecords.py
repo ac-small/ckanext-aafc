@@ -170,6 +170,10 @@ def query_by_aafc():
     apicall = "api/3/action/package_search"
     q_param0 = "?q=organization:aafc-aac&rows=%d" % rows
 
+
+    # useful queries:
+    # ?q=metadata_modified:[2019-10-10T21:15:00Z TO *]
+    #
     res = query_with_get(og, apicall, q_param0)
 
     if res is None:
