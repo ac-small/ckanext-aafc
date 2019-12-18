@@ -35,18 +35,20 @@ def get_unfilled_dataset():
     return (count, res_list)
 
 
-def query_remote(package_id):
-    open_gov_url = os.getenv("open_gov_url")
-    #key = os.getenv("api_key")
-    url1 = open_gov_url + "api/3/action/package_show"
-    q_param = "?id=%s" % package_id
+def query_with_get( site, apicall, q_param, apikey = None):
+    """
+    Query remote site with get
+    :param site:
+    :param apicall:
+    :param q_param:
+    :param apikey:
+    :return:
+    """
 
-    # req = urllib.request.Request(url1 + q_param, headers={'Authorization': key})
-    # for Python 2.7
+    url1 = site + apicall
     req = urllib2.Request(url1 + q_param)
-
-    #req.add_header('Authorization', key)
-
+    if apikey != None:
+        req.add_header('Authorization', apikey)
     # response = urllib.request.urlopen(req)
     # For Python 2.7
     response = None
@@ -59,8 +61,21 @@ def query_remote(package_id):
         print("Error happening querying OG site")
         return None
     res = response.read()
+
+    return res
+
+
+
+def query_remote(package_id):
+    open_gov_url = os.getenv("open_gov_url")
+    key = os.getenv("api_key")
+    q_param = "?id=%s" % package_id
+
+    res = query_with_get(open_gov_url,"api/3/action/package_show",q_param,key)
     # with open("res2.json","w") as fout:
     #     fout.write(str(res))
+    if res is None:
+        return None
     response_dict = json.loads(res)
     return response_dict
 
@@ -136,6 +151,53 @@ def reformat_date(date_string):
     return date_obj.strftime('%Y-%m-%d')
 
 
+def process_a_batch(data_list):
+    length = len(data_list)
+    ids = []
+    for i in range(length):
+        a_id = data_list[i]["id"]
+        ids.append(a_id)
+        #print("id:" + a_id)
+    return ids
+
+def query_by_aafc():
+    """
+    Query OG site to retrieve all the ids of AAFC
+    :return:
+    """
+    rows = 100
+    og = "https://open.canada.ca/data/"
+    apicall = "api/3/action/package_search"
+    q_param0 = "?q=organization:aafc-aac&rows=%d" % rows
+
+    res = query_with_get(og, apicall, q_param0)
+
+    if res is None:
+        return None
+
+    response_dict = json.loads(res)
+    data = response_dict['result']
+    record_cnt = data['count']
+    results = data['results']
+    id_list = process_a_batch(results)
+    batches = record_cnt / rows +1
+
+    for b in range(1,batches):
+        offset = b * rows
+        q_param = "?q=organization:aafc-aac&rows=%d&start=%d" % (rows,offset)
+        res = query_with_get(og, apicall, q_param)
+        response_dict = json.loads(res)
+        results = response_dict['result']['results']
+        id_list_curr = process_a_batch(results)
+        id_list.extend(id_list_curr)
+
+
+
+    return id_list
+
+
+
+
 def main():
     count, res_list = get_unfilled_dataset()
     for i in range(count):  # for each unfilled item
@@ -165,4 +227,8 @@ def testModification():
 
 if __name__ == "__main__":
     load_dotenv()
-    main()
+    #main2()
+    id_list = query_by_aafc()
+    with open("aafc_id_list.txt","w") as fout:
+         str = u','.join(id_list)
+         fout.write(str)
