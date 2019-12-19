@@ -101,10 +101,22 @@ def test_registry():
 
 
 def post_to_regsistry(package_id):
-
+    # TODO: Not implemented yet
+    print("Creating data set with package id %s to registry"% package_id )
     pass
+
+def main():
+    registry_url = os.getenv("registry_url")
+    registry_ids = query_site_for_newdata(registry_url, "&fq=publication:open_government", hours_ago=48)
+    og_site = "https://open.canada.ca/data/"
+    og_ids = query_site_for_newdata(og_site, "&fq=organization:aafc-aac", hours_ago=48)
+    # Go through both lists, retrieve missing data from OG and post into Regsitry
+    for id in og_ids:
+        if id in registry_ids:
+            continue
+        post_to_regsistry(id)
 
 if __name__ == "__main__":
     load_dotenv()
-    test_og()
-    #main()
+    #test_og()
+    main()
