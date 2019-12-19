@@ -158,8 +158,4 @@ def testModification():
 
 if __name__ == "__main__":
     load_dotenv()
-    #main2()
-    id_list = query_by_aafc()
-    with open("aafc_id_list.txt","w") as fout:
-         str = u','.join(id_list)
-         fout.write(str)
+    main()
