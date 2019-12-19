@@ -7,7 +7,7 @@ import pprint
 from dotenv import load_dotenv
 import os
 import datetime
-from Helper import *
+from helper import *
 
 
 # Use the json module to dump a dictionary to a string for posting.
