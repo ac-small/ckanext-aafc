@@ -209,7 +209,21 @@ def test_post():
 
     pass
 
+def test_get():
+    package_id = "e328838f-3bfc-4d86-9cc5-23de0b549c91"
+    site = os.getenv("registry_url")
+    rckan = RemoteCKAN(site)
+
+    data_as_d = {"id":package_id}
+    try:
+        ret = rckan.call_action("package_show", data_dict=data_as_d)#data_as_dict )
+    except Exception as e:
+        print("failed")
+
+    print(json.dumps(ret))
+
 if __name__ == "__main__":
     load_dotenv()
-    test_post()
+    #test_post()
+    test_get()
     #main()
