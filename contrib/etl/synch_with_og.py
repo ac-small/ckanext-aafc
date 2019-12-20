@@ -4,6 +4,9 @@ from dotenv import load_dotenv
 from helper import *
 import os
 from datetime import datetime, timedelta
+import urllib
+from random import randint
+from ckanapi import RemoteCKAN
 '''
 There are many data sets go to Open Government that are not through
 '''
@@ -80,7 +83,7 @@ def query_site_for_newdata(site, sec_param="", hours_ago=None):
     return id_list
 
 
-def main():
+def main1():
     og_site = "https://open.canada.ca/data/"
     id_list = query_by_aafc(og_site)
     with open("aafc_id_list2.txt", "w") as fout:
@@ -100,9 +103,56 @@ def test_registry():
         print("id:%s"%id)
 
 
+def post_to_site(site, action_string, data_as_dict, apikey):
+    """
+
+    :param site:
+    :param action_string: like "api/3/action/package_update" , or "api/3/action/package_create"
+    :param data_as_dict:
+    :return:
+    """
+
+
+    data_string = urllib.quote(json.dumps(data_as_dict))
+    url = site + action_string #"api/3/action/package_update"
+    request = urllib2.Request(url)
+
+    request.add_header('Authorization', apikey)
+
+
+    response = None
+    try:
+        response = urllib2.urlopen(request, data_string)
+    except urllib2.HTTPError as e:
+        # print("might not have the package in OG site yet")
+        return False
+    except:
+        print("Error happening querying OG site")
+        return False
+
+    pass
+
+
 def post_to_regsistry(package_id):
-    # TODO: Not implemented yet
-    print("Creating data set with package id %s to registry"% package_id )
+
+
+    data_as_d = {}
+    with open("Data//fromAlexis.json") as json_fp:
+        data_as_d = json.load(json_fp)
+
+
+
+    #Post to registry
+    site = os.getenv("registry_url")
+    registry_key = os.getenv("registry_api_key")
+    rckan = RemoteCKAN(site, apikey=registry_key)
+
+    try:
+        ret = rckan.call_action("package_create", data_dict=data_as_d)#data_as_dict )
+
+    except Exception as e:
+        return False
+
     return True #False
 
 def main():
@@ -119,12 +169,47 @@ def main():
             continue
         res = post_to_regsistry(id)
         if res is False:
+
             with open("error_post.log", "a") as fout:
                 now = datetime.now()
                 event = "Failed updating package id %s on %s\n"%(id, now)
                 fout.write(event)
 
+
+def test_post():
+    package_id = "e328838f-3bfc-4d86-9cc5-23de0b549c91"
+    apicall = "api/3/action/package_show"
+    q_param="?id=" +package_id
+    site = os.getenv("registry_url")
+    registry_key = os.getenv("registry_api_key")
+    ret_as_string = query_with_get(site, apicall, q_param, apikey=registry_key)
+    res_as_dict = json.loads(ret_as_string)['result']
+    data_as_dict = res_as_dict
+    data_as_dict['title'] = res_as_dict['title']  + str(randint(0,99))
+    del data_as_dict['id']
+    del data_as_dict['revision_id']
+    if "aafc_subject" in data_as_dict:
+        del data_as_dict['aafc_subject']
+
+    data_as_d = {}
+    with open("Data//fromAlexis.json") as json_fp:
+        data_as_d = json.load(json_fp)
+
+
+    # do a post
+    registry_key = os.getenv("registry_api_key")
+    rckan = RemoteCKAN(site, apikey=registry_key)
+
+    try:
+        ret = rckan.call_action("package_create", data_dict=data_as_d)#data_as_dict )
+
+    except Exception as e:
+        pass
+    #post_to_site(site, "api/3/action/package_create",data_as_dict,registry_key)
+
+    pass
+
 if __name__ == "__main__":
     load_dotenv()
-    #test_og()
-    main()
+    test_post()
+    #main()
