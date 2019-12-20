@@ -22,7 +22,7 @@ def query_with_get( site, apicall, q_param, apikey = None):
     response = None
     try:
         response = urllib2.urlopen(req)
-    except urllib2.HTTPError:
+    except urllib2.HTTPError as e:
         # print("might not have the package in OG site yet")
         return None
     except:
