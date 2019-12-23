@@ -8,6 +8,13 @@ from dotenv import load_dotenv
 import os
 import datetime
 from helper import *
+""""
+Purpose: This script is used for updating the 3 fields in Registry after records published in OG:
+The 3 fields are:
+ data_released
+ open_government_portal_record_e
+ open_government_portal_record_f
+"""
 
 
 # Use the json module to dump a dictionary to a string for posting.
