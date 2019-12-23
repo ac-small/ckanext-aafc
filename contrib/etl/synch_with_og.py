@@ -83,12 +83,7 @@ def query_site_for_newdata(site, sec_param="", hours_ago=None):
     return id_list
 
 
-def main1():
-    og_site = "https://open.canada.ca/data/"
-    id_list = query_by_aafc(og_site)
-    with open("aafc_id_list2.txt", "w") as fout:
-        str = u','.join(id_list)
-        fout.write(str)
+
 
 def test_og():
     og_site = "https://open.canada.ca/data/"
@@ -224,27 +219,9 @@ def get_data_from_og(package_id):
     print(json.dumps(ret))
     return ret
 
-def get_n_post():
-    og_data = get_data_from_og("92f73de5-5f46-4a8c-bc5f-c3872f268ecb")
-    with open("Data//fieldsAdded.json") as json_fp:
-        add_fields = json.load(json_fp)
-    for k,v in add_fields.items():
-        og_data[k] = add_fields[k]
 
-    reg_site = os.getenv("registry_url")
-    registry_key = os.getenv("registry_api_key")
-    rckan = RemoteCKAN(reg_site, apikey=registry_key)
-
-    try:
-        ret = rckan.call_action("package_create", data_dict=og_data)
-
-    except Exception as e:
-        pass
-
-    pass
 
 if __name__ == "__main__":
     load_dotenv()
-    #test_post()
-    get_n_post()
-    #main()
+    #post_to_regsistry("08ba1d1c-4985-46d4-be2d-495005689db2")
+    main()
