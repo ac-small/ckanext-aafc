@@ -62,7 +62,28 @@ def get_n_post(package_id):
 
 
 def get_ids():
-    return []
+    site = os.getenv("registry_url")
+    rckan = RemoteCKAN(site)
+
+    '''
+        # query for last 48 hours
+        apicall = "api/3/action/package_search"
+        q_param = "?q=metadata_modified:[2019-10-10T21:15:00Z TO *]&fq=publication:open_government"
+
+        if hours_ago is None:
+            hours_ago = 48
+        two_days_ago = datetime.now() - timedelta(hours=hours_ago)
+        str_2days_ago =  two_days_ago.strftime('%Y-%m-%dT%H:%M:%SZ')
+        q_param1 = "?q=metadata_modified:[%s%sTO%s*]"%(str_2days_ago, '%20','%20') + sec_param
+        res = query_with_get(site, apicall, q_param1)
+        # process the result to get filtered ids
+    '''
+
+    try:
+        ret = rckan.call_action("package_list")
+    except Exception as e:
+        return []
+    return ret
 
 
 def main():
@@ -78,4 +99,5 @@ def main():
 
 if __name__ == "__main__":
     load_dotenv()
+    get_ids()
     main()
