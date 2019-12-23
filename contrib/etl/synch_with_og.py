@@ -134,26 +134,23 @@ def post_to_site(site, action_string, data_as_dict, apikey):
 
 
 def post_to_regsistry(package_id):
-
-
-    data_as_d = {}
-    with open("Data//fromAlexis.json") as json_fp:
-        data_as_d = json.load(json_fp)
-
-
-
+    # data_as_d = {}
+    # with open("Data//fromAlexis.json") as json_fp:
+    #     data_as_d = json.load(json_fp)
+    with open("Data//fieldsAdded.json") as json_fp:
+        add_fields = json.load(json_fp)
     #Post to registry
-    site = os.getenv("registry_url")
+    og_data = get_data_from_og(package_id)
+    for k,v in add_fields.items():
+        og_data[k] = add_fields[k]
+    reg_site = os.getenv("registry_url")
     registry_key = os.getenv("registry_api_key")
-    rckan = RemoteCKAN(site, apikey=registry_key)
-
+    rckan = RemoteCKAN(reg_site, apikey=registry_key)
     try:
-        ret = rckan.call_action("package_create", data_dict=data_as_d)#data_as_dict )
-
+        ret = rckan.call_action("package_create", data_dict=og_data)
     except Exception as e:
         return False
-
-    return True #False
+    return True
 
 def main():
     #Get the lastest list from registry
@@ -209,9 +206,11 @@ def test_post():
 
     pass
 
-def test_get():
-    package_id = "e328838f-3bfc-4d86-9cc5-23de0b549c91"
-    site = os.getenv("registry_url")
+def get_data_from_og(package_id):
+    #package_id = "e328838f-3bfc-4d86-9cc5-23de0b549c91"
+    #package_id = "92f73de5-5f46-4a8c-bc5f-c3872f268ecb"
+    #site = os.getenv("registry_url")
+    site = os.getenv("open_gov_url")
     rckan = RemoteCKAN(site)
 
     data_as_d = {"id":package_id}
@@ -220,10 +219,32 @@ def test_get():
     except Exception as e:
         print("failed")
 
+
+
     print(json.dumps(ret))
+    return ret
+
+def get_n_post():
+    og_data = get_data_from_og("92f73de5-5f46-4a8c-bc5f-c3872f268ecb")
+    with open("Data//fieldsAdded.json") as json_fp:
+        add_fields = json.load(json_fp)
+    for k,v in add_fields.items():
+        og_data[k] = add_fields[k]
+
+    reg_site = os.getenv("registry_url")
+    registry_key = os.getenv("registry_api_key")
+    rckan = RemoteCKAN(reg_site, apikey=registry_key)
+
+    try:
+        ret = rckan.call_action("package_create", data_dict=og_data)
+
+    except Exception as e:
+        pass
+
+    pass
 
 if __name__ == "__main__":
     load_dotenv()
     #test_post()
-    test_get()
+    get_n_post()
     #main()
