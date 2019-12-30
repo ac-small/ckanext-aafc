@@ -3,14 +3,15 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import os
 from ckanapi import RemoteCKAN
+from helper import *
 
-to_remove = ["aafc_sector", "procured_data", "aafc_subject", "procured_data_organization_name", "authoritative_source",
+to_remove = ["aafc_sector", "procured_data", "procured_data_organization_name", "authoritative_source",
              "drf_program_inventory", "data_steward_email", "elegible_for_release", "publication",
-             "data_source_repository", "aafc_note", "drf_core_responsibilities", "aafc_resource_metadata_schema",
+             "data_source_repository", "aafc_note", "drf_core_responsibilities",
              "mint_a_doi", "other", "ineligibility_reason", "authority_to_release", "privacy", "formats", "security",
-             "official_language", "access_to_information", "access_restriction", "organization",
+             "official_language", "access_to_information", "organization",
              ]
-to_replace = {"type": "dataset", "owner_org": "2ABCCA59-6C57-4886-99E7-85EC6C719218", "restrictions": "unrestricted",
+to_replace = {"type": "dataset", "owner_org": "2ABCCA59-6C57-4886-99E7-85EC6C719218",
               "collection": "primary", "jurisdiction": "federal"}
 
 
@@ -41,7 +42,7 @@ def get_n_post(package_id):
     og_data = get_data_from_reg(package_id)
 
     # replace
-    for k,v  in to_replace:
+    for k,v  in to_replace.items():
         og_data[k] = to_replace[k]
 
     # remove
@@ -65,19 +66,16 @@ def get_ids():
     site = os.getenv("registry_url")
     rckan = RemoteCKAN(site)
 
-    '''
-        # query for last 48 hours
-        apicall = "api/3/action/package_search"
-        q_param = "?q=metadata_modified:[2019-10-10T21:15:00Z TO *]&fq=publication:open_government"
+    # query for last 48 hours
+    apicall = "api/3/action/package_search"
+    # q_param = "?q=metadata_modified:[2019-10-10T21:15:00Z TO *]&fq=publication:open_government"
 
-        if hours_ago is None:
-            hours_ago = 48
-        two_days_ago = datetime.now() - timedelta(hours=hours_ago)
-        str_2days_ago =  two_days_ago.strftime('%Y-%m-%dT%H:%M:%SZ')
-        q_param1 = "?q=metadata_modified:[%s%sTO%s*]"%(str_2days_ago, '%20','%20') + sec_param
-        res = query_with_get(site, apicall, q_param1)
-        # process the result to get filtered ids
-    '''
+    hours_ago = 48
+    two_days_ago = datetime.now() - timedelta(hours=hours_ago)
+    str_2days_ago =  two_days_ago.strftime('%Y-%m-%dT%H:%M:%SZ')
+    q_param1 = "?q=metadata_modified:[%s%sTO%s*]"%(str_2days_ago, '%20','%20')
+    res = query_with_get(site, apicall, q_param1)
+    # process the result to get filtered ids
 
     try:
         ret = rckan.call_action("package_list")
