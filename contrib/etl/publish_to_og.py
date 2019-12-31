@@ -49,8 +49,8 @@ def get_n_post(package_id):
     for k  in to_remove:
         del og_data[k]
 
-    og_site = os.getenv("open_gov_url")
-    og_key = os.getenv("api_key")
+    og_site = os.getenv("open_gov_registry_url")
+    og_key = os.getenv("open_gov_registry_api_key")
     rckan = RemoteCKAN(og_site, apikey=og_key)
 
     try:
@@ -75,13 +75,16 @@ def get_ids():
     str_2days_ago =  two_days_ago.strftime('%Y-%m-%dT%H:%M:%SZ')
     q_param1 = "?q=metadata_modified:[%s%sTO%s*]"%(str_2days_ago, '%20','%20')
     res = query_with_get(site, apicall, q_param1)
+    dict = json.loads(res)['result']['results']
     # process the result to get filtered ids
 
     try:
-        ret = rckan.call_action("package_list")
+        ids = []
+        for index in range(len(dict)):
+            ids.append(dict[index]['name'])
     except Exception as e:
         return []
-    return ret
+    return ids
 
 
 def main():
@@ -97,5 +100,4 @@ def main():
 
 if __name__ == "__main__":
     load_dotenv()
-    get_ids()
     main()
