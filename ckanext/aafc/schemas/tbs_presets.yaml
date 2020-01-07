@@ -2061,13 +2061,13 @@ presets:
 
 # Field = Time Period Coverage Start Date.
 # Add a Calendar control to select a Date.
-# {The start date of the period covered by the dataset (MM-DD-YYYY)}
+# {The start date of the period covered by the dataset (YYYY-MM-DD)}
 - preset_name: canada_time_period_coverage_start
   values:
     field_name: time_period_coverage_start
     help_text:
-      en: The start date of the period covered by the dataset (MM-DD-YYYY)
-      fr: Date de début de la période couverte par le jeu de données (MM-JJ-AAAA)
+      en: The start date of the period covered by the dataset (YYYY-MM-DD)
+      fr: Date de début de la période couverte par le jeu de données (AAAA-MM-JJ)
     label:
       en: Time Period Coverage Start
       fr: Couverture de la période de temps - date de début
@@ -2077,13 +2077,13 @@ presets:
 
 # Field = Time Period Coverage End Date.
 # Add a Calendar control to select a Date.
-# {The end date of the period covered by the dataset (MM-DD-YYYY)}
+# {The end date of the period covered by the dataset (YYYY-MM-DD)}
 - preset_name: canada_time_period_coverage_end
   values:
     field_name: time_period_coverage_end
     help_text:
-      en: The end date of the period covered by the dataset (MM-DD-YYYY)
-      fr: Date de fin de la période couverte par le jeu de données (MM-JJ-AAAA)
+      en: The end date of the period covered by the dataset (YYYY-MM-DD)
+      fr: Date de fin de la période couverte par le jeu de données (AAAA-MM-JJ)
     label:
       en: Time Period Coverage End
       fr: Couverture de la période de temps - date de fin
@@ -2200,7 +2200,7 @@ presets:
 
 # Field = Date Published.
 # Add a Calendar control to select a Date.
-# {The date of issuance (e.g., publication) of the dataset (MM-DD-YYYY)}
+# {The date of issuance (e.g., publication) of the dataset (YYYY-MM-DD)}
 - preset_name: canada_date_published
   values:
     field_name: date_published
@@ -2208,8 +2208,8 @@ presets:
       en: "Date Published"
       fr: "Date de publication"
     help_text:
-      en: The date of issuance (e.g., publication) of the dataset (MM-DD-YYYY)
-      fr: Date de publication du jeu de données (MM-JJ-AAAA)
+      en: The date of issuance (e.g., publication) of the dataset (YYYY-MM-DD)
+      fr: Date de publication du jeu de données (AAAA-MM-JJ)
     required: true
     # copied from date preset
     form_snippet: date.html
@@ -2218,7 +2218,7 @@ presets:
 
 # Field = Date Modified.
 # Add a Calendar control to select a Date.
-# {The date on which the dataset was updated (MM-DD-YYYY)}
+# {The date on which the dataset was updated (YYYY-MM-DD)}
 - preset_name: canada_date_modified
   values:
     field_name: date_modified
@@ -2226,8 +2226,8 @@ presets:
       en: Date Modified
       fr: Date de modification
     help_text:
-      en: The date on which the dataset was updated (MM-DD-YYYY)
-      fr: Date à laquelle le jeu de données a été mis à jour (MM-JJ-AAAA)
+      en: The date on which the dataset was updated (YYYY-MM-DD)
+      fr: Date à laquelle le jeu de données a été mis à jour (AAAA-MM-JJ)
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
