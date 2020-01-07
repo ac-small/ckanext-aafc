@@ -2884,14 +2884,14 @@ presets:
       en: Date Published
       fr: Date de publication
     help_text:
-      en: Date of formal issuance (e.g., publication) of the resource.
-      fr: Date officielle d’émission (c.-à-d. de publication) de la ressource
+      en: Date of formal issuance (e.g., publication) of the resource (YYYY-MM-DD)
+      fr: Date officielle d’émission (c.-à-d. de publication) de la ressource (AAAA-MM-JJ)
     #required: true
     form_panel: resource
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
-    validators: scheming_required
+    validators: ignore_empty isodate convert_to_json_if_date
 
 # Field = Resource Type.
 # List box Source: Resource Type code table (refer to Data Migration).
