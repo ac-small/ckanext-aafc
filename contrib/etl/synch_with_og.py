@@ -141,10 +141,17 @@ def post_to_regsistry(package_id):
     reg_site = os.getenv("registry_url")
     registry_key = os.getenv("registry_api_key")
     rckan = RemoteCKAN(reg_site, apikey=registry_key)
+    # First try to create new package.
+    # If package create fails, it's possible that the package already exists
+    # Try to update the package. If both of these actions fail, return false.
     try:
         ret = rckan.call_action("package_create", data_dict=og_data)
-    except Exception as e:
-        return False
+    except Exception as e1:
+        try:
+            ret = rckan.call_action("package_update", data_dict=og_data)
+            except Exception as e2:
+                return False
+        return True
     return True
 
 def main():
