@@ -149,8 +149,8 @@ def post_to_regsistry(package_id):
     except Exception as e1:
         try:
             ret = rckan.call_action("package_update", data_dict=og_data)
-            except Exception as e2:
-                return False
+        except Exception as e2:
+            return False
         return True
     return True
 
