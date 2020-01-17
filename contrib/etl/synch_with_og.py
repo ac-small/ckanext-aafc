@@ -3,6 +3,7 @@ import json
 from dotenv import load_dotenv
 from helper import *
 import os
+import re
 from datetime import datetime, timedelta
 import urllib
 from random import randint
@@ -127,32 +128,74 @@ def post_to_site(site, action_string, data_as_dict, apikey):
 
     pass
 
-
-def post_to_regsistry(package_id):
-    # data_as_d = {}
-    # with open("Data//fromAlexis.json") as json_fp:
-    #     data_as_d = json.load(json_fp)
-    with open("Data//fieldsAdded.json") as json_fp:
-        add_fields = json.load(json_fp)
-    #Post to registry
-    og_data = get_data_from_og(package_id)
-    for k,v in add_fields.items():
-        og_data[k] = add_fields[k]
-    reg_site = os.getenv("registry_url")
-    registry_key = os.getenv("registry_api_key")
-    rckan = RemoteCKAN(reg_site, apikey=registry_key)
-    # First try to create new package.
-    # If package create fails, it's possible that the package already exists
-    # Try to update the package. If both of these actions fail, return false.
-    try:
-        ret = rckan.call_action("package_create", data_dict=og_data)
-    except Exception as e1:
+def create_to_registry(package_id):
+        with open("Data//fieldsAdded.json") as json_fp:
+            add_fields = json.load(json_fp)
+        og_data = get_data_from_og(package_id)
+        for k,v in add_fields.items():
+            og_data[k] = add_fields[k]
+        #Post to registry
+        replace_branch_and_data_steward(og_data)
+        reg_site = os.getenv("registry_url")
+        registry_key = os.getenv("registry_api_key")
+        rckan = RemoteCKAN(reg_site, apikey=registry_key)
+        return False
         try:
-            ret = rckan.call_action("package_update", data_dict=og_data)
-        except Exception as e2:
+            ret = rckan.call_action("package_create", data_dict=og_data)
+        except Exception as e:
             return False
         return True
-    return True
+
+def update_to_registry(package_id):
+        # TODO: This function still needs to be rewritten
+        og_data = get_data_from_og(package_id)
+        #Post to registry
+        replace_branch_and_data_steward(og_data)
+        reg_site = os.getenv("registry_url")
+        registry_key = os.getenv("registry_api_key")
+        rckan = RemoteCKAN(reg_site, apikey=registry_key)
+        print(og_data)
+        try:
+            ret = rckan.call_action("package_update", data_dict=og_data)
+        except Exception as e:
+            return False
+        return True
+
+def extract_branch_and_data_steward(og_data):
+    if 'metadata_contact' in og_data:
+        #print og_data['metadata_contact']['en']
+        contact = og_data['metadata_contact']['en']
+        # Extract contact information fields
+        pattern = re.compile(r";|,")
+        contact_str = pattern.split(contact)
+    return contact_str
+
+def switch_branch(con_str):
+    #To Do: check branch names for typos / apostrophes
+    branches = {
+        "Science and Technology Branch":"ae56a90e-502b-43f9-b256-35a8f3a71bd3",
+        "Corporate Management Branch":"186eb448-b6b5-4f16-b615-dba53e26a1ad",
+        "Deputy Ministers Office":"acf141cc-2239-4884-8a2b-c7cdae8ea486",
+        "International Affairs Branch":"2da3aae3-5901-4bbf-8d08-080d0665bad9",
+        "Information Systems Branch":"4b90a457-bbe8-4e2b-938e-0358307d2af8",
+        "Market and Industry Services Branch":"0f41dff5-e56d-447b-85e1-3a95a8fb7cc7",
+        "Legal Services":"099265ac-e7b0-4f02-8c3d-45a4a4d3bac5",
+        "Ministers Office":"e507595f-a6c7-4244-a0f2-3f4de258b2d5",
+        "Office of Audit and Evaluation":"4cc47fdc-891a-4349-a9fd-f43a65476db1",
+        "Strategic Policy Branch":"b93050e4-1601-41f5-bb16-bf95709c1a30",
+        "Public Affairs Branch":"b6e22d31-5878-4378-9bc1-8c7a7f4574e2",
+        "Programs Branch":"71619d89-756b-4795-9e1b-ecf460dce051"
+    }
+    # Default (for now) if there is no match, place in generic AAFC Organization
+    return branches.get(con_str, "2ABCCA59-6C57-4886-99E7-85EC6C719218")
+
+def replace_branch_and_data_steward(og_data):
+        contact = extract_branch_and_data_steward(og_data)
+        branch = switch_branch(contact[2].strip())
+        data_steward = contact[3].strip()
+        og_data["owner_org"] = branch
+        og_data["data_steward_email"] = data_steward
+        #print (json.dumps(og_data))
 
 def main():
     #Get the lastest list from registry
@@ -166,13 +209,15 @@ def main():
     for id in og_ids:
         if id in registry_ids:
             continue
-        res = post_to_regsistry(id)
+        res = create_to_registry(id)
         if res is False:
+            res = update_to_registry(id)
+            if res is False:
+                with open("error_post.log", "a") as fout:
+                    now = datetime.now()
+                    event = "Failed updating package id %s on %s\n"%(id, now)
+                    fout.write(event)
 
-            with open("error_post.log", "a") as fout:
-                now = datetime.now()
-                event = "Failed updating package id %s on %s\n"%(id, now)
-                fout.write(event)
 
 
 def test_post():

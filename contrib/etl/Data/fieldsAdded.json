@@ -1,8 +1,6 @@
 {
 	"type":"aafc-open-data",
 	"publication":"open_government",
-	"owner_org":"2ABCCA59-6C57-4886-99E7-85EC6C719218",
-	"data_steward_email":"Unknown",
 	"data_source_repository":"uknown",
 	"mint_a_doi":"false",
 	"authority_to_release":"true",
@@ -13,7 +11,7 @@
 	"ineligibility_reason":"na",
 	"drf_core_responsibilities":"domestic_and_international_markets",
 	"drf_program_inventory":"None",
-	"authoritative_source":"true",
+	"authoritative_source":"false",
 	"private":"false",
 	"privacy":"true",
 	"security":"true",
@@ -22,9 +20,10 @@
 	"official_language":"true",
 	"formats":"true",
 	"aafc_sector":"other",
-	"aafc_subject":"agriculture",
 	"aafc_owner_org":"",
 	"ready_to_publish": "false",
 	"open_government_portal_record_e":"N/A",
-	"open_government_portal_record_f":"N/A"
+	"open_government_portal_record_f":"N/A",
+	"groups": [{"display_name": "Geospatial", "description": "", "image_display_url": "", "title": "Geospatial", "id": "e990b116-84d3-4357-8da1-70e18841ad1e", "name": "geospatial"}]
+
 }
