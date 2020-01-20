@@ -139,7 +139,6 @@ def create_to_registry(package_id):
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
         rckan = RemoteCKAN(reg_site, apikey=registry_key)
-        return False
         try:
             ret = rckan.call_action("package_create", data_dict=og_data)
         except Exception as e:
@@ -154,7 +153,7 @@ def update_to_registry(package_id):
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
         rckan = RemoteCKAN(reg_site, apikey=registry_key)
-        print(og_data)
+        #print(og_data)
         try:
             ret = rckan.call_action("package_update", data_dict=og_data)
         except Exception as e:
@@ -162,12 +161,14 @@ def update_to_registry(package_id):
         return True
 
 def extract_branch_and_data_steward(og_data):
-    if 'metadata_contact' in og_data:
+    if 'metadata_contact' in og_data and og_data['metadata_contact'] != {}:
         #print og_data['metadata_contact']['en']
         contact = og_data['metadata_contact']['en']
         # Extract contact information fields
         pattern = re.compile(r";|,")
         contact_str = pattern.split(contact)
+    else:
+        contact_str = ["Government of Canada", "Agriculture and Agrifood Canada", "Unknown Branch", "Unknown"]
     return contact_str
 
 def switch_branch(con_str):
@@ -192,7 +193,7 @@ def switch_branch(con_str):
 def replace_branch_and_data_steward(og_data):
         contact = extract_branch_and_data_steward(og_data)
         branch = switch_branch(contact[2].strip())
-        data_steward = contact[3].strip()
+        data_steward = contact[len(contact)-1].strip()
         og_data["owner_org"] = branch
         og_data["data_steward_email"] = data_steward
         #print (json.dumps(og_data))
