@@ -131,7 +131,7 @@ def post_to_site(site, action_string, data_as_dict, apikey):
 def create_to_registry(package_id):
         with open("Data//fieldsAdded.json") as json_fp:
             add_fields = json.load(json_fp)
-        og_data = get_data_from_og(package_id)
+        og_data = get_data_from_url(package_id, "open_gov_url")
         for k,v in add_fields.items():
             og_data[k] = add_fields[k]
         #Post to registry
@@ -147,7 +147,7 @@ def create_to_registry(package_id):
 
 def update_to_registry(package_id):
         # TODO: This function still needs to be rewritten
-        og_data = get_data_from_og(package_id)
+        og_data = get_data_from_url(package_id, "open_gov_url")
         #Post to registry
         replace_branch_and_data_steward(og_data)
         reg_site = os.getenv("registry_url")
@@ -176,12 +176,12 @@ def switch_branch(con_str):
     branches = {
         "Science and Technology Branch":"ae56a90e-502b-43f9-b256-35a8f3a71bd3",
         "Corporate Management Branch":"186eb448-b6b5-4f16-b615-dba53e26a1ad",
-        "Deputy Ministers Office":"acf141cc-2239-4884-8a2b-c7cdae8ea486",
+        "Deputy Minister's Office":"acf141cc-2239-4884-8a2b-c7cdae8ea486",
         "International Affairs Branch":"2da3aae3-5901-4bbf-8d08-080d0665bad9",
         "Information Systems Branch":"4b90a457-bbe8-4e2b-938e-0358307d2af8",
         "Market and Industry Services Branch":"0f41dff5-e56d-447b-85e1-3a95a8fb7cc7",
         "Legal Services":"099265ac-e7b0-4f02-8c3d-45a4a4d3bac5",
-        "Ministers Office":"e507595f-a6c7-4244-a0f2-3f4de258b2d5",
+        "Minister's Office":"e507595f-a6c7-4244-a0f2-3f4de258b2d5",
         "Office of Audit and Evaluation":"4cc47fdc-891a-4349-a9fd-f43a65476db1",
         "Strategic Policy Branch":"b93050e4-1601-41f5-bb16-bf95709c1a30",
         "Public Affairs Branch":"b6e22d31-5878-4378-9bc1-8c7a7f4574e2",
@@ -254,11 +254,9 @@ def test_post():
 
     pass
 
-def get_data_from_og(package_id):
-    #package_id = "e328838f-3bfc-4d86-9cc5-23de0b549c91"
-    #package_id = "92f73de5-5f46-4a8c-bc5f-c3872f268ecb"
+def get_data_from_url(package_id, url):
     #site = os.getenv("registry_url")
-    site = os.getenv("open_gov_url")
+    site = os.getenv(url)
     rckan = RemoteCKAN(site)
 
     data_as_d = {"id":package_id}
