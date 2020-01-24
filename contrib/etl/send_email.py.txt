@@ -1,6 +1,4 @@
 #Declare email constants
-SMTP_SERVER = 'smtp.aafccloud.com'
-SMTP_PORT = 587
 SMTP_FROM = 'no-reply@smtp.aafccloud.com'
 SMTP_TO = 'amal.hussein@canada.ca'
 
@@ -68,7 +66,7 @@ def send_logs (server, port, SMTP_FROM):
 
 def main():
         parser = argparse.ArgumentParser(description ='Email server logs')
-        parser.add_argument('-server', '--server', dest= 'server', default= 'smtp.aafccloud.com', help = 'The mail server')
+        parser.add_argument('-server', '--server', dest= 'server', help = 'The mail server')
         parser.add_argument('-port', '--port', dest ='port', help = 'Port number')
 
         args = parser.parse_args()
