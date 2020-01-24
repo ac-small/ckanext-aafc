@@ -1,0 +1,80 @@
+#Declare email constants
+SMTP_SERVER = 'smtp.aafccloud.com'
+SMTP_PORT = 587
+SMTP_FROM = 'no-reply@smtp.aafccloud.com'
+SMTP_TO = 'amal.hussein@canada.ca'
+
+# MESSAGE = """Attached are the error logs from AAFC Registry's publication process"""
+
+import smtplib, email
+import os
+import argparse
+from email import Encoders
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email.mime.application import MIMEApplication
+from email.Utils import formatdate
+
+#Define the path
+DIR =os.path.abspath(os.path.dirname(__file__))
+
+
+#Join the path components
+LOGS = [ #  os.path.join(DIR, 'etl', 'error_post_to_og.log') ,
+         os.path.join(DIR,  'error_post.log')]
+
+def send_logs (server, port, SMTP_FROM):
+
+#send the log file to send_to
+        msg = MIMEMultipart()
+        msg ['From'] = SMTP_FROM
+        msg ['To'] = SMTP_TO
+        msg ['Subject'] = """Attached are the error logs from AAFC Registry's publication process"""
+        msg ['Date'] = formatdate(localtime = True)
+
+# Attach the files
+        for log in LOGS:
+                part = MIMEBase('application', 'octect-stream')
+                part.set_payload(open(log, 'rb').read())
+                Encoders.encode_base64(part)
+                part.add_header (
+                        'Content-Disposition',
+                        'attachment; filename={}'.format(os.path.basename(log))
+                        )
+                msg.attach(part)
+
+        try:
+                server = smtplib.SMTP(host= server, port = port)
+                print 'Connected to server'
+                server.ehlo()
+                print 'Echo from server'
+        except Exception, e:
+                error = 'Something is broken: {}'.format(str(e))
+                print error
+                return False
+        try:
+                worked = server.sendmail(SMTP_FROM,[SMTP_TO], msg.as_string())
+                print "Mail has been sent"
+
+        except Exception, e:
+                error ='Email not sent: {}'.format(str(e))
+                print error
+                return False
+        finally:
+                server.close()
+                print 'Server closed'
+
+        return True
+
+def main():
+        parser = argparse.ArgumentParser(description ='Email server logs')
+        parser.add_argument('-server', '--server', dest= 'server', default= 'smtp.aafccloud.com', help = 'The mail server')
+        parser.add_argument('-port', '--port', dest ='port', help = 'Port number')
+
+        args = parser.parse_args()
+
+        email_Sent = send_logs(args.server, args.port,SMTP_FROM )
+
+if __name__=='__main__':
+        main()
+
