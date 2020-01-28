@@ -9,7 +9,7 @@ to_remove = ["aafc_sector", "procured_data", "procured_data_organization_name", 
              "drf_program_inventory", "data_steward_email", "elegible_for_release", "publication",
              "data_source_repository", "aafc_note", "drf_core_responsibilities",
              "mint_a_doi", "other", "ineligibility_reason", "authority_to_release", "privacy", "formats", "security",
-             "official_language", "access_to_information", "organization",
+             "official_language", "access_to_information", "organization", "groups"
              ]
 to_replace = {"type": "dataset", "owner_org": "2ABCCA59-6C57-4886-99E7-85EC6C719218",
               "collection": "primary", "jurisdiction": "federal"}
@@ -82,12 +82,29 @@ def get_ids():
     q_param1 = "?q=metadata_modified:[%s%sTO%s*]"%(str_2days_ago, '%20','%20')
     res = query_with_get(site, apicall, q_param1)
     dict = json.loads(res)['result']['results']
+    
+    # additionally filter only records where open checklist criteria passes
+    filtered_dict = [x for x in dict if (
+        x['ready_to_publish'] == 'true'
+        and x['elegible_for_release'] == 'true'
+        and x['access_to_information'] == 'true'
+        and x['authority_to_release'] == 'true'
+        and x['formats'] == 'true'
+        and x['privacy'] == 'true'
+        and x['official_language'] == 'true'
+        and x['security'] == 'true'
+        and x['other'] == 'true'
+        and x['imso_approval'] == 'true'
+        and x['license_id'] == 'ca-ogl-lgo'
+        and x['restrictions'] == 'unrestricted')]
+
+    print (filtered_dict)
     # process the result to get filtered ids
 
     try:
         ids = []
-        for index in range(len(dict)):
-            ids.append(dict[index]['name'])
+        for index in range(len(filtered_dict)):
+            ids.append(filtered_dict[index]['name'])
     except Exception as e:
         return []
     return ids
