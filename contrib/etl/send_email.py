@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import smtplib, email
 import os
 import argparse

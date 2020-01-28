@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
