@@ -68,7 +68,7 @@ def syncronize_registry(package_id, data):
     """
     # English: http: // open.canada.ca / data / en / dataset / {PACKAGE_ID}
     # French: http: // ouvert.canada.ca / data / fr / dataset / {PACKAGE_ID}
-    # metadata_modified
+    # metadata_created
     registry_url = os.getenv("registry_url")
     url1 = registry_url + "api/3/action/package_show"
     q_param = "?id=%s" % package_id
@@ -148,7 +148,7 @@ def main():
             continue
         data_og = res_og['result']
         # populate retrieved value
-        data_fill = {'data_released': reformat_date(data_og['metadata_modified']),
+        data_fill = {'data_released': reformat_date(data_og['metadata_created']),
                      'open_government_portal_record_e': u'http://open.canada.ca/data/en/dataset/%s' % package_id,
                      'open_government_portal_record_f': u'http://ouvert.canada.ca/data/fr/dataset/%s' % package_id}
         syncronize_registry(package_id, data_fill)

@@ -148,6 +148,7 @@ def create_to_registry(package_id):
 def update_to_registry(package_id):
         og_data = get_data_from_url(package_id, "open_gov_url")
         # query for registry data and remove shared fields (aafc registry exclusive fields will be kept i.e. ODI reference number, DRF core responsibilties)
+        reg_data = get_data_from_url(package_id, "registry_url")
         keys_to_remove = ['resources', 'organization', 'data_steward_email', 'notes_translated', 'title_translated', 'notes', 'owner_org', 'num_resources', 'title', 'keywords', 'revision_id', 'audience']
         for k in keys_to_remove:
             reg_data.pop(k, None)
