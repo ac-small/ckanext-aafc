@@ -150,10 +150,11 @@ def update_to_registry(package_id):
         # query for registry data and remove shared fields (aafc registry exclusive fields will be kept i.e. ODI reference number, DRF core responsibilties)
         reg_data = get_data_from_url(package_id, "registry_url")
         keys_to_remove = ['resources', 'organization', 'data_steward_email', 'notes_translated', 'title_translated', 'notes', 'owner_org', 'num_resources', 'title', 'keywords', 'revision_id', 'audience']
-        for k in keys_to_remove:
-            reg_data.pop(k, None)
-        for k,v in reg_data.items():
-            og_data[k] = reg_data[k]
+        if reg_data != []:
+            for k in keys_to_remove:
+                reg_data.pop(k, None)
+            for k,v in reg_data.items():
+                og_data[k] = reg_data[k]
         replace_branch_and_data_steward(og_data)
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
@@ -268,11 +269,9 @@ def get_data_from_url(package_id, url):
     try:
         ret = rckan.call_action("package_show", data_dict=data_as_d)#data_as_dict )
     except Exception as e:
-        print("failed")
+    # if no data exists yet, return empty
+        ret = []
 
-
-
-    print(json.dumps(ret))
     return ret
 
 
