@@ -207,10 +207,10 @@ def replace_branch_and_data_steward(og_data):
 def main():
     #Get the lastest list from registry
     registry_url = os.getenv("registry_url")
-    registry_ids = query_site_for_newdata(registry_url, "&fq=publication:open_government", hours_ago=48)
+    registry_ids = query_site_for_newdata(registry_url, "&fq=publication:open_government&rows=500", hours_ago=48)
     # Get the lastest list from OG
     og_site = "https://open.canada.ca/data/"
-    og_ids = query_site_for_newdata(og_site, "&fq=organization:aafc-aac", hours_ago=48)
+    og_ids = query_site_for_newdata(og_site, "&fq=organization:aafc-aac&rows=500", hours_ago=48)
 
     # Go through both lists, retrieve missing data from OG and post into Registry and record event of failure
     for id in og_ids:
