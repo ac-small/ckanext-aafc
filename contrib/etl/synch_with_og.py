@@ -215,15 +215,17 @@ def main():
     # Go through both lists, retrieve missing data from OG and post into Registry and record event of failure
     for id in og_ids:
         if id in registry_ids:
-            continue
-        res = create_to_registry(id)
-        if res is False:
             res = update_to_registry(id)
-            if res is False:
-                with open("error_syncing_with_og.log", "a") as fout:
-                    now = datetime.now()
-                    event = "Failed updating package id %s on %s\n"%(id, now)
-                    fout.write(event)
+        else:
+            res = create_to_registry(id)
+        if res is False:
+            #res = update_to_registry(id)
+            #if res is False:
+            with open("error_sync_with_og.log", "a") as fout:
+                now = datetime.now()
+                event = "Failed updating package id %s on %s\n"%(id, now)
+                fout.write(event)
+
 
 
 
