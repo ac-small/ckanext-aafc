@@ -27,7 +27,7 @@ def get_unfilled_dataset():
     load_dotenv()
     registry_url = os.getenv("registry_url")
     url1 = registry_url + "api/3/action/package_search"
-    q_param = "?q=open_government_portal_record_e:N/A&fq=publication:open_government"
+    q_param = "?q=open_government_portal_record_e:N/A&fq=publication:open_government&rows=500"
     # Make the HTTP request
     # response = urllib.request.urlopen(url1 + q_param)
     # for Python 2.7
@@ -153,7 +153,7 @@ def main():
                      'open_government_portal_record_f': u'http://ouvert.canada.ca/data/fr/dataset/%s' % package_id}
         syncronize_registry(package_id, data_fill)
 
-        print("id: %s, , title: %s, publication: %s" % (a_res["id"], a_res["title"], a_res["publication"]))
+        print("id: %s, , title: %s, publication: %s" % (a_res["id"], a_res["title"], a_res["publication"])).encode('utf-8')
 
 
 def testModification():

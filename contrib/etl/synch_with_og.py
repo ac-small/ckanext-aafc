@@ -220,7 +220,7 @@ def main():
         if res is False:
             res = update_to_registry(id)
             if res is False:
-                with open("error_post.log", "a") as fout:
+                with open("error_syncing_with_og.log", "a") as fout:
                     now = datetime.now()
                     event = "Failed updating package id %s on %s\n"%(id, now)
                     fout.write(event)
