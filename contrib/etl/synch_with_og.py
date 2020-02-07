@@ -136,6 +136,7 @@ def create_to_registry(package_id):
             og_data[k] = add_fields[k]
         #Post to registry
         replace_branch_and_data_steward(og_data)
+        replace_regions(og_data)
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
         rckan = RemoteCKAN(reg_site, apikey=registry_key)
@@ -156,6 +157,7 @@ def update_to_registry(package_id):
             for k,v in reg_data.items():
                 og_data[k] = reg_data[k]
         replace_branch_and_data_steward(og_data)
+        replace_regions(og_data)
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
         rckan = RemoteCKAN(reg_site, apikey=registry_key)
@@ -203,6 +205,47 @@ def replace_branch_and_data_steward(og_data):
         og_data["owner_org"] = branch
         og_data["data_steward_email"] = data_steward
         #print (json.dumps(og_data))
+
+def map_regions(region):
+    print (region)
+    if region >= 1001 and region <= 1011:
+        region = "10"
+    elif region >= 1101 and region <= 1103:
+        region = "11"
+    elif region >= 1201 and region <= 1218:
+        region = "12"
+    elif region >= 1301 and region <= 1315:
+        region = "13"
+    elif region >= 2401 and region <= 2499:
+        region = "2"
+    elif region >= 3501 and region <= 3560:
+        region = "3"
+    elif region >= 4601 and region <= 4623:
+        region = "46"
+    elif region >= 4701 and region <= 4718:
+        region = "47"
+    elif region >= 4801 and region <= 4819:
+        region = "48"
+    elif region >= 5901 and region <= 5959:
+        region = "5"
+    elif region == 6001:
+        region = "60"
+    elif region >= 6101 and region <= 6106:
+        region = "61"
+    elif region >= 6204 and region <= 6208:
+        region = "62"
+    return region
+
+def replace_regions(og_data):
+    if 'place_of_publication' in og_data and og_data['place_of_publication'] != []:
+        pub_int = int(''.join(og_data['place_of_publication']))
+        pub_reg = map_regions(pub_int)
+        og_data['place_of_publication'] = [pub_reg]
+    if 'geographic_region' in og_data and og_data['geographic_region'] != []:
+        geo_int = int(''.join(og_data['geographic_region']))
+        geo_reg = map_regions(geo_int)
+        og_data['geographic_region'] = [geo_reg]
+    return og_data
 
 def main():
     #Get the lastest list from registry
