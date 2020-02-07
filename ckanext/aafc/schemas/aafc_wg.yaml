@@ -692,16 +692,16 @@ resource_fields:
 - preset: canada_resource_date_published
   display_group: ANA
 - preset: canada_resource_type
-  #form_restrict_choices_to:
-  #- application
-  #- api
-  #- dataset
-  #- guide
-  #- faq
-  #- specification
-  #- terminology
-  #- tool
-  #- website
+  form_restrict_choices_to:
+  - application
+  - api
+  - dataset
+  - guide
+  - faq
+  - specification
+  - terminology
+  - tool
+  - website
   display_group: ANA
 - preset: canada_resource_format
   display_group: ANA
