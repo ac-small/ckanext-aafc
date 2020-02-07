@@ -1430,10 +1430,10 @@ presets:
         en: English
         fr: Anglais
       value: en
-    - label:
-        en: Bilingual (English and French)
-        fr: bilinque (Anglais et français)
-      value: bilingual
+    #- label:
+    #    en: Bilingual (English and French)
+    #    fr: bilinque (Anglais et français)
+    #  value: bilingual
     - label:
         en: French
         fr: Français
