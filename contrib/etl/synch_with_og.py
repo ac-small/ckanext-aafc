@@ -236,6 +236,22 @@ def map_regions(region):
         region = "62"
     return region
 
+
+
+region_mappings = { 10:(1001,1011),11:(1101,1103),12:(1201,1218),13:(1301,1315),2:(2401,2499),3:(3501,3560),
+                    46:(4601,4623),47:(4701,4718),48:(4801,4819),5:(5901,5959),60:(6001),61:(6101,6106),62:(6204,6208)}
+def map_regions2(reg_large):
+    '''
+    Another way to map large number to small number
+    :param reg_large:
+    :return:
+    '''
+    for reg_small, min_max in region_mappings.items():
+        if reg_large> min_max[0] and reg_large < min_max[1]:
+            return str(reg_small)
+
+    return None
+
 def replace_regions(og_data):
     if 'place_of_publication' in og_data and og_data['place_of_publication'] != []:
         pub_int = int(''.join(og_data['place_of_publication']))
@@ -320,8 +336,17 @@ def get_data_from_url(package_id, url):
     return ret
 
 
+def test_regmap():
+    testsets = [1008,1102,1212,1312,2450]
+
+    for s in testsets:
+        res1 = map_regions(s)
+        res2 = map_regions2(s)
+        print ("res1:%s,res2:%s\n"%(res1,res2))
+
 
 if __name__ == "__main__":
     load_dotenv()
     #post_to_regsistry("08ba1d1c-4985-46d4-be2d-495005689db2")
     main()
+    #test_regmap()
