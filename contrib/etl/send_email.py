@@ -10,7 +10,7 @@ from email.Utils import formatdate
 
 #Define the path
 DIR =os.path.abspath(os.path.dirname(__file__))
-FILES = ['error_post.log', 'error_post_to_og.log']
+FILES = ['error_sync_with_og.log', 'error_post_to_og.log']
 LOGS = []
 
 #Join the path components
