@@ -1259,11 +1259,11 @@ presets:
           fr: Services des acquisitions
         value: acquisition_services
     - value: non_applicable
-          choices:
-          - label:
-              en: Not Applicable
-              fr: Non applicable
-            value: non_applicable
+      choices:
+      - label:
+          en: Not Applicable
+          fr: Non applicable
+          value: non_applicable
     form_snippet: combined_dropdown.html
     display_snippet: combined_dropdown.html
 
