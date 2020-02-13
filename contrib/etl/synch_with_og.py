@@ -137,14 +137,23 @@ def create_to_registry(package_id):
 def update_to_registry(package_id):
         og_data = get_data_from_url(package_id, "open_gov_url")
         # query for registry data and remove shared fields (aafc registry exclusive fields will be kept i.e. ODI reference number, DRF core responsibilties)
+        # Organization and Data Steward are special cases, purposefully excluded from keys_to_remove list.
         reg_data = get_data_from_url(package_id, "registry_url")
-        keys_to_remove = ['resources', 'organization', 'data_steward_email', 'notes_translated', 'title_translated', 'notes', 'owner_org', 'num_resources', 'title', 'keywords', 'revision_id', 'audience']
+        keys_to_remove = ['resources', 'subject', 'frequency', 'org_section', 'author', 'author_email', 'creator', 'notes_translated', 'title_translated', 'notes', 'num_resources', 'title', 'keywords', 'revision_id', 'audience', 'geographic_region', 'place_of_publication', 'version', 'tags', 'spatial', 'org_title_at_publication', 'date_published', 'display_flags', 'groups', 'data_series_issue_identification', 'data_series_name', 'relationships_as_subject']
         if reg_data != []:
             for k in keys_to_remove:
                 reg_data.pop(k, None)
             for k,v in reg_data.items():
                 og_data[k] = reg_data[k]
-        replace_branch_and_data_steward(og_data)
+
+        # Only map branch and data steward for FGP datasets, for AAFC Registry datasets, this is not required.
+        if 'ready_to_publish' in reg_data and reg_data['ready_to_publish'] == "false":
+            replace_branch_and_data_steward(og_data)
+
+        # Ensure that we reset ready to publish to false after AAFC Registry dataset is posted to OG
+        if 'ready_to_publish' in reg_data and reg_data['ready_to_publish'] == "true":
+            og_data['ready_to_publish'] == "false"
+
         replace_regions(og_data)
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
@@ -168,7 +177,6 @@ def extract_branch_and_data_steward(og_data):
     return contact_str
 
 def switch_branch(con_str):
-    #To Do: check branch names for typos / apostrophes
     branches = {
         "Science and Technology Branch":"ae56a90e-502b-43f9-b256-35a8f3a71bd3",
         "Corporate Management Branch":"186eb448-b6b5-4f16-b615-dba53e26a1ad",
