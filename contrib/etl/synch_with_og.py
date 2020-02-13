@@ -209,32 +209,32 @@ def replace_branch_and_data_steward(og_data):
 def map_regions(region):
     print (region)
     if region >= 1001 and region <= 1011:
-        region = "10"
+        region = 10
     elif region >= 1101 and region <= 1103:
-        region = "11"
+        region = 11
     elif region >= 1201 and region <= 1218:
-        region = "12"
+        region = 12
     elif region >= 1301 and region <= 1315:
-        region = "13"
+        region = 13
     elif region >= 2401 and region <= 2499:
-        region = "2"
+        region = 2
     elif region >= 3501 and region <= 3560:
-        region = "3"
+        region = 3
     elif region >= 4601 and region <= 4623:
-        region = "46"
+        region = 46
     elif region >= 4701 and region <= 4718:
-        region = "47"
+        region = 47
     elif region >= 4801 and region <= 4819:
-        region = "48"
+        region = 48
     elif region >= 5901 and region <= 5959:
-        region = "5"
+        region = 5
     elif region == 6001:
-        region = "60"
+        region = 60
     elif region >= 6101 and region <= 6106:
-        region = "61"
+        region = 61
     elif region >= 6204 and region <= 6208:
-        region = "62"
-    return region
+        region = 62
+    return str(region)
 
 
 
