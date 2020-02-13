@@ -86,18 +86,6 @@ def query_site_for_newdata(site, sec_param="", hours_ago=None):
 
 
 
-def test_og():
-    og_site = "https://open.canada.ca/data/"
-    id_list = query_site_for_newdata(og_site, "&fq=organization:aafc-aac", hours_ago=1240)
-    for id in id_list:
-        print("id:%s"%id)
-
-def test_registry():
-    registry_url = os.getenv("registry_url")
-    id_list = query_site_for_newdata(registry_url, "&fq=publication:open_government", hours_ago=1240)
-    for id in id_list:
-        print("id:%s"%id)
-
 
 def post_to_site(site, action_string, data_as_dict, apikey):
     """
@@ -304,6 +292,18 @@ def main():
 '''
 Simple tests come here
 '''
+
+def test_og():
+    og_site = "https://open.canada.ca/data/"
+    id_list = query_site_for_newdata(og_site, "&fq=organization:aafc-aac", hours_ago=1240)
+    for id in id_list:
+        print("id:%s"%id)
+
+def test_registry():
+    registry_url = os.getenv("registry_url")
+    id_list = query_site_for_newdata(registry_url, "&fq=publication:open_government", hours_ago=1240)
+    for id in id_list:
+        print("id:%s"%id)
 
 def test_post():
     package_id = "e328838f-3bfc-4d86-9cc5-23de0b549c91"
