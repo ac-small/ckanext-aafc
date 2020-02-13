@@ -263,6 +263,21 @@ def replace_regions(og_data):
         og_data['geographic_region'] = [geo_reg]
     return og_data
 
+
+def get_data_from_url(package_id, url):
+    #site = os.getenv("registry_url")
+    site = os.getenv(url)
+    rckan = RemoteCKAN(site)
+
+    data_as_d = {"id":package_id}
+    try:
+        ret = rckan.call_action("package_show", data_dict=data_as_d)#data_as_dict )
+    except Exception as e:
+    # if no data exists yet, return empty
+        ret = []
+
+    return ret
+
 def main():
     #Get the lastest list from registry
     registry_url = os.getenv("registry_url")
@@ -286,7 +301,9 @@ def main():
                 fout.write(event)
 
 
-
+'''
+Simple tests come here
+'''
 
 def test_post():
     package_id = "e328838f-3bfc-4d86-9cc5-23de0b549c91"
@@ -321,19 +338,7 @@ def test_post():
 
     pass
 
-def get_data_from_url(package_id, url):
-    #site = os.getenv("registry_url")
-    site = os.getenv(url)
-    rckan = RemoteCKAN(site)
 
-    data_as_d = {"id":package_id}
-    try:
-        ret = rckan.call_action("package_show", data_dict=data_as_d)#data_as_dict )
-    except Exception as e:
-    # if no data exists yet, return empty
-        ret = []
-
-    return ret
 
 
 def test_regmap():
