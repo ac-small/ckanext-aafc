@@ -285,7 +285,24 @@ def main():
                 event = "Failed updating package id %s on %s\n"%(id, now)
                 fout.write(event)
 
+def get_data_from_url(package_id, url):
+    #site = os.getenv("registry_url")
+    site = os.getenv(url)
+    rckan = RemoteCKAN(site)
 
+    data_as_d = {"id":package_id}
+    try:
+        ret = rckan.call_action("package_show", data_dict=data_as_d)#data_as_dict )
+    except Exception as e:
+    # if no data exists yet, return empty
+        ret = []
+
+    return ret
+
+
+'''
+Simple test functions come here
+'''
 
 
 def test_post():
@@ -321,19 +338,7 @@ def test_post():
 
     pass
 
-def get_data_from_url(package_id, url):
-    #site = os.getenv("registry_url")
-    site = os.getenv(url)
-    rckan = RemoteCKAN(site)
 
-    data_as_d = {"id":package_id}
-    try:
-        ret = rckan.call_action("package_show", data_dict=data_as_d)#data_as_dict )
-    except Exception as e:
-    # if no data exists yet, return empty
-        ret = []
-
-    return ret
 
 
 def test_regmap():
