@@ -83,8 +83,20 @@ def query_site_for_newdata(site, sec_param="", hours_ago=None):
     id_list = process_a_batch(results)
     return id_list
 
+def query_all_aafc(site):
+    '''
+    Query to get a list of all AAFC registry package ID's
+    '''
+    apicall = "api/3/action/package_search"
+    q_param = "?fq=publication:open_government&rows=1000000"
+    res = query_with_get(site, apicall, q_param)
 
-
+    if res is None:
+        return None
+    response_dict = json.loads(res)
+    results = response_dict['result']['results']
+    id_list = process_a_batch(results)
+    return id_list
 
 
 def post_to_site(site, action_string, data_as_dict, apikey):
@@ -277,7 +289,7 @@ def get_data_from_url(package_id, url):
 def main():
     #Get the lastest list from registry
     registry_url = os.getenv("registry_url")
-    registry_ids = query_site_for_newdata(registry_url, "&fq=publication:open_government&rows=500", hours_ago=48)
+    registry_ids = query_all_aafc(registry_url)
     # Get the lastest list from OG
     og_site = "https://open.canada.ca/data/"
     og_ids = query_site_for_newdata(og_site, "&fq=organization:aafc-aac&rows=500", hours_ago=48)
