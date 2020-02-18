@@ -8,9 +8,6 @@ from datetime import datetime, timedelta
 import urllib
 from random import randint
 from ckanapi import RemoteCKAN
-'''
-There are many data sets go to Open Government that are not through
-'''
 
 
 def process_a_batch(data_list):
