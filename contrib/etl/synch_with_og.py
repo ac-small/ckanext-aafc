@@ -146,20 +146,53 @@ def create_to_registry(package_id):
 def update_to_registry(package_id):
         og_data = get_data_from_url(package_id, "open_gov_url")
         # query for registry data and remove shared fields (aafc registry exclusive fields will be kept i.e. ODI reference number, DRF core responsibilties)
-        # Organization and Data Steward are special cases, purposefully excluded from keys_to_remove list.
         reg_data = get_data_from_url(package_id, "registry_url")
-        keys_to_remove = ['resources', 'subject', 'frequency', 'org_section', 'author', 'author_email', 'creator', 'notes_translated', 'title_translated', 'notes', 'num_resources', 'title', 'keywords', 'revision_id', 'audience', 'geographic_region', 'place_of_publication', 'version', 'tags', 'spatial', 'org_title_at_publication', 'date_published', 'display_flags', 'groups', 'data_series_issue_identification', 'data_series_name', 'relationships_as_subject']
         if reg_data != []:
-            for k in keys_to_remove:
-                reg_data.pop(k, None)
-            for k,v in reg_data.items():
-                og_data[k] = reg_data[k]
-
-        # Only map branch and data steward for FGP datasets, for AAFC Registry datasets, this is not required.
+        # strip all fields except we will keep the values AAFC Registry specific fields
+            reg_keep = {
+                'ready_to_publish': reg_data['ready_to_publish'],
+                'drf_program_inventory': reg_data['drf_program_inventory'],
+                'official_language': reg_data['official_language'],
+                'aafc_owner_org': reg_data['aafc_owner_org'],
+                'data_steward_email': reg_data['data_steward_email'],
+                'procured_data': reg_data['procured_data'],
+                'elegible_for_release': reg_data['elegible_for_release'],
+                'authority_to_release': reg_data['authority_to_release'],
+                'mint_a_doi': reg_data['mint_a_doi'],
+                'procured_data_organization_name': reg_data['procured_data_organization_name'],
+                'privacy': reg_data['privacy'],
+                'data_source_repository': reg_data['data_source_repository'],
+                'drf_core_responsibilities': reg_data['drf_core_responsibilities'],
+                'authoritative_source': reg_data['authoritative_source'],
+                'formats': reg_data['formats'],
+                'aafc_sector': reg_data['aafc_sector'],
+                'security': reg_data['security'],
+                'ineligibility_reason': reg_data['ineligibility_reason'],
+                'access_to_information': reg_data['access_to_information'],
+                'other': reg_data['other'],
+                'publication': reg_data['publication'],
+                'data_released': reg_data['data_released'],
+                'open_government_portal_record_e': reg_data['open_government_portal_record_e'],
+                'open_government_portal_record_f': reg_data['open_government_portal_record_f']
+            }
+            # Keep ODI number if it exists, some datasets may not have an ODI.
+            if 'odi_reference_number' in reg_data:
+                reg_odi = {
+                    'odi_reference_number': reg_data['odi_reference_number']
+                }
+            else:
+                reg_odi = None
+                
+            # Update the Open Gov dataset
+            if reg_odi != None:
+                og_data.update(reg_odi)
+            og_data.update(reg_keep)
+            
+        # Only map branch and data steward for external (FGP) datasets, for AAFC Registry datasets, this is not required.
         if 'ready_to_publish' in reg_data and reg_data['ready_to_publish'] == "false":
             replace_branch_and_data_steward(og_data)
 
-        # Ensure that we reset ready to publish to false after AAFC Registry dataset is posted to OG
+        # Ensure that we reset ready to publish back to false after AAFC Registry dataset is posted to OG
         if 'ready_to_publish' in reg_data and reg_data['ready_to_publish'] == "true":
             og_data['ready_to_publish'] == "false"
 
@@ -167,10 +200,10 @@ def update_to_registry(package_id):
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
         rckan = RemoteCKAN(reg_site, apikey=registry_key)
-        #print(og_data)
         try:
             ret = rckan.call_action("package_update", data_dict=og_data)
         except Exception as e:
+
             return False
         return True
 
