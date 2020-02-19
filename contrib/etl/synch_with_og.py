@@ -154,6 +154,7 @@ def update_to_registry(package_id):
                 'drf_program_inventory': reg_data['drf_program_inventory'],
                 'official_language': reg_data['official_language'],
                 'aafc_owner_org': reg_data['aafc_owner_org'],
+                'owner_org': reg_data['owner_org'],
                 'data_steward_email': reg_data['data_steward_email'],
                 'procured_data': reg_data['procured_data'],
                 'elegible_for_release': reg_data['elegible_for_release'],
