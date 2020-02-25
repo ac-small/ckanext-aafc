@@ -20,41 +20,6 @@ def process_a_batch(data_list):
     return ids
 
 
-def query_by_aafc(site):
-    """
-    Query OG site to retrieve all the ids of AAFC
-    :return:
-    """
-    rows = 100
-    apicall = "api/3/action/package_search"
-    q_param0 = "?q=organization:aafc-aac&rows=%d" % rows
-
-    # useful queries:
-    # ?q=metadata_modified:[2019-10-10T21:15:00Z TO *]
-    #
-    res = query_with_get(site, apicall, q_param0)
-
-    if res is None:
-        return None
-
-    response_dict = json.loads(res)
-    data = response_dict['result']
-    record_cnt = data['count']
-    results = data['results']
-    id_list = process_a_batch(results)
-    batches = record_cnt / rows + 1
-
-    for b in range(1, batches):
-        offset = b * rows
-        q_param = "?q=organization:aafc-aac&rows=%d&start=%d" % (rows, offset)
-        res = query_with_get(site, apicall, q_param)
-        response_dict = json.loads(res)
-        results = response_dict['result']['results']
-        id_list_curr = process_a_batch(results)
-        id_list.extend(id_list_curr)
-
-    return id_list
-
 
 def query_site_for_newdata(site, sec_param="", hours_ago=None):
     '''
