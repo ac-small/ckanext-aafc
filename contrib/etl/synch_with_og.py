@@ -1,11 +1,9 @@
 #!/usr/bin/env python
-import json
 from dotenv import load_dotenv
 from helper import *
 import os
 import re
 from datetime import datetime, timedelta
-import urllib
 from random import randint
 from ckanapi import RemoteCKAN
 
@@ -60,35 +58,6 @@ def query_all_aafc(site):
     id_list = process_a_batch(results)
     return id_list
 
-
-def post_to_site(site, action_string, data_as_dict, apikey):
-    """
-
-    :param site:
-    :param action_string: like "api/3/action/package_update" , or "api/3/action/package_create"
-    :param data_as_dict:
-    :return:
-    """
-
-
-    data_string = urllib.quote(json.dumps(data_as_dict))
-    url = site + action_string #"api/3/action/package_update"
-    request = urllib2.Request(url)
-
-    request.add_header('Authorization', apikey)
-
-
-    response = None
-    try:
-        response = urllib2.urlopen(request, data_string)
-    except urllib2.HTTPError as e:
-        # print("might not have the package in OG site yet")
-        return False
-    except:
-        print("Error happening querying OG site")
-        return False
-
-    pass
 
 def create_to_registry(package_id):
         with open("Data//fieldsAdded.json") as json_fp:
