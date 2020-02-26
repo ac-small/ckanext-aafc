@@ -72,6 +72,17 @@ def query_all_aafc(site):
 
 
 def create_to_registry(package_id):
+        '''
+        Create new dataset in registry with the values from OG
+
+        Called by:
+        * main()
+        Call:
+        * get_data_from_url()
+        * replace_branch_and_data_steward()
+        * replace_regions()
+        *
+        '''
         with open("Data//fieldsAdded.json") as json_fp:
             add_fields = json.load(json_fp)
         og_data = get_data_from_url(package_id, "open_gov_url")
