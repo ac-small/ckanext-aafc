@@ -253,6 +253,20 @@ def get_data_from_url(package_id, url):
     return ret
 
 def main():
+    '''
+    Procedure:
+    1.From remote (OG) site get the list of new data in last 48 hours
+    2.From local (Registry) site get the list of all data
+    3.Compare 2 lists:
+        3.1 if the new id from OG is within local Registry id list, update local record
+        3.2 if the new id from OG is not on the local list, create new records
+    Used functions:
+    * query_site_for_newdata()
+    * query_all_aafc()
+    * update_to_registry()
+    * create_to_registry()
+    '''
+
     #Get the lastest list from registry
     registry_url = os.getenv("registry_url")
     registry_ids = query_all_aafc(registry_url)
