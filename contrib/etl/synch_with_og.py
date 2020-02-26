@@ -101,6 +101,14 @@ def create_to_registry(package_id):
         return True
 
 def update_to_registry(package_id):
+        '''
+        Update registry dataset with the values from OG
+        Called by:
+        * main()
+        Call:
+        * get_data_from_url()
+        * replace_branch_and_data_steward()
+        '''
         og_data = get_data_from_url(package_id, "open_gov_url")
         # query for registry data and remove shared fields (aafc registry exclusive fields will be kept i.e. ODI reference number, DRF core responsibilties)
         reg_data = get_data_from_url(package_id, "registry_url")
