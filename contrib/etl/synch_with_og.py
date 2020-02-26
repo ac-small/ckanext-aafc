@@ -108,6 +108,7 @@ def update_to_registry(package_id):
         Call:
         * get_data_from_url()
         * replace_branch_and_data_steward()
+        * replace_regions()
         '''
         og_data = get_data_from_url(package_id, "open_gov_url")
         # query for registry data and remove shared fields (aafc registry exclusive fields will be kept i.e. ODI reference number, DRF core responsibilties)
@@ -186,6 +187,10 @@ def extract_branch_and_data_steward(og_data):
     return contact_str
 
 def switch_branch(con_str):
+    '''
+    Called by:
+    * replaced_branch_and_data_steward()
+    '''
     branches = {
         "Science and Technology Branch":"ae56a90e-502b-43f9-b256-35a8f3a71bd3",
         "Corporate Management Branch":"186eb448-b6b5-4f16-b615-dba53e26a1ad",
@@ -204,6 +209,14 @@ def switch_branch(con_str):
     return branches.get(con_str, "2ABCCA59-6C57-4886-99E7-85EC6C719218")
 
 def replace_branch_and_data_steward(og_data):
+        '''
+        Called by:
+        * creaet_to_registry()
+        * update_to_registry()
+        Called:
+        * extract_branch_and_data_steward()
+        * switch_branch()
+        '''
         contact = extract_branch_and_data_steward(og_data)
         branch = switch_branch(contact[2].strip())
         data_steward = contact[len(contact)-1].strip()
@@ -258,6 +271,13 @@ def map_regions2(reg_large):
     return None
 
 def replace_regions(og_data):
+    '''
+    Called by:
+    * create_to_registry()
+    * update_to_registry()
+    Call:
+    * map_regions()
+    '''
     if 'place_of_publication' in og_data and og_data['place_of_publication'] != []:
         pub_int = int(''.join(og_data['place_of_publication']))
         pub_reg = map_regions(pub_int)
