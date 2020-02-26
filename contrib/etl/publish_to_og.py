@@ -60,9 +60,11 @@ def get_n_post(package_id):
     try:
         ret = rckan.call_action("package_create", data_dict=og_data)
     except Exception as e1:
+        print(e1)
         try:
             ret = rckan.call_action("package_update", data_dict=og_data)
-        except Exception as e2:    
+        except Exception as e2: 
+            print(e2)        
             return False
         return True
 
