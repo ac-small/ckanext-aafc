@@ -22,6 +22,12 @@ def process_a_batch(data_list):
 def query_site_for_newdata(site, sec_param="", hours_ago=None):
     '''
     Query  site to get list of new ids in last X hours
+    Called by:
+    * main()
+    Call:
+    * query_with_get()
+    * process_a_batch()
+
     :param sec_param: restrict to some condition. examples: "&fq=publication:open_government", "&fq=organization:aafc-aac"
     :param site:
     :return:
@@ -46,6 +52,12 @@ def query_site_for_newdata(site, sec_param="", hours_ago=None):
 def query_all_aafc(site):
     '''
     Query to get a list of all AAFC registry package ID's
+    Called by:
+    * main()
+    Call:
+    * query_with_get()
+    * process_a_batch()
+
     '''
     apicall = "api/3/action/package_search"
     q_param = "?fq=publication:open_government&rows=1000000"
