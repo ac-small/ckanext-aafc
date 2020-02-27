@@ -97,6 +97,7 @@ def create_to_registry(package_id):
         try:
             ret = rckan.call_action("package_create", data_dict=og_data)
         except Exception as e:
+            print(e)
             return False
         return True
 
@@ -171,7 +172,7 @@ def update_to_registry(package_id):
         try:
             ret = rckan.call_action("package_update", data_dict=og_data)
         except Exception as e:
-
+            print(e)
             return False
         return True
 
@@ -329,8 +330,10 @@ def main():
     for id in og_ids:
         if id in registry_ids:
             res = update_to_registry(id)
+            print("Updating Record ID: " + str(id)" Update success? Result = " + str(res))
         else:
             res = create_to_registry(id)
+            print("Creating New Record ID: " + str(id) + " Create success? Result = " + str(res))
         if res is False:
             #res = update_to_registry(id)
             #if res is False:
