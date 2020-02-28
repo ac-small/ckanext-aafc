@@ -5,6 +5,9 @@ from datetime import datetime, timedelta
 import os
 from ckanapi import RemoteCKAN
 from helper import *
+'''
+For publishing new or updated Registry dataset to OG
+'''
 
 to_remove = ["aafc_sector", "procured_data", "procured_data_organization_name", "authoritative_source",
              "drf_program_inventory", "data_steward_email", "elegible_for_release", "publication",
@@ -18,6 +21,7 @@ to_replace = {"type": "dataset", "owner_org": "2ABCCA59-6C57-4886-99E7-85EC6C719
 
 def get_data_from_reg(package_id):
     """
+    Called by get_n_post
     Get data from registry
     :param package_id:
     :return:
@@ -36,6 +40,8 @@ def get_data_from_reg(package_id):
 
 def get_n_post(package_id):
     """
+    Called by main()
+    Call get_data_from_reg()
     Get an data from registry , modify and post it to OG
     :param package_id:
     :return:
@@ -72,6 +78,10 @@ def get_n_post(package_id):
 
 
 def get_ids():
+    '''
+    called by main()
+    :return:
+    '''
     site = os.getenv("registry_url")
     rckan = RemoteCKAN(site)
 
