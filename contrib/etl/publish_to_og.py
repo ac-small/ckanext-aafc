@@ -46,6 +46,16 @@ def get_n_post(package_id):
     for k,v  in to_replace.items():
         og_data[k] = to_replace[k]
 
+    # Use branch and data steward values to populate metadata_contact field (necessary in sync_with_og script).
+    data_steward = og_data["data_steward_email"].strip()
+    branch = og_data["organization"]["description"].split('|')
+    branch_en = branch[0].strip()
+    branch_fr = branch[1].strip()
+    to_add = {"metadata_contact": {"fr":"Gouvernement du Canada; Agriculture et Agroalimentaire Canada, "+branch_fr+", "+data_steward, "en":"Government of Canada; Agriculture and Agri-Food Canada, "+branch_en+", "+data_steward}}
+
+    for k, v in to_add.items():
+        og_data[k] = to_add[k]
+
     # remove
     for k  in to_remove:
         del og_data[k]
