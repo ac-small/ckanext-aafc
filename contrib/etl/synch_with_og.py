@@ -330,7 +330,7 @@ def main():
     for id in og_ids:
         if id in registry_ids:
             res = update_to_registry(id)
-            print("Updating Record ID: " + str(id)" Update success? Result = " + str(res))
+            print("Updating Record ID: " + str(id) + " Update success? Result = " + str(res))
         else:
             res = create_to_registry(id)
             print("Creating New Record ID: " + str(id) + " Create success? Result = " + str(res))
