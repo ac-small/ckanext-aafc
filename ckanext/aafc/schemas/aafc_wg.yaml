@@ -291,8 +291,8 @@ dataset_fields:
     en: IMSO Approval
     fr: Approbation par le CSGI
   help_text:
-    en: "Confirms if IMSO approval has been received for the publication of the data"
-    fr: "Confirme si le CSGI a approuvé la publication des données."
+    en: "Confirms if Information Management Senior Official (IMSO) approval has been received for the publication of the data"
+    fr: "Confirme si le cadre supérieur responsable de la gestion de l’information (CSGI) a approuvé la publication des données."
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
