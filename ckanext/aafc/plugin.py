@@ -119,8 +119,6 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         except:
             pass
         bl_sector = {"en":"Sector", "fr":"Secteur"}
-        log.info("###lang in dataset_facets() is :" +lang)
-        log.info("###sector in dataset_facets() is :" +bl_sector.get(lang,"Sector"))
         #TODO: should use il8n, fix it when it's ready
         #facets_dict['aafc_sector'] = plugins.toolkit._('Sector')
         facets_dict['aafc_sector'] = bl_sector.get(lang,"Sector")
