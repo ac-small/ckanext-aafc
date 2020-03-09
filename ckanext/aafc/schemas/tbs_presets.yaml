@@ -2886,12 +2886,12 @@ presets:
     help_text:
       en: Date of formal issuance (e.g., publication) of the resource (YYYY-MM-DD)
       fr: Date officielle d’émission (c.-à-d. de publication) de la ressource (AAAA-MM-JJ)
-    #required: true
+    required: true
     form_panel: resource
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
-    validators: ignore_empty isodate convert_to_json_if_date
+    validators: canada_non_related_required isodate convert_to_json_if_date
 
 # Field = Resource Type.
 # List box Source: Resource Type code table (refer to Data Migration).
@@ -2908,12 +2908,7 @@ presets:
     field_name: resource_type
     form_snippet: select.html
     display_snippet: select.html
-    validators: scheming_choices
-############################################
-# JK Investigate TBS validator canada_non_related_required
-#
-#    validators: canada_non_related_required scheming_choices
-##############################################
+    validators: canada_non_related_required scheming_choices
     required: true
     form_include_blank_choice: true
     form_panel: resource
@@ -3337,12 +3332,7 @@ presets:
       fr: "Format"
     form_snippet: select.html
     display_snippet: select.html
-    validators: scheming_choices
-############################################
-# JK Investigate TBS validator canada_non_related_required
-#
-#    validators: canada_non_related_required scheming_choices
-##############################################
+    validators: canada_non_related_required scheming_choices
     required: true
     form_include_blank_choice: true
     form_panel: resource
