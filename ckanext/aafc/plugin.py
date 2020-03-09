@@ -117,6 +117,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         try:
             lang =  get_lang()[0]
         except:
+            log.info(">>>>get_lang() failed")
             pass
         bl_sector = {"en":"Sector", "fr":"Secteur"}
         #TODO: should use il8n, fix it when it's ready
