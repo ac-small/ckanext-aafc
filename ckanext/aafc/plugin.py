@@ -3,6 +3,7 @@
 import os
 import os.path
 from pylons.i18n import _
+from pylons.i18n.translation import get_lang
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.lib.plugins import DefaultDatasetForm
@@ -112,7 +113,17 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         #    'aafc_sector': _('Sector'),
         #    'res_type': _('Resource Type'),
         #    })
-        facets_dict['aafc_sector'] = plugins.toolkit._('Sector')
+        lang = "en"
+        try:
+            lang =  get_lang()[0]
+        except:
+            pass
+        bl_sector = {"en":"Sector", "fr":"Secteur"}
+        log.info("###lang in dataset_facets() is :" +lang)
+        log.info("###sector in dataset_facets() is :" +bl_sector.get(lang,"Sector"))
+        #TODO: should use il8n, fix it when it's ready
+        #facets_dict['aafc_sector'] = plugins.toolkit._('Sector')
+        facets_dict['aafc_sector'] = bl_sector.get(lang,"Sector")
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
