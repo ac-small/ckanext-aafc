@@ -327,6 +327,8 @@ def main():
     og_ids = query_site_for_newdata(og_site, "&fq=organization:aafc-aac&rows=500", hours_ago=48)
 
     # Go through both lists, retrieve missing data from OG and post into Registry and record event of failure
+    confirmed_ids = []
+    count = 0
     for id in og_ids:
         if id in registry_ids:
             res = update_to_registry(id)
@@ -341,7 +343,15 @@ def main():
                 now = datetime.now()
                 event = "Failed updating package id %s on %s\n"%(id, now)
                 fout.write(event)
+        else:
+            confirmed_ids.append(str(id))
+        count+=1
 
+    with open("success_sync_with_og.log", "a") as fout:
+        now = datetime.now()
+        ids = ",".join(confirmed_ids)
+        event = "confirmed successs package ids on %s\nids:%s\n" % ( now,ids)
+        fout.write(event)
 
 '''
 Simple tests come here
@@ -403,9 +413,43 @@ def test_regmap():
         res2 = map_regions2(s)
         print ("res1:%s,res2:%s\n"%(res1,res2))
 
+def test_confirm_log():
+    og_ids = range(1,20)
+    registry_ids = (1,3,7,9,15)
+    mock_flag=[True,True,True,True,False,True,True,True,True,True,
+               True,True,True,True,False,False,True,True,False,True,]
+    confirmed_ids = []
+    count = 0
+    for id in og_ids:
+        if id in registry_ids:
+            #res = update_to_registry(id)
+            res = mock_flag[count]
+            print("Updating Record ID: " + str(id) + " Update success? Result = " + str(res))
+        else:
+            #res = create_to_registry(id)
+            res = mock_flag[count]
+            print("Creating New Record ID: " + str(id) + " Create success? Result = " + str(res))
+        if res is False:
+            #res = update_to_registry(id)
+            #if res is False:
+            with open("error_sync_with_og.log", "a") as fout:
+                now = datetime.now()
+                event = "Failed updating package id %s on %s\n"%(id, now)
+                fout.write(event)
+        else:
+            confirmed_ids.append(str(id))
+        count+=1
+
+    with open("success_sync_with_og.log", "a") as fout:
+        now = datetime.now()
+        ids = ",".join(confirmed_ids)
+        event = "confirmed successs package ids on %s\nids:%s\n" % ( now,ids)
+        fout.write(event)
+
 
 if __name__ == "__main__":
     load_dotenv()
     #post_to_regsistry("08ba1d1c-4985-46d4-be2d-495005689db2")
     main()
     #test_regmap()
+    #test_confirm_log()
