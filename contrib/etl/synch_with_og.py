@@ -232,12 +232,13 @@ def default_resource_date_published(og_data):
         Called by:
         * creaet_to_registry()
         * update_to_registry()
-        Assigns the resource date published if left blank
+        If resource date published is blank (FGP)
+        apply metadata record date published.
         '''
        resources = og_data["resources"]
        for i in resources:
           if "date_published" not in i or i["date_published"] == "":
-              i["date_published"] = "1970-01-01 00:00:00"
+              i["date_published"] = og_data["date_published"]
 
 
 def map_regions(region):
