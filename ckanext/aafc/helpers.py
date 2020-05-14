@@ -309,7 +309,7 @@ def gen_uid():
     return new_id
 
 def gen_odi():
-    filename = "count.dat"
+    filename = "/tmp/count.dat"
     now = datetime.datetime.now()
     current_year = now.year
     count = 1
