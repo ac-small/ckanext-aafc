@@ -165,7 +165,60 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         pass
 
     def before_search(self, search_params):
+        log.info(">>>>search_params:")
+        log.info(str(search_params))
+
 	return search_params
+
+    def convert_fq_param(self, str_fq):
+        '''
+        convert the received fq paramter string into the format that python need.
+        i.e.
+        1.first or only fq key value pair as fq
+        2.All others will be put into a fq_list
+        :param str_fq:
+        :return: a list of 2 items: first is fq, the 2nd is the list of fq_list, could be empty
+        '''
+        fq_l = str_fq.split(' ')
+        len_fq = len(fq_l)
+        #print(len_fq)
+        #print(str(json.dumps(fq_l)))
+
+
+        if (len_fq > 0):
+            fq0 = fq_l[0]
+        fq_after = []
+        if len_fq > 1:
+            fq_after = fq_l[1:]
+
+        return fq0,fq_after
+    
+    def process_q(self, qterm):
+        '''
+        process q term
+        :param qterm:
+        :return: a pair of values with keyword and new string
+        '''
+
+        res= re.compile(r'''\s*([\w]+:\s*[\w|"|/]+)\s*''').split(qterm)
+        newq = ""
+        other_filter = []
+        keywords = []
+        for i in res:
+           if len(i) == 0:
+             continue
+           if ":" in i:
+               #res = re.compile(r"\s*canada_keywords:\s*\"([^\"]+)\"").findall(i)
+               #if len(res) != 0:
+               #    #build keywords
+               #    keywords.append(res[0]) #There will be only 1. just reuse old code of "findall"
+               #else:
+               #    other_filter.append(i)
+               other_filter.append(i)
+           else:
+               newq = i
+        new_qterm = newq
+        return keywords,new_qterm, other_filter
 
     def after_search(self, search_results, search_params):
         pr = sh.scheming_get_preset("aafc_sector")
