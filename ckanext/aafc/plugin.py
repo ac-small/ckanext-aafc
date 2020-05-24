@@ -165,7 +165,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         pass
 
     def before_search(self, search_params):
-        log.info(">>>>search_params:")
+        log.info(">>>>###search_params:")
         log.info(str(search_params))
 
 	return search_params
@@ -179,10 +179,12 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         :param str_fq:
         :return: a list of 2 items: first is fq, the 2nd is the list of fq_list, could be empty
         '''
+        str_fq = str_fq.replace('ESRI ', 'ESRI_')
         fq_l = str_fq.split(' ')
         len_fq = len(fq_l)
         #print(len_fq)
         #print(str(json.dumps(fq_l)))
+        fq_l = [ fq.replace('ESRI_', 'ESRI ') for fq in fq_l ]
 
 
         if (len_fq > 0):
@@ -200,6 +202,8 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         :return: a pair of values with keyword and new string
         '''
 
+        if 'ESRI' in qterm:
+           qterm = qterm.replace("ESRI ","ESRI_")
         res= re.compile(r'''\s*([\w]+:\s*[\w|"|/]+)\s*''').split(qterm)
         newq = ""
         other_filter = []
