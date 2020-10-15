@@ -155,6 +155,8 @@ def update_to_registry(package_id):
                 
             # Update the Open Gov dataset
             if reg_odi != None:
+                if isinstance(reg_odi,list):
+                    return False
                 og_data.update(reg_odi)
             og_data.update(reg_keep)
             
