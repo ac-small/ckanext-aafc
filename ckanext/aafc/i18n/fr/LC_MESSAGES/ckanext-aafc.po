@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-aafc 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+msgid "About"
+msgstr "¨¤ propos"
+
+msgid "About Canada.ca"
+msgstr "¨¤ propos de Canada.ca"
+
+msgid "About government"
+msgstr "Au sujet du gouvernement"
+
+msgid "About this site"
+msgstr "¨¤ propos de ce site"
+
+msgid "About {0}"
+msgstr " propos de {0}"
+
+msgid "Accessibility"
+msgstr "Accessibilit¨¦"
+
+msgid "Benefits"
+msgstr "Prestations"
+
+msgid "Business"
+msgstr "Entreprises"
+
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+msgid "Need To Translate"
+msgstr "(fr)Need To Translat" 
+
+msgid "JChen"
+msgstr "(fr)JChen" 
+
+msgid "datasets"
+msgstr "(fr)datasets" 
+
+msgid "Activate to apply this filter"
+msgstr "(fr)Activate to apply this filter" 
+
+msgid "Activate to remove this filter"
+msgstr "(fr)Activate to remove this filter" 
+
+msgid "Basic Information"
+msgstr "Informations de base" 
+
+msgid "Open Data Release Criteria"
+msgstr "Critères pour la diffusion sur Données ouvertes" 
+
+msgid "Optional Dataset Information"
+msgstr "Informations facultatives sur le jeu de données" 
+
+msgid "External Licence"
+msgstr "Licence"
+
+msgid "Role"
+msgstr "Rôle"

@@ -26,6 +26,7 @@ import logging
 from flask import render_template
 from flask import Blueprint
 import json
+from ckan.lib.plugins import DefaultTranslation
 
 log = logging.getLogger(__name__)
 
@@ -42,6 +43,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
     plugins.implements(plugins.IValidators, inherit=True)
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IPackageController)
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IBlueprint)
     # IConfigurer
 
@@ -50,6 +52,16 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'aafc')
 
+    def i18n_locales(self):
+        log.info(">>>>i18n_locales():")
+        return ['en','fr']
+
+    def i18n_domain(self):
+        log.info(">>>>i18n_domain:")
+        log.info("name:{name}".format(name=self.name))
+        dir = self.i18n_directory() 
+        log.info("i18n dir:{idir}".format(idir=dir))
+        return "ckanext-aafc" 
     # IValidators
 
     def get_validators(self):
