@@ -37,7 +37,7 @@ def helper_info():
     return render_template('home/about.html')    
 
 
-class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm):
+class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslation):
     plugins.implements(plugins.IConfigurer) 
     plugins.implements(plugins.ITemplateHelpers)  
     plugins.implements(plugins.IValidators, inherit=True)
