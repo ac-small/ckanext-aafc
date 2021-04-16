@@ -8,4 +8,4 @@ cd /home/rootadmin/docker/projects/ckanext-aafc/contrib/etl
 python publish_to_og.py
 python synch_with_og.py
 python update_empty_records.py
-python send_email.py --server --port --from --to 
+python send_email.py
