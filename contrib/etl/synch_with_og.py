@@ -44,7 +44,11 @@ def query_site_for_newdata(site, sec_param="", hours_ago=None):
 
     if res is None:
         return None
-    response_dict = json.loads(res)
+    try:    
+        response_dict = json.loads(res)
+    except Exception as e:
+        # print(e)
+        return []
     results = response_dict['result']['results']
     id_list = process_a_batch(results)
     return id_list
