@@ -124,6 +124,12 @@ CMD ["/app/ckan/admin/ckan.sh"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
 
 
+#Notes for build and run:
+#docker build  -t ckan:dev-1 -f Dockerfile-dev
+#docker run  -p 80:5000 --name ckanreg ckan:dev-1
+.
+
+
 
 
 
