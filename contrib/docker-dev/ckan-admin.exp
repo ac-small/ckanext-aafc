@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+spawn paster sysadmin add lliadmin email=admin@email.com name=lliadmin -c /app/ckan/config/dev.ini
+match_max 100000
+expect  "*? \[y/n\]"
+send -- "y\r"
+expect "*Password: "
+send -- "###ALL_PASSWORD#\r"
+expect "*Confirm password: "
+send -- "###ALL_PASSWORD#\r"
+expect eof

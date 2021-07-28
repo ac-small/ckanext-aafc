@@ -1,0 +1,14 @@
+[Unit]
+Description=CKAN
+After=network.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/bin/bash /app/ckan/admin/ckan.sh
+ExecReload=/app/ckan/admin/ckan.sh restart
+KillMode=process
+PIDFile=/app/ckan/admin/ckan.pid
+
+[Install]
+WantedBy=multi-user.target

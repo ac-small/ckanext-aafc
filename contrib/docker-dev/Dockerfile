@@ -1,0 +1,130 @@
+FROM ubuntu:18.04
+
+ARG SITE_URL=http://localhost
+ARG ROOT_PATH=
+ARG ALL_PASSWORD=welcome1
+ARG LL_TAG=master
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TMP=/app/temp
+ENV APP=/app/ckan/venv
+ENV CKCF=/app/ckan/config/dev.ini
+ENV ENV_LL_TAG=${LL_TAG}
+
+# Prepare OS
+RUN apt update && apt install -y gnupg2 curl wget && curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee  /etc/apt/sources.list.d/pgdg.list && apt-get update && \
+  apt install -y apache2 postgresql-10  postgresql-10-postgis-2.4 postgresql-10-postgis-scripts && \
+  apt install -y vim git zip unzip pkg-config expect dos2unix && \
+  apt install -y gcc make g++ automake linux-headers-generic && \
+  apt install -y build-essential python-dev=2.7.15~rc1-1 gettext python-six python-libxslt1 musl-dev openjdk-8-jdk uwsgi uwsgi-plugins-all python-gevent libtool libpq-dev
+RUN ln -s /usr/lib/postgresql/10/bin/pg_ctl /usr/bin/pg_ctl
+
+RUN mkdir -p $APP/src $TMP /app/ckan/config /app/ckan/log /var/www/html/asset/ && \
+    curl -o $TMP/getpip.py https://bootstrap.pypa.io/pip/3.4/get-pip.py && python $TMP/getpip.py "pip==19.3.1" && \
+    pip install pastescript && pip install pastedeploy && pip install supervisor && pip install "virtualenv==16.7.10" && \
+    mkdir /etc/supervisord.d && rm -rf $TMP/getpip.py && \
+    virtualenv $APP && \
+    pip install "Shapely==1.4.3" &&  cp /usr/share/zoneinfo/America/Toronto /etc/timezone && echo "America/Toronto" >/etc/timezone && \
+    date
+COPY *req $TMP
+
+# CKAN
+RUN . $APP/bin/activate && cd $APP/src && pip install -e git+https://gitlab.com/aafc/ckan.git@ckan-2.8.3#egg=ckan && \
+    cd $APP/src/ckan && cp who.ini /app/ckan/config/ && \
+    pip install --no-binary :all: -r requirements.txt && pip install gevent && \
+    pip install -e git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars && \
+    paster --plugin=ckan make-config ckan ${CKCF} && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.plugins = envvars image_view text_view recline_view datastore scheming_datasets fluent spatial_metadata spatial_query resource_proxy geo_view geojson_view wmts_view aafc" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.site_url = ${SITE_URL}" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.root_path = ${ROOT_PATH}" && \
+    pip install "PyYAML==5.2" && pip install ckanapi && pip install geojson && pip install geomet && \
+  #  pip install -e "git+https://gitlab.com/aafc/ckanext-scheming.git#egg=ckanext-scheming" && \
+    pip install -e "git+https://github.com/aafc-ckan/ckanext-scheming.git#egg=ckanext-scheming" && \
+    pip install -e git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent && \
+    pip install -r $TMP/ckan-spatial.req && \
+    pip install -e git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial && \
+    pip install -r https://raw.githubusercontent.com/ckan/ckanext-geoview/v0.0.17/pip-requirements.txt && \
+    pip install -e git+https://github.com/ckan/ckanext-geoview.git#egg=ckanext-geoview && \
+#    pip install -e git+https://gitlab.com/aafc/lli-ckan.git#egg=livinglabs && \
+    pip install -e  "git+https://github.com/aafc-ckan/ckanext-aafc.git#egg=ckanext-aafc"  && \
+    pip install -e git+https://gitlab.com/aafc/ckanext-aafcesas.git#egg=ckanext-aafcesas && \
+#    # cd  /app/temp && \
+#    #        curl https://raw.githubusercontent.com/aafc-ckan/ckanext-aafc/master/imports/org_data.json.gz -o org_data.json.gz && \
+#    #        gunzip org_data.json.gz && \
+#    #        ckanapi load organizations -I org_data.json -c $CKCF  && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.locale_order=en fr" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.locales_offered=en fr" && \
+    paster --plugin=ckan config-tool ${CKCF} "scheming.dataset_schemas=ckanext.aafc:schemas/aafc_wg.yaml" && \
+    paster --plugin=ckan config-tool ${CKCF} "scheming.presets=ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml ckanext.aafc:schemas/aafc_presets.yaml" && \
+    paster --plugin=ckan config-tool ${CKCF} "scheming.dataset_fallback=false" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.search.show_all_types=True" && \
+    paster --plugin=ckan config-tool ${CKCF} "licenses_group_url=file:///app/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.views.default_views=wms wfs geojson gml kml arcgis_rest" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckanext.geoview.ol_viewer.formats=wms wfs geojson gml kml arcgis_rest" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.datastore.write_url=postgresql://ckan_datastore:${ALL_PASSWORD}@localhost:5432/ckan_datastore" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.datastore.read_url=postgresql://ckan_datastore_ro:${ALL_PASSWORD}@localhost:5432/ckan_datastore" && \
+    paster --plugin=ckan config-tool ${CKCF} "ckan.datapusher.url=http://to-be-defined" && \
+    date
+
+# Apache SOLR
+ENV SOLR=/app/ckan/solr/bin/solr
+RUN adduser --disabled-password --gecos "" --shell /bin/bash ckan && cd $TMP && rm -rf * && curl http://archive.apache.org/dist/lucene/solr/7.7.1/solr-7.7.1.tgz -o solr.tgz && tar -zxf solr.tgz && mv solr-7.7.1 /app/ckan/solr && \
+    chown -R ckan /app/ckan/solr /app/ckan/log
+USER ckan
+RUN $SOLR start && cd /app/ckan/solr && bin/solr create -c ckan
+USER root
+
+# Redis
+RUN cd $TMP && rm -rf * && curl https://download.redis.io/releases/redis-5.0.5.tar.gz | tar -zxf - && cd redis-5.0.5 && make && make PREFIX=/app/ckan/redis install
+
+RUN echo "${SITE_URL}" && sed -E -i -e 's/sqlalchemy.url(.*)$/sqlalchemy.url = postgresql:\/\/ckan:'"${ALL_PASSWORD}"'@localhost:5432\/ckan/g' $CKCF && sed -E -i -e 's@ckan.site_url.*@ckan.site_url = '"${SITE_URL}"'@g' $CKCF &&  sed -E -i -e 's/\#solr_url.*/solr_url = http:\/\/localhost:8983\/solr\/ckan/g' $CKCF &&  sed -E -i -e 's/\#ckan.redis.url.*/ckan.redis.url = redis:\/\/localhost:8082\/0/g' $CKCF && grep ckan.site_url $CKCF
+COPY *.sh /app/ckan/admin/
+COPY *.exp /app/ckan/venv/src/ckan/
+RUN dos2unix /app/ckan/admin/*.sh /app/ckan/venv/src/ckan/*.exp
+RUN chmod +x /app/ckan/venv/src/ckan/*.exp
+COPY ./ckan.conf /etc/apache2/conf-enabled/
+RUN sed -i 's@###SITE_URL#@'"$SITE_URL$ROOT_PATH"'@g' /etc/apache2/conf-enabled/ckan.conf
+RUN sed -i 's@###ROOT_PATH#@'"$ROOT_PATH"'@g' /etc/apache2/conf-enabled/ckan.conf
+RUN sed -i '1 i\LoadModule headers_module /usr/lib/apache2/modules/mod_headers.so' /etc/apache2/conf-enabled/ckan.conf
+RUN sed -i '1 i\LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so' /etc/apache2/conf-enabled/ckan.conf
+RUN sed -i '1 i\LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so' /etc/apache2/conf-enabled/ckan.conf
+RUN sed -i '/httpd$/c\apachectl start' /app/ckan/admin/ckan.sh && sed -i '/httpd -k/c\apachectl stop' /app/ckan/admin/ckan.sh
+RUN chmod +x /app/ckan/admin/*sh
+RUN cd /app/ckan/solr/server/solr/ckan/conf/ && cp /app/ckan/venv/src/ckan/ckan/config/solr/schema.xml . && rm managed-schema && sed -i '/defaultSearchField/d' schema.xml &&  sed -i '/solrQueryParser/c\\<df\>text\<\/df\>\<solrQueryParser q.op="AND"\/\>' schema.xml && sed -i '/<updateProcessor.*class="solr.AddSchemaFieldsUpdateProcessorFactory".*i/,/<\/updateProcessor>/d' solrconfig.xml &&  sed -i '/<updateRequestProcessorChain.*add-unknown-fields-to-the-schema.*/,/<\/updateRequestProcessorChain>/d' solrconfig.xml && sed -i '/<initParams.*/,/<\/initParams>/d' solrconfig.xml && sed -i '/<\/config>/i <schemaFactory class="ClassicIndexSchemaFactory"/>' solrconfig.xml
+#
+## Database
+RUN mkdir -p /app/ckan/pgdata /run/postgresql && chown -R postgres:postgres /app/ckan/pgdata /run/postgresql && su - postgres -c "pg_ctl -D /app/ckan/pgdata init; echo \"listen_addresses = '*'\" >> /app/ckan/pgdata/postgresql.conf;  pg_ctl -w -D /app/ckan/pgdata start" && su - postgres -c "psql -c \"create user ckan with password '"${ALL_PASSWORD}"';\"" && su - postgres -c "psql -c \"CREATE DATABASE ckan WITH owner=ckan template=template0 encoding='UTF8';\"" && su - postgres -c "psql -c \"alter user ckan createdb;\"" && echo "host    all  all  0.0.0.0/0        md5" >> /app/ckan/pgdata/pg_hba.conf && echo "host    all  all  ::/0             md5" >> /app/ckan/pgdata/pg_hba.conf && cd /app/ckan/venv/src/ckan && export PATH=/app/ckan/default/bin:/app/ckan/python27/bin:/app/ckan/psql96/bin:$PATH
+RUN su - postgres -c "pg_ctl -w -D /app/ckan/pgdata start" && su - postgres -c "psql -c \"create user ckan_datastore with password '"${ALL_PASSWORD}"';create user ckan_datastore_ro with password '"${ALL_PASSWORD}"';\"" && su - postgres -c "psql -c \"CREATE DATABASE ckan_datastore WITH owner=ckan_datastore template=template0 encoding='UTF8';\"" && su - postgres -c "psql -c \"alter user ckan_datastore createdb;grant connect on database ckan_datastore to ckan_datastore_ro; \""  && \
+    su - postgres -c "psql -d ckan -c \"create extension postgis; ALTER VIEW geometry_columns OWNER to ckan; ALTER TABLE spatial_ref_sys OWNER to ckan;\" "
+RUN  su - postgres -c "pg_ctl -w -D /app/ckan/pgdata start" && . $APP/bin/activate && cd $APP/src/ckan && paster --plugin=ckan db init -c $CKCF
+
+# Create admin user
+RUN sed -i "s/###ALL_PASSWORD#/${ALL_PASSWORD}/g" /app/ckan/venv/src/ckan/ckan-admin.exp
+
+# Checkout branch
+#RUN . /app/ckan/venv/bin/activate && pip install -e git+https://gitlab.com/aafc/lli-ckan.git@${ENV_LL_TAG}#egg=livinglabs
+RUN . /app/ckan/venv/bin/activate && pip install -e git+https://github.com/aafc-ckan/ckanext-aafc.git#egg=ckanext-aafc
+
+# CKAN logger
+RUN . /app/ckan/venv/bin/activate && \
+    paster --plugin=ckan config-tool ${CKCF} -s handler_file "class = logging.handlers.RotatingFileHandler" && \
+    paster --plugin=ckan config-tool ${CKCF} -s handler_file "formatter = generic" && \
+    paster --plugin=ckan config-tool ${CKCF} -s handler_file "level = INFO" && \
+    paster --plugin=ckan config-tool ${CKCF} -s handler_file "args = (\"/app/ckan/log/ckan.log\", \"a\", 20000000, 9)"  && \
+    paster --plugin=ckan config-tool ${CKCF} -s handlers "keys = console, file"  && \
+    paster --plugin=ckan config-tool ${CKCF} -s handlers "keys = console, file"  && \
+    paster --plugin=ckan config-tool ${CKCF} -s logger_ckan "handlers = console, file"  && \
+    paster --plugin=ckan config-tool ${CKCF} -s logger_ckanext "handlers = console, file"  && \
+    date
+
+EXPOSE 5000
+
+# Start CKAN
+CMD ["/app/ckan/admin/ckan.sh"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+
+
+
+
+
