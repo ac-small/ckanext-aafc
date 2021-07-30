@@ -131,10 +131,15 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         except:
             log.info(">>>>get_lang() failed")
             pass
+        # Sector Facet
         bl_sector = {"en":"Sector", "fr":"Secteur"}
         #TODO: should use il8n, fix it when it's ready
         #facets_dict['aafc_sector'] = plugins.toolkit._('Sector')
         facets_dict['aafc_sector'] = bl_sector.get(lang,"Sector")
+        
+        # Publication Type Facet
+        bl_publication_type = {"en":"Publication Type", "fr":"Type de publication"}
+        facets_dict['publication'] = bl_publication_type.get(lang,"Publication Type")
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
@@ -239,6 +244,9 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
     def after_search(self, search_results, search_params):
         pr = sh.scheming_get_preset("aafc_sector")
         choices = sh.scheming_field_choices(pr)
+        
+        dt = sh.scheming_get_preset("publication_type")
+        options = sh.scheming_field_choices(dt)
         #for result in search_results.get('results', []):
             #for extra in result.get('extras', []):
             #    if extra.get('key') in ['sector' ]:
@@ -252,13 +260,17 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
                #facets.pop('tags')
                #c.facet_titles.pop(key)
                continue
-            if key != 'aafc_sector':
-                continue
+            if key == 'aafc_sector':
             #log.info(">>>###key:" + key)
-            for item in facet['items']:
-                field_value = item['name']				
-                label = sh.scheming_choices_label(choices,field_value)
-                item['display_name'] = label
+                for item in facet['items']:
+                    field_value = item['name']				
+                    label = sh.scheming_choices_label(choices,field_value)
+                    item['display_name'] = label
+            if key == 'publication':
+                for item in facet['items']:
+                    field_value = item['name']				
+                    label = sh.scheming_choices_label(options,field_value)
+                    item['display_name'] = label
         keys  = search_results.get('search_facets').keys()
         #log.info(">>>kesy before return  :" + str(keys))
         try:
