@@ -30,6 +30,10 @@
           (_('Relevance'), 'score desc, metadata_modified desc'),
           (_('Name Ascending'), 'title_string asc'),
           (_('Name Descending'), 'title_string desc'),
+          (_('Date Released Ascending'), 'data_released asc'),
+          (_('Date Released Descending'), 'data_released desc'),
+          (_('Date Published Ascending'), 'date_published asc'),
+          (_('Date Published Descending'), 'date_published desc'),
           (_('Last Modified'), 'metadata_modified desc'),
           (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
         %}
