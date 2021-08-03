@@ -32,6 +32,7 @@ COPY *req $TMP
 RUN . $APP/bin/activate && cd $APP/src && pip install -e git+https://gitlab.com/aafc/ckan.git@ckan-2.8.3#egg=ckan && \
     cd $APP/src/ckan && cp who.ini /app/ckan/config/ && \
     pip install --no-binary :all: -r requirements.txt && pip install gevent && \
+	pip install flask-debugtoolbar && \
     pip install -e git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars && \
     paster --plugin=ckan make-config ckan ${CKCF} && \
     paster --plugin=ckan config-tool ${CKCF} "ckan.plugins = envvars image_view text_view recline_view datastore scheming_datasets fluent spatial_metadata spatial_query resource_proxy geo_view geojson_view wmts_view aafc" && \
@@ -125,9 +126,9 @@ CMD ["/app/ckan/admin/ckan.sh"]
 
 
 #Notes for build and run:
-#docker build  -t ckan:dev-1 -f Dockerfile-dev
+#docker build  -t ckan:dev-1 -f Dockerfile-dev .
 #docker run  -p 80:5000 --name ckanreg ckan:dev-1
-.
+
 
 
 
