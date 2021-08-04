@@ -1,6 +1,23 @@
 {% ckan_extends %}
 {% block styles %}
   {{ super() }}
+  <script src="https://ssl-templates.services.gc.ca/app/cls/WET/gcintranet/v4_0_29/cdts/compiled/soyutils.js"></script>
+  <script src="https://ssl-templates.services.gc.ca/app/cls/WET/gcintranet/v4_0_29/cdts/compiled/wet-en.js"></script>
+  <noscript>
+	  	<!-- Write closure fall-back static file -->
+		<!-- /ROOT/app/cls/WET/gcintranet/v4_0_29/cdts/static/refTop.html -->
+		<!-- #include virtual="/app/cls/WET/gcintranet/v4_0_29/cdts/static/refTop.html" -->
+
+  </noscript>
+
+  <!-- Write closure template -->
+  <script>
+      document.write(wet.builder.refTop({
+	      "cdnEnv": "esdcprod",
+	      "subTheme": "esdc"
+	}));
+  </script>
+
   <link rel="stylesheet" href="/css/aafc2.css" />
 {% endblock %}
 {% block scripts %}
@@ -9,3 +26,11 @@
 
 
 
+
+
+
+
+
+  
+
+ 
