@@ -146,8 +146,7 @@
    The footer at the bottom of the site
    ==================================== */
 
-.site-footer,
-body {
+.site-footer {
   background-color: rgb(40, 40, 40);
 }
 /* The text in the footer. */
