@@ -157,6 +157,9 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         # Publication Type Facet
         bl_publication_type = {"en":"Publication Type", "fr":"Type de publication"}
         facets_dict['publication'] = bl_publication_type.get(lang,"Publication Type")
+        
+        # Dataset Visibility Facet
+        facets_dict['private'] = _("Visibility")
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
@@ -288,6 +291,13 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
                     field_value = item['name']				
                     label = sh.scheming_choices_label(options,field_value)
                     item['display_name'] = label
+            if key == 'private':
+                for item in facet['items']:
+                    field_value = item['name']
+                    if field_value == 'false':
+                        item['display_name'] = _("Public")
+                    elif field_value == 'true':
+                        item['display_name'] = _("Private")
         keys  = search_results.get('search_facets').keys()
         #log.info(">>>kesy before return  :" + str(keys))
         try:
