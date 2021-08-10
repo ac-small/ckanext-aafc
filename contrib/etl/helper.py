@@ -1,6 +1,11 @@
 import json
+import os
 import urllib
 import urllib2
+from datetime import datetime, timedelta
+import yaml
+from ckanapi import RemoteCKAN
+import requests
 
 
 
@@ -101,3 +106,54 @@ def post_to_site(site, action_string, data_as_dict, apikey):
         return False
 
     pass
+def get_all_data( isSink = False, timelimit = False, restrict=False):
+    '''
+    retrieve all data from the remote site
+    :return:
+    '''
+    #Get the lastest list from registry
+    data_url = os.getenv("source_url")
+    data_api_key = os.getenv("source_api_key")
+    if isSink:
+        data_url = os.getenv("destination_url")
+        data_api_key = os.getenv("destination_api_key")
+    rows = os.getenv("rows_to_get")
+
+    if data_url == None or len(data_url) == 0 or data_url.find("http") == -1:
+        print("Missing  url")
+        return
+    if data_api_key == None or len(data_api_key) == 0:
+        print("Missing  api key")
+    #    return
+
+
+    print("Geting data from remote:%s with api key %s"%(data_url,data_api_key))
+    session = requests.Session()
+    session.verify = False
+    rckan = RemoteCKAN(data_url, apikey=data_api_key,session=session)
+    param = {"rows":rows}
+    if timelimit:
+        param["q"] = calculate_time_param()
+
+    result = rckan.call_action("package_search",param)
+    print("Retrieved data from remote site")
+    if restrict:
+        new_result={}
+        new_result["count"] = result["count"]
+        new_result["results"] = []
+        for i in result['results']:
+            kwes=[]
+            kws = i["keywords"]["en"]
+            remove = True
+            for kw in kws:
+                kwes.append(kw)
+                if kw.find("Living Lab") >=0:
+                    remove = False
+            str_kw = ",".join(kwes)
+            #print(">>>List of kw in e:%s"%str_kw)
+            if not remove:
+            #    result['results'].remove(i)
+            #else:
+                new_result['results'].append(i)
+        result = new_result
+    return result
