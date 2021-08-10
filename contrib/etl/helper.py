@@ -34,7 +34,44 @@ def query_with_get( site, apicall, q_param, apikey = None):
 
     return res
 
+def purge_dataset(package_ids, source = False):
+    '''
 
+    :param package_ids: list of package id
+    :return:
+    '''
+    site = os.getenv("destination_url")
+    api_key = os.getenv("destination_api_key")
+
+    if source:
+        site = os.getenv("source_url")
+        api_key = os.getenv("source_api_key")
+    session = requests.Session()
+    session.verify = False
+
+    rckan = RemoteCKAN(site, apikey=api_key,session=session)
+
+    count = 0
+    try:
+        for package_id in package_ids:
+            data_as_d = {"id": package_id}
+            ret = rckan.call_action("dataset_purge", data_dict=data_as_d)
+            print("count:%d"%count+ json.dumps(ret))
+            count += 1
+    except Exception as e:
+        # if no data exists yet, return empty
+        ret = []
+    return ret
+
+
+def load_json( file ):
+    data =  None
+    with open(file) as json_fp:
+        data = json.load(json_fp)
+    return data
+
+        
+    
 # TODO: moved to here for now before delete it.
 def post_to_site(site, action_string, data_as_dict, apikey):
     """
