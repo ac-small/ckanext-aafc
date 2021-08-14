@@ -3,3 +3,4 @@ numpy==1.13.1
 pandas==0.20.3
 python-dotenv==0.10.3
 ckanapi==4.3
+pyyaml
