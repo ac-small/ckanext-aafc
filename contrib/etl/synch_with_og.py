@@ -8,6 +8,10 @@ from random import randint
 from ckanapi import RemoteCKAN
 
 
+#
+to_replace = {"owner_org": "d266f358-17ff-4625-b126-da390146909c" , "org_title_at_publication":"agriculture_and_agrifood_canada"  }
+
+
 def process_a_batch(data_list):
     length = len(data_list)
     ids = []
@@ -467,6 +471,46 @@ def test_confirm_log():
         ids = ",".join(confirmed_ids)
         event = "confirmed successs package ids on %s\nids:%s\n" % ( now,ids)
         fout.write(event)
+
+
+###### new functions #######
+def transform_data(data, keys_to_remove,items_to_add, kw_dict, items_to_replace = None):
+    '''
+    Transform the incoming data by remove some items and add some items with default value to match the
+    target schema
+
+    :param data:
+    :param keys_to_remove:
+    :param items_to_add:
+    :return:
+    '''
+    owner_org_id = os.getenv("organization_id",None)
+    if owner_org_id != None:
+        items_to_replace['owner_org'] = owner_org_id
+
+    transformed = []
+    for d in data:
+        # remove items
+        for key in keys_to_remove:
+            d.pop(key,"default")
+        for k,v in items_to_add.items():
+            d[k] = v
+        for k, v in items_to_replace.items():
+            d[k] = v
+        # remove "extra" fields for some old Registry datasets
+        d.pop("extras","default")
+
+        if d["id"] in ["dafded61-61a2-478d-91f6-2c77f030214b"]:
+            pass
+        #d["keywords"]
+        process_keywors(d, kw_dict)
+
+        #other temperary conversion to get around
+        temp_process(d)
+
+        transformed.append(d)
+
+    return transformed
 
 
 if __name__ == "__main__":
