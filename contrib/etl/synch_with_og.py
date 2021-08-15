@@ -219,7 +219,8 @@ def switch_branch(con_str):
         "Programs Branch":"71619d89-756b-4795-9e1b-ecf460dce051"
     }
     # Default (for now) if there is no match, place in generic AAFC Organization
-    return branches.get(con_str, "2ABCCA59-6C57-4886-99E7-85EC6C719218")
+    generic_aafc_org = os.getenv("organization_id")
+    return branches.get(con_str, generic_aafc_org)
 
 def replace_branch_and_data_steward(og_data):
         '''
@@ -503,14 +504,28 @@ def transform_data(data, keys_to_remove,items_to_add, kw_dict, items_to_replace 
         if d["id"] in ["dafded61-61a2-478d-91f6-2c77f030214b"]:
             pass
         #d["keywords"]
-        process_keywors(d, kw_dict)
+        #process_keywors(d, kw_dict)
 
         #other temperary conversion to get around
-        temp_process(d)
+        #temp_process(d)
 
         transformed.append(d)
 
     return transformed
+
+def transform_data_og(data, keys_to_remove,items_to_add, kw_dict, items_to_replace = None):
+    transformed = []
+    for d in data:
+        for k, v in items_to_add.items():
+            d[k] = v
+        # Post to registry
+        replace_branch_and_data_steward(d)
+        replace_regions(d)
+        default_resource_date_published(d)
+
+        transformed.append(d)
+    return transformed
+
 
 
 if __name__ == "__main__":
