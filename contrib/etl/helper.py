@@ -71,8 +71,11 @@ def purge_dataset(package_ids, source = False):
 
 def load_json( file ):
     data =  None
-    with open(file) as json_fp:
-        data = json.load(json_fp)
+    try:
+        with open(file) as json_fp:
+            data = json.load(json_fp)
+    except IOError:
+        data = None
     return data
 
         
@@ -157,3 +160,27 @@ def get_all_data( isSink = False, timelimit = False, restrict=False):
                 new_result['results'].append(i)
         result = new_result
     return result
+	
+def get_all_ids(remote=True):
+    '''
+    Get all ids from site
+    :param remote:
+    :return:
+    '''
+    if remote:
+        site = os.getenv("source_url")
+        api_key = os.getenv("source_api_key")
+    else: #local
+        site = os.getenv("destination_url")
+        api_key = os.getenv("destination_api_key")
+    session = requests.Session()
+    session.verify = False
+    rckan = RemoteCKAN(site, apikey=api_key,session=session)
+    try:
+        ret = rckan.call_action("package_list")
+        #for id in ret:
+        #    print(id)
+    except Exception as e:
+        print("Error message : %s" % e.message)
+        ret = []
+    return ret
