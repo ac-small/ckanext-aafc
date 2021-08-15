@@ -135,18 +135,6 @@ def test_purge_remote():
     purge_dataset(id_list, source=True)
 
 
-def test1(p=None):
-    data = load_json("Data/" + 'all_from_qa.json')
-    count = 0
-    for d in data:
-        print("%d id:%s" % (count, d['id']))
-        count += 1
-    first10 = data[1:3]
-    with open("Data/" + "first3_from_qa.json", "w") as fo:
-        fo.write(json.dumps(first10))
-
-    pass
-
 
 
 def test_dumpkw(params):
@@ -244,9 +232,6 @@ def load_raw_tosrc(params):
 
 
 
-def gen_reverse_dict(params):
-    generate_kw_reverse_dict()
-
 def simple_pull(params):
     site = os.getenv("source_url")
     dest_key = os.getenv("source_api_key")
@@ -306,10 +291,8 @@ funcname_map = {
     "purge": test_purge_all_data,
     "dump": dump_data_as_json,
     "load": load_json_data,
-    "t1": test1,
     "t3":test3,
     "test": test,
-    "genKwRev": gen_reverse_dict,
     "loads": load_raw_tosrc,
     "tcompared": test_compare_dict,
     "push": push_data,
