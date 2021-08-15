@@ -5,7 +5,7 @@ from helper import *
 import os
 # import re
 import sys, getopt
-from synch_with_og import transform_data, to_replace
+from synch_with_og import transform_data, to_replace, transform_data_og
 from ckanapi.errors import *
 import yaml
 import requests
@@ -46,14 +46,14 @@ def dump_data_as_json(params):  # site, json_file_name, from_og = False):
 
 
 def load_json_data(params):
-    json_file_name, from_og = params
+    json_file_name = params[0]
 
     keys_to_remove = load_json("Data/keysToRemove.json")
-    items_to_add = load_json("Data/fieldsAddedForLli.json")
+    items_to_add = load_json("Data/fieldsAdded.json")
     rev_dict = load_json("Data/reverse_kw_dict.json")
     extracted = load_json("Data/" + json_file_name)
 
-    data = transform_data(extracted, keys_to_remove, items_to_add, rev_dict, to_replace)
+    data = transform_data_og(extracted, keys_to_remove, items_to_add, rev_dict, to_replace)
 
     site = os.getenv("destination_url")
     dest_key = os.getenv("destination_api_key")
@@ -82,6 +82,7 @@ def load_json_data(params):
             print("Failure posting, other reason ")
             print("Error message : %s" % e.message)
         count += 1
+
 
 def push_data(params):
     json_file_name, dummy = params
