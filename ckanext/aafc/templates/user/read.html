@@ -42,7 +42,7 @@
  {% for organization in organizations %}
        {% for eachUser in organization.users %}
        {% if eachUser.name == user.name %}
-       <dd>{{organization.title}}-{{ role_trans[eachUser.capacity]}}</dd>
+       <dd>{{organization.title}} - {{ role_trans[eachUser.capacity]}}</dd>
        {% endif %}
      {% endfor %}
  {% endfor %}
