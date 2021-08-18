@@ -134,7 +134,22 @@ def test_purge_remote():
     id_list = ["3055d83b-edac-4b38-87fd-1b54730dbec4"]
     purge_dataset(id_list, source=True)
 
+def get_package_list(remote=False, save=True):
+    """
+    Get list of package in remote site. Save to a local file or return as a list
+    """
+    site = os.getenv("destination_url") if remote == False else os.getenv("source_url")
+    rckan = RemoteCKAN(site)
+    try:
+        id_list = rckan.call_action("package_list")
+    except:
+        print("failed to get the data")
+    if not save:
+        return id_list
 
+    id_list_str =",".join(id_list)
+    with open("package_list.txt","w") as fp:
+        fp.write(id_list_str)
 
 
 def test_dumpkw(params):
@@ -337,4 +352,5 @@ def main(argv):
 
 if __name__ == "__main__":
     load_dotenv()
-    main(sys.argv[1:])
+    #main(sys.argv[1:])
+    get_package_list()
