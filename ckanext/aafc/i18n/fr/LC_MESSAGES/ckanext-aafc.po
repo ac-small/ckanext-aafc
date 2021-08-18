@@ -66,3 +66,6 @@ msgstr "Licence"
 
 msgid "Role"
 msgstr "Rôle"
+
+msgid "Clear"
+msgstr "Effacer"

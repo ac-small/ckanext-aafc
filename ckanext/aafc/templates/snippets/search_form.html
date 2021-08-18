@@ -1,0 +1,64 @@
+{# Overridden to add clear search button #}
+
+{% resource 'aafc/extra.js' %}
+
+{% ckan_extends %}
+
+{% import 'macros/form.html' as form %}
+
+{% set placeholder = placeholder if placeholder else _('Search datasets...') %}
+{% set sorting = sorting if sorting else [(_('Name Ascending'), 'name asc'), (_('Name Descending'), 'name desc')] %}
+{% set search_class = search_class if search_class else 'search-giant' %}
+{% set no_bottom_border = no_bottom_border if no_bottom_border else false %}
+{% set form_id = form_id if form_id else false %}
+
+<form {% if form_id %}id="{{ form_id }}" {% endif %}class="search-form{% if no_bottom_border %} no-bottom-border{% endif %}" method="get" data-module="select-switch">
+
+  {% block search_input %}
+    <div class="input-group search-input-group">
+      <input aria-label="{% block header_site_search_label %}{{ placeholder }}{% endblock %}" id="field-giant-search" type="text" class="form-control input-lg" name="q" value="{{ query }}" autocomplete="off" placeholder="{{ placeholder }}">
+      {% block search_clear_button %}
+      <span class="input-group-btn">
+	      <button id="reset-btn" class="btn btn-default btn-lg" type="reset" value="reset" data-toggle="tooltip" data-placement="top" title={{ _("Clear") }} onclick="resetFunction()">
+          <i class="fa fa-times-circle"></i>
+      </span>
+      {% endblock %}
+      {% block search_input_button %}
+      <span class="input-group-btn">
+	      <button id="search-btn" class="btn btn-default btn-lg" type="submit" value="search" data-toggle="tooltip" data-placement="top" title={{ _("Search") }}>
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      {% endblock %}
+    </div>
+  {% endblock %}
+
+  {% block search_search_fields %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block search_sortby %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block search_title %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block search_facets %}
+    {{ super() }}
+  {% endblock %}
+
+</form>
+
+{% if show_empty and count == 0 and not error %}
+  {% trans %}
+    <p class="extra">Please try another search.</p>
+  {% endtrans %}
+{% endif %}
+
+{% if error %}
+  {% trans %}
+    <p id="search-error"><strong>There was an error while searching.</strong> Please try again.</p>
+  {% endtrans %}
+{% endif %}
