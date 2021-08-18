@@ -1,0 +1,50 @@
+{% ckan_extends %}
+
+{% block subtitle %}
+  {{ user.display_name }}
+{% endblock %}
+
+{% block page_heading %}
+  {{ super.super() }}
+{% endblock %}
+
+{% block page_primary_action %}
+  {% if h.check_access('package_create') %}
+  {{ h.snippet ('snippets/add_dataset.html', dataset_type=dataset_type) }}
+    {% endif %}
+{% endblock %}
+{% block primary_content_inner %}
+
+  {% block package_list %}
+    {{ super() }}
+    
+    <h2 class="wb-inv"  id="datasetHeading">{{ _('Datasets') }}</h2>
+    <script>
+      var appBanners = document.getElementsByClassName('empty'),
+          i;
+  
+      for (i = 0; i < appBanners.length; i += 1) {
+          appBanners[i].style.display = 'none';
+      }
+  </script>
+    {% endblock %}
+{% endblock %}
+
+
+ {% block user_info %}
+ {{ super() }}
+
+ {% set organizations = h.get_featured_organizations(100) %}
+
+ <dl>
+ <dt>{{ _('Role')}} </dt>
+ {% set role_trans = {"editor":"Editor", "admin":"Administrator","member":"Member"} %}
+ {% for organization in organizations %}
+       {% for eachUser in organization.users %}
+       {% if eachUser.name == user.name %}
+       <dd>{{organization.title}} - {{ role_trans[eachUser.capacity]}}</dd>
+       {% endif %}
+     {% endfor %}
+ {% endfor %}
+ </dl>
+ {% endblock %}
