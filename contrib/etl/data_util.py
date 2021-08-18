@@ -352,5 +352,4 @@ def main(argv):
 
 if __name__ == "__main__":
     load_dotenv()
-    #main(sys.argv[1:])
-    get_package_list()
+    main(sys.argv[1:])
