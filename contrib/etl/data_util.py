@@ -131,7 +131,7 @@ def load_yaml(file_name):
     return documents
 
 
-def test_purge_all_data(params):
+def purge_all_data_local(params):
     site = os.getenv("destination_url")
     purge_all_data(site)
 
@@ -278,11 +278,7 @@ def simple_pull(params):
          print("Failure posting, other reason ")
          print("Error message : %s" % e.message)
 
-def test(param):
-    #test1(param)
-    #test2(param)
-    #test_purge_remote(param)
-    test_dumpkw(param) # dump keywords as json file
+
 
 
 query_term={"q": " canada_keywords: \"ecosystems\"", "fq":""}
@@ -305,21 +301,26 @@ def process_q(qterm):
 
     return keywords,new_qterm
 
-def test3(param):
+def test_any(param):
+    """
+    Put experimental script for test here
+    """
     query_term_data = query_term2 #json.loads(query_term)
     qterm = query_term_data['q']
     kw,news = process_q(qterm)
     print (" kw:%s, news:%s"%(kw,news))
-
+    #test1(param)
+    #test2(param)
+    #test_purge_remote(param)
+    #test_dumpkw(param) # dump keywords as json file
 
 
 funcname_map = {
-    "purge": test_purge_all_data,
+    "purge": purge_all_data_local,
     "purge_list": puerg_data_from_list,
     "dump": dump_data_as_json,
     "load": load_json_data,
-    "t3":test3,
-    "test": test,
+    "test_any":test_any,
     "loads": load_raw_tosrc,
     "tcompared": test_compare_dict,
     "push": push_data,
@@ -352,15 +353,6 @@ def main(argv):
                 exit()
 
             func(args)
-
-        # elif opt == '-o':
-        #     value = arg
-        #     oparams = value
-
-    # print 'function is: ', func
-    # #print 'Other params are ', oparams
-    # print "extra params:", args
-
 
 if __name__ == "__main__":
     load_dotenv()
