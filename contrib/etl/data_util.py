@@ -24,6 +24,17 @@ def purge_all_data(site):
     purge_dataset(id_list)
     pass
 
+def puerg_data_from_list(file = None):
+    """
+    Purge data selectively. The package list will be in a text file. The ids are separated by ','
+    """
+    file_name = "package_list.txt" if file is None else file
+    with open(file_name, "r") as fp:
+        id_list_str = fp.read()
+    if id_list_str is None or len(id_list_str) == 0:
+        return
+    id_list = id_list_str.split(",")
+    purge_dataset(id_list)
 
 def dump_data_as_json(params):  # site, json_file_name, from_og = False):
     json_file_name, flag = params
@@ -304,6 +315,7 @@ def test3(param):
 
 funcname_map = {
     "purge": test_purge_all_data,
+    "purge_list": puerg_data_from_list,
     "dump": dump_data_as_json,
     "load": load_json_data,
     "t3":test3,
