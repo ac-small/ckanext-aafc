@@ -66,3 +66,6 @@ msgstr "Date de publication Croissant"
 
 msgid "Date Published Descending"
 msgstr "Date de publication Décroissant"
+
+msgid "Export Datasets"
+msgstr "(FR) Export Datasets"

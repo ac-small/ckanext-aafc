@@ -15,6 +15,9 @@
         {% if h.check_access('package_create') %}
           <div class="page_primary_action">
             {{ h.snippet ('snippets/add_dataset.html', dataset_type=dataset_type) }}
+	    {% if h.check_access('sysadmin') %}
+	    <button class="btn btn-default"> <i class="fa fa-download"></i> <a href={{h.url_for("/export")}}>{{ _('Export Datasets') }}</a></button>
+	    {% endif %}
           </div>
         {% endif %}
       {% endblock %}
