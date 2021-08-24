@@ -1,0 +1,13 @@
+{
+  "Description English": {
+      "pattern_path": ["^notes_translated$", "^en$"],
+      "case_sensitive": true
+  },
+  "Description French":{
+      "pattern_path": ["^notes_translated$", "^fr$"],
+      "case_sensitive": true
+  },
+  "Branch": {
+      "pattern_path": ["^organization$", "^name$"]
+  }
+}

@@ -10,27 +10,21 @@ from ckan.lib.plugins import DefaultDatasetForm
 from ckan.logic import validators as logic_validators
 from routes.mapper import SubMapper
 from paste.reloader import watch_file
-#from ckantoolkit import h, chained_action, side_effect_free
 import ckanapi
 from ckan.lib.base import c
-
+import routes.mapper
 from ckanext.aafc import validators
-#from ckanext.aafc import logic
-#from ckanext.aafc import auth
 from ckanext.aafc import helpers
-#from ckanext.aafc import activity as act
-#from ckanext.aafc.extendedactivity.plugins import IActivity
 from time import gmtime, strftime
 from ckanext.scheming import helpers as sh
 import logging
-from flask import render_template
-from flask import Blueprint
+import ckanapi_exporter.exporter as exporter
+import ckan.lib.base as base
 import json
 from ckan.lib.plugins import DefaultTranslation
+from datetime import datetime
 
 import ckan as ckan
-#import ckan.plugins as p
-#import ckan.plugins.toolkit as t
 import ckan.lib.helpers as h
 import ckan.lib.formatters as formatters
 import ckan.model as model
@@ -42,26 +36,20 @@ import geomet.wkt as wkt
 from webhelpers.html import HTML, literal
 from webhelpers.html.tags import link_to
 from pylons import config
+from pylons import response
 from pylons.i18n import gettext
 
 
 log = logging.getLogger(__name__)
 
-def helper_info():
-    """
-    A function that render a page when the route to '/info'
-    """
-    return render_template('home/about.html')    
-
-
 class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslation):
+    plugins.implements(plugins.IRoutes)
     plugins.implements(plugins.IConfigurer) 
     plugins.implements(plugins.ITemplateHelpers)  
     plugins.implements(plugins.IValidators, inherit=True)
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IPackageController)
     plugins.implements(plugins.ITranslation)
-    plugins.implements(plugins.IBlueprint)
     # IConfigurer
 
     def update_config(self, config_):
@@ -169,18 +157,6 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
     def organization_facets(self, facets_dict, organization_type,
                             package_type):
         return self.dataset_facets(facets_dict, package_type)
-# IBluprint
-    def get_blueprint(self):
-        # Create Blueprint for plugin
-        blueprint = Blueprint(self.name, self.__module__)
-        # Add plugin url rules to Blueprint object
-        rules = [
-            (u'/info', u'info', helper_info),
-        ]
-        for rule in rules:
-            blueprint.add_url_rule(*rule)
-
-        return blueprint
 
 # IPackageController
     def read(self, entity):
@@ -334,10 +310,35 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
     def after_update(self, context, data_dict):
 	return data_dict
 
-
     def after_create(self, context, data_dict):
         return data_dict
 
+
+    def before_map(self, route_map):
+        with routes.mapper.SubMapper(route_map,
+                controller='ckanext.aafc.plugin:ExportController') as m:
+            m.connect('export', '/export',
+                    action='export')
+        return route_map
+
+    def after_map(self, route_map):
+        return route_map
+
+
+class ExportController(base.BaseController):
+
+    def export(self):
+        '''
+        Use ckanapi-exporter to export records into a csv file.
+        Columns exported are specified in the /export/export.columns.json file.
+        Exported files are labelled with current datetime.
+        '''
+        csv_content = exporter.export('http://localhost:5000', '../ckanext-aafc/ckanext/aafc/export/export_columns.json')
+        time = datetime.now().strftime("%Y%m%d-%H%M%S")
+        filename = ("AAFC-Data-Catalogue-Export " + time + ".csv")
+        response.headers['Content-Type'] = 'text/csv; charset=utf-8'
+        response.headers["Content-Disposition"] = "attachment; filename=" + filename
+        return csv_content
 
 
 class WetTheme(plugins.SingletonPlugin):

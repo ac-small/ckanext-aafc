@@ -11,22 +11,22 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 
 msgid "About"
-msgstr "¨¤ propos"
+msgstr "À propos"
 
 msgid "About Canada.ca"
-msgstr "¨¤ propos de Canada.ca"
+msgstr "À propos de Canada.ca"
 
 msgid "About government"
 msgstr "Au sujet du gouvernement"
 
 msgid "About this site"
-msgstr "¨¤ propos de ce site"
+msgstr "À propos de ce site"
 
 msgid "About {0}"
 msgstr " propos de {0}"
 
 msgid "Accessibility"
-msgstr "Accessibilit¨¦"
+msgstr "Accessibilité"
 
 msgid "Benefits"
 msgstr "Prestations"
@@ -36,21 +36,6 @@ msgstr "Entreprises"
 
 msgid "Contact us"
 msgstr "Contactez-nous"
-
-msgid "Need To Translate"
-msgstr "(fr)Need To Translat" 
-
-msgid "JChen"
-msgstr "(fr)JChen" 
-
-msgid "datasets"
-msgstr "(fr)datasets" 
-
-msgid "Activate to apply this filter"
-msgstr "(fr)Activate to apply this filter" 
-
-msgid "Activate to remove this filter"
-msgstr "(fr)Activate to remove this filter" 
 
 msgid "Basic Information"
 msgstr "Informations de base" 
@@ -66,3 +51,21 @@ msgstr "Licence"
 
 msgid "Role"
 msgstr "Rôle"
+
+msgid "Clear"
+msgstr "Effacer"
+
+msgid "Date Released Ascending"
+msgstr "Données publiées Croissant"
+
+msgid "Date Released Descending"
+msgstr "Données publiées Décroissant"
+
+msgid "Date Published Ascending"
+msgstr "Date de publication Croissant"
+
+msgid "Date Published Descending"
+msgstr "Date de publication Décroissant"
+
+msgid "Export Datasets"
+msgstr "(FR) Export Datasets"
