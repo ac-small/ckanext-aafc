@@ -3,13 +3,55 @@
 from dotenv import load_dotenv
 from helper import *
 import os
-# import re
 import sys, getopt
 from synch_with_og import transform_data, to_replace, transform_data_og
 from ckanapi.errors import *
 import yaml
 import requests
 import re
+'''
+# Brief:
+
+A collection of the data utility functions including data dumping, data loading and dat deletion.
+Used along with .env file to define the data source for pulling and dumping, the target for loading(Usually
+local developement environment. i.e. Docker container or Virtural maching running CKAN instance
+
+It's a command line application. The functions can be defined as parameters.
+
+# Prerequesit:
+* define the data source and target for pull/dump and loading, delete
+example:
+source_url=https://open.canada.ca/data/
+destination_url=http://localhost
+destination_api_key=34f0bf32-f471-4ba4-966c-345206e2c59a
+
+* The data file will be in ./data folder 
+
+# Usage:
+
+* Pulling/Dumping
+Python data_util.py -f dump <dumped.json>
+A <dumped.json> file will be generated under ./data folder. The maxumun data record is defined in .env
+
+* Loading 
+Python data_util.py -f load <dumped.json>
+Where the file <dumped.json> is the file name containing all the data to load
+
+* Delete
+Python data_util.py -f purge_list <file_with_list_of_ids_to_delete> 
+With no file defined, a default file "package_list.txt“ under ./data folder will be used
+
+Python data_util.py -f purge
+Will purge all data in target site defined in .env
+
+
+* Scenario for using the utility
+The data utilities can be used in many different cases during development. Test data is needed in most function
+development. For debuging some difficult issues that are not happen very often, dumped data can be edited before
+loading to mimic the real situation and duplicate the cases  
+
+'''
+
 
 
 def purge_all_data(site):
