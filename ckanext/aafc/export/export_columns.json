@@ -1,13 +1,65 @@
 {
+  "Reference Number": {
+      "pattern_path": ["^odi_reference_number$"]
+  },
+  "Branch": {
+      "pattern_path": ["^organization$", "^name$"]
+  },
+  "Title English": {
+      "pattern_path": ["^title_translated$", "^en$"],
+      "case_sensitive": true
+  },
+  "Title French": {
+      "pattern_path": ["^notes_translated$", "^fr$"],
+      "case_sensitive": true
+  },
   "Description English": {
       "pattern_path": ["^notes_translated$", "^en$"],
       "case_sensitive": true
   },
-  "Description French":{
+  "Description French": {
       "pattern_path": ["^notes_translated$", "^fr$"],
       "case_sensitive": true
   },
-  "Branch": {
-      "pattern_path": ["^organization$", "^name$"]
+  "Data Steward": {
+      "pattern_path": ["^data_steward_email$"]
+  },
+  "Date Published": {
+      "pattern_path": ["^date_published$"]
+  },
+  "Language": {
+      "pattern_path": ["^resources$", "^language$"],
+      "deduplicate": true
+  },
+  "Size": {
+      "pattern_path": ["^resources$", "^size$"],
+      "deduplicate": true
+  },
+  "Eligibile For Release": {
+      "pattern_path": ["^elegible_for_release$"]
+  },
+  "Ineligibility Reason": {
+      "pattern_path": ["ineligibility_reason$"]
+  },
+  "DRF Program Inventory": {
+      "pattern_path": ["^drf_program_inventory$"]
+  },
+  "DRF Core Responsibilities": {
+      "pattern_path": ["^drf_core_responsibilities$"]
+  },
+  "Publisher English" : {
+      "pattern_path": ["^org_title_at_publication$", "^en$"]
+  },
+  "Publisher French" : {
+      "pattern_path": ["^org_title_at_publication$", "^fr$"]
+  },
+  "Date Released" : {
+      "pattern_path": ["^data_released$"]
+  },
+  "Portal URL English" : {
+      "pattern_path": ["^open_government_portal_record_e$"]
+  },
+  "Portal URL French" : {
+      "pattern_path": ["^open_government_portal_record_f$"]
   }
 }

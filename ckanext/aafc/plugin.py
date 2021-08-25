@@ -333,7 +333,7 @@ class ExportController(base.BaseController):
         Columns exported are specified in the /export/export.columns.json file.
         Exported files are labelled with current datetime.
         '''
-        csv_content = exporter.export('http://localhost:5000', '../ckanext-aafc/ckanext/aafc/export/export_columns.json')
+        csv_content = exporter.export('http://localhost:5000', '../ckanext-aafc/ckanext/aafc/export/export_columns.json', str(c.userobj.apikey) , "{'include_private':'True'}")
         time = datetime.now().strftime("%Y%m%d-%H%M%S")
         filename = ("AAFC-Data-Catalogue-Export " + time + ".csv")
         response.headers['Content-Type'] = 'text/csv; charset=utf-8'
