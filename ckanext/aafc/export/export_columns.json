@@ -3,7 +3,7 @@
       "pattern_path": ["^odi_reference_number$"]
   },
   "Branch": {
-      "pattern_path": ["^organization$", "^name$"]
+      "pattern_path": ["^organization$", "^description$"]
   },
   "Title English": {
       "pattern_path": ["^title_translated$", "^en$"],
