@@ -334,7 +334,7 @@ dataset_fields:
 - preset: canada_org_section_name
   display_group: Optional Dataset Information
 
-- preset: canada_creator
+- preset: aafc_creator
   display_group: Optional Dataset Information
 
 - preset: canada_contributor
