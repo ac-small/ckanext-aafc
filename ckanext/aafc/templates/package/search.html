@@ -1,3 +1,5 @@
+{% resource 'aafc/extra.js' %}
+
 {% extends "page.html" %}
 {% import 'macros/form.html' as form %}
 
@@ -15,9 +17,6 @@
         {% if h.check_access('package_create') %}
           <div class="page_primary_action">
             {{ h.snippet ('snippets/add_dataset.html', dataset_type=dataset_type) }}
-	    {% if h.check_access('sysadmin') %}
-	    <button class="btn btn-default"> <i class="fa fa-download"></i> <a href={{h.url_for("/export")}}>{{ _('Export Datasets') }}</a></button>
-	    {% endif %}
           </div>
         {% endif %}
       {% endblock %}
@@ -79,6 +78,12 @@
 
 {% block secondary_content %}
 <div class="filters">
+  <section class="module module-narrow module-shallow">
+    {% if h.check_access('sysadmin') %}
+      <a href={{h.url_for("/export")}} class="btn btn-default btn-block mrgn-tp-lg mrgn-bttm-md"><i class="fa fa-download"></i>{{ _('Export Datasets') }}</a>
+    {% endif %}
+    <a id="suggest_dataset_email" href="" onClick="generate_email()" class="btn btn-success btn-block mrgn-tp-lg mrgn-bttm-md">{{ _("Suggest a Dataset") }}</a>
+  </section>
   <div>
     {% for facet in c.facet_titles %}
       {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
