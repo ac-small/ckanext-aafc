@@ -50,9 +50,10 @@
           {% block resources_outer %}
             <ul class="dataset-resources list-unstyled">
               {% block resources_inner %}
+	        <strong>{{_("Formats:")}}</strong>
                 {% for resource in h.dict_list_reduce(package.resources, 'format') %}
                 <li>
-                  <span class="label label-default">{{ resource }}</span>
+		   <span class="badge">{{ resource }}</span>
                 </li>
                 {% endfor %}
               {% endblock %}
