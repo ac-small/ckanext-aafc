@@ -67,8 +67,11 @@ msgstr "Date de publication Croissant"
 msgid "Date Published Descending"
 msgstr "Date de publication Décroissant"
 
-msgid "Date Published"
-msgstr "Date de publication"
+msgid "Date Published:"
+msgstr "Dossier publié:"
+
+msgid "Last Modified:"
+msgstr "Dernière mise à jour:"
 
 msgid "Suggest a Dataset"
 msgstr "Proposez un jeu de données"
