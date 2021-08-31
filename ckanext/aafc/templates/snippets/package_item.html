@@ -30,14 +30,14 @@
       <div style ="float:right; font-size:small;">
       {% block date_published %}
         {% if date_published %}
-            <div><i>{{ _('Date Published:') }} {{ h.render_datetime(date_published) }}</i></div>
+            <div><i>{{ _('Date Published:') }} {{ h.render_datetime(date_published), date_format=strftime("%B %d, %Y") }}</i></div>
         {% else %}
             <p class="empty">{{ _("This dataset has not yet been published") }}</p>
         {% endif %}
       {% endblock %}
       {% block metadata_modified %}
         {% if metadata_modified %}
-            <div><i>{{ _('Last Modified:') }} {{ h.render_datetime(metadata_modified) }}</i></div>
+            <div><i>{{ _('Last Modified:') }} {{ h.render_datetime(metadata_modified), date_format=strftime("%B %d, %Y") }}</i></div>
         {% else %}
             <p class="empty">{{ _("This dataset has an unknown last modified date") }}</p>
         {% endif %}
