@@ -167,3 +167,9 @@
   color:#fff;
   background-color:rgb(38, 55, 74);
 }
+
+.badge {
+  border-radius:0.35rem;
+  font-weight:normal;
+  font-size:80%;
+  white-space:no-wrap;
