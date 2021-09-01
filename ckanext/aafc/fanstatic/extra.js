@@ -14,10 +14,10 @@ function generate_email() {
         // Check language (en/fr), and generate the appropriate email.
         var lang = document.documentElement.lang;
 	    if (lang == "fr"){
-		link.href = "mailto:aafc.opengovernment-gouvernmentouvert.aac@canada.ca?subject=Proposez un jeu de données - Catalogue de données d'AAC&body=";
+		link.href = "mailto:aafc.opengovernment-gouvernementouvert.aac@agr.gc.ca?subject=Proposez un jeu de données - Catalogue de données d'AAC&body=";
 		link.href += get_french_email_body();
 	    } else {
-		link.href = "mailto:aafc.opengovernment-gouvernmentouvert.aac@canada.ca?subject=Suggest a Dataset - AAFC Data Catalogue&body=";
+		link.href = "mailto:aafc.opengovernment-gouvernementouvert.aac@agr.gc.ca?subject=Suggest a Dataset - AAFC Data Catalogue&body=";
 	        link.href += get_english_email_body();
 	    }
 }
