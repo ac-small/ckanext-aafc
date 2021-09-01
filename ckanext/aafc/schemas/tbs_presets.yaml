@@ -2071,8 +2071,9 @@ presets:
     label:
       en: Time Period Coverage Start
       fr: Couverture de la période de temps - date de début
-    form_snippet: date.html
+    form_snippet: altdate.html
     display_snippet: date.html
+    form_placeholder: "YYYY-MM-DD"
     validators: scheming_required isodate
 
 # Field = Time Period Coverage End Date.
