@@ -2890,8 +2890,9 @@ presets:
     required: true
     form_panel: resource
     # copied from date preset
-    form_snippet: date.html
+    form_snippet: altdate.html
     display_snippet: date.html
+    form_placeholder: "YYYY-MM-DD"
     validators: canada_non_related_required isodate convert_to_json_if_date
 
 # Field = Resource Type.
