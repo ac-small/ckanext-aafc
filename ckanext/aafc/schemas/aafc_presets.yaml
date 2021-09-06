@@ -1275,6 +1275,7 @@ presets:
       en: Sector
       fr: Secteur
     #required: true
+    sorted_choices: true
     form_include_blank_choice: true
     choices:
     - label:
