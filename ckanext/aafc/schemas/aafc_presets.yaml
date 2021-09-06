@@ -1278,9 +1278,29 @@ presets:
     form_include_blank_choice: true
     choices:
     - label:
+        en: "Agri-Food"
+        fr: "L'agroalimentaire"
+      value: agri_food
+    - label:
+        en: "Agro-Ecosystem Productivity and Health"
+        fr: "La productivité des écosystèmes agricoles et santé"
+      value: agro_ecosystem_productivity_and_health    
+    - label:
         en: "Animal genetics"
         fr: "Zoogénétiques"
       value: animal_genetics
+    - label:
+        en: "Biodiversity and Bioresouces"
+        fr: "La biodiversité et les bioressources"
+      value: biodiversity_and_bioresouces
+    - label:
+        en: "Bioproducts"
+        fr: "Bioproduits"
+      value: bioproducts      
+    - label:
+        en: "Cereal and Pulse"
+        fr: "Les céréales et les légumineuses"
+      value: cereal_and_pulse      
     - label:
         en: "Crops"
         fr: "Productions végétales"
@@ -1290,17 +1310,33 @@ presets:
         fr: "Produits laitiers"
       value: dairy
     - label:
+        en: "Dairy, Pork, Poultry and Other Livestock"
+        fr: "Le cheptel laitier, porc, volaille et autres animaux d'élevage"
+      value: dairy_pork_poultry_and_other_livestock      
+    - label:
         en: "Fish and seafood"
         fr: "Poissons et fruits de mer"
       value: fish_and_seafood
+    - label:
+        en: "Forages and Beef"
+        fr: "Les fourrages et le boeuf"
+      value: forages_and_beef      
     - label:
         en: "Functional foods and natural health products"
         fr: "Aliments fonctionnels et produits de santé naturels"
       value: functional_foods_and_natural_health_products
     - label:
+        en: "Horticulture"
+        fr: "Horticulture"
+      value: horticulture  
+    - label:
         en: "Industrial bioproducts"
         fr: "Bioproduits industriels"
       value: industrial_bioproducts
+    - label:
+        en: "Oilseeds"
+        fr: "Les oléagineux"
+      value: oilseeds      
     - label:
         en: "Organic products"
         fr: "Produits biologiques"
@@ -1317,42 +1353,6 @@ presets:
         en: "Red meat and livestock"
         fr: "Viandes rouges et bétail"
       value: red_meat_and_livestock 
-    - label:
-        en: "Horticulture"
-        fr: "Horticulture"
-      value: horticulture      
-    - label:
-        en: "Forages and Beef"
-        fr: "Les fourrages et le boeuf"
-      value: forages_and_beef
-    - label:
-        en: "Cereal and Pulse"
-        fr: "Les céréales et les légumineuses"
-      value: cereal_and_pulse
-    - label:
-        en: "Oilseeds"
-        fr: "Les oléagineux"
-      value: oilseeds
-    - label:
-        en: "Dairy, Pork, Poultry and Other Livestock"
-        fr: "Le cheptel laitier, porc, volaille et autres animaux d'élevage"
-      value: dairy_pork_poultry_and_other_livestock
-    - label:
-        en: "Bioproducts"
-        fr: "Bioproduits"
-      value: bioproducts
-    - label:
-        en: "Agri-Food"
-        fr: "L'agroalimentaire"
-      value: agri_food
-    - label:
-        en: "Agro-Ecosystem Productivity and Health"
-        fr: "La productivité des écosystèmes agricoles et santé"
-      value: agro_ecosystem_productivity_and_health
-    - label:
-        en: "Biodiversity and Bioresouces"
-        fr: "La biodiversité et les bioressources"
-      value: biodiversity_and_bioresouces
     - label:
         en: "Other"
         fr: "Autre"
