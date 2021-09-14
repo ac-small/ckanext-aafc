@@ -2071,8 +2071,9 @@ presets:
     label:
       en: Time Period Coverage Start
       fr: Couverture de la période de temps - date de début
-    form_snippet: date.html
+    form_snippet: altdate.html
     display_snippet: date.html
+    form_placeholder: "YYYY-MM-DD"
     validators: scheming_required isodate
 
 # Field = Time Period Coverage End Date.
@@ -2087,8 +2088,9 @@ presets:
     label:
       en: Time Period Coverage End
       fr: Couverture de la période de temps - date de fin
-    form_snippet: date.html
+    form_snippet: altdate.html
     display_snippet: date.html
+    form_placeholder: "YYYY-MM-DD"
     validators: scheming_required isodate
 
 # Field = Maintenance and Update Frequency.
@@ -2230,8 +2232,9 @@ presets:
       en: The date on which the dataset was updated (YYYY-MM-DD)
       fr: Date à laquelle le jeu de données a été mis à jour (AAAA-MM-JJ)
     # copied from date preset
-    form_snippet: date.html
+    form_snippet: altdate.html
     display_snippet: date.html
+    form_placeholder: "YYYY-MM-DD"
     validators: scheming_required isodate
 
 # Field = Date Expires.
