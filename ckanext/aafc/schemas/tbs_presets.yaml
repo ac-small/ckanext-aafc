@@ -2215,8 +2215,9 @@ presets:
       fr: Date de publication du jeu de données (AAAA-MM-JJ)
     required: true
     # copied from date preset
-    form_snippet: date.html
+    form_snippet: altdate.html
     display_snippet: date.html
+    form_placeholder: "YYYY-MM-DD"
     validators: scheming_required isodate
 
 # Field = Date Modified.
