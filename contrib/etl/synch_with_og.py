@@ -81,7 +81,9 @@ def query_all_aafc(site):
 
 def create_to_registry(package_id):
         '''
-        Create new dataset in registry with the values from OG
+        Create new dataset in registry with the values from OG.
+        These should only ever be geospatial records (records published
+        to OG but does not yet exist in the AAFC Data Catalogue).
 
         Called by:
         * main()
@@ -100,6 +102,7 @@ def create_to_registry(package_id):
         replace_branch_and_data_steward(og_data)
         replace_regions(og_data)
         default_resource_date_published(og_data)
+        update_urls_data_released(og_data)
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
         rckan = RemoteCKAN(reg_site, apikey=registry_key)
@@ -316,6 +319,17 @@ def replace_regions(og_data):
         og_data['geographic_region'] = [geo_reg]
     return og_data
 
+
+def update_urls_data_released(og_data):
+    '''
+    Called by:
+    * create_to_registry()
+    This function adds open gov URL's and data_released
+    for newly created (geospatial records)
+    '''
+    og_data['open_government_portal_record_e'] = 'http://open.canada.ca/data/en/dataset/' + og_data['id']
+    og_data['open_government_portal_record_f'] = 'http://ouvert.canada.ca/data/fr/dataset/' + og_data['id']
+    og_data['data_released'] = og_data['metadata_created']
 
 def get_data_from_url(package_id, url):
     #site = os.getenv("registry_url")
