@@ -1578,10 +1578,10 @@ presets:
     field_name: creator
     label:
       en: Data Owner
-      fr: (fr)Data Owner
+      fr: Propriétaire des données
     help_text:
       en: Individual entities (persons) primarily responsible for making the dataset (separate multiple entities by commas)
       fr: Entités individuelles (personnes) principalement responsables de produire le jeu de données (séparer les multiples entités par des virgules)
-    value: aafc_author_email_value
+    #value: aafc_author_email_value
     #classes: ['hidden']
-    form_snippet: text_author_email.html    
+    #form_snippet: text_author_email.html    
