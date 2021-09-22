@@ -7,19 +7,13 @@
 #     Send out email notifications
 # This script is to be executed on an hourly basis via a crontab.
 # Crontab is created on startup through docker-ckan start_ckan / start_ckan_dev scripts.
-# Example: @hourly source hourly_tasks.sh
+# Example: 0 * * * * /path/to/script/hourly_tasks.sh
 
-cd /srv/app/bin
-source activate
+CKAN_CONFIG=/srv/app/production.ini
 
 echo "Running Tracking Update ... "
-paster --plugin=ckan tracking update --config /srv/app/production.ini
-echo "Tracking Update Successful!"
+. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan tracking update --config=$CKAN_CONFIG
 echo "Rebuilding Search Index ... "
-paster --plugin=ckan search-index rebuild --config /srv/app/production.ini
-echo "Search Index Successfully rebuilt!"
+. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan search-index rebuild --config=$CKAN_CONFIG
 echo "Sending Emails ..."
-paster --plugin=ckan post --config=/srv/app/production.ini /api/action/send_email_notifications
-echo "Successfully Sent Emails!"
-
-deactivate
+. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan post -c $CKAN_CONFIG /api/action/send_email_notifications
