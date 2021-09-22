@@ -1571,16 +1571,18 @@ presets:
     # copied from dataset_organization preset
     validators: unicode
     form_snippet: aafc_org.html
-    
+
+#For AR-171, repurpose creator field as Data Owner    
 - preset_name: aafc_creator
   values:
     field_name: creator
     label:
-      en: Creator
-      fr: Auteur
+      en: Data Owner
+      fr: Propriétaire des données
     help_text:
       en: Individual entities (persons) primarily responsible for making the dataset (separate multiple entities by commas)
       fr: Entités individuelles (personnes) principalement responsables de produire le jeu de données (séparer les multiples entités par des virgules)
-    value: aafc_author_email_value
+    required: true
+    #value: aafc_author_email_value
     #classes: ['hidden']
-    form_snippet: text_author_email.html    
+    #form_snippet: text_author_email.html    

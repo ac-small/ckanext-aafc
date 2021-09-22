@@ -94,6 +94,9 @@ dataset_fields:
     fr: "Le premier point de contact pour toutes les questions relatives à cet ensemble de données. (nom.utilisateur@canada.ca)"
   display_group: Basic Information
 
+- preset: aafc_creator
+  display_group: Basic Information
+
 - preset: aafc_yesno_required
   label:
     en: Procured Data
@@ -332,9 +335,6 @@ dataset_fields:
   display_group: Optional Dataset Information
 
 - preset: canada_org_section_name
-  display_group: Optional Dataset Information
-
-- preset: aafc_creator
   display_group: Optional Dataset Information
 
 - preset: canada_contributor
