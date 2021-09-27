@@ -244,6 +244,7 @@ presets:
       en: Data Source Repository
       fr: Dépôt de sources de données
     required: true
+    sorted_choices: true
     form_include_blank_choice: true
     choices:
     - label:
