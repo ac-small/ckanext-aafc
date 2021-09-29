@@ -1,13 +1,15 @@
+{% resource 'aafc/fp.js' %}
+
 {% set current_lang = request.environ.CKAN_LANG %}
   <div class="container">
     <div class="row top30"></div>
     <div class="row top30">
       <div class="col-xs-12 text-center">
-        <span style="font-weight: 700;font-size: 36px;color:#00a2ed;">
+        <h1 class="index-main-header">
 	    {%if current_lang == "fr" %} Welcome to the AAFC Data Catalogue (FR)
             {% else %} Welcome to the AAFC Data Catalogue
 	    {% endif %}
-       </span>
+       </h1>
       </div>
     </div>
     <div class="row">
@@ -37,48 +39,50 @@
   <div class="container">
     <div class="row row2">
       <div class="col-md-6 col2 mrgn-tp-lg">
-        <span class="index-category-header">
+        <h2 class="index-category-header">
             {%if current_lang == "fr" %} (FR) Need Help?
             {% else %} Need Help?
             {% endif %}
-        </span>
+        </h2>
 	  <br>
-	<span class="index-category-subtext" >Insert text about accessing the user guide, link to CDO, generic mailbox etc.
-	</span>
+          <p>
+            {%if current_lang == "fr" %} (FR) Insert text about accessing the user guide, link to CDO, generic mailbox etc.
+            {% else %}Insert text about accessing the user guide, link to CDO, generic mailbox etc.
+            {% endif %}
+          </p>
       </div>
       <div class="col-md-6 col1 mrgn-tp-lg">
-        <span class="index-category-header">
+        <h2 class="index-category-header">
             {%if current_lang == "fr" %} (FR) Most Viewed Datasets
             {% else %} Most Viewed Datasets
             {% endif %}
-        </span>
+        </h2>
           <br>
-            {% block most_viewed %}
-            {% snippet 'snippets/package_item.html',package=c.datasets[1] %}
-            {% endblock %}
+          <ul class="popular-datasets"></ul>
       </div>
     </div>
     <div class="row row3 mrgn-bttm-lg">
       <div class="col-md-6 col2 mrgn-tp-lg">
-        <span class="index-category-header">
+        <h2 class="index-category-header">
             {%if current_lang == "fr" %} (FR) Open Government
             {% else %} Open Government
             {% endif %}
-        </span>
+        </h2>
           <br>
-        <span class="index-category-subtext">Insert text and add information and links to open.ca
-        </span>
+          <p>
+            {%if current_lang == "fr" %} (FR) Insert text and add information and links to open.ca
+            {% else %} Insert text and add information and links to open.ca
+            {% endif %}
+	  </p>
       </div>
        <div class="col-md-6 col1 mrgn-tp-lg mrgn-bttm-lg">
-        <span class ="index-category-header">
-            {%if current_lang == "fr" %} (FR) New or Modified Datasets
-            {% else %} New or Modified Datasets
+        <h2 class ="index-category-header">
+            {%if current_lang == "fr" %}(FR) New or Recently Modified Datasets</a>
+            {% else %} New or Recently Modified Datasets </a>
             {% endif %}
-        </span>
+        </h2>
           <br>
-            {% block last_modified %}
-            {% snippet 'snippets/package_item.html',package=c.datasets[0] %}
-            {% endblock %}
+	  <ul class ="recent-datasets"></ul>
       </div>
     </div>
 </div>

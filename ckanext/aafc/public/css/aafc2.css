@@ -145,18 +145,25 @@
   text-decoration:none;
 }
 
+.index-main-header {
+  font-weight: 700;
+  font-size: 36px;
+  color: #2e74b5;
+  border-bottom:none;
+}
+
 .index-category-header {
   font-weight:700;
-  font-size: 24px;
-  color:#00a2ed;
+  color:#2e74b5;
   border-bottom:1px solid black;
 }
 
-.index-category-subtext {
-  font-weight:400;
-  font-size:18px; 
+.popular-datasets {
+  padding-left:1em;
 }
-
+.recent-datasets {
+  padding-left:1em;
+}
 
 /* ====================================
    The footer at the bottom of the site
