@@ -210,7 +210,8 @@ presets:
       - label:
           en: N/A
           fr: N/A
-        value: na 
+        value: na
+      sorted_choices: true
       form_snippet: select.html
       display_snippet: select.html
       validators: scheming_required scheming_choices
@@ -243,6 +244,7 @@ presets:
       en: Data Source Repository
       fr: Dépôt de sources de données
     required: true
+    sorted_choices: true
     form_include_blank_choice: true
     choices:
     - label:
