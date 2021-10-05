@@ -2,7 +2,7 @@
 Javascript to populate front page (landing page)
 with statistics on last modified, and most popular
 datasets.
-API calls use last_modified field and total_views.
+API calls use last_modified field and views_recent.
 For consistency, only public records will be returned.
 */
 
@@ -11,7 +11,7 @@ var lang = document.documentElement.lang;
 (function($) {
 	$(document).ready(function() {
 		var recentDatasetsURL = "api/action/package_search?q=&sort=metadata_modified+desc&rows=5";
-		var popularDatasetsURL = "api/action/package_search?q=&sort=total_views+desc&rows=5";
+		var popularDatasetsURL = "api/action/package_search?q=&sort=views_recent+desc&rows=5";
 
 		var recent_data = {}
 		var popular_data = {}
