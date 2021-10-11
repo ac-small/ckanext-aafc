@@ -1,5 +1,6 @@
 {% block header_wrapper %} {% block header_account %}
 <header class="account-masthead">
+	<!-- header start -->
   <div class="container">
     {% block header_account_container_content %} {% if c.userobj %}
     <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
@@ -122,6 +123,12 @@
       {% endblock %}
     </div>
    </div>
+   <div class="row" id="header_guide">
+    <div class="navbar-right" style="margin-right:12%;margin-top:4px;font-size: 12px;">
+	    <a href="#">User Guide</a>
+    </div>
+   </div>
   </div>
+	<!-- header end -->
 </header>
 {% endblock %}
