@@ -1,0 +1,89 @@
+{% resource 'aafc/fp.js' %}
+
+{% set current_lang = request.environ.CKAN_LANG %}
+  <div class="container">
+    <div class="row top30"></div>
+    <div class="row top30">
+      <div class="col-xs-12 text-center">
+        <h1 class="index-main-header">
+	    {%if current_lang == "fr" %} Welcome to the AAFC Data Catalogue (FR)
+            {% else %} Welcome to the AAFC Data Catalogue
+	    {% endif %}
+       </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center mrgn-tp-md">
+        <span style="font-style: normal;font-weight: 400;font-size: 22px;color: black;">
+	    {%if current_lang == "fr" %} (FR) The Data Catalogue is Agriculture and Agri-Food's data portal, where you can discover, share and publish datasets
+            {% else %} The Data Catalogue is Agriculture and Agri-Food's data portal, where you can discover, share and publish datasets
+	    {% endif %}
+          </span>
+      </div>
+    </div>
+  </div>
+  <div class="aafc-container index-search-container mrgn-tp-md" style="padding:0 !important;">
+    {% block search %}
+      {% snippet 'home/snippets/search.html' %}
+    {% endblock %}
+  </div>
+  <div class="aafc-container" style="padding:0;position:relative;bottom:15px;">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% block stats %}
+          {% snippet 'home/snippets/stats.html' %}
+        {% endblock %}
+      </div>
+    </div>
+</div>
+  <div class="container">
+    <div class="row row2">
+      <div class="col-md-6 col2 mrgn-tp-lg">
+        <h2 class="index-category-header">
+            {%if current_lang == "fr" %} (FR) Need Help?
+            {% else %} Need Help?
+            {% endif %}
+        </h2>
+	  <br>
+          <p>
+            {%if current_lang == "fr" %} (FR) Insert text about accessing the user guide, link to CDO, generic mailbox etc.
+            {% else %}Insert text about accessing the user guide, link to CDO, generic mailbox etc.
+            {% endif %}
+          </p>
+      </div>
+      <div class="col-md-6 col1 mrgn-tp-lg">
+        <h2 class="index-category-header">
+            {%if current_lang == "fr" %} (FR) Most Viewed Datasets
+            {% else %} Most Viewed Datasets
+            {% endif %}
+        </h2>
+          <br>
+          <ul class="popular-datasets"></ul>
+      </div>
+    </div>
+    <div class="row row3 mrgn-bttm-lg">
+      <div class="col-md-6 col2 mrgn-tp-lg">
+        <h2 class="index-category-header">
+            {%if current_lang == "fr" %} (FR) Open Government
+            {% else %} Open Government
+            {% endif %}
+        </h2>
+          <br>
+          <p>
+            {%if current_lang == "fr" %} (FR) Insert text and add information and links to open.ca
+            {% else %} Insert text and add information and links to open.ca
+            {% endif %}
+	  </p>
+      </div>
+       <div class="col-md-6 col1 mrgn-tp-lg mrgn-bttm-lg">
+        <h2 class ="index-category-header">
+            {%if current_lang == "fr" %}(FR) New or Recently Modified Datasets</a>
+            {% else %} New or Recently Modified Datasets </a>
+            {% endif %}
+        </h2>
+          <br>
+	  <ul class ="recent-datasets"></ul>
+      </div>
+    </div>
+</div>
+
