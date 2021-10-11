@@ -551,6 +551,7 @@ presets:
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
+    sorted_choices: true
     choices:
     - label:
         en: Arts, Music, Literature
@@ -669,6 +670,7 @@ presets:
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
+    sorted_choices: true
     choices:
     - label:
         en: Aboriginal peoples
