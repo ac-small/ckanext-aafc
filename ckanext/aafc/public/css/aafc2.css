@@ -106,13 +106,17 @@
   background-color: transparent;
   color:#fff;
 }
-.box a{
-  color:#fff;
+
+.box a {
+  border:none;
 }
 /* Remove the borders around the "Welcome to CKAN" and "Search Your Data"
    boxes. */
 .aafc-back .box {
   border: none;
+}
+.index-search-container .box {
+  border:none;
 }
 /* Change the colors of the "Search Your Data" box. */
 .homepage .module-search .module-content {
@@ -141,6 +145,25 @@
   text-decoration:none;
 }
 
+.index-main-header {
+  font-weight: 700;
+  font-size: 36px;
+  color: #2e74b5;
+  border-bottom:none;
+}
+
+.index-category-header {
+  font-weight:700;
+  color:#2e74b5;
+  border-bottom:1px solid black;
+}
+
+.popular-datasets {
+  padding-left:1em;
+}
+.recent-datasets {
+  padding-left:1em;
+}
 
 /* ====================================
    The footer at the bottom of the site
