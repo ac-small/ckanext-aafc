@@ -439,8 +439,8 @@ dataset_fields:
  
 - field_name: data_released 
   label:
-    en: Data Released
-    fr: Données publiées
+    en: Record Released
+    fr: Dossier publié
   value: aafc_data_released
   classes: ['hidden']
   display_group: Optional Dataset Information
