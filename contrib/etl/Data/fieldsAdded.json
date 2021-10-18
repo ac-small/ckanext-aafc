@@ -22,6 +22,7 @@
 	"aafc_sector":"other",
 	"aafc_owner_org":"",
 	"ready_to_publish": "false",
+	"aafc_is_harvested":"true",
 	"groups": [{"display_name": "Geospatial", "description": "", "image_display_url": "", "title": "Geospatial", "id": "e990b116-84d3-4357-8da1-70e18841ad1e", "name": "geospatial"}]
 
 }
