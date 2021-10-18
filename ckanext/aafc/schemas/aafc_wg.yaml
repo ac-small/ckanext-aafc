@@ -166,6 +166,14 @@ dataset_fields:
   field_name: hidden_drf_program_inventory
   display_group: Basic Information
 
+- preset: aafc_yesno_required
+  label:
+    en: Is Harvested
+    fr: Is Harvested  
+  field_name: aafc_is_harvested
+  classes: ['hidden']
+  display_group: Basic Information
+
 #- field_name: aafc_author
 #  label:
 #    en: Author
