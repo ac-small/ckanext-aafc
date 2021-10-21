@@ -547,7 +547,8 @@ presets:
       en: "The topic of the content of the dataset. You may select multiple subjects (Ctrl+Click)"
       fr: "Le sujet du contenu du jeu de données. Vous pouvez sélectionner de multiples sujets (Ctrl+Clic)"
     required: true
-    form_snippet: multiple_select.html
+    #form_snippet: multiple_select.html
+    form_snippet: multiple_select_special.html
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
