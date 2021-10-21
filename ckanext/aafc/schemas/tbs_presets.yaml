@@ -556,101 +556,121 @@ presets:
     - label:
         en: Arts, Music, Literature
         fr: Arts, musique, littérature
+        ff: Arts, musique, littérature
       replaces: [AA]
       value: arts_music_literature
     - label:
         en: Agriculture
         fr: Agriculture
+        ff: Agriculture
       replaces: [AG]
       value: agriculture
     - label:
         en: Economics and Industry
         fr: Économie et industrie
+        ff: Economie et industrie
       replaces: [EC]
       value: economics_and_industry
     - label:
         en: Education and Training
         fr: Éducation et formation
+        ff: Education et formation
       replaces: [ET]
       value: education_and_training
     - label:
         en: Form Descriptors
         fr: Format
+        ff: Format
       replaces: [FM]
       value: form_descriptors
     - label:
         en: Government and Politics
         fr: Gouvernement et vie politique
+        ff: Gouvernement et vie politique
       replaces: [GV]
       value: government_and_politics
     - label:
         en: Health and Safety
         fr: Santé et sécurité
+        ff: Santé et sécurité
       replaces: [HE]
       value: health_and_safety
     - label:
         en: History and Archaeology
         fr: Histoire et archéologie
+        ff: Histoire et archéologie
       replaces: [HI]
       value: history_and_archaeology
     - label:
         en: Information and Communications
         fr: Information et communication
+        ff: Information et communication
       replaces: [IN]
       value: information_and_communications
     - label:
         en: Labour
         fr: Travail et emploi
+        ff: Travail et emploi
       replaces: [LB]
       value: labour
     - label:
         en: Language and Linguistics
         fr: Langue et linguistique
+        ff: Langue et linguistique
       replaces: [LN]
       value: language_and_linguistics
     - label:
         en: Law
         fr: Droit
+        ff: Droit
       replaces: [LW]
       value: law
     - label:
         en: Military
         fr: Histoire et science militaire
+        ff: Histoire et science militaire
       replaces: [MI]
       value: military
     - label:
         en: Nature and Environment
         fr: Nature et environnement
+        ff: Nature et environnement
       replaces: [NE]
       value: nature_and_environment
     - label:
         en: Persons
         fr: Personnes
+        ff: Personnes
       replaces: [PE]
       value: persons
     - label:
         en: Processes
         fr: Liens et fonctions
+        ff: Liens et fonctions
       replaces: [PR]
       value: processes
     - label:
         en: Society and Culture
         fr: Société et culture
+        ff: Société et culture
       replaces: [SO]
       value: society_and_culture
     - label:
         en: Science and Technology
         fr: Sciences et technologie
+        ff: Sciences et technologie
       replaces: [ST]
       value: science_and_technology
     - label:
         en: Transport
         fr: Transport
+        ff: Transport
       replaces: [TR]
       value: transport
     - label:
         en: Other
         fr: Autre
+        ff: Autre
       replaces: [OT]
       value: other
 
