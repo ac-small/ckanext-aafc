@@ -114,6 +114,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
             'gen_odi',
             'get_ver',
             'get_release',
+            'customized_sort',
             'get_url'
             ])
 
