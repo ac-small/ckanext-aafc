@@ -40,14 +40,22 @@
     <div class="row row2">
       <div class="col-md-6 col2 mrgn-tp-lg">
         <h2 class="index-category-header">
-            {%if current_lang == "fr" %} (FR) Open Government
+            {%if current_lang == "fr" %} Gouvernement ouvert
             {% else %} Open Government
             {% endif %}
         </h2>
           <br>
           <p>
-            {%if current_lang == "fr" %} (FR) Insert text and add information and links to open.ca
-            {% else %} Insert text and add information and links to open.ca
+            {%if current_lang == "fr" %}
+	        Le gouvernement ouvert a trait à rendre le gouvernement plus accessible à tous.
+	        Ceci veut dire qu'il faut accorder un plus grand accès aux données et à l'information du gouvernement au public canadien même qu'à la collectivité des entreprises.
+		<br> En apprendre davantage sur le <a href="https://ouvert.canada.ca/fr" target="_blank">gouvernement ouvert</a>.
+		<br> Effectuez des recherches dans les données du gouvernement du Canada dans <a href="https://ouvert.canada.ca/fr/donnees-ouvertes" target="_blank">le portail des données ouvertes</a>.
+	    {% else %}
+	        Open Government is about making government more accessible to everyone.
+	        This means giving greater access to government data and information to the Canadian public and the businesses community.
+	        <br> Learn about <a href="https://open.canada.ca/en" target="_blank">Open Government</a>.
+	        <br> Search Government of Canada data on the <a href="https://open.canada.ca/en/open-data" target="_blank">Open Data Portal</a>.
             {% endif %}
           </p>
       </div>
@@ -70,8 +78,14 @@
         </h2>
           <br>
           <p>
-            {%if current_lang == "fr" %} (FR) Insert text about accessing the user guide, link to CDO, generic mailbox etc.
-            {% else %}Insert text about accessing the user guide, link to CDO, generic mailbox etc.
+            {%if current_lang == "fr" %}
+	        Des <a href="" target="_blank" >guides d'utilisation</a> du catalogue de données d'AAC
+		<br> Services en architecture de l'information
+		<br> Bureau de l'agente en chef des données - <a href="" target="_blank">Développement et partenariats de données</a>
+	    {% else %}
+	        AAFC Data Catalogue <a href="" target="_blank">User Guides</a>.
+		<br> Information Architecture Services
+		<br> Office of the Chief Data Officer - <a href="" target="_blank">Data Development and Partnerships</a>
             {% endif %}
           </p>
       </div>
