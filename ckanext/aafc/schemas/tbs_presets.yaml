@@ -687,7 +687,7 @@ presets:
     help_text:
       en: "A description of the audience or group of people for whom the described dataset is intended or useful. You may select multiple options (Ctrl+Click)"
       fr: "Description de l’audience ou du groupe de personnes pour lequel le jeu de données décrit est destiné ou utile. Vous pouvez sélectionner de multiples options (Ctrl+Clic)"
-    form_snippet: multiple_select.html
+    form_snippet: multiple_select_special.html
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
@@ -696,98 +696,122 @@ presets:
     - label:
         en: Aboriginal peoples
         fr: Peuples autochtones
+        ff: Peuples autochtones
       value: aboriginal_peoples
     - label:
         en: Business
         fr: Entreprises
+        ff: Entreprises
       value: business
     - label:
         en: Children
         fr: Enfants
+        ff: Enfants
       value: children
     - label:
         en: Educators
         fr: Éducateurs
+        ff: Educateurs
       value: educators
     - label:
         en: Employers
         fr: Employeurs
+        ff: Employeurs
       value: employers
     - label:
         en: Funding applicants
         fr: Demandeurs de financement
+        ff: Demandeurs de financement
       value: funding_applicants
     - label:
         en: General public
         fr: Grand public
+        ff: Grand public
       value: general_public
     - label:
         en: Government
         fr: Gouvernement
+        ff: Gouvernement
       value: government
     - label:
         en: Immigrants
         fr: Immigrants
+        ff: Immigrants
       value: immigrants
     - label:
         en: Job seekers
         fr: Chercheurs d’emploi
+        ff: Chercheurs d’emploi
       value: job_seekers
     - label:
         en: Media
         fr: Médias
+        ff: Médias
       value: media
     - label:
         en: Non-Canadians
         fr: Non-Canadiens
+        ff: Non-Canadiens
       value: noncanadians
     - label:
         en: Non-governmental organizations
         fr: Organisations non governementales
+        ff: Organisations non governementales
       value: nongovernmental_organizations
     - label:
         en: Parents
         fr: Parents
+        ff: Parents
       value: parents
     - label:
         en: Persons with disabilities
         fr: Personnes handicapées
+        ff: Personnes handicapées
       value: persons_with_disabilities
     - label:
         en: Rural community
         fr: Communauté rurale
+        ff: Communauté rurale
       value: rural_community
     - label:
         en: Seniors
         fr: Aînés
+        ff: Aînés
       value: seniors
     - label:
         en: Scientists
         fr: Scientifiques
+        ff: Scientifiques
       value: scientists
     - label:
         en: Students
         fr: Étudiants
+        ff: Etudiants
       value: students
     - label:
         en: Travellers
         fr: Voyageurs
+        ff: Voyageurs
       value: travellers
     - label:
         en: Veterans
         fr: Anciens combattants
+        ff: Anciens combattants
       value: veterans
     - label:
         en: Visitors to Canada
         fr: Visiteurs au Canada
+        ff: Visiteurs au Canada
       value: visitors_to_canada
     - label:
         en: Women
         fr: Femmes
+        ff: Femmes
       value: women
     - label:
         en: Youth
         fr: Jeunesse
+        ff: Jeunesse
       value: youth
 
 # Field = Place pf Publication.
