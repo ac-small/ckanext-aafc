@@ -14,6 +14,6 @@ CKAN_CONFIG=/srv/app/production.ini
 echo "Running Tracking Update ... "
 . /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan tracking update --config=$CKAN_CONFIG
 echo "Rebuilding Search Index ... "
-. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan search-index rebuild --config=$CKAN_CONFIG
+. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan search-index rebuild -r --config=$CKAN_CONFIG
 echo "Sending Emails ..."
 . /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan post -c $CKAN_CONFIG /api/action/send_email_notifications
