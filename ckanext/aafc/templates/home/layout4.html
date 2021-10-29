@@ -6,7 +6,7 @@
     <div class="row top30">
       <div class="col-xs-12 text-center">
         <h1 class="index-main-header">
-	    {%if current_lang == "fr" %} Welcome to the AAFC Data Catalogue (FR)
+	    {%if current_lang == "fr" %} Bienvenue au catalogue de données d'AAC
             {% else %} Welcome to the AAFC Data Catalogue
 	    {% endif %}
        </h1>
@@ -40,14 +40,22 @@
     <div class="row row2">
       <div class="col-md-6 col2 mrgn-tp-lg">
         <h2 class="index-category-header">
-            {%if current_lang == "fr" %} (FR) Need Help?
-            {% else %} Need Help?
+            {%if current_lang == "fr" %} Gouvernement ouvert
+            {% else %} Open Government
             {% endif %}
         </h2>
-	  <br>
+          <br>
           <p>
-            {%if current_lang == "fr" %} (FR) Insert text about accessing the user guide, link to CDO, generic mailbox etc.
-            {% else %}Insert text about accessing the user guide, link to CDO, generic mailbox etc.
+            {%if current_lang == "fr" %}
+	        Le gouvernement ouvert a trait à rendre le gouvernement plus accessible à tous.
+	        Ceci veut dire qu'il faut accorder un plus grand accès aux données et à l'information du gouvernement au public canadien, de même qu'à la collectivité des entreprises.
+		<br> En apprendre davantage sur le <a href="https://ouvert.canada.ca/fr" target="_blank">gouvernement ouvert</a>.
+		<br> Effectuez des recherches dans les données du gouvernement du Canada dans <a href="https://ouvert.canada.ca/fr/donnees-ouvertes" target="_blank">le portail des données ouvertes</a>.
+	    {% else %}
+	        Open Government is about making government more accessible to everyone.
+	        This means giving greater access to government data and information to the Canadian public and the businesses community.
+	        <br> Learn about <a href="https://open.canada.ca/en" target="_blank">Open Government</a>.
+	        <br> Search Government of Canada data on the <a href="https://open.canada.ca/en/open-data" target="_blank">Open Data Portal</a>.
             {% endif %}
           </p>
       </div>
@@ -64,16 +72,22 @@
     <div class="row row3 mrgn-bttm-lg">
       <div class="col-md-6 col2 mrgn-tp-lg">
         <h2 class="index-category-header">
-            {%if current_lang == "fr" %} (FR) Open Government
-            {% else %} Open Government
+            {%if current_lang == "fr" %} (FR) Need Help?
+            {% else %} Need Help?
             {% endif %}
         </h2>
           <br>
           <p>
-            {%if current_lang == "fr" %} (FR) Insert text and add information and links to open.ca
-            {% else %} Insert text and add information and links to open.ca
+            {%if current_lang == "fr" %}
+	        Des <a href="https://collab.agr.gc.ca/co/aafcogwg-gtaacgo/Documents/AAFC%20Data%20Catalogue/AAFC_DATA_CATALOGUE_GUIDES" target="_blank" >guides d'utilisation</a> du catalogue de données d'AAC
+		<br> Services en architecture de l'information - aafc.informationarchitecture-architecturedelinformation.aac@agr.gc.ca
+		<br> Bureau de l'agente en chef des données - <a href="https://collab.agr.gc.ca/co/ddph-pddp/SitePages/Home.aspx" target="_blank">Développement et partenariats de données</a>
+	    {% else %}
+	        AAFC Data Catalogue <a href="https://collab.agr.gc.ca/co/aafcogwg-gtaacgo/Documents/AAFC%20Data%20Catalogue/AAFC_DATA_CATALOGUE_GUIDES" target="_blank">User Guides</a>
+		<br> Information Architecture Services - aafc.informationarchitecture-architecturedelinformation.aac@agr.gc.ca
+		<br> Office of the Chief Data Officer - <a href="https://collab.agr.gc.ca/co/ddph-pddp/SitePages/Home.aspx" target="_blank">Data Development and Partnerships</a>
             {% endif %}
-	  </p>
+          </p>
       </div>
        <div class="col-md-6 col1 mrgn-tp-lg mrgn-bttm-lg">
         <h2 class ="index-category-header">

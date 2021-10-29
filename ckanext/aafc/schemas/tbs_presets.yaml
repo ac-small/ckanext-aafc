@@ -547,7 +547,8 @@ presets:
       en: "The topic of the content of the dataset. You may select multiple subjects (Ctrl+Click)"
       fr: "Le sujet du contenu du jeu de données. Vous pouvez sélectionner de multiples sujets (Ctrl+Clic)"
     required: true
-    form_snippet: multiple_select.html
+    #form_snippet: multiple_select.html
+    form_snippet: multiple_select_special.html
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
@@ -556,101 +557,121 @@ presets:
     - label:
         en: Arts, Music, Literature
         fr: Arts, musique, littérature
+        ff: Arts, musique, littérature
       replaces: [AA]
       value: arts_music_literature
     - label:
         en: Agriculture
         fr: Agriculture
+        ff: Agriculture
       replaces: [AG]
       value: agriculture
     - label:
         en: Economics and Industry
         fr: Économie et industrie
+        ff: Economie et industrie
       replaces: [EC]
       value: economics_and_industry
     - label:
         en: Education and Training
         fr: Éducation et formation
+        ff: Education et formation
       replaces: [ET]
       value: education_and_training
     - label:
         en: Form Descriptors
         fr: Format
+        ff: Format
       replaces: [FM]
       value: form_descriptors
     - label:
         en: Government and Politics
         fr: Gouvernement et vie politique
+        ff: Gouvernement et vie politique
       replaces: [GV]
       value: government_and_politics
     - label:
         en: Health and Safety
         fr: Santé et sécurité
+        ff: Santé et sécurité
       replaces: [HE]
       value: health_and_safety
     - label:
         en: History and Archaeology
         fr: Histoire et archéologie
+        ff: Histoire et archéologie
       replaces: [HI]
       value: history_and_archaeology
     - label:
         en: Information and Communications
         fr: Information et communication
+        ff: Information et communication
       replaces: [IN]
       value: information_and_communications
     - label:
         en: Labour
         fr: Travail et emploi
+        ff: Travail et emploi
       replaces: [LB]
       value: labour
     - label:
         en: Language and Linguistics
         fr: Langue et linguistique
+        ff: Langue et linguistique
       replaces: [LN]
       value: language_and_linguistics
     - label:
         en: Law
         fr: Droit
+        ff: Droit
       replaces: [LW]
       value: law
     - label:
         en: Military
         fr: Histoire et science militaire
+        ff: Histoire et science militaire
       replaces: [MI]
       value: military
     - label:
         en: Nature and Environment
         fr: Nature et environnement
+        ff: Nature et environnement
       replaces: [NE]
       value: nature_and_environment
     - label:
         en: Persons
         fr: Personnes
+        ff: Personnes
       replaces: [PE]
       value: persons
     - label:
         en: Processes
         fr: Liens et fonctions
+        ff: Liens et fonctions
       replaces: [PR]
       value: processes
     - label:
         en: Society and Culture
         fr: Société et culture
+        ff: Société et culture
       replaces: [SO]
       value: society_and_culture
     - label:
         en: Science and Technology
         fr: Sciences et technologie
+        ff: Sciences et technologie
       replaces: [ST]
       value: science_and_technology
     - label:
         en: Transport
         fr: Transport
+        ff: Transport
       replaces: [TR]
       value: transport
     - label:
         en: Other
         fr: Autre
+        ff: Autre
       replaces: [OT]
       value: other
 
@@ -666,7 +687,7 @@ presets:
     help_text:
       en: "A description of the audience or group of people for whom the described dataset is intended or useful. You may select multiple options (Ctrl+Click)"
       fr: "Description de l’audience ou du groupe de personnes pour lequel le jeu de données décrit est destiné ou utile. Vous pouvez sélectionner de multiples options (Ctrl+Clic)"
-    form_snippet: multiple_select.html
+    form_snippet: multiple_select_special.html
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
     output_validators: scheming_multiple_choice_output
@@ -675,98 +696,122 @@ presets:
     - label:
         en: Aboriginal peoples
         fr: Peuples autochtones
+        ff: Peuples autochtones
       value: aboriginal_peoples
     - label:
         en: Business
         fr: Entreprises
+        ff: Entreprises
       value: business
     - label:
         en: Children
         fr: Enfants
+        ff: Enfants
       value: children
     - label:
         en: Educators
         fr: Éducateurs
+        ff: Educateurs
       value: educators
     - label:
         en: Employers
         fr: Employeurs
+        ff: Employeurs
       value: employers
     - label:
         en: Funding applicants
         fr: Demandeurs de financement
+        ff: Demandeurs de financement
       value: funding_applicants
     - label:
         en: General public
         fr: Grand public
+        ff: Grand public
       value: general_public
     - label:
         en: Government
         fr: Gouvernement
+        ff: Gouvernement
       value: government
     - label:
         en: Immigrants
         fr: Immigrants
+        ff: Immigrants
       value: immigrants
     - label:
         en: Job seekers
         fr: Chercheurs d’emploi
+        ff: Chercheurs d’emploi
       value: job_seekers
     - label:
         en: Media
         fr: Médias
+        ff: Médias
       value: media
     - label:
         en: Non-Canadians
         fr: Non-Canadiens
+        ff: Non-Canadiens
       value: noncanadians
     - label:
         en: Non-governmental organizations
         fr: Organisations non governementales
+        ff: Organisations non governementales
       value: nongovernmental_organizations
     - label:
         en: Parents
         fr: Parents
+        ff: Parents
       value: parents
     - label:
         en: Persons with disabilities
         fr: Personnes handicapées
+        ff: Personnes handicapées
       value: persons_with_disabilities
     - label:
         en: Rural community
         fr: Communauté rurale
+        ff: Communauté rurale
       value: rural_community
     - label:
         en: Seniors
         fr: Aînés
+        ff: Aînés
       value: seniors
     - label:
         en: Scientists
         fr: Scientifiques
+        ff: Scientifiques
       value: scientists
     - label:
         en: Students
         fr: Étudiants
+        ff: Etudiants
       value: students
     - label:
         en: Travellers
         fr: Voyageurs
+        ff: Voyageurs
       value: travellers
     - label:
         en: Veterans
         fr: Anciens combattants
+        ff: Anciens combattants
       value: veterans
     - label:
         en: Visitors to Canada
         fr: Visiteurs au Canada
+        ff: Visiteurs au Canada
       value: visitors_to_canada
     - label:
         en: Women
         fr: Femmes
+        ff: Femmes
       value: women
     - label:
         en: Youth
         fr: Jeunesse
+        ff: Jeunesse
       value: youth
 
 # Field = Place pf Publication.
@@ -2232,8 +2277,8 @@ presets:
       en: Date Modified
       fr: Date de modification
     help_text:
-      en: The date on which the dataset was updated (YYYY-MM-DD)
-      fr: Date à laquelle le jeu de données a été mis à jour (AAAA-MM-JJ)
+      en: The date on which the dataset was updated (MM-DD-YYYY)
+      fr: Date à laquelle le jeu de données a été mis à jour (MM-JJ-AAAA)
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
@@ -2250,8 +2295,8 @@ presets:
       en: Date Expires
       fr: Date de expiration
     help_text:
-      en: The date on which the dataset expires (YYYY-MM-DD)
-      fr: Date à laquelle le jeu de données va expirer (AAAA-MM-JJ)
+      en: The date on which the dataset expires (MM-DD-YYYY)
+      fr: Date à laquelle le jeu de données va expirer (MM-JJ-AAAA)
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
@@ -2563,8 +2608,8 @@ presets:
       en: Portal Release Date
       fr: Date de lancement du portail
     help_text:
-      en: The date the dataset may be published on the Portal (YYYY-MM-DD)
-      fr: La date à laquelle le jeu de données peut être publié dans le portail (AAAA-MM-JJ)
+      en: The date the dataset may be published on the Portal (MM-DD-YYYY)
+      fr: La date à laquelle le jeu de données peut être publié dans le portail (MM-JJ-AAAA)
     form_snippet: portal_release_date.html
     display_snippet: date.html
     # order is very important here:

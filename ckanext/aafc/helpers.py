@@ -347,6 +347,23 @@ def get_release():
    '''Return a reference for registry release from config file'''
    return config.get('release.aafc.registry', '0.0')
 
+
+def customized_sort(choices):
+    '''
+    use a fake language to escape native python sorting which doesn't 
+    meet the requirement of ascent from client
+    '''
+    language = h.lang()
+    len_choices = len(choices)
+    if language == "en":
+        return choices
+    #list_new = choices
+    #list_new.sort(key=lambda tup: tup[2])
+    #print(list_other[:20])
+    #choices = list_new
+    choices.sort(key=lambda tup: tup[2])
+    return choices
+
 # FIXME: terrible hacks
 def gravatar(*args, **kwargs):
     '''Brute force disable gravatar'''
