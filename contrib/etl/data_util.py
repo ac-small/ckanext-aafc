@@ -39,7 +39,7 @@ Where the file <dumped.json> is the file name containing all the data to load
 
 * Delete
 Python data_util.py -f purge_list <file_with_list_of_ids_to_delete> 
-With no file defined, a default file "package_list.txt“ under ./data folder will be used
+With no file defined, a default file "package_list.txtï¿½ under ./data folder will be used
 
 Python data_util.py -f purge
 Will purge all data in target site defined in .env
@@ -80,7 +80,7 @@ def puerg_data_from_list(file = None):
 
 def dump_data_as_json(params):  # site, json_file_name, from_og = False):
     json_file_name, flag = params
-    print "dump_data_as_json called"
+    print("dump_data_as_json called")
     print [json_file_name, flag]
 
     if flag == 'f':
@@ -212,7 +212,7 @@ def test_dumpkw(params):
     :return:
     '''
     documents = load_yaml("Data/canada_keywords.yaml")
-    print params
+    print(params)
     kw_as_dic = {}
     pres_val_chcs = documents[0]["values"]["choices"]
     for item in pres_val_chcs:
@@ -374,7 +374,7 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, "f:")
     except getopt.GetoptError:
-        print """
+        print("""
         data_util.py -f <function> param1 param2 param3'
         -f options:
             purge -purge all data
@@ -384,14 +384,14 @@ def main(argv):
             load -load json file as data from drive
             push -push datafrom json file to remote site
                 param1: the json file name
-      """
+      """)
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-f':
             value = arg
             func = funcname_map.get(value, "invalid")
             if func == "invalid":
-                print "Not a valid function"
+                print("Not a valid function")
                 exit()
 
             func(args)
