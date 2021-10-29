@@ -49,6 +49,9 @@ msgstr "Informations facultatives sur le jeu de données"
 msgid "External Licence"
 msgstr "Licence"
 
+msgid "Open Government Licence - Canada"
+msgstr "Licence du gouvernement ouvert - Canada"
+
 msgid "Role"
 msgstr "Rôle"
 
