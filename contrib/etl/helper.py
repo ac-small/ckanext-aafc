@@ -203,3 +203,10 @@ def get_data_from_reg(package_id):
         print("failed")
 
     return ret
+
+def is_harvested(package_id):
+    data = get_data_from_reg(package_id)
+    if data.get("aafc_is_harvested"):
+        return True
+    return False
+
