@@ -2,7 +2,6 @@
 # -*- coding: cp1250 -*-
 from dotenv import load_dotenv
 from helper import *
-from publish_to_og import get_data_from_reg
 
 '''
 This is part of implementing aafc_is_harvested flag to differentiate those that were harvested from the one created internally in AAFC
