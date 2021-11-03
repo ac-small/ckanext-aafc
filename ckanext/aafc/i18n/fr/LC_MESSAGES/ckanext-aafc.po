@@ -52,6 +52,9 @@ msgstr "Licence"
 msgid "Open Government Licence - Canada"
 msgstr "Licence du gouvernement ouvert - Canada"
 
+msgid "Data Sharing Agreement - AAFC"
+msgstr "D'ententes déchange de données - AAC"
+
 msgid "Role"
 msgstr "Rôle"
 
