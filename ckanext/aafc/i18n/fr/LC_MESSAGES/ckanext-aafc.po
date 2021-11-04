@@ -79,6 +79,12 @@ msgstr "Dossier publié:"
 msgid "Last Modified:"
 msgstr "Dernière mise à jour:"
 
+msgid "Last Updated (YYYY-MM-DD)"
+msgstr "Dernière modification (AAAA-MM-JJ)"
+
+msgid "Created (YYYY-MM-DD)"
+msgstr "Créé le (AAAA-MM-JJ)"
+
 msgid "Suggest a Dataset"
 msgstr "Proposez un jeu de données"
 
