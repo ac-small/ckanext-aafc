@@ -2113,8 +2113,8 @@ presets:
   values:
     field_name: time_period_coverage_start
     help_text:
-      en: The start date of the period covered by the dataset (MM-DD-YYYY)
-      fr: Date de début de la période couverte par le jeu de données (MM-JJ-AAAA)
+      en: The start date of the period covered by the dataset. Use the calendar icon in the field to select the date.
+      fr: Date de début de la période couverte par le jeu de données. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
     label:
       en: Time Period Coverage Start
       fr: Couverture de la période de temps - date de début
@@ -2130,8 +2130,8 @@ presets:
   values:
     field_name: time_period_coverage_end
     help_text:
-      en: The end date of the period covered by the dataset (MM-DD-YYYY)
-      fr: Date de fin de la période couverte par le jeu de données (MM-JJ-AAAA)
+      en: The end date of the period covered by the dataset. Use the calendar icon in the field to select the date.
+      fr: Date de fin de la période couverte par le jeu de données. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
     label:
       en: Time Period Coverage End
       fr: Couverture de la période de temps - date de fin
@@ -2258,8 +2258,8 @@ presets:
       en: "Date Published"
       fr: "Date de publication"
     help_text:
-      en: The date of issuance (e.g., publication) of the dataset (MM-DD-YYYY)
-      fr: Date de publication du jeu de données (MM-JJ-AAAA)
+      en: The date of issuance (e.g., publication) of the dataset. Use the calendar icon in the field to select the date.
+      fr: Date de publication du jeu de données. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
     required: true
     # copied from date preset
     form_snippet: date.html
@@ -2277,8 +2277,8 @@ presets:
       en: Date Modified
       fr: Date de modification
     help_text:
-      en: The date on which the dataset was updated (MM-DD-YYYY)
-      fr: Date à laquelle le jeu de données a été mis à jour (MM-JJ-AAAA)
+      en: The date on which the dataset was updated. Use the calendar icon in the field to select the date.
+      fr: Date à laquelle le jeu de données a été mis à jour. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
@@ -2295,8 +2295,8 @@ presets:
       en: Date Expires
       fr: Date de expiration
     help_text:
-      en: The date on which the dataset expires (MM-DD-YYYY)
-      fr: Date à laquelle le jeu de données va expirer (MM-JJ-AAAA)
+      en: The date on which the dataset expires. Use the calendar icon in the field to select the date.
+      fr: Date à laquelle le jeu de données va expirer. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
@@ -2608,8 +2608,8 @@ presets:
       en: Portal Release Date
       fr: Date de lancement du portail
     help_text:
-      en: The date the dataset may be published on the Portal (MM-DD-YYYY)
-      fr: La date à laquelle le jeu de données peut être publié dans le portail (MM-JJ-AAAA)
+      en: The date the dataset may be published on the Portal. Use the calendar icon in the field to select the date.
+      fr: La date à laquelle le jeu de données peut être publié dans le portail. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
     form_snippet: portal_release_date.html
     display_snippet: date.html
     # order is very important here:
@@ -2936,8 +2936,8 @@ presets:
       en: Date Published
       fr: Date de publication
     help_text:
-      en: Date of formal issuance (e.g., publication) of the resource (MM-DD-YYYY)
-      fr: Date officielle d’émission (c.-à-d. de publication) de la ressource (MM-JJ-DDDD)
+      en: Date of formal issuance (e.g., publication) of the resource. Use the calendar icon in the field to select the date.
+      fr: Date officielle d’émission (c.-à-d. de publication) de la ressource. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
     required: true
     form_panel: resource
     # copied from date preset
