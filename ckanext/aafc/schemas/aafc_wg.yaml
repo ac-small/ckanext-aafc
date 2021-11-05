@@ -171,6 +171,7 @@ dataset_fields:
     en: Is Harvested
     fr: Is Harvested  
   field_name: aafc_is_harvested
+  required: false
   classes: ['hidden']
   display_group: Basic Information
 
