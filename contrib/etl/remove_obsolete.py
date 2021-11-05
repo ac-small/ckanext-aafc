@@ -38,6 +38,21 @@ def get_missing_ids():
 
     return missing_ids
 
+def run_once(to_remove):
+    '''
+    run only once the first time
+    '''
+    purge_dataset(to_remove)
+
+def routine(missing):
+    need_to_remove = []
+    for id in missing:
+    #    print(id)
+        if is_harvested(id):
+            #print("harveseted, %s"%pid)
+            need_to_remove.append(id)
+    purge_dataset(need_to_remove)
+
 
 if __name__ == "__main__":
     load_dotenv()
@@ -45,7 +60,10 @@ if __name__ == "__main__":
     #For checing length
     #print(len(missing))
 
-    #missing = missing[:3]
+    #missing = missing[:3] # for test only
     #for id in missing:
     #    print(id)
-    purge_dataset(missing)
+    # To save time the following line can be run for the first time instead of the routine()
+    #run_once(missing)
+
+    routine(missing)

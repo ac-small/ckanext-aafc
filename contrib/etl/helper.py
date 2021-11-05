@@ -184,3 +184,29 @@ def get_all_ids(remote=True):
         print("Error message : %s" % e.message)
         ret = []
     return ret
+
+
+def get_data_from_reg(package_id):
+    """
+    Called by get_n_post
+    Get data from registry
+    :param package_id:
+    :return:
+    """
+    site = os.getenv("registry_url")
+    rckan = RemoteCKAN(site)
+
+    data_as_d = {"id": package_id}
+    try:
+        ret = rckan.call_action("package_show", data_dict=data_as_d)  # data_as_dict )
+    except Exception as e:
+        print("failed")
+
+    return ret
+
+def is_harvested(package_id):
+    data = get_data_from_reg(package_id)
+    if data.get("aafc_is_harvested"):
+        return True
+    return False
+
