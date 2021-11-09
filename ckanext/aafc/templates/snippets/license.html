@@ -1,0 +1,49 @@
+{% macro license_string(pkg_dict) %}
+  {% if 'license_url' in pkg_dict %}
+    {% set current_lang = request.environ.CKAN_LANG %}
+     {%- set lic = h.get_license(pkg_dict.license_id) -%}
+     {%- if current_lang == "fr" -%}
+         {%-  set license_desc = lic.title_fra -%} 
+         {%-  set license_url = lic.url_fra -%} 
+     {% else %}
+         {%-  set license_desc = pkg_dict.license_title -%} 
+         {%-  set license_url = pkg_dict.license_url -%} 
+     {% endif %}
+
+    <a href="{{ license_url }}" rel="dc:rights">{{ license_desc }}</a>
+  {% else %}
+    <span property="dc:rights">{{ pkg_dict.license_title }}</span>
+  {% endif %}
+{% endmacro %}
+
+{% block license %}
+  {% if text_only %}
+    {% if pkg_dict.license_id %}
+      {{ license_string(pkg_dict) }}
+    {% else %}
+      {{ _('No License Provided') }}
+    {% endif %}
+  {% else %}
+    {% if pkg_dict.license_id %}
+      {% block license_wrapper %}
+        <section class="module module-narrow module-shallow license">
+          {% block license_title %}
+            <h2 class="module-heading"><i class="fa fa-lock"></i> {{ _('License') }}</h2>
+          {% endblock %}
+          {% block license_content %}
+            <p class="module-content">
+              {% block license_content_inner %}
+                {{ license_string(pkg_dict) }}
+                {% if pkg_dict.isopen %}
+                  <a href="http://opendefinition.org/okd/" title="{{ _('This dataset satisfies the Open Definition.') }}">
+                      <img class="open-data" src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="[Open Data]" />
+                  </a>
+                {% endif %}
+              {% endblock %}
+            </p>
+          {% endblock %}
+        </section>
+      {% endblock %}
+    {% endif %}
+  {% endif %}
+{% endblock %}
