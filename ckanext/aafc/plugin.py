@@ -90,7 +90,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
 #            'user_organizations',
 #            'openness_score',
 #            'remove_duplicates',
-#            'get_license',
+            'get_license',
 #            'normalize_strip_accents',
 #            'portal_url',
 #            'googleanalytics_id',
