@@ -23,6 +23,7 @@ import ckan.lib.base as base
 import json
 from ckan.lib.plugins import DefaultTranslation
 from datetime import datetime
+from unidecode import unidecode
 
 import ckan as ckan
 import ckan.lib.helpers as h
@@ -241,8 +242,8 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         data_dict['subject'] = json.loads(data_dict.get('subject', '[]'))
 
         titles = json.loads(data_dict.get('title_translated', '{}'))
-        data_dict['title_fr'] = titles.get('fr', '')
-        data_dict['title_string'] = titles.get('en', '')
+        data_dict['title_fr'] = unidecode(titles.get('fr', '').lower(), "utf-8")
+        data_dict['title_string'] = titles.get('en', '').lower()
 
         output_file = "/tmp/b4index_" + strftime("%Y-%m-%d_%H_%M_%S", gmtime()) + ".json"
         #with open(output_file,"w") as fout:
