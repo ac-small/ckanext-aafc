@@ -23,6 +23,7 @@ import ckan.lib.base as base
 import json
 from ckan.lib.plugins import DefaultTranslation
 from datetime import datetime
+from unidecode import unidecode
 
 import ckan as ckan
 import ckan.lib.helpers as h
@@ -177,64 +178,13 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         pass
 
     def before_search(self, search_params):
+        if not search_params.get('defType', ''):
+            search_params['defType'] = 'edismax' # use edismax if query type unspecified
+
         log.info(">>>>###search_params:")
         log.info(str(search_params))
 
 	return search_params
-
-    def convert_fq_param(self, str_fq):
-        '''
-        convert the received fq paramter string into the format that python need.
-        i.e.
-        1.first or only fq key value pair as fq
-        2.All others will be put into a fq_list
-        :param str_fq:
-        :return: a list of 2 items: first is fq, the 2nd is the list of fq_list, could be empty
-        '''
-        str_fq = str_fq.replace('ESRI ', 'ESRI_')
-        fq_l = str_fq.split(' ')
-        len_fq = len(fq_l)
-        #print(len_fq)
-        #print(str(json.dumps(fq_l)))
-        fq_l = [ fq.replace('ESRI_', 'ESRI ') for fq in fq_l ]
-
-
-        if (len_fq > 0):
-            fq0 = fq_l[0]
-        fq_after = []
-        if len_fq > 1:
-            fq_after = fq_l[1:]
-
-        return fq0,fq_after
-    
-    def process_q(self, qterm):
-        '''
-        process q term
-        :param qterm:
-        :return: a pair of values with keyword and new string
-        '''
-
-        if 'ESRI' in qterm:
-           qterm = qterm.replace("ESRI ","ESRI_")
-        res= re.compile(r'''\s*([\w]+:\s*[\w|"|/]+)\s*''').split(qterm)
-        newq = ""
-        other_filter = []
-        keywords = []
-        for i in res:
-           if len(i) == 0:
-             continue
-           if ":" in i:
-               #res = re.compile(r"\s*canada_keywords:\s*\"([^\"]+)\"").findall(i)
-               #if len(res) != 0:
-               #    #build keywords
-               #    keywords.append(res[0]) #There will be only 1. just reuse old code of "findall"
-               #else:
-               #    other_filter.append(i)
-               other_filter.append(i)
-           else:
-               newq = i
-        new_qterm = newq
-        return keywords,new_qterm, other_filter
 
     def after_search(self, search_results, search_params):
         pr = sh.scheming_get_preset("aafc_sector")
@@ -287,6 +237,14 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
 
 
     def before_index(self, data_dict):
+
+        data_dict['data_steward_email'] = data_dict.get('data_steward_email', '')
+        data_dict['subject'] = json.loads(data_dict.get('subject', '[]'))
+
+        titles = json.loads(data_dict.get('title_translated', '{}'))
+        data_dict['title_fr'] = unidecode(titles.get('fr', '').lower(), "utf-8")
+        data_dict['title_string'] = titles.get('en', '').lower()
+
         output_file = "/tmp/b4index_" + strftime("%Y-%m-%d_%H_%M_%S", gmtime()) + ".json"
         #with open(output_file,"w") as fout:
         #   output_str = json.dumps(data_dict)
