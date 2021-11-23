@@ -58,7 +58,6 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         toolkit.add_resource('fanstatic', 'aafc')
 
     def i18n_locales(self):
-        log.info(">>>>i18n_locales():")
         return ['en','fr']
 
     def i18n_domain(self):
@@ -134,7 +133,6 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
             lang =  get_lang()[0]
         except:
             log.info(">>>>get_lang() failed")
-            pass
         # Sector Facet
         bl_sector = {"en":"Sector", "fr":"Secteur"}
         #TODO: should use il8n, fix it when it's ready
@@ -273,6 +271,23 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
                         item['display_name'] = _("Public")
                     elif field_value == 'true':
                         item['display_name'] = _("Private")
+            if key == 'license_id':
+                lang = "en"
+                try:
+                    lang =  get_lang()[0]
+                except:
+                    log.info(">>>>get_lang() failed")
+                for item in facet['items']:
+                    field_value = item['name']
+                    lic_data = helpers.get_license(field_value)
+                    #title_fr = lic_data["title_fra"]
+                    title_fr = lic_data.title_fra
+                    if lang == "fr":
+                        item['display_name'] = title_fr 
+
+                    #log.info("field_value: %s, title fra: %s"%(field_value,title_fr))
+
+                log.info(">>>>key license_id,language: %s"%lang)
         keys  = search_results.get('search_facets').keys()
         #log.info(">>>kesy before return  :" + str(keys))
         try:
