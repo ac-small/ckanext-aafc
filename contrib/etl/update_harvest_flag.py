@@ -26,18 +26,21 @@ def update_package(package_id, to_add):
         return False
     return True
 
-def update_existing_harvested(package_id):
+def update_existing_harvested(package_id,data_owner=""):
     '''
     add existing data with harvest flag.
     Note: "creator" is a new field that needs to be added. Otherwise there will be a failure
+    Update: "creator"(Labelled as "Data Owner") is now updated with a value.
     '''
-    data = {"aafc_is_harvested":"true","creator":"admin"}
+    data = {"aafc_is_harvested":"true","creator":data_owner}
     update_package(package_id,data)
 
 
 if __name__ == "__main__":
     load_dotenv()
     ids = get_all_ids(remote=False)
-    #for pid in ids[4:-3]: for test only
-    for pid in ids:
-        update_existing_harvested(pid)
+    for pid in ids[3:6]: # for test only
+    #for pid in ids:
+        res = get_data_from_reg(pid)
+        steward = res.get("data_steward_email")
+        update_existing_harvested(pid,steward)
