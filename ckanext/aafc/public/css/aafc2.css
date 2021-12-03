@@ -141,6 +141,14 @@
   border-top: 1px solid rgb(204, 204, 204);
 }
 
+.homepage {
+  background-color: white;
+ }
+
+.navbar {
+  margin-bottom:0px;
+}
+
 .homepage .stats ul a:hover{
   text-decoration:none;
 }
