@@ -60,9 +60,6 @@
   background-color: #fff;
   background-image: none;
 }
-.masthead a {
-    color: #000;
-}
 
 .masthead .nav > li > a,
 .masthead .nav > li > a:focus,
@@ -139,6 +136,14 @@
 /* Add a border line between the top and bottom halves of the front page. */
 .homepage [role="main"] {
   border-top: 1px solid rgb(204, 204, 204);
+}
+
+.homepage {
+  background-color: white;
+ }
+
+.navbar {
+  margin-bottom:0px;
 }
 
 .homepage .stats ul a:hover{
