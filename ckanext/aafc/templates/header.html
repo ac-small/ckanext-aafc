@@ -124,8 +124,13 @@
     </div>
    </div>
    <div class="row" id="header_guide">
-    <div class="navbar-right" style="margin-right:12%;margin-top:4px;font-size: 12px;">
+    <div class="navbar-right col-xs-2 mrgn-tp-sm" style="margin-right:2%">
+	{%if current_lang == "en"%} 
 	    <a target="_blank" href="https://collab.agr.gc.ca/co/aafcogwg-gtaacgo/Documents/AAFC%20Data%20Catalogue/AAFC_DATA_CATALOGUE_GUIDES/Data_Catalogue_USER_GUIDE_2021.pdf">User Guide</a>
+        {% else %}
+	    <a target="_blank" href="https://collab.agr.gc.ca/co/aafcogwg-gtaacgo/_layouts/15/guestaccess.aspx?guestaccesstoken=uVhAriFLCza4VPR0qkQheIW7keVJVA05wSED0EE7Spg%3d&docid=2_0a84f71cdc2c2449daf9fd697ff48f01e&rev=1">Guide d'utilisateur</a>
+	{% endif %}
+
     </div>
    </div>
   </div>
