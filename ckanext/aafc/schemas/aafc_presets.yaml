@@ -298,7 +298,7 @@ presets:
          en: DRF Core Responsibilities
          fr: Responsabilités essentielles du CRM concernant l’architecture d’alignement des programmes
       required: true
-      form_include_blank_choice: true
+      form_include_blank_choice: false
       choices:
       - label:
           en: Domestic and International Markets
@@ -332,7 +332,7 @@ presets:
          fr: Répertoire des programmes du Cadre ministériel des résultats
 
       required: true
-      form_include_blank_choice: true
+      form_include_blank_choice: false
       choices:
       - label:
           en: Trade and Market Expansion
@@ -1361,8 +1361,10 @@ presets:
         fr: "Autre"
       value: other
     form_snippet: select.html
+    classes: ['hidden']
     display_snippet: select.html
     validators: scheming_required scheming_choices
+    form_include_blank_choice: False
 
 ########################################
 # For resouce page
