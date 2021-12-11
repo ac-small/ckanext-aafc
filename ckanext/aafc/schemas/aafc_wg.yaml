@@ -202,6 +202,8 @@ dataset_fields:
   help_text:
     en: "Mint a Digital Object Identifier (DOI) for this dataset through DataCite Canada."
     fr: "Créer un identificateur d’objet numérique (DOI) pour cet ensemble de données par l’entremise de DataCite Canada."
+  classes: ['hidden']
+  form_include_blank_choice: false
   display_group: Open Data Release Criteria
 
 - preset: access_to_information
