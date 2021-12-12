@@ -15,8 +15,9 @@
   .aafc-back {
     background-color: white;
     background-position:center center;
-    background: url("../images/home_page_background.png")  center center white;
+    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("../images/barn.png")  center center white;
     background-repeat:no-repeat;
+    min-height:410px;
   }
 }
 
@@ -150,11 +151,16 @@
   text-decoration:none;
 }
 
+.stats{
+  text-shadow:#FFF 1px 0px 1px;
+}
+
 .index-main-header {
   font-weight: 700;
   font-size: 36px;
-  color: #2e74b5;
+  color: #000;
   border-bottom:none;
+  text-shadow:#FFF 1px 0px 1px;
 }
 
 .index-category-header {

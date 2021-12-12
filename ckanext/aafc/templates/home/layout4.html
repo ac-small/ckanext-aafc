@@ -1,6 +1,7 @@
 {% resource 'aafc/fp.js' %}
 
 {% set current_lang = request.environ.CKAN_LANG %}
+<div class="container aafc-back">
   <div class="container">
     <div class="row top30"></div>
     <div class="row top30">
@@ -14,9 +15,9 @@
     </div>
     <div class="row">
       <div class="text-center mrgn-tp-md">
-        <span style="font-style: normal;font-weight: 400;font-size: 22px;color: black;">
-	    {%if current_lang == "fr" %} (FR) The Data Catalogue is Agriculture and Agri-Food's data portal, where you can discover, share and publish datasets
-            {% else %} The Data Catalogue is Agriculture and Agri-Food's data portal, where you can discover, share and publish datasets
+        <span style="font-style: normal;font-weight: 400;font-size: 22px;color: black; text-shadow:#FFF 1px 0px 1px;">
+	    {%if current_lang == "fr" %} Le catalogue de données départemental de Agriculture et Agroalimentaire Canada - faciles à trouver, accessibles, interopérables et réutilisables
+            {% else %} Agriculture and Agri-Food Canada's departmental data catalogue - Findable, Accessible, Interoperable, Reusable
 	    {% endif %}
           </span>
       </div>
@@ -36,6 +37,7 @@
       </div>
     </div>
 </div>
+</div>
   <div class="container">
     <div class="row row2">
 	<div class="col-md-6 col1 mrgn-tp-lg mrgn-bttm-lg">
@@ -50,8 +52,8 @@
 
       <div class="col-md-6 col1 mrgn-tp-lg">
         <h2 class="index-category-header">
-            {%if current_lang == "fr" %} (FR) Most Viewed Datasets
-            {% else %} Most Viewed Datasets
+            {%if current_lang == "fr" %} (FR) Frequently Viewed Datasets
+            {% else %} Frequently Viewed Datasets
             {% endif %}
         </h2>
           <br>
@@ -69,12 +71,12 @@
           <p>
             {%if current_lang == "fr" %}
 	        Des <a href="https://collab.agr.gc.ca/co/aafcogwg-gtaacgo/Documents/AAFC%20Data%20Catalogue/AAFC_DATA_CATALOGUE_GUIDES/Data_Catalogue_USER_GUIDE_2021.pdf" target="_blank" >guides d'utilisation</a> du catalogue de données d'AAC
-		<br> Services en architecture de l'information - aafc.informationarchitecture-architecturedelinformation.aac@agr.gc.ca
-		<br> Bureau de l'agente en chef des données - <a href="https://collab.agr.gc.ca/co/ddph-pddp/SitePages/Home.aspx" target="_blank">Développement et partenariats de données</a>
+		<br>
+		<br> Contactez-nous: aafc.opengovernment-gouvernementouvert.aac@agr.gc.ca
 	    {% else %}
-	        AAFC Data Catalogue <a href="https://collab.agr.gc.ca/co/aafcogwg-gtaacgo/Documents/AAFC%20Data%20Catalogue/AAFC_DATA_CATALOGUE_GUIDES/Data_Catalogue_USER_GUIDE_2021.pdf" target="_blank">User Guides</a>
-		<br> Information Architecture Services - aafc.informationarchitecture-architecturedelinformation.aac@agr.gc.ca
-		<br> Office of the Chief Data Officer - <a href="https://collab.agr.gc.ca/co/ddph-pddp/SitePages/Home.aspx" target="_blank">Data Development and Partnerships</a>
+	    AAFC Data Catalogue <a href="https://collab.agr.gc.ca/co/aafcogwg-gtaacgo/Documents/AAFC%20Data%20Catalogue/AAFC_DATA_CATALOGUE_GUIDES/Data_Catalogue_USER_GUIDE_2021.pdf" target="_blank">User Guides</a>
+	        <br>
+		<br>Contact Us: aafc.opengovernment-gouvernementouvert.aac@agr.gc.ca
             {% endif %}
           </p>
       </div>
