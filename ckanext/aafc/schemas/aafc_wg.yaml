@@ -144,12 +144,14 @@ dataset_fields:
   help_text:
     en: "Departmental Results Framework Core Responsibility to which the dataset relates"
     fr: "Responsabilité essentielle du Cadre de résultats ministériels à laquelle se rapporte l’ensemble de données"
+  classes: ['hidden']
   display_group: Basic Information   
   
 - preset: drf_program_inventory
   help_text:
     en: "Departmental Results Framework Program to which the dataset relates"
     fr: "Programme du Cadre de résultats ministériels auquel l’ensemble de données se rapporte"
+  classes: ['hidden']
   display_group: Basic Information   
 
 - preset: aafc_yesno_required
