@@ -94,6 +94,18 @@
     max-height: 30px;
 }
 
+.masthead a {
+  color:#000;
+}
+
+.masthead a:hover {
+  color:#0535d2;
+}
+
+.masthead a:visited {
+  color:#7834bc;
+}
+
 /* ===========================================
    The content in the middle of the front page
    =========================================== */
