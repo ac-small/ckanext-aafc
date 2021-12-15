@@ -696,6 +696,7 @@ resource_fields:
 - preset: aafc_resource_language
   display_group: ANA
 - preset: aafc_resource_metadata_schema
+  classes: ['hidden']
   display_group: ANA
 #- preset: canada_resource_unique_identifier
 - preset: aafc_resource_unique_identifier
