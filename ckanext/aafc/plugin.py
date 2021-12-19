@@ -242,7 +242,9 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         #log.info(">>>kesy before return  :" + str(keys))
         try:
             c.facet_titles.pop('tags')
+            c.facet_titles.pop('aafc_sector')
         except (AttributeError, RuntimeError):
+            log.info("error when pop tags, aafc_sector from filter title")
             pass
         
 	return search_results
