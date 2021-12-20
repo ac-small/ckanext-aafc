@@ -1,0 +1,29 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Help') }}{% endblock %}
+
+{% block breadcrumb_content %}
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+        {% if g.site_about %}
+          {{ h.render_markdown(g.site_about) }}
+        {% else %}
+          <h1 class="page-heading">{{ _('AAFC Data Catalogue Help') }}</h1>
+          {% if h.lang() == "en" %}
+          {% snippet 'home/snippets/help_text.html' %}
+          {% else %}
+          {% snippet 'home/snippets/help_text_f.html' %}
+          {% endif %}
+        {% endif %}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
+~
+

@@ -290,16 +290,18 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
 
     def before_map(self, route_map):
         with routes.mapper.SubMapper(route_map,
-                controller='ckanext.aafc.plugin:ExportController') as m:
+                controller='ckanext.aafc.plugin:AAFCController') as m:
             m.connect('export', '/export',
                     action='export')
+            m.connect('help', '/help',
+                    action='help')
         return route_map
 
     def after_map(self, route_map):
         return route_map
 
 
-class ExportController(base.BaseController):
+class AAFCController(base.BaseController):
 
     def export(self):
         '''
@@ -315,6 +317,12 @@ class ExportController(base.BaseController):
         response.headers["Content-Disposition"] = "attachment; filename=" + filename
         response.write("\xEF\xBB\xBF")
         return csv_content
+
+    def help(self):
+        '''
+        Load the help page in the top menu.
+        '''
+        return base.render('home/help.html')
 
 
 class WetTheme(plugins.SingletonPlugin):
