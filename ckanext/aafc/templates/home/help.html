@@ -3,6 +3,7 @@
 {% block subtitle %}{{ _('Help') }}{% endblock %}
 
 {% block breadcrumb_content %}
+  <li class="active">{% link_for _('Help'), named_route='help' %}</li>
 {% endblock %}
 
 {% block primary %}
