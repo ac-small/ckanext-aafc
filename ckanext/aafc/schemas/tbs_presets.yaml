@@ -45,121 +45,6 @@ presets:
     form_snippet: null
     display_snippet: null
 
-- preset_name: aafc_schema_type
-  values:
-      field_name: type
-      label:
-         en: Dataset Type
-         fr: Type d’ensemble de données
-      help_text:
-         en: "The current Schema type will be automatically populated after create. "
-         fr: "Le type de schéma en cours sera automatiquement saisi après sa création. "
-      form_attrs:
-         readonly: ''
-         disabled: "disabled" 
-         style: "background-color:#ddd"
-
-- preset_name: aafc_future_schema_target
-  values:
-      field_name: aafc_future_schema_target
-      label:
-         en: Inventory Type
-         fr: Type de répertoire
-      choices:
-      - label:
-          en: Inventory - Open Data
-          fr: Répertoire — Données ouvertes
-        value: inv_open_data
-      - label:
-          en: Inventory - Open Data Publish Canididate
-          fr: Répertoire — Données ouvertes — Publier le nom du candidat
-        value: inv_open_data_publish
-      - label:
-          en: non-Inventory AAFC internal
-          fr: Non inscrit au répertoire interne d’AAC
-        value: non_inv_aafc_int
-      form_snippet: select.html
-      display_snippet: select.html
-      validators: scheming_required scheming_choices
-
-- preset_name: aafc_proposed_release
-  values:
-      field_name: aafc_proposed_release
-      label:
-         en: Proposed Release (FY - Q)
-         fr: Date de publication proposée (exercice-trimestre)
-
-- preset_name: aafc_contact_it
-  values:
-      field_name: aafc_contact_it
-      label:
-         en: IT Custodian or APM ID
-         fr: Responsable des TI ou ID du PAM
-
-- preset_name: aafc_eligibility_reason
-  values:
-      field_name: aafc_eligibility_reason
-      label:
-         en: Eligibility Criteria 
-         fr: Critères d’admissibilité
-
-- preset_name: inv_eligibe_to_release
-  values:
-      field_name: inv_elig_to_release
-      label:
-         en: Eligible to Release
-         fr: Admissible pour publication
-      form_attrs:
-         readonly: ''
-         disabled: "disabled" 
-
-- preset_name: inv_ref_number
-  values:
-      field_name: inv_ref_number
-      label:
-         en: TBS Inventory Reference Number (ODI)
-         fr: Numéro de référence du répertoire du SCT (Répertoire des données ouvertes)
-      form_attrs:
-         readonly: ''
-         disabled: "disabled" 
-
-- preset_name: inv_id
-  values:
-      field_name: inv_id
-      label:
-         en: TBS Inventory ID
-         fr: ID du répertoire du SCT
-      form_attrs:
-         readonly: ''
-         disabled: "disabled"
-
-- preset_name: inv_program_alignment
-  values:
-      field_name: inv_program_align
-      label:
-         en: Program Activity Architecture
-         fr: Architecture des activités de programme
-      form_attrs:
-         readonly: ''
-         disabled: "disabled"
-
-- preset_name: aafc_tbs_inventory_submission_date
-  values:
-      field_name: aafc_inv_subm_date
-      label:
-         en: AAFC TBS Inventory Submission Date
-         fr: Date de présentation au répertoire du SCT pour AAC
-      form_attrs:
-         readonly: ''
-         disabled: "disabled"
-         style: "background-color:#ddd"
-
-- preset_name: aafc_dept_result_fw
-  values:
-      field_name: aafc_dept_result_fw
-      label:
-         en: Departmental Result Framework
-         fr: Cadre ministériel des résultats
 
 # Field = Collection Type.
 # Display the English or the French Description from the Collection Type code table (refer to Data Migration), depending on the selected language.
@@ -272,32 +157,11 @@ presets:
   values:
     field_name: owner_org
     label:
-      en: Publisher - Current Organization Name
-      fr: Éditeur - Nom actuel de l’organisation
+      en: Publishing Branch
+      fr: Direction générale de la publication
     help_text:
-      en: The Title of the current Organization (GC Department or Agency) primarily responsible for publishing the dataset
-      fr: Titre de l’organisation actuelle (organisme ou ministère du GC) principalement responsable de publier le jeu de données
-    required: true
-    form_include_blank_choice: true
-    form_select_attrs:
-      class: form-control
-    # copied from dataset_organization preset
-    validators: owner_org_validator unicode
-    form_snippet: organization.html
-
-# Field = Publisher - Current AAFC Branch Name.
-# List box Source: Publisher - Current Branch Name code table (refer to Data Migration).
-# Populate the list box with the Titles of all the organizations the currently logged-in user is linked to.
-# {The Title of the current Organization (GC Department or Agency) primarily responsible for publishing the asset}
-- preset_name: aafc_branch_owner_org
-  values:
-    field_name: owner_org
-    label:
-      en: Publisher - Current AAFC Branch Name
-      fr: Editeur - Nom actuel de la filiale
-    help_text:
-      en: "The Title of the current AAFC Branch primarily responsible for publishing the dataset"
-      fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de donnÃ©es"
+      en: Branch within the department responsible for publishing
+      fr: (FRENCH) Branch within the department responsible for publishing
     required: true
     form_include_blank_choice: true
     form_select_attrs:
@@ -325,19 +189,11 @@ presets:
         fr: Éditeur - Nom de l’organisation lors de la publication (français)
     fluent_help_text:
       en:
-        en: The English organization title at publication time. Please leave blank
-          if the organization name at time of publication is identical to
-          your current organization name.
-        fr: Nom de l’organisation au moment de la publication, en anglais. Veuillez
-          laisser le champ libre si le nom de l'organisation lors de la publication
-          est identique au nom actuel de votre organisation.
+        en: The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
+        fr: (FRENCH) The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
       fr:
-        en: The French organization title at publication time. Please leave blank
-          if the organization name at time of publication is identical to
-          your current organization name.
-        fr: Nom de l’organisation au moment de la publication, en français. Veuillez
-          laisser le champ libre si le nom de l'organisation lors de la publication
-          est identique au nom actuel de votre organisation.
+        en: The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
+        fr: (FRENCH) The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
     validators: fluent_text
 #################################
 # JK REmoved the canada_copy_from_org_name
@@ -373,11 +229,11 @@ presets:
         fr: Éditeur - Organisation - Nom de la section (français)
     fluent_help_text:
       en:
-        en: The English names of the work groups, units of work, business units, etc. of the organization that publishes the dataset (separate multuple names by commas).
-        fr: Noms anglais des groupes de travail, des unités de travail, des unités opérationnelles, etc. de l’organisation qui publie le jeu de données (séparer les multiples noms par des virgules)
+        en: Work group or business unit of the publishing organization.
+        fr: (FRENCH) Work group or business unit of the publishing organization.
       fr:
-        en: The French names of the work groups, units of work, business units, etc. of the organization that publishes the dataset (separate multuple names by commas).
-        fr: Noms français des groupes de travail, des unités de travail, des unités opérationnelles, etc. de l’organisation qui publie le jeu de données (séparer les multiples noms par des virgules)
+        en: Work group or business unit of the publishing organization.
+        fr: (FRENCH) Work group or business unit of the publishing organization.
 
     # copied from fluent_text preset
     form_attrs:
@@ -420,11 +276,11 @@ presets:
         fr: Contributeur (français)
     fluent_help_text:
       en:
-        en: The English names of entities (persons, groups, GC Departments or Agencies) that contributed to the dataset (separate multiple entities by commas)
-        fr: Les noms anglais des entités (personnes, groupes, ministères ou organismes du GC) qui ont apporté une contribution à le jeu de données (séparer les multiples entités par des virgules)
+        en: Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
+        fr: (FRENCH) Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
       fr:
-        en: The French names of entities (persons, groups, GC Departments or Agencies) that contributed to the dataset (separate multiple entities by commas)
-        fr: Les noms français des entités (personnes, groupes, ministères ou organismes du GC) qui ont apporté une contribution au jeu de données (séparer les multiples entités par des virgules)
+        en: Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
+        fr: (FRENCH) Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -514,11 +370,11 @@ presets:
         fr: "Mots clés (français)"
     fluent_help_text:
       en:
-        en: Commonly used words or phrases which describe the dataset, in English. (Separate multiple entries by commas)
-        fr: Mots ou phrases couramment utilisés qui décrivent le jeu de données, en anglais. (Séparer les mots ou phrases par une virgule)
+        en: Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
+        fr: (FRENCH) Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
       fr:
-        en: Commonly used words or phrases which describe the dataset, in French. (Separate multiple entries by commas)
-        fr: Mots ou phrases couramment utilisés qui décrivent le jeu de données, en français. (Séparer les mots ou phrases par une virgule)
+        en: Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
+        fr: (FRENCH) Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
     required: true
 ###################
 # JK Need to investigate TBS tag_validators
@@ -685,8 +541,8 @@ presets:
       en: Audience
       fr: Audience
     help_text:
-      en: "A description of the audience or group of people for whom the described dataset is intended or useful. You may select multiple options (Ctrl+Click)"
-      fr: "Description de l’audience ou du groupe de personnes pour lequel le jeu de données décrit est destiné ou utile. Vous pouvez sélectionner de multiples options (Ctrl+Clic)"
+      en: "For whom the resource is intended.  You may select multiple options (Ctrl+Click)"
+      fr: "(FRENCH) For whom the resource is intended. Vous pouvez sélectionner de multiples options (Ctrl+Clic)"
     form_snippet: multiple_select_special.html
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
@@ -839,8 +695,8 @@ presets:
 #    validators: scheming_required geojson_validator
 #################################################
     help_text:
-      en: The range of spatial applicability of a dataset, as a GeoJson string.
-      fr: Étendue de l’applicabilité spatiale d’un produit. Cet élément peut inclure un cadre de délimitation ou une chaîne GeoJson.
+      en: GeoJSON format specification to represent the spatial range.
+      fr: (FRENCH) GeoJSON format specification to represent the spatial range.
 
 # Field = Geographic Region Name.
 # List box Source: Geographic Region name code table (refer to Data Migration).
@@ -857,8 +713,8 @@ presets:
       en: Geographic Region Name
       fr: Nom de la région géographique
     help_text:
-      en: The geographic region of the dataset. You may select multiple regions (Ctrl+Click)
-      fr: Région géographique d’un jeu de données. Vous pouvez sélectionner de multiples régions (Ctrl+Clic)
+      en: Select the region(s) which best reflects the geographic scope of the dataset. You may select multiple regions (Ctrl+Click).
+      fr: (FRENCH) Select the region(s) which best reflects the geographic scope of the dataset. Vous pouvez sélectionner de multiples régions (Ctrl+Clic).
     choices:
     - label:
         en: Canada
@@ -2113,8 +1969,8 @@ presets:
   values:
     field_name: time_period_coverage_start
     help_text:
-      en: The start date of the period covered by the dataset. Use the calendar icon in the field to select the date.
-      fr: Date de début de la période couverte par le jeu de données. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
+      en: The start date of the period covered by the dataset.
+      fr: Date de début de la période couverte par le jeu de données.
     label:
       en: Time Period Coverage Start
       fr: Couverture de la période de temps - date de début
@@ -2130,8 +1986,8 @@ presets:
   values:
     field_name: time_period_coverage_end
     help_text:
-      en: The end date of the period covered by the dataset. Use the calendar icon in the field to select the date.
-      fr: Date de fin de la période couverte par le jeu de données. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
+      en: The end date of the period covered by the dataset.
+      fr: Date de fin de la période couverte par le jeu de données.
     label:
       en: Time Period Coverage End
       fr: Couverture de la période de temps - date de fin
@@ -2147,8 +2003,8 @@ presets:
   values:
     field_name: frequency
     help_text:
-      en: The frequency with which changes and additions are made to the initial dataset
-      fr: Fréquence à laquelle les changements et les ajouts sont apportés au jeu de données initial
+      en: The frequency with which changes and additions are made to the initial dataset.
+      fr: Fréquence à laquelle les changements et les ajouts sont apportés au jeu de données initial.
     label:
       en: "Maintenance and Update Frequency"
       fr: "Fréquence d'entretien et de mise à jour"
@@ -2277,8 +2133,8 @@ presets:
       en: Date Modified
       fr: Date de modification
     help_text:
-      en: The date on which the dataset was updated. Use the calendar icon in the field to select the date.
-      fr: Date à laquelle le jeu de données a été mis à jour. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
+      en: The date on which the dataset was updated.
+      fr: Date à laquelle le jeu de données a été mis à jour.
     # copied from date preset
     form_snippet: date.html
     display_snippet: date.html
@@ -2365,11 +2221,11 @@ presets:
         fr: URL de la page d’accueil (français)
     fluent_help_text:
       en:
-        en: English program or homepage that can be navigated to gain additional or contextual information about the dataset
-        fr: Programme ou page d’accueil pouvant être consulté pour obtenir de l’information supplémentaire ou contextuelle au sujet du jeu de données, en anglais
+        en: Location that has additional or contextual information.
+        fr: (FRENCH) Location that has additional or contextual information.
       fr:
-        en: French program or homepage that can be navigated to gain additional or contextual information about the dataset
-        fr: Programme ou page d’accueil pouvant être consulté pour obtenir de l’information supplémentaire ou contextuelle au sujet du jeu de données, en français
+        en: Location that has additional or contextual information.
+        fr: (FRENCH) Location that has additional or contextual information.
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -2400,11 +2256,11 @@ presets:
         fr: Nom de la série (français)
     fluent_help_text:
       en:
-        en: The English name of the series, or aggregate dataset, of which the dataset is a part
-        fr: Nom anglais de la série, ou du jeu de données globales, dont le jeu de données fait partie
+        en: The series title of which the dataset belongs to.
+        fr: (FRENCH) The series title of which the dataset belongs to.
       fr:
-        en: The French name of the series, or aggregate dataset, of which the dataset is a part
-        fr: Nom français de la série, ou du jeu de données globales, dont le jeu de données fait partie
+        en: The series title of which the dataset belongs to.
+        fr: (FRENCH) The series title of which the dataset belongs to.
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -2433,11 +2289,11 @@ presets:
         fr: Numéro de publication de la série (français)
     fluent_help_text:
       en:
-        en: English identification of the series’ issue information
-        fr: Identification en anglais des renseignements sur la publication de la série
+        en: Enter the specific identification number.
+        fr: (FRENCH) Enter the specific identification number.
       fr:
-        en: French identification of the series’ issue information
-        fr: Identification en français des renseignements sur la publication de la série
+        en: Enter the specific identification number.
+        fr: (FRENCH) Enter the specific identification number.
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -2469,8 +2325,8 @@ presets:
       en: Jurisdiction
       fr: Juridiction
     help_text:
-      en: "The extent or range of judicial, law enforcement or other authority. Example: Level of government that contributed the dataset."
-      fr: "Étendue de l’autorité judiciaire, de l’autorité d’application de la loi ou d’un autre type d’autorité. Par exemple, l'ordre de gouvernement ayant fourni le jeu de données."
+      en: "Indicates the jurisdiction under which the dataset is being published."
+      fr: "Indique la juridiction sous laquelle le jeu de données est publié."
     display_snippet: null
     form_restrict_choices_to: [federal]
     form_attrs:
@@ -2507,8 +2363,8 @@ presets:
       en: "Licence"
       fr: "Licence"
     help_text:
-      en: The licence applied to the dataset
-      fr: Licence s’appliquant au jeu de données
+      en: "Indicates the licence under which the dataset is being published"
+      fr: "Précise la licence selon laquelle l'ensemble de données est publié."
     required: true
     form_attrs:
       class: form-control
@@ -2524,8 +2380,8 @@ presets:
       en: Access Restrictions
       fr: Restrictions d'accès
     help_text:
-      en: The access restrictions of the dataset
-      fr: Restrictions d’accès du jeu de données
+      en: Indicates whether or not there are any restictions to accessing the data.
+      fr: Précise si l'accès aux données est assujetti à des restrictions.
     required: true
     form_attrs:
       readonly: ''
@@ -2790,11 +2646,11 @@ presets:
         fr: "Titre français"
     fluent_help_text:
       en:
-        en: An English name given to the resource.
-        fr: Nom anglais attribué à la ressource
+        en: Title that reflects the content of the dataset and can be easily understood by users.
+        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
       fr:
-        en: A French name given to the resource.
-        fr: Nom français attribué à la ressource
+        en: Title that reflects the content of the dataset and can be easily understood by users.
+        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
     required: true
     # copied from fluent_text preset
     form_attrs:
@@ -2936,8 +2792,8 @@ presets:
       en: Date Published
       fr: Date de publication
     help_text:
-      en: Date of formal issuance (e.g., publication) of the resource. Use the calendar icon in the field to select the date.
-      fr: Date officielle d’émission (c.-à-d. de publication) de la ressource. Cliquez sur l'icône en forme de calendrier dans le champ de saisie pour ouvrir le calendrier et choisir une date.
+      en: Date of issuance (e.g. publication) of the dataset.
+      fr: (FRENCH) Date of issuance (e.g. publication) of the dataset.
     required: true
     form_panel: resource
     # copied from date preset
@@ -2956,8 +2812,8 @@ presets:
       en: Resource Type
       fr: Type de content
     help_text:
-      en: The nature or genre of the content of the resource
-      fr: Nature ou genre du contenu de la ressource
+      en: Supplementary information to describe the content and usage of the resource.
+      fr: (FRENCH) Supplementary information to describe the content and usage of the resource.
     field_name: resource_type
     form_snippet: select.html
     display_snippet: select.html
@@ -3377,8 +3233,8 @@ presets:
 - preset_name: canada_resource_format
   values:
     help_text:
-      en: The file format, physical medium, or dimensions of the resource.
-      fr: Format du fichier, support physique ou dimensions de la ressource
+      en: File format.
+      fr: (FRENCH) File format.
     field_name: format
     label:
       en: "Format"
@@ -3668,8 +3524,8 @@ presets:
       en: Character Set
       fr: Jeu de caractères
     help_text:
-      en: This is the character set of the resource
-      fr: Nom complet de la norme de codage des caractères utilisée pour le ressource
+      en: Select the encoding of the resource. 
+      fr: (FRENCH) Select the encoding of the resource.
     form_panel: resource
     form_snippet: select.html
     form_restrict_choices_to: [UTF-8, US-ASCII]
@@ -4108,8 +3964,8 @@ presets:
       en: "File Upload"
       fr: "Téléchargement du fichier"
     help_text:
-      en: The location for online access to the distribution of the resource, if the file resides elsewhere.
-      fr: Emplacement pour l’accès en ligne aux fins de la distribution de la ressource.
+      en: Location of the dataset (for shared drives follow up  - ticket).
+      fr: (FRENCH) Location of the dataset (for shared drives follow up  - ticket).
     required: true
     # copied from resource_url_upload
     validators: not_empty unicode remove_whitespace

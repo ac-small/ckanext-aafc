@@ -6,10 +6,6 @@ about_url: http://github.com/aafc-ckan/ckanext-aafc
 
 presets:
 
-#########################################################################
-# JC 2019/04/10
-# extra sets used by AAFC
-# Field = Publication Type.
 - preset_name: publication_type
   values:
     field_name: publication
@@ -48,14 +44,11 @@ presets:
         fr: "Titre (français)"
     fluent_help_text:
       en:
-        en: The English name by which the assest is known
-        fr: Nom anglais désignant le jeu de données
+        en: Title that reflects the content of the dataset and can be easily understood by users.
+        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users
       fr:
-        en: The French name by which the assest is known
-        fr: Nom français désignant le jeu de données
-    #form_placeholder:
-      #en: Canada Border Wait Times
-      #fr: Temps d’attente à la frontière
+        en: Title that reflects the content of the dataset and can be easily understood by users.
+        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
     required: true
     # copied from fluent_text preset
     form_snippet: fluent_text.html
@@ -86,19 +79,13 @@ presets:
       fr:
         en: "Description (French)"
         fr: "Description (français)"
-   # form_placeholder:
-   #   en: The National Pollutant Release Inventory (NPRI) is Canada's public inventory
-   #     of pollutant releases (to air, water and land), disposals and transfers for
-   #     recycling. The NPRI includes...
-   #   fr: L’Inventaire national des rejets de polluants (INRP) est l’inventaire public
-   #     des rejets de polluants du Canada…
     fluent_help_text:
       en:
-        en: "An account of the dataset, in English. A description may include  abstract, table of contents, or a free-text"
-        fr: "Description du jeu de données, en anglais. La description peut comprendre un résumé, une table des matières ou un texte libre."
+        en: "Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
+        fr: "(FRENCH) Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
       fr:
-        en: "An account of the dataset, in French. A description may include  abstract, table of contents, or a free-text"
-        fr: "Description du jeu de données, en anglais. La description peut comprendre un résumé, une table des matières ou un texte libre."
+        en: "Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
+        fr: "(FRENCH) Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
     required: true
     # copied from fluent_markdown preset
     form_attrs:
@@ -108,13 +95,6 @@ presets:
     error_snippet: fluent_text.html
     validators: fluent_text
     output_validators: fluent_core_translated_output
-
-- preset_name: test_odi
-  values:
-    field_name: test_odi
-    label:
-      en: Test ODI
-      fr: Essai — Répertoire des données ouvertes
 
 # Field = Subject.
 # List box Source: Subject code table (refer to Data Migration).
@@ -145,22 +125,15 @@ presets:
       replaces: [AG]
       value: agriculture
 
-- preset_name: aafc_test
-  values:
-      field_name: test
-      label:
-         en: Dataset Test
-         fr: To Translate...
-      help_text:
-         en: "The current item is a test. "
-         fr: "To translate..."
-
 - preset_name: data_steward_email
   values:
       field_name: data_steward_email
       label:
          en: Data Steward Email
          fr: Courriel du responsable des données
+      help_text:
+         en: "Individual responsible for inquiries   (user.name@agr.gc.ca)"
+         fr: "(FRENCH) Individual responsible for inquiries   (user.name@agr.gc.ca)"
  
 - preset_name: procured_data
   values:
@@ -186,8 +159,8 @@ presets:
          en: Ineligibility Reason
          fr: Motif du rejet 
       help_text:
-         en: "Ineligibility reason. "
-         fr: "Motif du rejet."
+         en: If the dataset is not eligible for release for the public, select the reason why the dataset is not eligble for release.
+         fr: (FRENCH) If the dataset is not eligible for release for the public, select the reason why the dataset is not eligble for release.
       required: true
       form_include_blank_choice: true
       choices:
@@ -235,7 +208,10 @@ presets:
       field_name: procured_data_organization_name
       label:
          en: Procured Data Organization Name
-         fr: Nom de l'organisation de données achetée            
+         fr: Nom de l'organisation de données achetée
+      help_text:
+         en: The name of the organization which the data was purchased from.
+         fr: Le nom de l’organisation pour laquelle les données ont été achetées.       
 
 - preset_name: data_source_repository
   values:
@@ -243,6 +219,9 @@ presets:
     label:
       en: Data Source Repository
       fr: Dépôt de sources de données
+    help_text:
+      en: Select from where the dataset source is located.
+      fr: (FRENCH) Select from where the dataset source is located.
     required: true
     sorted_choices: true
     form_include_blank_choice: true
@@ -297,6 +276,9 @@ presets:
       label:
          en: DRF Core Responsibilities
          fr: Responsabilités essentielles du CRM concernant l’architecture d’alignement des programmes
+      help_text:
+         en: Departmental Results Framework Core Responsibility to which the dataset relates
+         fr: Responsabilité essentielle du Cadre de résultats ministériels à laquelle se rapporte l’ensemble de données
       required: true
       form_include_blank_choice: false
       choices:
@@ -330,7 +312,9 @@ presets:
       label:
          en: DRF Program Inventory
          fr: Répertoire des programmes du Cadre ministériel des résultats
-
+      help_text:
+         en: Departmental Results Framework Program to which the dataset relates
+         fr: Programme du Cadre de résultats ministériels auquel l’ensemble de données se rapporte
       required: true
       form_include_blank_choice: false
       choices:
@@ -875,13 +859,6 @@ presets:
     label:
         en: Open Government Portal Record English
         fr: Dossier du Portail du gouvernement ouvert (français)
-
-- preset_name: aafc_test
-  values:
-    field_name: test
-    label:
-        en: Open Government Portal Record French
-        fr: Dossier du Portail du gouvernement ouvert (français)
         
 #######################################
 # Open Government Dataset Release Information
@@ -891,6 +868,9 @@ presets:
     label:
       en: Access To Information
       fr: Accès à l’information 
+    help_text:
+      en: The data or information resource is not subject to any exemptions or exclusions under the Access to Information Act.
+      fr: Les données ou les ressources documentaires ne sont visées par aucune exception ou exclusion en vertu de la Loi sur l’accès à l’information.
     required: true
     form_include_blank_choice: true
     choices:
@@ -978,7 +958,7 @@ presets:
     field_name: offical_language
     label:
       en: Offical Language
-      fr: (fr)Offical LanguageLangues officielles
+      fr: Langues officielles
     required: true
     form_include_blank_choice: true
     choices:
@@ -1419,18 +1399,6 @@ presets:
     form_snippet: text_uid.html
     form_panel: resource
 
-- preset_name: aafc_resource_name
-  values:
-    #field_name: name_translated 
-    field_name: name_resource
-    label:
-      en: Title 
-      fr: Titre
-    help_text:
-      en: A name given to the resource
-      fr: (fr)A name given to the resource
-    form_panel: resource
-
 
 # NOTE: a modified version of canada_resource_language to adapt AAFC requirement
 - preset_name: aafc_resource_language
@@ -1483,8 +1451,8 @@ presets:
       en: Geographic Region Name
       fr: Nom de la région géographique
     help_text:
-      en: The geographic region of the dataset. You may select multiple regions (Ctrl+Click)
-      fr: Région géographique d’un jeu de données. Vous pouvez sélectionner de multiples régions (Ctrl+Clic)
+      en: Select the region(s) which best reflects the geographic scope of the dataset. You may select multiple regions (Ctrl+Click).
+      fr: (FRENCH) Select the region(s) which best reflects the geographic scope of the dataset. Vous pouvez sélectionner de multiples régions (Ctrl+Clic).
     choices:
     - label:
         en: Canada
@@ -1567,8 +1535,8 @@ presets:
       en: Publisher - Current Organization Name
       fr: Éditeur - Nom actuel de l’organisation
     help_text:
-      en: The Title of the current Organization (GC Department or Agency) primarily responsible for publishing the dataset
-      fr: Titre de l’organisation actuelle (organisme ou ministère du GC) principalement responsable de publier le jeu de données
+      en: Branch name primairly responsible for publishing.
+      fr: (FRENCH) Branch name primairly responsible for publishing.
     form_include_blank_choice: true
     form_select_attrs:
       class: form-control
@@ -1584,8 +1552,8 @@ presets:
       en: Data Owner
       fr: Propriétaire des données
     help_text:
-      en: Individual entities (persons) primarily responsible for making the dataset (separate multiple entities by commas)
-      fr: Entités individuelles (personnes) principalement responsables de produire le jeu de données (séparer les multiples entités par des virgules)
+      en: Senior officer(s) or role(s) accountable for the dataset (separate multiple entities by commas).
+      fr: Senior officer(s) or role(s) accountable for the dataset (séparer les multiples entités par des virgules).
     required: true
     #value: aafc_author_email_value
     #classes: ['hidden']
