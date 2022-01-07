@@ -33,11 +33,11 @@
             (_('Relevance'), 'score desc, metadata_modified desc'),
             (_('Name Ascending'), 'title_fr asc'),
             (_('Name Descending'), 'title_fr desc'),
-            (_('Date Released Ascending'), 'data_released asc'),
-            (_('Date Released Descending'), 'data_released desc'),
-            (_('Date Published Ascending'), 'date_published asc'),
-            (_('Date Published Descending'), 'date_published desc'),
-            (_('Last Modified'), 'metadata_modified desc'),
+            (_('Date Released Ascending'), 'data_released asc, title_fr asc'),
+            (_('Date Released Descending'), 'data_released desc, title_fr asc'),
+            (_('Date Published Ascending'), 'date_published asc, title_fr asc'),
+            (_('Date Published Descending'), 'date_published desc, title_fr asc'),
+            (_('Last Modified'), 'metadata_modified desc, title_fr asc'),
             (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
           %}
 	{% else %}
@@ -45,11 +45,11 @@
             (_('Relevance'), 'score desc, metadata_modified desc'),
             (_('Name Ascending'), 'title_string asc'),
             (_('Name Descending'), 'title_string desc'),
-            (_('Date Released Ascending'), 'data_released asc'),
-            (_('Date Released Descending'), 'data_released desc'),
-            (_('Date Published Ascending'), 'date_published asc'),
-            (_('Date Published Descending'), 'date_published desc'),
-            (_('Last Modified'), 'metadata_modified desc'),
+            (_('Date Released Ascending'), 'data_released asc, title_string asc'),
+            (_('Date Released Descending'), 'data_released desc, title_string asc'),
+            (_('Date Published Ascending'), 'date_published asc, title_string asc'),
+            (_('Date Published Descending'), 'date_published desc, title_string asc'),
+            (_('Last Modified'), 'metadata_modified desc, title_string asc'),
             (_('Popular'), 'views_recent desc') if g.tracking_enabled else (false, false) ]
           %}
 	{% endif %}
