@@ -160,8 +160,8 @@ presets:
       en: Publishing Branch
       fr: Direction générale de la publication
     help_text:
-      en: Branch within the department responsible for publishing
-      fr: (FRENCH) Branch within the department responsible for publishing
+      en: Branch within the department responsible for publishing.
+      fr: (FRENCH) Branch within the department responsible for publishing.
     required: true
     form_include_blank_choice: true
     form_select_attrs:
@@ -3964,8 +3964,8 @@ presets:
       en: "File Upload"
       fr: "Téléchargement du fichier"
     help_text:
-      en: Location of the dataset (for shared drives follow up  - ticket).
-      fr: (FRENCH) Location of the dataset (for shared drives follow up  - ticket).
+      en: The existing location to access the resource (https://site/path/filename). An accessible, managed file location (file:\\networklocation\filename) can be used if no URL is available.
+      fr: (FRENCH) The existing location to access the resource (https://site/path/filename). An accessible, managed file location (file:\\networklocation\filename) can be used if no URL is available.
     required: true
     # copied from resource_url_upload
     validators: not_empty unicode remove_whitespace

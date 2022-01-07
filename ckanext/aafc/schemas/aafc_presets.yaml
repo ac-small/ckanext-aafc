@@ -132,8 +132,8 @@ presets:
          en: Data Steward Email
          fr: Courriel du responsable des données
       help_text:
-         en: "Individual responsible for inquiries   (user.name@agr.gc.ca)"
-         fr: "(FRENCH) Individual responsible for inquiries   (user.name@agr.gc.ca)"
+         en: Individual responsible for inquiries   (user.name@agr.gc.ca).
+         fr: (FRENCH) Individual responsible for inquiries   (user.name@agr.gc.ca)
  
 - preset_name: procured_data
   values:
@@ -149,8 +149,8 @@ presets:
          en: Eligible for Release
          fr: Admissible pour publication  
       help_text:
-         en: "Indicates whether or not there are any restictions to accessing the data."
-         fr: "Précise si l'accès aux données est assujetti à des restrictions."
+         en: Indicates whether or not there are any restictions to accessing the data.
+         fr: Précise si l'accès aux données est assujetti à des restrictions.
 
 - preset_name: ineligibility_reason
   values:
@@ -1535,8 +1535,8 @@ presets:
       en: Publisher - Current Organization Name
       fr: Éditeur - Nom actuel de l’organisation
     help_text:
-      en: Branch name primairly responsible for publishing.
-      fr: (FRENCH) Branch name primairly responsible for publishing.
+      en: Branch name primarily responsible for publishing.
+      fr: (FRENCH) Branch name primarily responsible for publishing.
     form_include_blank_choice: true
     form_select_attrs:
       class: form-control
