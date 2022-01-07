@@ -4,9 +4,8 @@ dataset_type: aafc-open-data
 display_group_default: Basic Information
 #display_group_order:
 #  - Basic Information
-#  - Contact Information
+#  - Open Data Release Criteria
 #  - Optional Dataset Information
-#  - Optional Inventory Information
 
 display_groups:
   - label: ANA
@@ -20,9 +19,6 @@ display_groups:
   - label: Optional Dataset Information
     description: "This is the Optional Dataset Information section. "
     collapse_by_default: true
-#  - label: Optional Inventory Information
-#    description: "This is the Optional Inventory Information section. "
-#    collapse_by_default: true
 
 about: 'open.canada.ca: raw open data metadata definition'
 about_url: http://github.com/open-data/ckanext-canada
@@ -34,22 +30,11 @@ form_languages:
   - fr
 dataset_fields:
 
-##################################################
-# Changed Original TBS
-# TBS original comment: our id + name fields are uuids and always equal
-# JK 2018/12/04: Uncommented and pulled in TBS logic. AAFC id and name.
 - preset: canada_dataset_id
   display_snippet: none
 - preset: canada_dataset_name
   display_snippet: null
-###################################################
 
-####################################################
-# Added tbs fields to hold tbs id and name
-# Hidden and only set from id and name values 
-# on Open gov
-# JK 2018/12/04
-######################################################
 - preset: tbs_dataset_id
 - preset: tbs_dataset_name
 
@@ -60,15 +45,9 @@ dataset_fields:
   display_group: ANA
 
 ##################################################
-# Basic Group
+# Basic Information
 #
 - preset: canada_owner_org
-  label:
-    en: Publishing Branch
-    fr: Direction générale de la publication
-  help_text:
-    en: "The name of the Branch primarily responsible for publishing the dataset"
-    fr: "Titre de lâ filiale de AFC actuelle principalement responsable de publier le jeu de données"
   display_group: Basic Information
 
 - preset: aafc_title
@@ -89,9 +68,6 @@ dataset_fields:
 
 - preset: data_steward_email
   required: true
-  help_text:
-    en: "The first point of contact for all questions related to this dataset.  (user.name@canada.ca)"
-    fr: "Le premier point de contact pour toutes les questions relatives à cet ensemble de données. (nom.utilisateur@canada.ca)"
   display_group: Basic Information
 
 - preset: aafc_creator
@@ -102,7 +78,7 @@ dataset_fields:
     en: Procured Data
     fr: Données achetées
   help_text:
-    en: "Indicates whether or not the data was purchased from a source external to AAFC"
+    en: "Indicates whether or not the data was purchased from a source external to AAFC."
     fr: "Précise si les données ont été achetées ou non d’une source externe à AAC."
   field_name: procured_data
   form_include_blank_choice: true
@@ -110,9 +86,6 @@ dataset_fields:
 
 - preset: procured_data_organization_name
   required: true
-  help_text:
-    en: "The name of the organization which the data was purchased from"
-    fr: "Le nom de l’organisation pour laquelle les données ont été achetées."
   display_group: Basic Information   
   
 - preset: aafc_yesno_required
@@ -121,36 +94,24 @@ dataset_fields:
     en: Eligible for Release 
     fr: Admissible pour publication
   help_text:
-    en: "Indicates whether or not the dataset is eligible for release to the public"
+    en: "Indicates whether or not the dataset is eligible for release to the public."
     fr: "Précise si l'accès aux données est assujetti à des restrictions."
   display_group: Basic Information
 
 - preset: ineligibility_reason
-  help_text:
-    en: "If the dataset is not eligible for release to the public, select the reason why the dataset is not eligible for release."
-    fr: "Si l'ensemble de données ne peut pas être communiqué au public, sélectionnez la raison pour laquelle il en est ainsi."
   display_group: Basic Information   
 
 - preset: canada_frequency
   display_group: Basic Information 
 
 - preset: data_source_repository
-  help_text:
-    en: "Indicates where the source data for the dataset can be found"
-    fr: "Indique l’endroit où se trouvent les données de base de l’ensemble de données."
   display_group: Basic Information   
 
 - preset: drf_core_responsibilities
-  help_text:
-    en: "Departmental Results Framework Core Responsibility to which the dataset relates"
-    fr: "Responsabilité essentielle du Cadre de résultats ministériels à laquelle se rapporte l’ensemble de données"
   classes: ['hidden']
   display_group: Basic Information   
   
 - preset: drf_program_inventory
-  help_text:
-    en: "Departmental Results Framework Program to which the dataset relates"
-    fr: "Programme du Cadre de résultats ministériels auquel l’ensemble de données se rapporte"
   classes: ['hidden']
   display_group: Basic Information   
 
@@ -159,8 +120,8 @@ dataset_fields:
     en: Authoritative Source
     fr: Source faisant autorité
   help_text:
-    en: "Dataset is considered to be the authoritative source for data"
-    fr: "L’ensemble de données est considéré comme la source faisant autorité pour les données."
+    en: "The data is recognized to be the primary source that is valid and/or trusted by departmental or external users, e.g., current, reliable, purposeful and publisher-authorized."
+    fr: "(FRENCH) The data is recognized to be the primary source that is valid and/or trusted by departmental or external users, e.g., current, reliable, purposeful and publisher-authorized."
   field_name: authoritative_source
   display_group: Basic Information
 
@@ -177,23 +138,6 @@ dataset_fields:
   classes: ['hidden']
   display_group: Basic Information
 
-#- field_name: aafc_author
-#  label:
-#    en: Author
-#    fr: Auteur
-#  value: aafc_author_value
-#  classes: ['hidden']
-#  form_snippet: text_author.html
-#  display_group: Basic Information
-#
-#- field_name: aafc_author_email
-#  label:
-#    en: Author Email
-#    fr: Auteur Email
-#  value: aafc_author_email_value
-#  classes: ['hidden']
-#  form_snippet: text_author_email.html
-#  display_group: Basic Information
 ############################
 # Open Gov Dataset Release Information
 - preset: aafc_yesno_required
@@ -209,12 +153,6 @@ dataset_fields:
   display_group: Open Data Release Criteria
 
 - preset: access_to_information
-  label:
-    en: Access To Information
-    fr: Accès à l'information
-  help_text:
-    en: "The data or information resource is not subject to any exemptions or exclusions under the Access to Information Act."
-    fr: "Les données ou les ressources documentaires ne sont visées par aucune exception ou exclusion en vertu de la Loi sur l’accès à l’information."
   display_group: Open Data Release Criteria
 
 - preset: general_boolean_required
@@ -284,21 +222,12 @@ dataset_fields:
   display_group: Open Data Release Criteria
 
 - preset: canada_jurisdiction
-  help_text:
-    en: "Indicates the jurisdiction under which the dataset is being published"
-    fr: "Indique la juridiction sous laquelle le jeu de données est publié"
   display_group: Open Data Release Criteria
 
 - preset: canada_license_id
-  help_text:
-    en: "Indicates the licence under which the dataset is being published"
-    fr: "Précise la licence selon laquelle l'ensemble de données est publié."
   display_group: Open Data Release Criteria
 
 - preset: canada_restrictions
-  help_text:
-    en: "Indicates whether or not there are any restictions to accessing the data"
-    fr: "Précise si l'accès aux données est assujetti à des restrictions."
   display_group: Open Data Release Criteria
 
 - preset: aafc_yesno_required
@@ -321,27 +250,12 @@ dataset_fields:
     fr: "Confirme que l'ensemble de données est prêt à publier sur le Portail du gouvernement ouvert."
   display_group: Open Data Release Criteria
 
-#- preset: aafc_yesno_required
-#  field_name: ready_to_republish
-#  label:
-#    en: Ready to Republish
-#    fr: Prêt pour la publication
-#  help_text:
-#    en: "Confirms that the dataset is ready to be re-published to the Open Government portal"
-#    fr: "Confirme que l'ensemble de données est prêt à publier de nouveau sur le Portail du gouvernement ouvert."
-#  display_group: Open Data Release Criteria
 
 ############################
 # Optional Dataset Information
 #- preset_name: canada_owner_org
 #  display_group: Optional Dataset Information
 - preset: aafc_owner_org
-  label:
-    en: Publisher - Current Organization Name
-    fr: Diffuseur - Nom de l'organisation actuelle
-  help_text:
-    en: "The title of the current organization (GC Department or Agency) primarily responsible for publishing the asset"
-    fr: "Titre de l'organisation (Ministère du GC ou Organisme) principalement responsable de la publication de la ressource."
   display_group: Optional Dataset Information
 
 - preset: canada_org_title_at_publication
@@ -394,6 +308,7 @@ dataset_fields:
     en: "The Digital Object Identifier assigned to the asset.For more information visit: http://cisti-icist.nrc-cnrc.gc.ca/eng/services/cisti/datacite-canada/index.html"
     fr: "The Digital Object Identifier assigned to the asset.For more information visit: http://cisti-icist.nrc-cnrc.gc.ca/eng/services/cisti/datacite-canada/index.html"
   value: aafc_doi
+  classes: ['hidden']
   display_group: Optional Dataset Information
  
 - preset: canada_date_modified
@@ -415,11 +330,11 @@ dataset_fields:
       fr: Remarque (français)
   fluent_help_text:
     en:
-      en: General information relating to an asset, in English
-      fr: Information générale liée à une ressource, en anglais.
+      en: Additional information regarding the contents of the dataset.
+      fr: (FRENCH) Additional information regarding the contents of the dataset.
     fr:
-      en: General information relating to an asset, in French
-      fr: Information générale liée à une ressource, en français.
+      en: Additional information regarding the contents of the dataset.
+      fr: (FRENCH) Additional information regarding the contents of the dataset.
   form_snippet: fluent_text.html
   form_attrs:
     class: form-control
@@ -437,8 +352,8 @@ dataset_fields:
     en: APM Departmental Identifier
     fr: Identifiant (ID) du Programme Agri-marketing (PAM)
   help_text:
-    en: The Application Portfolio Management "Departmental ID" of the data source for this dataset, if applicable.(https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index)
-    fr: « ID ministériel » du portefeuille d'applications d'où provient la source de l'ensemble de données, s'il y a lieu. (https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index)
+    en: The Application Portfolio Management "Departmental ID" of the data source for this dataset, if applicable.(https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index).
+    fr: « ID ministériel » du portefeuille d'applications d'où provient la source de l'ensemble de données, s'il y a lieu. (https://ade-sdg.agr.gc.ca/adesdg/applicationPortfolio/index).
   display_group: Optional Dataset Information
 
 - field_name: odi_reference_number
@@ -474,218 +389,7 @@ dataset_fields:
   form_snippet: text_url.html
   display_group: Optional Dataset Information
  
-####################################
-# FGP fields (hidden from form)
-- field_name: distributor
-  label:
-    en: Distributor
-    fr: Distributeur
-  form_snippet: null
-
-- field_name: status
-  label:
-    en: Status
-    fr: État
-  form_snippet: null
-  choices:
-  - label:
-      en: Completed
-      fr: Complété
-    value: completed
-  - label:
-      en: Historical Archive
-      fr: Aarchive historique
-    value: historical_archive
-  - label:
-      en: Obsolete
-      fr: Périmé
-    value: obsolete
-  - label:
-      en: Ongoing
-      fr: En continue
-    value: ongoing
-  - label:
-      en: Planned
-      fr: Planifié
-    value: planned
-  - label:
-      en: Required
-      fr: Requis
-    value: required
-  - label:
-      en: Under Development
-      fr: En production
-    value: under_development
-  - label:
-      en: Proposed
-      fr: Proposé
-    value: proposed
-  # copied from select preset
-  display_snippet: select.html
-  validators: scheming_required scheming_choices
-
-- field_name: association_type
-  label:
-    en: Association Type
-    fr: Type association
-  validators: scheming_multiple_choice
-  output_validators: scheming_multiple_choice_output
-  form_snippet: null
-  choices:
-  - label:
-      en: Cross Reference
-      fr: Référence croisée
-    value: cross_reference
-  - label:
-      en: Larger Work Citation
-      fr: Référence générique
-    value: larger_work_citation
-  - label:
-      en: Part of Seamless Database
-      fr: Partie de base de données continue
-    value: part_of_seamless_database
-  - label:
-      en: Source
-      fr: Source
-    value: source
-  - label:
-      en: Stereo Mate
-      fr: Stéréo associée
-    value: stereo_mate
-  - label:
-      en: Is Composed Of
-      fr: Est composé de
-    value: is_composed_of
-
-#################################
-# Optional Inventory Information
-#- preset: odi_reference_number
-#  display_group: Optional Inventory Information
-#
-#- preset: program_alignment_architecture9
-#  display_group: Optional Inventory Information
-#
-#- preset: open_government_portal_record
-#  display_group: Optional Inventory Information
-#
-#- preset: canada_restrictions
-#  display_group: Optional Inventory Information
-
-###########################################
-# Commented out JK 2018/10/31
-# Reason: preset has TBS custom logic and form_snippet
-#- preset: canada_portal_release_date
-
-############################################
-# fields hidden from the form to support loading fgp and geogratis data
-
-- field_name: presentation_form
-  label:
-    en: Presentation Form
-    fr: Type de représentation spatiale
-  help_text:
-    en: The form in which the resource is available
-    fr: Le format dans lequel la ressource est disponible
-  choices:
-  - label:
-      en: Document Digital
-      fr: Document numérique
-    value: document_digital
-  - label:
-      en: Document Hardcopy
-      fr: Document papier
-    value: document_hardcopy
-  - label:
-      en: Image Digital
-      fr: Image numérique
-    value: image_digital
-  - label:
-      en: Image Hardcopy
-      fr: Image papier
-    value: image_hardcopy
-  - label:
-      en: Map Digital
-      fr: Carte numérique
-    value: map_digital
-  - label:
-      en: Map Hardcopy
-      fr: Carte papier
-    value: map_hardcopy
-  - label:
-      en: Model Digital
-      fr: Modèle numérique
-    value: model_digital
-  - label:
-      en: Model Hardcopy
-      fr: Maquette
-    value: model_hardcopy
-  - label:
-      en: Profile Digital
-      fr: Profil numérique
-    value: profile_digital
-  - label:
-      en: Profile Hardcopy
-      fr: Profil papier
-    value: profile_hardcopy
-  - label:
-      en: Table Digital
-      fr: Table numérique
-    value: table_digital
-  - label:
-      en: Table Hardcopy
-      fr: Table papier
-    value: table_hardcopy
-  - label:
-      en: Video Digital
-      fr: Vidéo numérique
-    value: video_digital
-  - label:
-      en: Video Hardcopy
-      fr: Vidéo film
-    value: video_hardcopy
-  - label:
-      en: Audio Digital
-      fr: Audio numérique
-    value: audio_digital
-  - label:
-      en: Audio Hardcopy
-      fr: Audio analogique
-    value: audio_hardcopy
-  - label:
-      en: Multimedia Digital
-      fr: Multimédia numérique
-    value: multimedia_digital
-  - label:
-      en: Multimedia Hardcopy
-      fr: Multimédia analogique
-    value: multimedia_hardcopy
-  - label:
-      en: Diagram Digital
-      fr: Diagramme numérique
-    value: diagram_digital
-  - label:
-      en: Diagram Hardcopy
-      fr: Diagramme papier
-    value: diagram_hardcopy
-  form_snippet: null
-  # copied from select preset
-  display_snippet: select.html
-  validators: scheming_required scheming_choices
-
-- field_name: display_flags
-  label:
-    en: Display Flags
-    fr: Drapeaux d’affichage
-  form_snippet: null
-  display_snippet: null
-  validators: scheming_multiple_choice
-  output_validators: scheming_multiple_choice_output
-  choices:
-  - label:
-      en: FGP viewer is supported
-      fr: La visionneuse de la PGF est compatible
-    value: fgp_viewer
-
+ 
 #################################
 #
 #   RESOURCE FIELDS
