@@ -75,15 +75,16 @@
             {% if res.url and h.is_url(res.url) %}
               <p class="text-muted ellipsis">{{ _('URL:') }} <a class="resource-url-analytics" href="{{ res.url }}" title="{{ res.url }}">{{ res.url }}</a></p>
             {% elif res.url %}
-              <p class="text-muted break-word">{{ _('URL:') }} {{ res.url }}</p>
+	    <p class="text-muted break-word">{{ _('URL:') }} <span id="url">{{ res.url }}</span></p>
             
 	      {% set url = res.url %}
               {% if url.startswith("file") %}
-	        <div class="form-actions">
+	        <div class="form-actions form-group">
 		  <button class="btn btn-primary pull-left" id="copy"> {{_("Copy File Path")}} </a>
 	        </div>
                 {% set lang = request.environ.CKAN_LANG %}
-                <div class="info-block">
+                 <div class="info-block">
+                 <i class="fa fa-info-circle"></i>
                 {% if lang == 'fr' %}
                    Des Ressources sont précédées par "file:" doivent être copiées et collées dans un nouvel onglet pour accesser la ressource
                 {% else %}
