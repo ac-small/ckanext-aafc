@@ -80,8 +80,21 @@
 	      {% set url = res.url %}
               {% if url.startswith("file") %}
 	        <div class="form-actions form-group">
-		  <button class="btn btn-primary pull-left" id="copy"> {{_("Copy File Path")}} </a>
+		  <button class="btn btn-primary pull-left" id="copy"  onclick ="copyurl()"> {{_("Copy File Path")}} </a>
 	        </div>
+		<script language="javascript" type="text/javascript">
+		   function copyurl(){
+			   var copyText = document.getElementById("url");
+			   var text = copyText.textContent;
+			   const el = document.createElement('textarea');
+			   el.value = text;
+			   document.body.appendChild(el);
+			   el.select();
+			   document.execCommand('copy');
+			   document.body.removeChild(el);
+			   //window.open( text, "_blank");
+		   }
+		</script>
                 {% set lang = request.environ.CKAN_LANG %}
                  <div class="info-block">
                  <i class="fa fa-info-circle"></i>
