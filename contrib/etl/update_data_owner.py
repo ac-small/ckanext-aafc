@@ -27,8 +27,8 @@ if __name__ == "__main__":
         #    update_existing_harvested(pid)
         res = get_data_from_reg(pid)
 		# Fro refix of AR 212
-		#is_harvested = res.get("aafc_is_harvested")
-		#if not is_harvested:
-		#   continue
+		is_harvested = res.get("aafc_is_harvested")
+		if not is_harvested:
+		   continue
         steward = res.get("data_steward_email")
         update_dataowner(pid, steward)
