@@ -161,7 +161,7 @@ def get_all_data( isSink = False, timelimit = False, restrict=False):
         result = new_result
     return result
 	
-def get_all_ids(remote=True):
+def get_all_public_ids(remote=True):
     '''
     Get all ids from site
     :param remote:
@@ -186,6 +186,34 @@ def get_all_ids(remote=True):
     return ret
 
 
+def get_all_private_ids(remote=True):
+    '''
+    Get all private record IDs from site
+    :param remote:
+    :return:
+    '''
+    if remote:
+        site = os.getenv("source_url")
+        api_key = os.getenv("source_api_key")
+    else: #local
+        site = os.getenv("destination_url")
+        api_key = os.getenv("destination_api_key")
+    session = requests.Session()
+    session.verify = False
+    rckan = RemoteCKAN(site, apikey=api_key,session=session)
+    try:
+        ret = rckan.action.package_search(q='+private:true', include_private='true')
+        records = ret["results"]
+        id_list = []
+        for item in records:
+            id_list.append(item["id"])
+        print(id_list)
+    except Exception as e:
+        print("Error message : %s" % e.message)
+        id_list = []
+    return id_list
+
+
 def get_data_from_reg(package_id):
     """
     Called by get_n_post
@@ -194,7 +222,8 @@ def get_data_from_reg(package_id):
     :return:
     """
     site = os.getenv("registry_url")
-    rckan = RemoteCKAN(site)
+    api_key= os.getenv("registry_api_key")
+    rckan = RemoteCKAN(site, apikey=api_key)
 
     data_as_d = {"id": package_id}
     try:
