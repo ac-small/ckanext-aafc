@@ -219,3 +219,11 @@
   font-weight:normal;
   font-size:80%;
   white-space:nowrap;
+}
+
+.info-block {
+  color: #31708f !important;
+  font-size: 87% !important;
+  padding: 5px 0 5px 5px !important;
+}
+
