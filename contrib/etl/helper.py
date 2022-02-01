@@ -202,7 +202,7 @@ def get_all_private_ids(remote=True):
     session.verify = False
     rckan = RemoteCKAN(site, apikey=api_key,session=session)
     try:
-        ret = rckan.action.package_search(q='+private:true', include_private='true')
+        ret = rckan.action.package_search(q='+private:true', include_private='true', rows=1000)
         records = ret["results"]
         id_list = []
         for item in records:
