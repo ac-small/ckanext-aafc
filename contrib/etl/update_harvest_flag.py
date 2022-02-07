@@ -35,12 +35,20 @@ def update_existing_harvested(package_id,data_owner=""):
     data = {"aafc_is_harvested":"true","creator":data_owner}
     update_package(package_id,data)
 
+def update_existing_nonharvest(package_id,data_owner=""):
+    data = {"aafc_is_harvested":"false", "creator":data_owner}
+    update_package(package_id,data)
 
 if __name__ == "__main__":
     load_dotenv()
-    ids = get_all_ids(remote=False)
-    for pid in ids[3:6]: # for test only
-    #for pid in ids:
+    public_ids = get_all_public_ids(remote=False)
+    private_ids = get_all_private_ids(remote=False)
+    #for pid in ids[3:6]: # for test only
+    for pid in public_ids:
         res = get_data_from_reg(pid)
         steward = res.get("data_steward_email")
         update_existing_harvested(pid,steward)
+    for pid in private_ids:
+        res = get_data_from_reg(pid)
+        steward = res.get("data_steward_email")
+        update_existing_nonharvest(pid, steward)
