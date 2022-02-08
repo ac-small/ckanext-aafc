@@ -3,7 +3,7 @@
 import re
 import unicodedata
 
-from pylons.i18n import _
+from ckan.common import config, _, json, request, c
 from ckan.lib.navl.validators import StopOnError
 from ckan.authz import is_sysadmin
 from ckan import model
@@ -14,8 +14,8 @@ from geomet import wkt
 import json
 import uuid
 
-from ckanapi import LocalCKAN, NotFound
-from ckantoolkit import get_validator, Invalid, missing
+#from ckanapi import LocalCKAN, NotFound
+from ckan.plugins.toolkit import get_validator, Invalid, missing
 
 not_empty = get_validator('not_empty')
 ignore_missing = get_validator('ignore_missing')
@@ -82,7 +82,7 @@ def canada_tags(value, context):
         raise Invalid(
             _(u'Tag "%s" may not contain consecutive spaces') % (value,))
 
-    caution = re.sub(ur'[\w ]*', u'', value)
+    caution = re.sub(r'[\w ]*', u'', value)
     for ch in caution:
         category = unicodedata.category(ch)
         if category.startswith('C'):

@@ -1,16 +1,16 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
 import os.path
-from pylons.i18n import _
-from pylons.i18n.translation import get_lang
+#from pylons.i18n import _
+#from pylons.i18n.translation import get_lang
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.lib.plugins import DefaultDatasetForm
 from ckan.logic import validators as logic_validators
 from routes.mapper import SubMapper
-from paste.reloader import watch_file
-import ckanapi
+#from paste.reloader import watch_file
+#import ckanapi
 from ckan.lib.base import c
 import routes.mapper
 from ckanext.aafc import validators
@@ -18,27 +18,27 @@ from ckanext.aafc import helpers
 from time import gmtime, strftime
 from ckanext.scheming import helpers as sh
 import logging
-import ckanapi_exporter.exporter as exporter
+#import ckanapi_exporter.exporter as exporter
 import ckan.lib.base as base
 import json
 from ckan.lib.plugins import DefaultTranslation
 from datetime import datetime
-from unidecode import unidecode
+#from unidecode import unidecode
 
 import ckan as ckan
 import ckan.lib.helpers as h
 import ckan.lib.formatters as formatters
 import ckan.model as model
-import webhelpers.html as html
+#import webhelpers.html as html
 import dateutil.parser
 import json as json
 import geomet.wkt as wkt
 
-from webhelpers.html import HTML, literal
-from webhelpers.html.tags import link_to
-from pylons import config
-from pylons import response
-from pylons.i18n import gettext
+#from webhelpers.html import HTML, literal
+#from webhelpers.html.tags import link_to
+from ckan.common import config, _, json, request, c
+#from pylons import response
+#from pylons.i18n import gettext
 
 log = logging.getLogger(__name__)
 
@@ -181,7 +181,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         log.info(">>>>###search_params:")
         log.info(str(search_params))
 
-    return search_params
+        return search_params
 
     def after_search(self, search_results, search_params):
         pr = sh.scheming_get_preset("aafc_sector")
@@ -246,7 +246,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
             log.info("error when pop tags, aafc_sector from filter title")
             pass
         
-    return search_results
+        return search_results
 
     def after_show(self, context, data_dict):
         return data_dict
@@ -258,7 +258,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         data_dict['subject'] = json.loads(data_dict.get('subject', '[]'))
 
         titles = json.loads(data_dict.get('title_translated', '{}'))
-        data_dict['title_fr'] = unidecode(titles.get('fr', '').lower(), "utf-8")
+        #data_dict['title_fr'] = unidecode(titles.get('fr', '').lower(), "utf-8")
         data_dict['title_string'] = titles.get('en', '').lower()
 
         output_file = "/tmp/b4index_" + strftime("%Y-%m-%d_%H_%M_%S", gmtime()) + ".json"
@@ -281,7 +281,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         return facet_titles
 
     def after_update(self, context, data_dict):
-    return data_dict
+       return data_dict
 
     def after_create(self, context, data_dict):
         return data_dict
@@ -300,29 +300,29 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         return route_map
 
 
-class AAFCController(base.BaseController):
-
-    def export(self):
-        '''
-        Use ckanapi-exporter to export records into a csv file.
-        Columns exported are specified in the /export/export.columns.json file.
-        Exported files are labelled with current datetime.
-        '''
-        csv_content = exporter.export('http://localhost:5000', 'ckanext-aafc/ckanext/aafc/export/export_columns.json', str(c.userobj.apikey) , "{'include_private':'True'}")
-        time = datetime.now().strftime("%Y%m%d-%H%M%S")
-        filename = ("AAFC-Data-Catalogue-Export " + time + ".csv")
-        response.headers['Content-Encoding'] = 'utf-8-sig'
-        response.headers['Content-Type'] = 'text/plain; charset=utf-8-sig'
-        response.headers["Content-Disposition"] = "attachment; filename=" + filename
-        response.write("\xEF\xBB\xBF")
-        return csv_content
-
-    def help(self):
-        '''
-        Load the help page in the top menu.
-        '''
-        return base.render('home/help.html')
-
+#class AAFCController(base.BaseController):
+#
+#    def export(self):
+#        '''
+#        Use ckanapi-exporter to export records into a csv file.
+#        Columns exported are specified in the /export/export.columns.json file.
+#        Exported files are labelled with current datetime.
+#        '''
+#        csv_content = exporter.export('http://localhost:5000', 'ckanext-aafc/ckanext/aafc/export/export_columns.json', str(c.userobj.apikey) , "{'include_private':'True'}")
+#        time = datetime.now().strftime("%Y%m%d-%H%M%S")
+#        filename = ("AAFC-Data-Catalogue-Export " + time + ".csv")
+#        response.headers['Content-Encoding'] = 'utf-8-sig'
+#        response.headers['Content-Type'] = 'text/plain; charset=utf-8-sig'
+#        response.headers["Content-Disposition"] = "attachment; filename=" + filename
+#        response.write("\xEF\xBB\xBF")
+#        return csv_content
+#
+#    def help(self):
+#        '''
+#        Load the help page in the top menu.
+#        '''
+#        return base.render('home/help.html')
+#
 
 class WetTheme(plugins.SingletonPlugin):
     """
