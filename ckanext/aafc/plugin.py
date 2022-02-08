@@ -181,7 +181,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         log.info(">>>>###search_params:")
         log.info(str(search_params))
 
-	return search_params
+    return search_params
 
     def after_search(self, search_results, search_params):
         pr = sh.scheming_get_preset("aafc_sector")
@@ -205,12 +205,12 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
             if key == 'aafc_sector':
             #log.info(">>>###key:" + key)
                 for item in facet['items']:
-                    field_value = item['name']				
+                    field_value = item['name']
                     label = sh.scheming_choices_label(choices,field_value)
                     item['display_name'] = label
             if key == 'publication':
                 for item in facet['items']:
-                    field_value = item['name']				
+                    field_value = item['name']
                     label = sh.scheming_choices_label(options,field_value)
                     item['display_name'] = label
             if key == 'private':
@@ -246,7 +246,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
             log.info("error when pop tags, aafc_sector from filter title")
             pass
         
-	return search_results
+    return search_results
 
     def after_show(self, context, data_dict):
         return data_dict
@@ -281,7 +281,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         return facet_titles
 
     def after_update(self, context, data_dict):
-	return data_dict
+    return data_dict
 
     def after_create(self, context, data_dict):
         return data_dict
