@@ -17,7 +17,7 @@ ENV SOLR=/app/ckan/solr/bin/solr
 RUN mkdir -p /app/ckan/admin /app/ckan/data
 RUN apt update && apt install -y gnupg2 curl wget && \
     apt install -y apache2 postgresql-12 postgresql-12-postgis-3 libapache2-mod-wsgi redis-server ssh && \
-    apt install -y vim git zip unzip pkg-config expect dos2unix openssh-server telnet && \
+    apt install -y vim git zip unzip pkg-config expect dos2unix openssh-server telnet mc && \
     apt install -y gcc make g++ automake linux-headers-generic && \
     apt install -y build-essential gettext musl-dev openjdk-8-jdk uwsgi uwsgi-plugins-all libtool libpq5 libpq-dev && \
     apt install -y python3-dev python3-pip python3-venv git-core python-is-python3 solr-jetty && \
