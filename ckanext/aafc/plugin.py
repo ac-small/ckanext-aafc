@@ -40,7 +40,6 @@ from pylons import config
 from pylons import response
 from pylons.i18n import gettext
 
-
 log = logging.getLogger(__name__)
 
 class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslation):
