@@ -61,7 +61,8 @@ RUN . $APP/bin/activate && cd $APP/src && pip install setuptools==44.1.0 && pip 
     pip install ckanapi && pip install geojson && pip install geomet && \
     deactivate && . $APP/bin/activate && \
     cd $APP/src/ckan && cp who.ini /app/ckan/config/ && \
-    #pip install -e "git+https://gitlab.com/aafc/ckanext-scheming.git#egg=ckanext-scheming" && \
+    #pip install -e "git+https://
+	.com/aafc/ckanext-scheming.git#egg=ckanext-scheming" && \
     pip install -e git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent && \
     pip install -e git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial && \
     pip install -r /app/ckan/venv/src/ckanext-spatial/pip-requirements.txt && \
@@ -118,7 +119,7 @@ RUN dos2unix /app/ckan/admin/*.sh /app/ckan/venv/src/ckan/*.exp
 RUN chmod +x /app/ckan/admin/*.sh /app/ckan/venv/src/ckan/*.exp
 
 RUN cd /root; mkdir -p .ssh; touch .ssh/authorized_keys; chown -R root .ssh; chmod 700 .ssh; cd .ssh; chmod 600 authorized_keys && \
-    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDqFW2yVPx6tNhw19MYDf24ibRN6nXcx0WwlIobOzxp1v68lx322kIM3j7IY+ENPsPpHlZcjYsw3hio+VNeVT8vq7QuigvoH0T+yTfcecNEhdo3LxLTRCOvCIHbN29bxaM3BTQahkIrMiTFIs7WIMcGDktfRUdBr3oBrnf3mGYBmnKlULlmYQhfry3qbplgCVHZ9f6b7v7Cm33aA6wdjpiksVfkacZ1BT8+bC/i3GO9HaCoy43cxRlGelCXQRuGz5nM+WGDz4RbOtyt4iz2mDvYN6SvKcQj9QqURFcTbuEhvghhPE+mqbTAtlCUCPAt1LhSgQ9P4FOuJKMa1CQpKr4dSNDrU6OojfhxsilmO2DyUXcbDqkPJaT7Eg3QNMFAYUM11ZQ8Ea1MYA0FqVRnTI1w6T1t5Zto8RG71sVh8Tyn+v/OcQs1BmAGeTPBs3KC2QzP0/AhsAVTy2dCea7NTsxXFcpIPPMbGtMOmhm0PKUtAO4MUN97y5xr4RI3AHyrtFk= devonly" >>authorized_keys
+    echo "ssh-rsa xxxx" >>authorized_keys
 RUN sed -i '/PermitRootLogin/a PermitRootLogin yes' /etc/ssh/sshd_config
 
 EXPOSE 80 5000 2222
