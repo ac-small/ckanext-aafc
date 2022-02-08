@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+eval spawn ckan sysadmin add dhadmin email=admin@email.com name=dhadmin
+expect  "*Y/n*"
+sleep 5
+send "Y\r"
+expect "*Password : "
+sleep 5
+send -- "###ALL_PASSWORD#\r"
+expect "*confirmation*"
+sleep 5
+send -- "###ALL_PASSWORD#\r"
+expect eof
