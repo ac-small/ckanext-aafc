@@ -185,10 +185,12 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
 
     def after_search(self, search_results, search_params):
         pr = sh.scheming_get_preset("aafc_sector")
-        choices = sh.scheming_field_choices(pr)
+        if pr is not None:
+            choices = sh.scheming_field_choices(pr)
         
         dt = sh.scheming_get_preset("publication_type")
-        options = sh.scheming_field_choices(dt)
+        if dt is not None:
+            options = sh.scheming_field_choices(dt)
         #for result in search_results.get('results', []):
             #for extra in result.get('extras', []):
             #    if extra.get('key') in ['sector' ]:
@@ -288,6 +290,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
 
 
     def before_map(self, route_map):
+        log.info(">>>>before_map called")
         with routes.mapper.SubMapper(route_map,
                 controller='ckanext.aafc.plugin:AAFCController') as m:
             m.connect('export', '/export',
