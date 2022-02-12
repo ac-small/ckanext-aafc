@@ -1,5 +1,5 @@
 {% block header_wrapper %} {% block header_account %}
-<header class="account-masthead">
+<header class="account-masthead2">
 	<!-- header start -->
   <div class="container">
     {% block header_account_container_content %} {% if c.userobj %}
@@ -65,7 +65,7 @@
   </div>
 </header>
 {% endblock %}
-<header class="navbar navbar-static-top masthead">
+<header class="navbar navbar-static-top masthead2">
   {% block header_debug %} {% if g.debug and not g.debug_supress_header %}
   <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
   {% endif %} {% endblock %}
