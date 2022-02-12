@@ -33,20 +33,20 @@
 .top120 { margin-top:120px; }
 
 
-.account-masthead {
+.account-masthead2 {
     background-color: rgb(40, 40, 40);
 }
 /* The "bubble" containing the number of new notifications. */
-.account-masthead .account .notifications a span {
+.account-masthead2 .account .notifications a span {
   background-color: #888888;
 }
 /* The text and icons in the user account info. */
-.account-masthead .account ul li a {
+.account-masthead2 .account ul li a {
   color: rgba(255, 255, 255, 0.6);
 }
 /* The user account info text and icons, when the user's pointer is hovering
    over them. */
-.account-masthead .account ul li a:hover {
+.account-masthead2 .account ul li a:hover {
   color: rgba(255, 255, 255, 0.7);
   background-color: black;
 }
@@ -56,53 +56,53 @@
    The main masthead bar that contains the site logo, nav links, and search
    ======================================================================== */
 
-.masthead {
+.masthead2 {
   color: #000;
   background-color: #fff;
   background-image: none;
 }
 
-.masthead .nav > li > a,
-.masthead .nav > li > a:focus,
-.masthead .nav > li > a:hover,
-.masthead .nav > .active > a,
-.masthead .nav > .active > a:hover,
-.masthead .nav > .active > a:focus {
+.masthead2 .nav > li > a,
+.masthead2 .nav > li > a:focus,
+.masthead2 .nav > li > a:hover,
+.masthead2 .nav > .active > a,
+.masthead2 .nav > .active > a:hover,
+.masthead2 .nav > .active > a:focus {
   color: #000;
   text-shadow: none;
 }
 
 /* The "navigation pills" in the masthead (the links to Datasets,
    Organizations, etc) when the user's pointer hovers over them. */
-.masthead .navigation .nav-pills li a:hover {
+.masthead2 .navigation .nav-pills li a:hover {
   background-color: white;
   color: black;
 }
 /* The "active" navigation pill (for example, when you're on the /dataset page
    the "Datasets" link is active). */
-.masthead .navigation .nav-pills li.active a {
+.masthead2 .navigation .nav-pills li.active a {
   background-color: rgb(214, 214, 214);
 }
 /* The "box shadow" effect that appears around the search box when it
    has the keyboard cursor's focus. */
-.masthead input[type="text"]:focus {
+.masthead2 input[type="text"]:focus {
   -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
   box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
 }
 
-.masthead .logo img {
+.masthead2 .logo img {
     max-height: 30px;
 }
 
-.masthead a {
+.masthead2 a {
   color:#000;
 }
 
-.masthead a:hover {
+.masthead2 a:hover {
   color:#0535d2;
 }
 
-.masthead a:visited {
+.masthead2 a:visited {
   color:#7834bc;
 }
 
@@ -129,12 +129,12 @@
   border:none;
 }
 /* Change the colors of the "Search Your Data" box. */
-.homepage .module-search .module-content {
+.homepage .module-search2 .module-content {
   color: rgb(68, 68, 68);
   background-color: rgba(0,0,0,0);
 }
 /* Change the background color of the "Popular Tags" box. */
-.homepage .module-search .tags {
+.homepage .module-search2 .tags {
   background-color: rgb(61, 61, 61);
 }
 /* Remove some padding. This makes the bottom edges of the "Welcome to CKAN"
@@ -142,7 +142,7 @@
 .module-content:last-child {
  /* padding-bottom: 0px;*/
 }
-.homepage .module-search {
+.homepage .module-search2 {
   padding: 0px;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -207,9 +207,9 @@
 }
 
 
-.masthead .navigation .nav-pills li a:hover,
-.masthead .navigation .nav-pills li a:focus,
-.masthead .navigation .nav-pills li.active a {
+.masthead2 .navigation .nav-pills li a:hover,
+.masthead2 .navigation .nav-pills li a:focus,
+.masthead2 .navigation .nav-pills li.active a {
   color:#fff;
   background-color:rgb(38, 55, 74);
 }
