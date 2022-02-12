@@ -71,7 +71,20 @@
   color: #000;
   text-shadow: none;
 }
+.masthead2 .navbar-collapse {
+  float: right;
+}
 
+.masthead2 .site-search {
+  margin-left: 15px;
+}
+.masthead2 .site-search {
+  margin: 4px 8px 4px 0;
+  margin-left: 0px;
+}
+.masthead2 .section {
+  float: left;
+}
 /* The "navigation pills" in the masthead (the links to Datasets,
    Organizations, etc) when the user's pointer hovers over them. */
 .masthead2 .navigation .nav-pills li a:hover {
