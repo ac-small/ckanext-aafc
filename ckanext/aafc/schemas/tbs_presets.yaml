@@ -161,7 +161,7 @@ presets:
       fr: Direction générale de la publication
     help_text:
       en: Branch within the department responsible for publishing.
-      fr: (FRENCH) Branch within the department responsible for publishing.
+      fr: Direction générale du Ministère qui est responsable de la publication.
     required: true
     form_include_blank_choice: true
     form_select_attrs:
@@ -371,10 +371,10 @@ presets:
     fluent_help_text:
       en:
         en: Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
-        fr: (FRENCH) Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
+        fr: Utilisez des termes ou des phrases qui seront utilisés par le public cible. Séparez les termes par une virgule.
       fr:
         en: Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
-        fr: (FRENCH) Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
+        fr: Utilisez des termes ou des phrases qui seront utilisés par le public cible. Séparez les termes par une virgule.
     required: true
 ###################
 # JK Need to investigate TBS tag_validators
@@ -2647,10 +2647,10 @@ presets:
     fluent_help_text:
       en:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
       fr:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
     required: true
     # copied from fluent_text preset
     form_attrs:
