@@ -1536,7 +1536,7 @@ presets:
       fr: Éditeur - Nom actuel de l’organisation
     help_text:
       en: Branch name primarily responsible for publishing.
-      fr: (FRENCH) Branch name primarily responsible for publishing.
+      fr: Nom de la direction générale principalement responsable de la publication.
     form_include_blank_choice: true
     form_select_attrs:
       class: form-control
