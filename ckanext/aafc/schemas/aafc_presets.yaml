@@ -45,10 +45,10 @@ presets:
     fluent_help_text:
       en:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
       fr:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
     required: true
     # copied from fluent_text preset
     form_snippet: fluent_text.html

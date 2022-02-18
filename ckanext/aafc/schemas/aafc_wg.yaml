@@ -331,10 +331,10 @@ dataset_fields:
   fluent_help_text:
     en:
       en: Additional information regarding the contents of the dataset.
-      fr: (FRENCH) Additional information regarding the contents of the dataset.
+      fr: Renseignements supplémentaires concernant le contenu de l’ensemble de données.
     fr:
       en: Additional information regarding the contents of the dataset.
-      fr: (FRENCH) Additional information regarding the contents of the dataset.
+      fr: Renseignements supplémentaires concernant le contenu de l’ensemble de données.
   form_snippet: fluent_text.html
   form_attrs:
     class: form-control

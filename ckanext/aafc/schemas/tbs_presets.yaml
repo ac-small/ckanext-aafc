@@ -2793,7 +2793,7 @@ presets:
       fr: Date de publication
     help_text:
       en: Date of issuance (e.g. publication) of the dataset.
-      fr: (FRENCH) Date of issuance (e.g. publication) of the dataset.
+      fr: Date de diffusion (c.-à-d. de publication) de l’ensemble de données.
     required: true
     form_panel: resource
     # copied from date preset
@@ -2813,7 +2813,7 @@ presets:
       fr: Type de content
     help_text:
       en: Supplementary information to describe the content and usage of the resource.
-      fr: (FRENCH) Supplementary information to describe the content and usage of the resource.
+      fr: Renseignements supplémentaires pour décrire le contenu et l’utilisation de la ressource.
     field_name: resource_type
     form_snippet: select.html
     display_snippet: select.html
@@ -3234,7 +3234,7 @@ presets:
   values:
     help_text:
       en: File format.
-      fr: (FRENCH) File format.
+      fr: Format de fichier
     field_name: format
     label:
       en: "Format"
@@ -3525,7 +3525,7 @@ presets:
       fr: Jeu de caractères
     help_text:
       en: Select the encoding of the resource. 
-      fr: (FRENCH) Select the encoding of the resource.
+      fr: Sélectionnez le codage de la ressource.
     form_panel: resource
     form_snippet: select.html
     form_restrict_choices_to: [UTF-8, US-ASCII]
@@ -3965,7 +3965,7 @@ presets:
       fr: "Téléchargement du fichier"
     help_text:
       en: The existing location to access the resource (https://site/path/filename). An accessible, managed file location (file:\\networklocation\filename) can be used if no URL is available.
-      fr: (FRENCH) The existing location to access the resource (https://site/path/filename). An accessible, managed file location (file:\\networklocation\filename) can be used if no URL is available.
+      fr: Emplacement actuel de la ressource (https://site/path/filename). Un emplacement de fichier accessible et géré (file:\\networklocation\filename) peut être utilisé si aucune adresse URL n’est disponible.
     required: true
     # copied from resource_url_upload
     validators: not_empty unicode remove_whitespace
