@@ -135,10 +135,10 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         except:
             log.info(">>>>get_lang() failed")
         # Sector Facet
-        bl_sector = {"en":"Sector", "fr":"Secteur"}
+        #bl_sector = {"en":"Sector", "fr":"Secteur"}
         #TODO: should use il8n, fix it when it's ready
         #facets_dict['aafc_sector'] = plugins.toolkit._('Sector')
-        facets_dict['aafc_sector'] = bl_sector.get(lang,"Sector")
+        #facets_dict['aafc_sector'] = bl_sector.get(lang,"Sector")
         
         # Publication Type Facet
         bl_publication_type = {"en":"Publication Type", "fr":"Type de publication"}
@@ -178,6 +178,8 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
     def before_search(self, search_params):
         if not search_params.get('defType', ''):
             search_params['defType'] = 'edismax' # use edismax if query type unspecified
+        if search_params.get('fq', 'owner_org'):
+            search_params.pop('defType')
 
         log.info(">>>>###search_params:")
         log.info(str(search_params))
@@ -203,12 +205,12 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
                #facets.pop('tags')
                #c.facet_titles.pop(key)
                continue
-            if key == 'aafc_sector':
+            #if key == 'aafc_sector':
             #log.info(">>>###key:" + key)
-                for item in facet['items']:
-                    field_value = item['name']				
-                    label = sh.scheming_choices_label(choices,field_value)
-                    item['display_name'] = label
+            #    for item in facet['items']:
+            #        field_value = item['name']				
+            #        label = sh.scheming_choices_label(choices,field_value)
+            #        item['display_name'] = label
             if key == 'publication':
                 for item in facet['items']:
                     field_value = item['name']				
@@ -242,7 +244,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         #log.info(">>>kesy before return  :" + str(keys))
         try:
             c.facet_titles.pop('tags')
-            c.facet_titles.pop('aafc_sector')
+            #c.facet_titles.pop('aafc_sector')
         except (AttributeError, RuntimeError):
             log.info("error when pop tags, aafc_sector from filter title")
             pass
