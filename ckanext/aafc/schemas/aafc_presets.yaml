@@ -1452,7 +1452,7 @@ presets:
       fr: Nom de la région géographique
     help_text:
       en: Select the region(s) which best reflects the geographic scope of the dataset. You may select multiple regions (Ctrl+Click).
-      fr: (FRENCH) Select the region(s) which best reflects the geographic scope of the dataset. Vous pouvez sélectionner de multiples régions (Ctrl+Clic).
+      fr: Sélectionnez la ou les régions qui reflètent le mieux la portée géographique de l’ensemble de données. Vous pouvez sélectionner plusieurs régions (Ctrl+Clic).
     choices:
     - label:
         en: Canada
