@@ -13,6 +13,12 @@ msgstr ""
 msgid "About"
 msgstr "À propos"
 
+msgid "Help"
+msgstr "Aide"
+
+msgid "AAFC Data Catalogue Help"
+msgstr "Aide concernant le Catalogue de données d'AAC"
+
 msgid "About Canada.ca"
 msgstr "À propos de Canada.ca"
 
