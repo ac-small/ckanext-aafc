@@ -2,7 +2,7 @@
 
 {% set data = data or {} %}
 {% set errors = errors or {} %}
-{% set action = form_action or h.url_for(controller='package', action='new_resource', id=pkg_name) %}
+{% set action = form_action or h.url_for(dataset_type ~ '_resource.new',  id=pkg_name) %}
 {% set lang  = request.environ.CKAN_LANG %}
 
 <label class="control-label" style="margin-bottom:15px">
