@@ -56,8 +56,8 @@ presets:
     error_snippet: fluent_text.html
     validators: fluent_text
     output_validators: fluent_core_translated_output
-    form_attrs:
-      data-module: autocomplete
+    #form_attrs:
+    #  data-module: autocomplete
 
 # Copy form tbs_presets.yaml with small modification of help text
 # Field = Description (English).
