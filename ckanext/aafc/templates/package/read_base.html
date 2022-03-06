@@ -13,7 +13,7 @@
   {% if not pkg.aafc_is_harvested == "true" %}
     {{ super() }}
   {% if h.check_access('package_update', {'id':pkg.id }) %}
-    {% link_for _('Manage'), controller='package', action='edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
+    {% link_for _('Manage'), named_route=pkg.type ~ '.edit', id=pkg.name, class_='btn btn-default', icon='wrench' %}
   {% endif %}
   {% endif %}
 {% endblock %}
