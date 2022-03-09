@@ -103,6 +103,7 @@ def create_to_registry(package_id):
         replace_regions(og_data)
         default_resource_date_published(og_data)
         update_urls_data_released(og_data)
+        update_creator(og_data)
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
         rckan = RemoteCKAN(reg_site, apikey=registry_key)
@@ -180,6 +181,7 @@ def update_to_registry(package_id):
             og_data['ready_to_publish'] == "false"
 
         replace_regions(og_data)
+        update_creator(og_data)
         default_resource_date_published(og_data)
         reg_site = os.getenv("registry_url")
         registry_key = os.getenv("registry_api_key")
@@ -254,6 +256,8 @@ def default_resource_date_published(og_data):
           if "date_published" not in i or i["date_published"] == "":
               i["date_published"] = og_data["date_published"]
 
+def update_creator(og_data):
+    og_data["creator"] = og_data["data_steward_email"]
 
 def map_regions(region):
     print (region)
