@@ -118,6 +118,86 @@
 .masthead2 a:visited {
   color:#7834bc;
 }
+/** account **/
+.account-masthead2 .account {
+  float: right;
+}
+.account-masthead2 .account ul:before,
+.account-masthead2 .account ul:after {
+  content: " ";
+  display: table;
+}
+.account-masthead2 .account ul:after {
+  clear: both;
+}
+.account-masthead2 .account ul:before,
+.account-masthead2 .account ul:after {
+  content: " ";
+  display: table;
+}
+.account-masthead2 .account ul:after {
+  clear: both;
+}
+.account-masthead2 .account ul li {
+  display: block;
+  float: left;
+  border-left: 1px solid #00232e;
+}
+.account-masthead2 .account ul li a {
+  display: block;
+  color: #bfd7de;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 10px;
+  line-height: 31px;
+}
+.account-masthead2 .account ul li a span.username,
+.account-masthead2 .account ul li a span.text {
+  margin: 0 2px 0 4px;
+}
+.account-masthead2 .account ul li a span.text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.account-masthead2 .account ul li a:hover {
+  color: #d9e7eb;
+  background-color: #00232e;
+  text-decoration: none;
+}
+.account-masthead2 .account ul li a.sub {
+  font-weight: 300;
+}
+.account-masthead2 .account ul li a .btn {
+  vertical-align: 1px;
+  margin-left: 3px;
+}
+.account-masthead2 .account .notifications a span.badge {
+  font-size: 12px;
+  margin-left: 3px;
+  padding: 1px 6px;
+  background-color: #00232e;
+  border-radius: 4px;
+  text-shadow: none;
+  color: #bfd7de;
+}
+.account-masthead2 .account .notifications a:hover span {
+  color: #ffffff;
+  background-color: #000f14;
+}
+.account-masthead2 .account .notifications.notifications-important a span.badge {
+  color: #ffffff;
+  background-color: #c9403a;
+}
+.account-masthead2 .account.authed .image {
+  padding: 0 6px;
+}
+.account-masthead2 .account.authed .image img {
+  vertical-align: -6px;
+  border-radius: 4px;
+}
+
+
 
 /* ===========================================
    The content in the middle of the front page
