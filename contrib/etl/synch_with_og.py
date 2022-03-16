@@ -155,7 +155,8 @@ def update_to_registry(package_id):
                 'data_released': reg_data['data_released'],
                 'open_government_portal_record_e': reg_data['open_government_portal_record_e'],
                 'open_government_portal_record_f': reg_data['open_government_portal_record_f'],
-                'groups': reg_data['groups']
+                'groups': reg_data['groups'],
+                'aafc_is_harvested': reg_data['aafc_is_harvested']
             }
             # Keep ODI number if it exists, some datasets may not have an ODI.
             if 'odi_reference_number' in reg_data:
