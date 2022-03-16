@@ -320,3 +320,10 @@
   padding: 5px 0 5px 5px !important;
 }
 
+
+.navbar2 {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0px;
+  border: 1px solid transparent;
+}
