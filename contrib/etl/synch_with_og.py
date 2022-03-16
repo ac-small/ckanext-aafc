@@ -336,6 +336,15 @@ def replace_regions(og_data):
     return og_data
 
 
+def reformat_date(date_string):
+    '''
+    Convert the incoming date string into simple format
+    :param date_string:
+    :return: simplified date string
+    '''
+    date_obj = datetime.datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%f')
+    return date_obj.strftime('%Y-%m-%d')
+
 def update_urls_data_released(og_data):
     '''
     Called by:
@@ -343,9 +352,9 @@ def update_urls_data_released(og_data):
     This function adds open gov URL's and data_released
     for newly created (geospatial records)
     '''
-    og_data['open_government_portal_record_e'] = 'http://open.canada.ca/data/en/dataset/' + og_data['id']
-    og_data['open_government_portal_record_f'] = 'http://ouvert.canada.ca/data/fr/dataset/' + og_data['id']
-    og_data['data_released'] = og_data['metadata_created']
+    og_data['open_government_portal_record_e'] = 'https://open.canada.ca/data/en/dataset/' + og_data['id']
+    og_data['open_government_portal_record_f'] = 'https://ouvert.canada.ca/data/fr/dataset/' + og_data['id']
+    og_data['data_released'] = reformat_date(og_data['metadata_created'])
 
 def get_data_from_url(package_id, url):
     #site = os.getenv("registry_url")
