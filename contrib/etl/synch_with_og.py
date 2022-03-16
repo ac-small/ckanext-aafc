@@ -211,17 +211,29 @@ def switch_branch(con_str):
     '''
     branches = {
         "Science and Technology Branch":"ae56a90e-502b-43f9-b256-35a8f3a71bd3",
+        "STB":"ae56a90e-502b-43f9-b256-35a8f3a71bd3",
         "Corporate Management Branch":"186eb448-b6b5-4f16-b615-dba53e26a1ad",
+        "CMB":"186eb448-b6b5-4f16-b615-dba53e26a1ad",
         "Deputy Minister's Office":"acf141cc-2239-4884-8a2b-c7cdae8ea486",
+        "DMO":"acf141cc-2239-4884-8a2b-c7cdae8ea486",
         "International Affairs Branch":"2da3aae3-5901-4bbf-8d08-080d0665bad9",
+        "IAB":"2da3aae3-5901-4bbf-8d08-080d0665bad9",
         "Information Systems Branch":"4b90a457-bbe8-4e2b-938e-0358307d2af8",
+        "ISB":"4b90a457-bbe8-4e2b-938e-0358307d2af8",
         "Market and Industry Services Branch":"0f41dff5-e56d-447b-85e1-3a95a8fb7cc7",
+        "MISB":"0f41dff5-e56d-447b-85e1-3a95a8fb7cc7",
         "Legal Services":"099265ac-e7b0-4f02-8c3d-45a4a4d3bac5",
+        "LS":"099265ac-e7b0-4f02-8c3d-45a4a4d3bac5",
         "Minister's Office":"e507595f-a6c7-4244-a0f2-3f4de258b2d5",
+        "MO":"e507595f-a6c7-4244-a0f2-3f4de258b2d5",
         "Office of Audit and Evaluation":"4cc47fdc-891a-4349-a9fd-f43a65476db1",
+        "OAE":"4cc47fdc-891a-4349-a9fd-f43a65476db1",
         "Strategic Policy Branch":"b93050e4-1601-41f5-bb16-bf95709c1a30",
+        "SPB":"b93050e4-1601-41f5-bb16-bf95709c1a30",
         "Public Affairs Branch":"b6e22d31-5878-4378-9bc1-8c7a7f4574e2",
-        "Programs Branch":"71619d89-756b-4795-9e1b-ecf460dce051"
+        "PAB":"b6e22d31-5878-4378-9bc1-8c7a7f4574e2",
+        "Programs Branch":"71619d89-756b-4795-9e1b-ecf460dce051",
+        "PB":"71619d89-756b-4795-9e1b-ecf460dce051"
     }
     # Default (for now) if there is no match, place in generic AAFC Organization
     generic_aafc_org = os.getenv("organization_id")
