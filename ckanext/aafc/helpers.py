@@ -23,7 +23,7 @@ DATAPREVIEW_MAX = 500
 FGP_URL_OPTION = 'fgp.service_endpoint'
 FGP_URL_DEFAULT = 'http://localhost/'
 
-AAFC_EXT_VER = '1.0.0'
+AAFC_EXT_VER = '2.0.0'
 OPEN_GOV_URL = 'N/A'
 
 
