@@ -1,6 +1,10 @@
 {% ckan_extends %}
 {% block styles %}
-  {{ super() }}
+{#{{ super() }}#}
+  {% set main_css = h.get_rtl_css() if h.is_rtl_language() else g.main_css %}
+   <link rel="stylesheet" href="{{main_css}}" />
+   {# strip '/base/' prefix and '.css' suffix #}
+   <!-- {#% asset main_css[6:-4] %#} -->
   <script src="https://ssl-templates.services.gc.ca/app/cls/WET/gcintranet/v4_0_29/cdts/compiled/soyutils.js"></script>
   <script src="https://ssl-templates.services.gc.ca/app/cls/WET/gcintranet/v4_0_29/cdts/compiled/wet-en.js"></script>
   <noscript>
