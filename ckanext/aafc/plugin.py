@@ -2,48 +2,38 @@
 # -*- coding: utf-8 -*-
 import os
 import os.path
-#from pylons.i18n import _
-#from pylons.i18n.translation import get_lang
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.lib.plugins import DefaultDatasetForm
 from ckan.logic import validators as logic_validators
 from routes.mapper import SubMapper
-#from paste.reloader import watch_file
-#import ckanapi
-from ckan.lib.base import c
 import routes.mapper
 from ckanext.aafc import validators
 from ckanext.aafc import helpers
 from time import gmtime, strftime
 from ckanext.scheming import helpers as sh
 import logging
-#import ckanapi_exporter.exporter as exporter
 import ckan.lib.base as base
 import json
 from ckan.lib.plugins import DefaultTranslation
 from datetime import datetime
-#from unidecode import unidecode
 
 import ckan as ckan
 import ckan.lib.helpers as h
+import ckanext.aafc.blueprint as blueprint
 import ckan.lib.formatters as formatters
 import ckan.model as model
-#import webhelpers.html as html
 import dateutil.parser
 import json as json
 import geomet.wkt as wkt
 
-#from webhelpers.html import HTML, literal
-#from webhelpers.html.tags import link_to
 from ckan.common import config, _, json, request, c
-#from pylons import response
-#from pylons.i18n import gettext
+
 
 log = logging.getLogger(__name__)
 
 class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslation):
-    plugins.implements(plugins.IRoutes)
+    plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IConfigurer) 
     plugins.implements(plugins.ITemplateHelpers)  
     plugins.implements(plugins.IValidators, inherit=True)
@@ -61,8 +51,6 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         return ['en','fr']
 
     def i18n_domain(self):
-        #dir = self.i18n_directory() 
-        #log.info("i18n dir:{idir}".format(idir=dir))
         return "ckanext-aafc" 
     # IValidators
 
@@ -73,10 +61,6 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
             'canada_tags': validators.canada_tags,
             'geojson_validator': validators.geojson_validator,
             'email_validator': validators.email_validator,
-#            'protect_portal_release_date':
-#                validators.protect_portal_release_date,
-#            'canada_copy_from_org_name':
-#                validators.canada_copy_from_org_name,
             'canada_non_related_required':
                 validators.canada_non_related_required,
             'if_empty_set_to':
@@ -86,27 +70,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
     #ITemplateHelpers
     def get_helpers(self):
         return dict((h, getattr(helpers, h)) for h in [
-#            'user_organizations',
-#            'openness_score',
-#            'remove_duplicates',
             'get_license',
-#            'normalize_strip_accents',
-#            'portal_url',
-#            'googleanalytics_id',
-#            'loop11_key',
-#            'drupal_session_present',
-#            'fgp_url',
-#            'contact_information',
-#            'show_subject_facet',
-#            'show_fgp_facets',
-#            'show_openinfo_facets',
-#            'gravatar',
-#            'linked_gravatar',
-#            'linked_user',
-#            'json_loads',
-#            'catalogue_last_update_date',
-#            'dataset_rating',
-#            'dataset_comments',
             'get_translated_t',
             'language_text_t',
             'gen_uid',
@@ -121,23 +85,11 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
 
     def dataset_facets(self, facets_dict, package_type):
         ''' Update the facets_dict and return it. '''
-
-        #facets_dict.update({
-        #    'organization': _('Organization'),
-        #    'res_format': _('Format'),
-        #    'aafc_sector': _('Sector'),
-        #    'res_type': _('Resource Type'),
-        #    })
         lang = "en"
         try:
             lang =  get_lang()[0]
         except:
             log.info(">>>>get_lang() failed")
-        # Sector Facet
-        bl_sector = {"en":"Sector", "fr":"Secteur"}
-        #TODO: should use il8n, fix it when it's ready
-        #facets_dict['aafc_sector'] = plugins.toolkit._('Sector')
-        facets_dict['aafc_sector'] = bl_sector.get(lang,"Sector")
         
         # Publication Type Facet
         bl_publication_type = {"en":"Publication Type", "fr":"Type de publication"}
@@ -177,39 +129,21 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
     def before_search(self, search_params):
         if not search_params.get('defType', ''):
             search_params['defType'] = 'edismax' # use edismax if query type unspecified
-
+        if search_params.get('fq', 'owner_org'):
+            search_params.pop('defType')
         log.info(">>>>###search_params:")
         log.info(str(search_params))
 
         return search_params
 
-    def after_search(self, search_results, search_params):
-        pr = sh.scheming_get_preset("aafc_sector")
-        if pr is not None:
-            choices = sh.scheming_field_choices(pr)
-        
+    def after_search(self, search_results, search_params):      
         dt = sh.scheming_get_preset("publication_type")
         if dt is not None:
             options = sh.scheming_field_choices(dt)
-        #for result in search_results.get('results', []):
-            #for extra in result.get('extras', []):
-            #    if extra.get('key') in ['sector' ]:
-            #        result[extra['key']] = "xxx" #extra['value']
         facets = search_results.get('search_facets')
         if not facets:
             return search_results
         for key, facet in facets.items():
-            if key == 'tags':
-               #log.info(">>>pop :" + key)
-               #facets.pop('tags')
-               #c.facet_titles.pop(key)
-               continue
-            if key == 'aafc_sector':
-            #log.info(">>>###key:" + key)
-                for item in facet['items']:
-                    field_value = item['name']
-                    label = sh.scheming_choices_label(choices,field_value)
-                    item['display_name'] = label
             if key == 'publication':
                 for item in facet['items']:
                     field_value = item['name']
@@ -231,22 +165,12 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
                 for item in facet['items']:
                     field_value = item['name']
                     lic_data = helpers.get_license(field_value)
-                    #title_fr = lic_data["title_fra"]
                     title_fr = lic_data.title_fra
                     if lang == "fr":
                         item['display_name'] = title_fr 
 
-                    #log.info("field_value: %s, title fra: %s"%(field_value,title_fr))
-
                 log.info(">>>>key license_id,language: %s"%lang)
         keys  = search_results.get('search_facets').keys()
-        #log.info(">>>kesy before return  :" + str(keys))
-        try:
-            c.facet_titles.pop('tags')
-            c.facet_titles.pop('aafc_sector')
-        except (AttributeError, RuntimeError):
-            log.info("error when pop tags, aafc_sector from filter title")
-            pass
         
         return search_results
 
@@ -260,13 +184,9 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
         data_dict['subject'] = json.loads(data_dict.get('subject', '[]'))
 
         titles = json.loads(data_dict.get('title_translated', '{}'))
-        #data_dict['title_fr'] = unidecode(titles.get('fr', '').lower(), "utf-8")
         data_dict['title_string'] = titles.get('en', '').lower()
 
         output_file = "/tmp/b4index_" + strftime("%Y-%m-%d_%H_%M_%S", gmtime()) + ".json"
-        #with open(output_file,"w") as fout:
-        #   output_str = json.dumps(data_dict)
-        #   fout.write(output_str)
         return data_dict
 
 
@@ -291,41 +211,13 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
 
     def before_map(self, route_map):
         log.info(">>>>before_map called")
-        with routes.mapper.SubMapper(route_map,
-                controller='ckanext.aafc.plugin:AAFCController') as m:
-            m.connect('export', '/export',
-                    action='export')
-            m.connect('help', '/help',
-                    action='help')
         return route_map
 
     def after_map(self, route_map):
         return route_map
 
-
-#class AAFCController(base.BaseController):
-#
-#    def export(self):
-#        '''
-#        Use ckanapi-exporter to export records into a csv file.
-#        Columns exported are specified in the /export/export.columns.json file.
-#        Exported files are labelled with current datetime.
-#        '''
-#        csv_content = exporter.export('http://localhost:5000', 'ckanext-aafc/ckanext/aafc/export/export_columns.json', str(c.userobj.apikey) , "{'include_private':'True'}")
-#        time = datetime.now().strftime("%Y%m%d-%H%M%S")
-#        filename = ("AAFC-Data-Catalogue-Export " + time + ".csv")
-#        response.headers['Content-Encoding'] = 'utf-8-sig'
-#        response.headers['Content-Type'] = 'text/plain; charset=utf-8-sig'
-#        response.headers["Content-Disposition"] = "attachment; filename=" + filename
-#        response.write("\xEF\xBB\xBF")
-#        return csv_content
-#
-#    def help(self):
-#        '''
-#        Load the help page in the top menu.
-#        '''
-#        return base.render('home/help.html')
-#
+    def get_blueprint(self):
+        return blueprint.get_blueprints()
 
 class WetTheme(plugins.SingletonPlugin):
     """

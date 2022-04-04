@@ -100,7 +100,10 @@
   </section>
   <div>
     {% for facet in c.facet_titles %}
-      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
+      {% if 'tags' in facet %}
+      {% else %}
+        {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
+      {% endif %}
     {% endfor %}
   </div>
   <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
