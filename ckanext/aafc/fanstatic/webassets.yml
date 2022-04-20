@@ -1,0 +1,5 @@
+aafc_js:
+   contents:
+       - fp.js
+       - extra.js
+       - dynamicDropdown.js
