@@ -387,8 +387,10 @@ presets:
     validators: fluent_tags
     output_validators: fluent_tags_output
     form_attrs:
-      #data-module: autocomplete
+      class: full-width
+      data-module: autocomplete
       data-module-tags: ""
+      data-module-source: /api/2/util/tag/autocomplete?incomplete=?
 
 # Field = Subject.
 # List box Source: Subject code table (refer to Data Migration).
