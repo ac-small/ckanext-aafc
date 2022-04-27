@@ -22,6 +22,9 @@ msgstr "Au sujet du gouvernement"
 msgid "About this site"
 msgstr "À propos de ce site"
 
+msgid "AAFC Data Catalogue"
+msgstr "Catalogue de données d'AAC"
+
 msgid "About {0}"
 msgstr " propos de {0}"
 
