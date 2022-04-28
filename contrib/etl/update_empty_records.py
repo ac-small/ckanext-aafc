@@ -149,8 +149,8 @@ def main():
         data_og = res_og['result']
         # populate retrieved value
         data_fill = {'data_released': reformat_date(data_og['metadata_created']),
-                     'open_government_portal_record_e': u'http://open.canada.ca/data/en/dataset/%s' % package_id,
-                     'open_government_portal_record_f': u'http://ouvert.canada.ca/data/fr/dataset/%s' % package_id}
+                     'open_government_portal_record_e': u'https://open.canada.ca/data/en/dataset/%s' % package_id,
+                     'open_government_portal_record_f': u'https://ouvert.canada.ca/data/fr/dataset/%s' % package_id}
         syncronize_registry(package_id, data_fill)
 
         print("id: %s, , title: %s, publication: %s" % (a_res["id"], a_res["title"], a_res["publication"])).encode('utf-8')

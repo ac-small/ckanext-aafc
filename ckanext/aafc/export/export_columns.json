@@ -41,12 +41,6 @@
   "Ineligibility Reason": {
       "pattern_path": ["ineligibility_reason$"]
   },
-  "DRF Program Inventory": {
-      "pattern_path": ["^drf_program_inventory$"]
-  },
-  "DRF Core Responsibilities": {
-      "pattern_path": ["^drf_core_responsibilities$"]
-  },
   "Publisher English" : {
       "pattern_path": ["^org_title_at_publication$", "^en$"]
   },

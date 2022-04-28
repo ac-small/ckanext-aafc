@@ -16,18 +16,18 @@ def dump_all_remote_ids():
     '''
     used only during dev
     '''
-    ids = get_all_ids()
+    ids = get_all_public_ids()
     print(len(ids))
     with open("Data/" + "all_ids_from_og.json", "w") as fo:
         fo.write(json.dumps(ids))
 
 def get_missing_ids():
-    remote_ids = get_all_ids()
+    remote_ids = get_all_public_ids()
     #For test during dev
     #with open("Data/" + "all_ids_from_og.json") as fo:
     #    remote_ids = json.load(fo)
 
-    local_ids = get_all_ids(False)
+    local_ids = get_all_public_ids(False)
     #print("local id len:%i"%len(local_ids))
     #print("remote id len:%i"%len(remote_ids))
 

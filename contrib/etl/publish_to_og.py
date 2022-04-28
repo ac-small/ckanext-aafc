@@ -40,7 +40,7 @@ def get_n_post(package_id):
     branch = og_data["organization"]["description"].split('|')
     branch_en = branch[0].strip()
     branch_fr = branch[1].strip()
-    to_add = {"metadata_contact": {"fr":"Gouvernement du Canada; Agriculture et Agroalimentaire Canada, "+branch_fr+", "+data_steward, "en":"Government of Canada; Agriculture and Agri-Food Canada, "+branch_en+", "+data_steward}}
+    to_add = {"metadata_contact": {"fr":"Gouvernement du Canada; Agriculture et Agroalimentaire Canada, "+branch_fr+", "+data_steward, "en":"Government of Canada; Agriculture and Agri-Food Canada, "+branch_en+", "+data_steward}, "maintainer_email":data_steward}
 
     for k, v in to_add.items():
         og_data[k] = to_add[k]

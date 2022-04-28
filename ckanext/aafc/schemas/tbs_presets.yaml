@@ -161,7 +161,7 @@ presets:
       fr: Direction générale de la publication
     help_text:
       en: Branch within the department responsible for publishing.
-      fr: (FRENCH) Branch within the department responsible for publishing.
+      fr: Direction générale du Ministère qui est responsable de la publication.
     required: true
     form_include_blank_choice: true
     form_select_attrs:
@@ -190,10 +190,10 @@ presets:
     fluent_help_text:
       en:
         en: The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
-        fr: (FRENCH) The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
+        fr: Organisation responsable de la création de l’ensemble de données. Veuillez ne rien indiquer si le nom de l’organisation est identique à celui de l’organisation actuelle.
       fr:
         en: The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
-        fr: (FRENCH) The organization responsible for creating the dataset. Please leave blank if the the organization name is identical to current organization name.
+        fr: Organisation responsable de la création de l’ensemble de données. Veuillez ne rien indiquer si le nom de l’organisation est identique à celui de l’organisation actuelle.
     validators: fluent_text
 #################################
 # JK REmoved the canada_copy_from_org_name
@@ -230,10 +230,10 @@ presets:
     fluent_help_text:
       en:
         en: Work group or business unit of the publishing organization.
-        fr: (FRENCH) Work group or business unit of the publishing organization.
+        fr: Groupe de travail ou unité opérationnelle de l’organisation chargée de la publication.
       fr:
         en: Work group or business unit of the publishing organization.
-        fr: (FRENCH) Work group or business unit of the publishing organization.
+        fr: Groupe de travail ou unité opérationnelle de l’organisation chargée de la publication.
 
     # copied from fluent_text preset
     form_attrs:
@@ -277,10 +277,10 @@ presets:
     fluent_help_text:
       en:
         en: Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
-        fr: (FRENCH) Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
+        fr: Personnes ou organisations qui ont participé à la création de l’ensemble de données (séparez les entités multiples par une virgule).
       fr:
         en: Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
-        fr: (FRENCH) Persons or organizations that participated in the creation of the dataset.  (separate multiple entities by commas)
+        fr: Personnes ou organisations qui ont participé à la création de l’ensemble de données (séparez les entités multiples par une virgule).
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -371,10 +371,10 @@ presets:
     fluent_help_text:
       en:
         en: Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
-        fr: (FRENCH) Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
+        fr: Utilisez des termes ou des phrases qui seront utilisés par le public cible. Séparez les termes par une virgule.
       fr:
         en: Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
-        fr: (FRENCH) Use terms or phrases that will be used by the target audience.  Separate terms by a comma.
+        fr: Utilisez des termes ou des phrases qui seront utilisés par le public cible. Séparez les termes par une virgule.
     required: true
 ###################
 # JK Need to investigate TBS tag_validators
@@ -544,7 +544,7 @@ presets:
       fr: Audience
     help_text:
       en: "For whom the resource is intended.  You may select multiple options (Ctrl+Click)"
-      fr: "(FRENCH) For whom the resource is intended. Vous pouvez sélectionner de multiples options (Ctrl+Clic)"
+      fr: "Indiquez à qui la ressource est destinée. Vous pouvez sélectionner plusieurs options (Ctrl+Clic)."
     form_snippet: multiple_select_special.html
     display_snippet: list_inline.html
     validators: scheming_multiple_choice
@@ -698,7 +698,7 @@ presets:
 #################################################
     help_text:
       en: GeoJSON format specification to represent the spatial range.
-      fr: (FRENCH) GeoJSON format specification to represent the spatial range.
+      fr: Spécification en format GeoJSON pour représenter l’étendue spatiale.
 
 # Field = Geographic Region Name.
 # List box Source: Geographic Region name code table (refer to Data Migration).
@@ -716,7 +716,7 @@ presets:
       fr: Nom de la région géographique
     help_text:
       en: Select the region(s) which best reflects the geographic scope of the dataset. You may select multiple regions (Ctrl+Click).
-      fr: (FRENCH) Select the region(s) which best reflects the geographic scope of the dataset. Vous pouvez sélectionner de multiples régions (Ctrl+Clic).
+      fr: Sélectionnez la ou les régions qui reflètent le mieux la portée géographique de l’ensemble de données. Vous pouvez sélectionner plusieurs régions (Ctrl+Clic).
     choices:
     - label:
         en: Canada
@@ -2224,10 +2224,10 @@ presets:
     fluent_help_text:
       en:
         en: Location that has additional or contextual information.
-        fr: (FRENCH) Location that has additional or contextual information.
+        fr: Emplacement qui contient des renseignements supplémentaires ou contextuels.
       fr:
         en: Location that has additional or contextual information.
-        fr: (FRENCH) Location that has additional or contextual information.
+        fr: Emplacement qui contient des renseignements supplémentaires ou contextuels.
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -2259,10 +2259,10 @@ presets:
     fluent_help_text:
       en:
         en: The series title of which the dataset belongs to.
-        fr: (FRENCH) The series title of which the dataset belongs to.
+        fr: Titre de la série à laquelle appartient l’ensemble de données.
       fr:
         en: The series title of which the dataset belongs to.
-        fr: (FRENCH) The series title of which the dataset belongs to.
+        fr: Titre de la série à laquelle appartient l’ensemble de données.
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -2292,10 +2292,10 @@ presets:
     fluent_help_text:
       en:
         en: Enter the specific identification number.
-        fr: (FRENCH) Enter the specific identification number.
+        fr: Entrez le numéro d’identification spécifique.
       fr:
         en: Enter the specific identification number.
-        fr: (FRENCH) Enter the specific identification number.
+        fr: Entrez le numéro d’identification spécifique.
     # copied from fluent_text preset
     form_attrs:
       class: form-control
@@ -2649,10 +2649,10 @@ presets:
     fluent_help_text:
       en:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
       fr:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
     required: true
     # copied from fluent_text preset
     form_attrs:
@@ -2795,7 +2795,7 @@ presets:
       fr: Date de publication
     help_text:
       en: Date of issuance (e.g. publication) of the dataset.
-      fr: (FRENCH) Date of issuance (e.g. publication) of the dataset.
+      fr: Date de diffusion (c.-à-d. de publication) de l’ensemble de données.
     required: true
     form_panel: resource
     # copied from date preset
@@ -2815,7 +2815,7 @@ presets:
       fr: Type de content
     help_text:
       en: Supplementary information to describe the content and usage of the resource.
-      fr: (FRENCH) Supplementary information to describe the content and usage of the resource.
+      fr: Renseignements supplémentaires pour décrire le contenu et l’utilisation de la ressource.
     field_name: resource_type
     form_snippet: select.html
     display_snippet: select.html
@@ -3236,7 +3236,7 @@ presets:
   values:
     help_text:
       en: File format.
-      fr: (FRENCH) File format.
+      fr: Format de fichier
     field_name: format
     label:
       en: "Format"
@@ -3527,7 +3527,7 @@ presets:
       fr: Jeu de caractères
     help_text:
       en: Select the encoding of the resource. 
-      fr: (FRENCH) Select the encoding of the resource.
+      fr: Sélectionnez le codage de la ressource.
     form_panel: resource
     form_snippet: select.html
     form_restrict_choices_to: [UTF-8, US-ASCII]
@@ -3967,7 +3967,7 @@ presets:
       fr: "Téléchargement du fichier"
     help_text:
       en: The existing location to access the resource (https://site/path/filename). An accessible, managed file location (file:\\networklocation\filename) can be used if no URL is available.
-      fr: (FRENCH) The existing location to access the resource (https://site/path/filename). An accessible, managed file location (file:\\networklocation\filename) can be used if no URL is available.
+      fr: Emplacement actuel de la ressource (https://site/path/filename). Un emplacement de fichier accessible et géré (file:\\networklocation\filename) peut être utilisé si aucune adresse URL n’est disponible.
     required: true
     # copied from resource_url_upload
     validators: not_empty unicode remove_whitespace

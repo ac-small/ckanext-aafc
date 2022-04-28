@@ -45,10 +45,10 @@ presets:
     fluent_help_text:
       en:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
       fr:
         en: Title that reflects the content of the dataset and can be easily understood by users.
-        fr: (FRENCH) Title that reflects the content of the dataset and can be easily understood by users.
+        fr: Titre qui reflète le contenu de l’ensemble de données et qui peut être facilement compris par l’utilisateur.
     required: true
     # copied from fluent_text preset
     form_snippet: fluent_text.html
@@ -83,10 +83,10 @@ presets:
     fluent_help_text:
       en:
         en: "Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
-        fr: "(FRENCH) Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
+        fr: "Résumé du contenu de l’ensemble de données pour faciliter la recherche et fournir à l’utilisateur des renseignements sur la ressource."
       fr:
         en: "Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
-        fr: "(FRENCH) Brief summary of the contents of the dataset, to support search and to provide users with information about the asset."
+        fr: "Résumé du contenu de l’ensemble de données pour faciliter la recherche et fournir à l’utilisateur des renseignements sur la ressource."
     required: true
     # copied from fluent_markdown preset
     form_attrs:
@@ -134,7 +134,7 @@ presets:
          fr: Courriel du responsable des données
       help_text:
          en: Individual responsible for inquiries   (user.name@agr.gc.ca).
-         fr: (FRENCH) Individual responsible for inquiries   (user.name@agr.gc.ca)
+         fr: Personne responsable des demandes de renseignements (nom.utilisateur@agr.gc.ca).
  
 - preset_name: procured_data
   values:
@@ -161,7 +161,7 @@ presets:
          fr: Motif du rejet 
       help_text:
          en: If the dataset is not eligible for release for the public, select the reason why the dataset is not eligble for release.
-         fr: (FRENCH) If the dataset is not eligible for release for the public, select the reason why the dataset is not eligble for release.
+         fr: Si l’ensemble de données n’est pas admissible à la publication, sélectionnez la raison pour laquelle c’est le cas. 
       required: true
       form_include_blank_choice: true
       choices:
@@ -222,7 +222,7 @@ presets:
       fr: Dépôt de sources de données
     help_text:
       en: Select from where the dataset source is located.
-      fr: (FRENCH) Select from where the dataset source is located.
+      fr: Sélectionnez l’emplacement de la source de l’ensemble de données.
     required: true
     sorted_choices: true
     form_include_blank_choice: true
@@ -1453,7 +1453,7 @@ presets:
       fr: Nom de la région géographique
     help_text:
       en: Select the region(s) which best reflects the geographic scope of the dataset. You may select multiple regions (Ctrl+Click).
-      fr: (FRENCH) Select the region(s) which best reflects the geographic scope of the dataset. Vous pouvez sélectionner de multiples régions (Ctrl+Clic).
+      fr: Sélectionnez la ou les régions qui reflètent le mieux la portée géographique de l’ensemble de données. Vous pouvez sélectionner plusieurs régions (Ctrl+Clic).
     choices:
     - label:
         en: Canada
@@ -1537,7 +1537,7 @@ presets:
       fr: Éditeur - Nom actuel de l’organisation
     help_text:
       en: Branch name primarily responsible for publishing.
-      fr: (FRENCH) Branch name primarily responsible for publishing.
+      fr: Nom de la direction générale principalement responsable de la publication.
     form_include_blank_choice: true
     form_select_attrs:
       class: form-control
@@ -1554,7 +1554,7 @@ presets:
       fr: Propriétaire des données
     help_text:
       en: Senior officer(s) or role(s) accountable for the dataset (separate multiple entities by commas).
-      fr: Senior officer(s) or role(s) accountable for the dataset (séparer les multiples entités par des virgules).
+      fr: Agent(s) ou rôle(s) responsable(s) de l’ensemble de données (séparez les entités multiples par une virgule).
     required: true
     #value: aafc_author_email_value
     #classes: ['hidden']

@@ -121,7 +121,7 @@ dataset_fields:
     fr: Source faisant autorité
   help_text:
     en: "The data is recognized to be the primary source that is valid and/or trusted by departmental or external users, e.g., current, reliable, purposeful and publisher-authorized."
-    fr: "(FRENCH) The data is recognized to be the primary source that is valid and/or trusted by departmental or external users, e.g., current, reliable, purposeful and publisher-authorized."
+    fr: "Les données sont reconnues comme étant la principale source valide et sûre par les utilisateurs ministériels ou externes, c’est-à-dire que les données sont à jour, fiables, pertinentes et autorisées par l’éditeur."
   field_name: authoritative_source
   display_group: Basic Information
 
@@ -132,7 +132,7 @@ dataset_fields:
 - preset: aafc_yesno_required
   label:
     en: Is Harvested
-    fr: Is Harvested  
+    fr: Données recueillies  
   field_name: aafc_is_harvested
   required: false
   classes: ['hidden']
@@ -331,10 +331,10 @@ dataset_fields:
   fluent_help_text:
     en:
       en: Additional information regarding the contents of the dataset.
-      fr: (FRENCH) Additional information regarding the contents of the dataset.
+      fr: Renseignements supplémentaires concernant le contenu de l’ensemble de données.
     fr:
       en: Additional information regarding the contents of the dataset.
-      fr: (FRENCH) Additional information regarding the contents of the dataset.
+      fr: Renseignements supplémentaires concernant le contenu de l’ensemble de données.
   form_snippet: fluent_text.html
   form_attrs:
     class: form-control
