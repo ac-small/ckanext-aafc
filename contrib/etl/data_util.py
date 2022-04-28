@@ -81,7 +81,6 @@ def puerg_data_from_list(file = None):
 def dump_data_as_json(params):  # site, json_file_name, from_og = False):
     json_file_name, flag = params
     print("dump_data_as_json called")
-    print [json_file_name, flag]
 
     if flag == 'f':
         all_data = get_all_data_og()

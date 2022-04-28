@@ -1,7 +1,7 @@
 import json
 import os
 import urllib
-import urllib2
+import urllib.request as urllib2
 from datetime import datetime, timedelta
 import yaml
 from ckanapi import RemoteCKAN
