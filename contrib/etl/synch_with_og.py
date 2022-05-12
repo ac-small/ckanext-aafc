@@ -7,8 +7,6 @@ from datetime import datetime, timedelta
 from random import randint
 from ckanapi import RemoteCKAN
 
-
-#
 to_replace = {"owner_org": "d266f358-17ff-4625-b126-da390146909c" , "org_title_at_publication":"agriculture_and_agrifood_canada"  }
 
 
@@ -343,7 +341,7 @@ def reformat_date(date_string):
     :param date_string:
     :return: simplified date string
     '''
-    date_obj = datetime.datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%f')
+    date_obj = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%S.%f')
     return date_obj.strftime('%Y-%m-%d')
 
 def update_urls_data_released(og_data):
