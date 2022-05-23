@@ -1,5 +1,5 @@
 from flask import Blueprint
-import ckanapi_exporter.exporter as exporter
+#import ckanapi_exporter.exporter as exporter
 import ckan.plugins.toolkit as tk
 from datetime import datetime
 from flask import Response, make_response
@@ -10,8 +10,8 @@ def help_page():
     return tk.render('/home/help.html')
 
 def build_export():
-    csv_content = exporter.get_datasets_from_ckan("http://localhost:5000/", apikey="")
-    #csv_content="Hello World"
+    #csv_content = exporter.get_datasets_from_ckan("http://localhost:5000/", apikey="")
+    csv_content="Hello World"
     return csv_content
 
 def export():
