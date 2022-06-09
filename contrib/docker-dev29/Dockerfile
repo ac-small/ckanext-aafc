@@ -61,15 +61,14 @@ RUN . $APP/bin/activate && cd $APP/src && pip install setuptools==44.1.0 && pip 
     pip install ckanapi && pip install geojson && pip install geomet && \
     deactivate && . $APP/bin/activate && \
     cd $APP/src/ckan && cp who.ini /app/ckan/config/ && \
-    #pip install -e "git+https://
-	.com/aafc/ckanext-scheming.git#egg=ckanext-scheming" && \
+    #pip install -e "git+https://github.com/aafc/ckanext-scheming.git#egg=ckanext-scheming" && \
     pip install -e git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent && \
     pip install -e git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial && \
     pip install -r /app/ckan/venv/src/ckanext-spatial/pip-requirements.txt && \
     pip install -e git+https://github.com/ckan/ckanext-harvest.git#egg=ckanext-harvest && \
     pip install -r /app/ckan/venv/src/ckanext-harvest/pip-requirements.txt && \
     pip install -e git+https://github.com/ckan/ckanext-geoview.git#egg=ckanext-geoview && \
-    pip install -r /app/ckan/venv/src/ckanext-geoview/pip-requirements.txt && \
+    pip install -r /app/ckan/venv/src/ckanext-geoview/dev-requirements.txt && \
     pip install -e git+https://gitlab.com/aafc/ckanext-aafcesas.git#egg=ckanext-aafcesas && \
     ckan generate config ${CKCF} && \
     ckan config-tool ${CKCF} "ckan.site_url = ${SITE_URL}" && \

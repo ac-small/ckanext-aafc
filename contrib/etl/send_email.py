@@ -3,8 +3,8 @@ import smtplib
 import email.utils
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.MIMEBase import MIMEBase
-from email import Encoders
+from email.mime.base import MIMEBase
+from email import encoders
 
 # Replace sender with a "From" address.
 # Note: This address must be verified.
@@ -60,7 +60,7 @@ msg['To'] = RECIPIENT
 for log in LOGS:
     part0 = MIMEBase('application', 'octect-stream')
     part0.set_payload(open(log, 'rb').read())
-    Encoders.encode_base64(part0)
+    encoders.encode_base64(part0)
     part0.add_header (
       'Content-Disposition',
        'attachment; filename={}'.format(os.path.basename(log))
