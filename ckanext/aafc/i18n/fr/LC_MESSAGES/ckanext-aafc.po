@@ -99,3 +99,6 @@ msgstr "Proposez un jeu de données"
 
 msgid "Export Datasets"
 msgstr "(FR) Export Datasets"
+
+msgid "Not Published Externally"
+msgstr "Non publié en externe"
