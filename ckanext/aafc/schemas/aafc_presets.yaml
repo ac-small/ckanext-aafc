@@ -135,6 +135,7 @@ presets:
       help_text:
          en: Individual responsible for inquiries   (user.name@agr.gc.ca).
          fr: Personne responsable des demandes de renseignements (nom.utilisateur@agr.gc.ca).
+      validators: email_validator scheming_required string_safe strip_value
  
 - preset_name: procured_data
   values:
