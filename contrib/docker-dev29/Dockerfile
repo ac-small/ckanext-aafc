@@ -15,7 +15,7 @@ ENV SOLR=/app/ckan/solr/bin/solr
 
 # Prepare OS
 RUN mkdir -p /app/ckan/admin /app/ckan/data
-RUN apt update && apt install -y gnupg2 curl wget && \
+RUN apt update && apt install --fix-missing -y gnupg2 curl wget && \
     apt install -y apache2 postgresql-12 postgresql-12-postgis-3 libapache2-mod-wsgi redis-server ssh && \
     apt install -y vim git zip unzip pkg-config expect dos2unix openssh-server telnet mc && \
     apt install -y gcc make g++ automake linux-headers-generic && \
@@ -59,9 +59,12 @@ RUN . $APP/bin/activate && cd $APP/src && pip install setuptools==44.1.0 && pip 
     pip install Shapely vdm ckantoolkit geoalchemy2 && \
     pip install -e git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars && \
     pip install ckanapi && pip install geojson && pip install geomet && \
+	pip install SQLAlchemy==1.3.5 && \
     deactivate && . $APP/bin/activate && \
     cd $APP/src/ckan && cp who.ini /app/ckan/config/ && \
     #pip install -e "git+https://github.com/aafc/ckanext-scheming.git#egg=ckanext-scheming" && \
+	pip install -e git+https://github.com/aafc-ckan/losser.git#egg=losser && \
+	pip install ckanapi_exporter && \
     pip install -e git+https://github.com/ckan/ckanext-fluent.git#egg=ckanext-fluent && \
     pip install -e git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial && \
     pip install -r /app/ckan/venv/src/ckanext-spatial/pip-requirements.txt && \
@@ -99,18 +102,21 @@ RUN adduser --disabled-password --gecos "" --shell /bin/bash ckan && \
 RUN su - ckan -c "$SOLR start && cd /app/ckan/solr && bin/solr create -c ckan"
 RUN cd /app/ckan/solr/server/solr/ckan/conf/ && ln -sf /app/ckan/venv/src/ckan/ckan/config/solr/schema.xml ./schema.xml && rm managed-schema && \
   sed -i '/defaultSearchField/d' schema.xml &&  sed -i '/solrQueryParser/c\\<df\>text\<\/df\>\<solrQueryParser q.op="AND"\/\>' schema.xml && \
+  sed -i '/<\/fields/i \<field name="subject" type="string" indexed="true" stored="true" multiValued="true"\/\>' schema.xml && \
+  sed -i '/<\/fields/i \<field name="data_steward_email" type="textgen" indexed="true" multiValued="true"\/\>' schema.xml && \
   sed -i '/<updateProcessor.*class="solr.AddSchemaFieldsUpdateProcessorFactory".*i/,/<\/updateProcessor>/d' solrconfig.xml && \
   sed -i '/<updateRequestProcessorChain.*add-unknown-fields-to-the-schema.*/,/<\/updateRequestProcessorChain>/d' solrconfig.xml && \
   sed -i '/<initParams.*/,/<\/initParams>/d' solrconfig.xml && sed -i '/<\/config>/i <schemaFactory class="ClassicIndexSchemaFactory"/>' solrconfig.xml
 RUN su - ckan -c "$SOLR stop"; su - ckan -c "$SOLR start"
 
 # Init
-#RUN su - postgres -c "pg_ctl -w -D /app/ckan/pgdata start" && su - ckan -c "$SOLR start" && su - ckan -c "redis-server --port 8082 &" && \
-#    . $APP/bin/activate && cd $APP/src/ckan && ckan -c $CKCF db init
-#RUN . /app/ckan/venv/bin/activate && cd $APP/src/ckan && \
-#    ckan config-tool ${CKCF} "ckan.plugins = envvars image_view text_view recline_view datastore fluent spatial_metadata spatial_query resource_proxy geo_view geojson_view wmts_view" && \
-#    ckan config-tool ${CKCF} "scheming.presets=ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml ckanext.aafc:schemas/aafc_presets.yaml" && \
-#    ckan config-tool ${CKCF} "scheming.dataset_schemas=ckanext.aafc:schemas/aafc_wg.yaml"
+RUN su - postgres -c "pg_ctl -w -D /app/ckan/pgdata start" && su - ckan -c "$SOLR start" && su - ckan -c "redis-server --port 8082 &" && \
+    . $APP/bin/activate && cd $APP/src/ckan && ckan -c $CKCF db init
+RUN . /app/ckan/venv/bin/activate && cd $APP/src/ckan && \
+    ckan config-tool ${CKCF} "ckan.plugins = envvars image_view text_view recline_view datastore fluent spatial_metadata spatial_query resource_proxy geo_view geojson_view wmts_view" && \
+    ckan config-tool ${CKCF} "scheming.presets=ckanext.scheming:presets.json ckanext.fluent:presets.json ckanext.aafc:schemas/tbs_presets.yaml ckanext.aafc:schemas/aafc_presets.yaml" && \
+    ckan config-tool ${CKCF} "scheming.dataset_schemas=ckanext.aafc:schemas/aafc_wg.yaml" && \
+    ckan config-tool ${CKCF} "licenses_group_url=file:///app/ckan/venv/src/ckanext-aafc/ckanext/aafc/public/static/licenses.json"
 
 COPY *.exp /app/ckan/venv/src/ckan/
 RUN sed -i "s/###ALL_PASSWORD#/${ALL_PASSWORD}/g" /app/ckan/venv/src/ckan/ckan-admin.exp
