@@ -3,6 +3,8 @@
 import re
 import unicodedata
 
+from six import text_type
+
 from ckan.common import config, _, json, request, c
 from ckan.lib.navl.validators import StopOnError
 from ckan.authz import is_sysadmin
@@ -129,7 +131,7 @@ def geojson_validator(value):
     if value:
         try:
             # accept decoded geojson too
-            if isinstance(value, basestring):
+            if isinstance(value, str):
                 value = json.loads(value)
             shape = geojson.GeoJSON.to_instance(value, strict=True)
             if not shape.is_valid:
@@ -180,3 +182,16 @@ def if_empty_set_to(default_value):
         return value
 
     return validator
+
+def string_safe(value, context):
+    if isinstance(value, text_type):
+        return value
+    elif isinstance(value, bytes):
+        # bytes only arrive when core ckan or plugins call
+        # actions from Python code
+        try:
+            return value.decode(u'utf8')
+        except UnicodeDecodeError:
+            return value.decode(u'cp1252')
+    else:
+        raise Invalid(_('Must be a Unicode string value'))

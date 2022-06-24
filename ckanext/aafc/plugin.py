@@ -61,6 +61,7 @@ class AafcPlugin(plugins.SingletonPlugin, DefaultDatasetForm , DefaultTranslatio
             'canada_tags': validators.canada_tags,
             'geojson_validator': validators.geojson_validator,
             'email_validator': validators.email_validator,
+            'string_safe': validators.string_safe,
             'canada_non_related_required':
                 validators.canada_non_related_required,
             'if_empty_set_to':
