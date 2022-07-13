@@ -27,6 +27,8 @@ RUN ln -s /usr/lib/postgresql/12/bin/pg_ctl /usr/bin/pg_ctl
 RUN mkdir -p $APP/src $TMP /app/ckan/config /app/ckan/log && \
     curl -o $TMP/getpip.py https://bootstrap.pypa.io/get-pip.py && python3 $TMP/getpip.py && \
     pip install pastescript && pip install pastedeploy && pip install supervisor && pip install "virtualenv==16.7.9" && \
+	pip install python-dotenv && pip install pyyaml && pip install ckanapi && \
+
     mkdir /etc/supervisord.d
 RUN TZ=America/Toronto; ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -56,10 +58,9 @@ RUN mkdir -p /app/ckan/pgdata /run/postgresql && chown -R postgres:postgres /app
 RUN . $APP/bin/activate && cd $APP/src && pip install setuptools==44.1.0 && pip install --upgrade pip && \
     pip install -e 'git+https://github.com/ckan/ckan.git@ckan-2.9.5#egg=ckan[requirements,dev]' && \
     pip install -r /app/ckan/venv/src/ckan/dev-requirements.txt && \
-    pip install Shapely vdm ckantoolkit geoalchemy2 && \
+    pip install Shapely==1.8.0 vdm ckantoolkit geoalchemy2==0.5.0 && \
     pip install -e git+https://github.com/okfn/ckanext-envvars.git#egg=ckanext-envvars && \
     pip install ckanapi && pip install geojson && pip install geomet && \
-	pip install SQLAlchemy==1.3.5 && \
     deactivate && . $APP/bin/activate && \
     cd $APP/src/ckan && cp who.ini /app/ckan/config/ && \
     #pip install -e "git+https://github.com/aafc/ckanext-scheming.git#egg=ckanext-scheming" && \
