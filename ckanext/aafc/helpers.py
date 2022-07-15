@@ -51,7 +51,7 @@ def get_translated_t(data_dict, field):
                 if l.startswith(language + '-t-'):
                     return data_dict[field+'_translated'][l], True
         val = data_dict.get(field, '')
-        return (_(val) if val and isinstance(val, basestring) else val), False
+        return (_(val) if val and isinstance(val, str) else val), False
 
 
 def language_text_t(text, prefer_lang=None):
