@@ -27,9 +27,12 @@
           {% block resource_actions %}
           <ul>
             {% block resource_actions_inner %}
-            {% if h.check_access('package_update', {'id':pkg.id }) %}
-              <li>{% link_for _('Manage'), named_route=pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id, class_='btn btn-default', icon='wrench' %}</li>
-            {% endif %}
+            {% if not pkg.aafc_is_harvested == "true" %}
+              {% if h.check_access('package_update', {'id':pkg.id }) %}
+                <li>{% link_for _('Manage'), named_route=pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id, class_='btn btn-default', icon='wrench' %}</li>
+              {% endif %}
+            {%endif%}
+           
             {% if res.url and h.is_url(res.url) %}
               <li>
                 <div class="btn-group">
