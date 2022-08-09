@@ -101,8 +101,4 @@ msgid "Export Datasets"
 msgstr "(FR) Export Datasets"
 
 msgid "Not Published Externally"
-msgstr "Non publié en externe"
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/AR-268
+msgstr "Pas publiées en externe"
