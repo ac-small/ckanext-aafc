@@ -16,7 +16,7 @@ def export():
     Exported files are labelled with current datetime.
     '''
     csv_bom_header = ('\ufeff')
-    data = exporter.export('http://localhost:5000/', '/app/ckan/venv/src/ckanext-aafc/ckanext/aafc/export/export_columns.json', str(c.userobj.apikey) , "{'include_private':'True'}")
+    data = exporter.export('http://localhost:5000/', '/srv/app/src/ckanext-aafc/ckanext/aafc/export/export_columns.json', str(c.userobj.apikey) , "{'include_private':'True'}")
     csv_content = csv_bom_header + data
 
     response = make_response(csv_content)
