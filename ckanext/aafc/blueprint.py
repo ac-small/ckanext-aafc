@@ -1,18 +1,13 @@
-from flask import Blueprint
-#import ckanapi_exporter.exporter as exporter
+from flask import Blueprint, make_response
+import ckanapi_exporter.exporter as exporter
 import ckan.plugins.toolkit as tk
+from ckan.common import c
 from datetime import datetime
-from flask import Response, make_response
 
 aafc = Blueprint('aafc', __name__)
 
 def help_page():
     return tk.render('/home/help.html')
-
-def build_export():
-    #csv_content = exporter.get_datasets_from_ckan("http://localhost:5000/", apikey="")
-    csv_content="Hello World"
-    return csv_content
 
 def export():
     '''
@@ -20,13 +15,16 @@ def export():
     Columns exported are specified in the /export/export.columns.json file.
     Exported files are labelled with current datetime.
     '''
-    response = make_response(build_export())
+    csv_bom_header = ('\ufeff')
+    data = exporter.export('http://localhost:5000/', '/srv/app/src/ckanext-aafc/ckanext/aafc/export/export_columns.json', str(c.userobj.apikey) , "{'include_private':'True'}")
+    csv_content = csv_bom_header + data
+
+    response = make_response(csv_content)
     time = datetime.now().strftime("%Y%m%d-%H%M%S")
     filename = ("AAFC-Data-Catalogue-Export " + time + ".csv")
     response.headers['Content-Encoding'] = 'utf-8-sig'
     response.headers['Content-Type'] = 'text/plain; charset=utf-8-sig'
     response.headers["Content-Disposition"] = "attachment; filename=" + filename
-    #response.write("\xEF\xBB\xBF")
     return response
 
 def get_blueprints():
