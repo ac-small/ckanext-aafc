@@ -10,7 +10,7 @@
       "case_sensitive": true
   },
   "Title French": {
-      "pattern_path": ["^notes_translated$", "^fr$"],
+      "pattern_path": ["^title_translated$", "^fr$"],
       "case_sensitive": true
   },
   "Description English": {
