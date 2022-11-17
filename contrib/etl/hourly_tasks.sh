@@ -9,7 +9,7 @@
 # Crontab is created on startup through docker-ckan start_ckan / start_ckan_dev scripts.
 # Example: 0 * * * * /path/to/script/hourly_tasks.sh
 
-CKAN_CONFIG=/srv/app/production.ini
+CKAN_CONFIG=/srv/app/ckan.ini
 
 echo "Running Tracking Update ... "
 . /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan tracking update --config=$CKAN_CONFIG

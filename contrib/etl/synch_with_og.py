@@ -177,7 +177,7 @@ def update_to_registry(package_id):
 
         # Ensure that we reset ready to publish back to false after AAFC Registry dataset is posted to OG
         if 'ready_to_publish' in reg_data and reg_data['ready_to_publish'] == "true":
-            og_data['ready_to_publish'] == "false"
+            og_data['ready_to_publish'] = "false"
 
         replace_regions(og_data)
         update_creator(og_data)
@@ -199,6 +199,13 @@ def extract_branch_and_data_steward(og_data):
         # Extract contact information fields
         pattern = re.compile(r";|,")
         contact_str = pattern.split(contact)
+    elif 'org_section' in og_data and og_data['org_section']['en'] != {}:
+        branch = og_data['org_section']['en']
+        if 'maintainer_email' in og_data and og_data['maintainer_email'] != {}:
+            data_steward = og_data['maintainer_email']
+        else:
+            data_steward = 'Unknown'
+        contact_str = ["Government of Canada", "Agriculture and Agrifood Canada", branch, data_steward]
     else:
         contact_str = ["Government of Canada", "Agriculture and Agrifood Canada", "Unknown Branch", "Unknown"]
     return contact_str
