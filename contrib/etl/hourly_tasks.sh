@@ -12,8 +12,8 @@
 CKAN_CONFIG=/srv/app/ckan.ini
 
 echo "Running Tracking Update ... "
-. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan tracking update --config=$CKAN_CONFIG
+. /srv/app/bin/activate && ckan -c $CKAN_CONFIG tracking update
 echo "Rebuilding Search Index ... "
-. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan search-index rebuild -r --config=$CKAN_CONFIG
+. /srv/app/bin/activate && ckan -c $CKAN_CONFIG search-index rebuild -r
 echo "Sending Emails ..."
-. /srv/app/bin/activate && /srv/app/bin/paster --plugin=ckan post -c $CKAN_CONFIG /api/action/send_email_notifications
+curl -H "Authorization: $API_KEY" -X POST http://localhost:5000/api/action/send_email_notifications
