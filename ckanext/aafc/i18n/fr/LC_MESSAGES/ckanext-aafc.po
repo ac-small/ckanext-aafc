@@ -98,7 +98,10 @@ msgid "Suggest a Dataset"
 msgstr "Proposez un jeu de données"
 
 msgid "Export Datasets"
-msgstr "(FR) Export Datasets"
+msgstr "Télécharger de l'ensemble de données"
+
+msgid "Copy File Path"
+msgstr "Copier le chemin de fichier"
 
 msgid "Not Published Externally"
 msgstr "Pas publiées en externe"
